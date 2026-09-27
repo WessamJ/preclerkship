@@ -70,13 +70,13 @@ def cards(course):
             u'<p class="bmeta">Block %d &middot; %s %s</p>\n'
             u'<h2>%s</h2>\n<p>%s</p>\n'
             u'<span class="tally">\n'
-            u'<span><b>%d</b> of %d lecture notes</span>\n'
+            u'<span><b>%d</b> lecture notes</span>\n'
             u'<span><b>%d</b> questions in the bank</span>\n'
             u'</span>\n'
             u'</a>' % (slug, hue, n,
                       # a block that is one week long says "Week", not "Weeks"
                       u"Weeks" if re.search(u"[-\u2013]", weeks) else u"Week",
-                      weeks, name, blurb, written, len(lects), len(qs)))
+                      weeks, name, blurb, written, len(qs)))
     return "\n".join(out)
 
 

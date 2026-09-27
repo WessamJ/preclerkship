@@ -30,7 +30,7 @@ def cards():
                 u'<span class="tally"><span>not built yet</span></span>\n'
                 u'</div>' % (c["accent"], c["year"], c["name"], c["blurb"]))
             continue
-        notes = (u'<span><b>%d</b> of %d lecture notes</span>' % (w, l)) if l else u''
+        notes = (u'<span><b>%d</b> lecture notes</span>' % w) if l else u''
         out.append(
             u'<a class="block-card" href="%s/index.html" style="--hue:%s">\n'
             u'<p class="bmeta">%s &middot; %d blocks</p>\n'
