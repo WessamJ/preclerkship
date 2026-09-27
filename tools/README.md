@@ -10,6 +10,17 @@ its own extractors beside its own sources:
 | PoM 1 | `tools/pom1/` | the block bank PDFs, the workbook, and upper-year study notes |
 | T2C | none | its questions arrived as JSON |
 
+**The FoM and PoM 1 notes are now hand-curated.** On 2026-09-27 every written
+lecture in `fom/data/notes/b1..b4.json` and `pom1/data/notes/{cardio,gi,resp}.json`
+was cleaned by hand on top of what the extractors produced: split sentences
+rejoined, phantom tables rebuilt, exploded equations rewritten, stray diagram
+labels removed, misfiled sections moved to the lecture they belong to, a
+framing and keypoints written for each, and 240 mermaid flowcharts added. Each
+of those files carries a top-level `curated` key saying so. Re-running
+`tools/fom/parse_summative.py` or `tools/pom1/notes_from_pdf.py` would overwrite
+all of that, so they are kept for reference and for any block that has no
+notes yet (ENT, GU); do not run them over a curated block.
+
 The three *builders* below - `build_pages.py`, `build_index.py`,
 `build_hub.py` - are shared: each runs over every course in
 [`portal.py`](portal.py)'s roster, so a course is a dictionary, a directory and

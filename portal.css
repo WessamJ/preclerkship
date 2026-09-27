@@ -1605,22 +1605,23 @@ mark.hit{
 .tlead p,.cnote p{margin-bottom:6px;}
 .tlead p:last-child,.cnote p:last-child{margin-bottom:0;}
 
-.clist ul{margin:0 0 0 20px;}
-.clist li{margin-bottom:6px;}
+.clist ul,.clist ol,.cnote ul,.cnote ol{margin:0 0 0 20px;}
+.clist li,.cnote li{margin-bottom:6px;}
 .clist p{margin-bottom:6px;}
-.clist ul+p,.clist p+ul{margin-top:6px;}
+.clist ul+p,.clist p+ul,.cnote ul+p,.cnote p+ul{margin-top:6px;}
 
 /* A note lifted from a study document keeps that document's own sub-heads, so
    the block needs a heading level inside it. Small and set in the accent, so a
-   sub-head reads as a turn in the argument rather than as a second title. */
-.clist h5{
+   sub-head reads as a turn in the argument rather than as a second title.
+   The hand-cleaned FoM and PoM 1 notes use the same sub-heads in prose blocks. */
+.clist h5,.cnote h5{
     font-family:var(--serif);
     font-size:.94rem;
     font-weight:600;
     color:var(--q-accent-ink);
     margin:14px 0 6px 0;
 }
-.clist h5:first-child{margin-top:0;}
+.clist h5:first-child,.cnote h5:first-child{margin-top:0;}
 
 .tlead strong,.cnote strong,.clist strong{font-weight:600;}
 
