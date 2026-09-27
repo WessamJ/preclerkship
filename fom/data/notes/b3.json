@@ -387,8 +387,8 @@
          "Causes",
          "<strong>↓ intake</strong> (vegan)<br><strong>↓ absorption</strong>: celiac, atrophic gastritis, <em>H. pylori</em> gastritis, gastric bypass, medication<br><strong>↑ demand</strong>: pregnancy, EPO signal<br><strong>↑ loss</strong> — GI: stomach/small-bowel bleeding, <strong>melena</strong> (black stool), ulcer, colon cancer; non-GI: menstruation, fibroids, urinary loss, chronic intravascular hemolysis with hemoglobinuria, pulmonary hemosiderosis, bleeding disorder, marathon running, blood donation<br><strong>Iron depletion</strong> = deficiency without anemia",
          "Acute/chronic immune activation<br><strong>Chronic infection</strong>: lung abscess, TB, subacute bacterial endocarditis, osteomyelitis, HIV<br><strong>Chronic inflammation</strong>: RA, SLE, rheumatic fever, IBD<br><strong>Malignancy</strong>: lymphoma, carcinoma, myeloma<br>Alcoholic liver disease, heart disease<br>Idiopathic<br><strong>Hepcidin overproduction</strong> blocks ferroportin from releasing stored iron → <strong>functional iron deficiency</strong>",
-         "<strong>Iron deposits in mitochondria</strong> (ring around the precursor nucleus)<br><strong>Congenital</strong>: X-linked, autosomal recessive<br><strong>Acquired</strong>: toxins, <strong>vitamin B6 deficiency</strong>, myelodysplastic syndromes<br>Iron present in normal amounts but cannot enter Hb (<strong>functional iron deficiency</strong>)",
-         "α- or β-globin gene defects (<strong>quantitative</strong>); severity depends on gene and number of alleles<br><strong>α-thal</strong> (SE Asia, Africa): silent carrier → α trait (mild anemia) → HbH disease (hemolysis, splenomegaly) → hydrops fetalis (Bart's, stillbirth)<br><strong>β-thal</strong> (Mediterranean): minor (heterozygous) — <strong>↑ HbA2</strong>; intermedia — bone disease, splenomegaly; major (homozygous) — <strong>↑ HbF</strong>"
+         "<strong>Iron deposits in mitochondria</strong> (<strong>ring around the precursor nucleus</strong>)<br><strong>Congenital</strong>: X-linked, autosomal recessive<br><strong>Acquired</strong>: toxins, <strong>vitamin B6 deficiency</strong>, myelodysplastic syndromes<br>Iron present in normal amounts but cannot enter Hb (<strong>functional iron deficiency</strong>)",
+         "α- or β-globin gene defects (<strong>quantitative</strong>); severity depends on gene and number of alleles<br><strong>α-thal</strong> (SE Asia, Africa): silent carrier → α trait (mild anemia) → <strong>HbH disease</strong> (hemolysis, splenomegaly) → <strong>hydrops fetalis</strong> (Bart's, stillbirth)<br><strong>β-thal</strong> (Mediterranean): minor (heterozygous) — <strong>↑ HbA2</strong>; intermedia — bone disease, splenomegaly; major (homozygous) — <strong>↑ HbF</strong>"
         ],
         [
          "Presentation",
@@ -402,14 +402,14 @@
          "Hypochromic<br><strong>Anisocytosis</strong>, <strong>poikilocytosis</strong><br>Target cells, elliptocytes",
          "Hypochromic",
          "Hypochromic<br>Basophilic stippling<br><strong>Pappenheimer bodies</strong>",
-         "Hypochromic<br><strong>Basophilic stippling</strong><br>Hemolysis<br>Target cells, teardrop cells"
+         "Hypochromic<br><strong>Basophilic stippling</strong><br>Hemolysis<br><strong>Target cells, teardrop cells</strong>"
         ],
         [
          "High",
          "<strong>RDW</strong>, <strong>transferrin</strong>, serum transferrin receptor, red cell zinc protoporphyrin",
          "<strong>Ferritin</strong>, cytokine levels",
          "<strong>RDW</strong>",
-         "RBC count, <strong>MCHC</strong>"
+         "<strong>RBC count</strong>, <strong>MCHC</strong>"
         ],
         [
          "Investigations",
@@ -422,7 +422,7 @@
          "Management",
          "Replace iron (oral/IV, transfusion)<br><strong>Find the cause</strong>",
          "Treat the underlying disease<br>Seldom needs transfusion<br>EPO in severe cases",
-         "Transfusion<br>BM transplant (rare)<br>Remove toxin (chelation for lead, avoid chemicals)<br>Pyridoxine occasionally helps",
+         "Transfusion<br>BM transplant (rare)<br>Remove toxin (<strong>chelation for lead</strong>, avoid chemicals)<br>Pyridoxine occasionally helps",
          "Transfusion by severity<br>Iron chelation (<strong>deferoxamine</strong>)<br>Genetic counselling / family planning"
         ]
        ],
@@ -435,6 +435,12 @@
       {
        "t": "pathway",
        "mermaid": "flowchart TD\n A[\"Microcytic anemia<br/>MCV under 80 fL\"] --> B[\"CBC indices, ferritin, peripheral film\"]\n B --> C[\"Iron deficiency<br/>find the source of loss\"]\n B --> D[\"Chronic inflammation<br/>infection workup\"]\n B --> E[\"Thalassemia<br/>Hb electrophoresis or HPLC\"]\n B --> F[\"Sideroblastic<br/>marrow: ringed iron in mitochondria\"]\n E --> G[\"Normal HbA2<br/>α-thal: gene sequencing, HbH test\"]\n E --> H[\"↑ HbA2 = β-thal minor<br/>↑ HbF = β-thal major\"]"
+      },
+      {
+       "t": "callout",
+       "kind": "tip",
+       "title": "Schulich Reviews",
+       "html": "<ul><li>Iron deficiency labs: <strong>low ferritin + high RDW + high platelets</strong></li><li>Chronic inflammation: mild microcytosis, <strong>MCV rarely &lt; 75 fL</strong>; ferritin normal/↑</li><li>Thalassemia: <strong>normal RDW</strong>, normal ferritin and platelets; RBC count higher than in iron deficiency</li><li>α-thal by genes deleted: 1 silent carrier · 2 trait · <strong>3 HbH disease</strong> · <strong>4 hydrops fetalis</strong></li></ul>"
       }
      ]
     },
@@ -475,7 +481,7 @@
         [
          "Blood / marrow",
          "<strong>Severe reticulocytopenia</strong><br>Normochromic",
-         "<strong>Pancytopenia</strong><br>Hypocellular marrow, replaced by fat cells",
+         "<strong>Pancytopenia</strong><br>Hypocellular marrow, <strong>replaced by fat cells</strong>",
          "<strong>Leukoerythroblastic</strong> picture<br><strong>Teardrop cells</strong>"
         ]
        ],
@@ -487,7 +493,7 @@
       },
       {
        "t": "note",
-       "html": "<h5>Sickle cell disease (autosomal recessive)</h5><ul><li><strong>β-chain disorder</strong>: <strong>HbS = Glu → Val</strong>; <strong>HbC = Glu → Lys</strong> → Hb polymerization and adhesion</li><li>Usually <strong>does not present until ~age 3</strong> because HbF protects early</li><li>Heterozygotes have ↑ <strong>malaria resistance</strong></li><li><strong>Sickle trait (HbAS)</strong>: monitor for hematuria/glaucoma, severe dehydration, renal medullary carcinoma</li><li>Disease: chronic organ damage, severity depends on genotype; <strong>vaso-occlusive crises (VOC)</strong>, dactylitis, acute chest syndrome, neuropathy, stroke (CVA)</li><li><strong>Smear/labs</strong>: sickle cells, high HbF</li><li><strong>Ix</strong>: <strong>newborn screening</strong>, Hb electrophoresis, HPLC</li><li><strong>Mx</strong>: folate; <strong>hydroxyurea</strong>; manage complications; stem cell transplant; <strong>penicillin prophylaxis to age 5</strong>; VOC → oxygen, IV fluids, opioids/NSAIDs, treat the trigger</li></ul>"
+       "html": "<h5>Sickle cell disease (autosomal recessive)</h5><ul><li><strong>β-chain disorder</strong>: <strong>HbS = Glu → Val</strong>; <strong>HbC = Glu → Lys</strong> → Hb polymerization and adhesion</li><li>Usually <strong>does not present until ~age 3</strong> because HbF protects early</li><li>Heterozygotes have ↑ <strong>malaria resistance</strong></li><li><strong>Sickle trait (HbAS)</strong>: monitor for hematuria/glaucoma, severe dehydration, renal medullary carcinoma</li><li>Disease: chronic organ damage, severity depends on genotype; <strong>vaso-occlusive crises (VOC)</strong>, dactylitis, <strong>acute chest syndrome</strong>, neuropathy, stroke (CVA)</li><li><strong>Smear/labs</strong>: sickle cells, high HbF</li><li><strong>Ix</strong>: <strong>newborn screening</strong>, <strong>Hb electrophoresis</strong>, HPLC</li><li><strong>Mx</strong>: folate; <strong>hydroxyurea</strong>; manage complications; stem cell transplant; <strong>penicillin prophylaxis to age 5</strong>; VOC → oxygen, IV fluids, opioids/NSAIDs, treat the trigger</li></ul>"
       },
       {
        "t": "pathway",
@@ -496,6 +502,12 @@
       {
        "t": "note",
        "html": "<h5>Acute blood loss</h5><ul><li><strong>Sources</strong>: GI; non-GI — menstruation, fibroids, urinary blood loss, bleeding disorder</li><li><strong>Presentation</strong>: pallor, bleeding</li><li><strong>Ix</strong>: identify the source of bleeding</li><li><strong>Mx</strong>: treat the cause; transfuse if necessary</li></ul>"
+      },
+      {
+       "t": "callout",
+       "kind": "tip",
+       "title": "Schulich Reviews",
+       "html": "<ul><li><strong>Reticulocyte count</strong> splits normocytic anemia: ↑ retics = ↑ turnover (bleeding, hemolysis) → hemolysis markers, look for bleeding; not ↑ = <strong>↓ production</strong> → marrow (aspirate/biopsy)</li></ul>"
       }
      ]
     },
@@ -527,8 +539,8 @@
         ],
         [
          "Causes",
-         "<strong>Diet</strong>: vegan, vegetarian, malnutrition<br><strong>Gastric</strong>: pernicious anemia, post-gastrectomy, mucosal atrophy<br><strong>Intestinal</strong>: Crohn's, ileal resection, fish tapeworm<br><strong>Genetic</strong>: intrinsic factor receptor defect",
-         "<strong>Diet</strong>: alcoholism, substance use, old age, poverty, goat's milk anemia<br><strong>Malabsorption</strong>: jejunal resection<br><strong>Drugs</strong>: anticonvulsants, sulfasalazine, oral contraceptives, alcohol<br><strong>↑ demand</strong>: pregnancy, hemolysis, prematurity, hemodialysis, exfoliative dermatitis/psoriasis"
+         "<strong>Diet</strong>: vegan, vegetarian, malnutrition<br><strong>Gastric</strong>: <strong>pernicious anemia</strong>, post-gastrectomy, mucosal atrophy<br><strong>Intestinal</strong>: Crohn's, <strong>ileal resection</strong>, fish tapeworm<br><strong>Genetic</strong>: intrinsic factor receptor defect",
+         "<strong>Diet</strong>: alcoholism, substance use, old age, poverty, goat's milk anemia<br><strong>Malabsorption</strong>: <strong>jejunal resection</strong><br><strong>Drugs</strong>: anticonvulsants, sulfasalazine, oral contraceptives, alcohol<br><strong>↑ demand</strong>: pregnancy, hemolysis, prematurity, hemodialysis, exfoliative dermatitis/psoriasis"
         ],
         [
          "Presentation",
@@ -714,12 +726,12 @@
         [
          "",
          "",
-         "Bacterial products: <strong>clostridial sepsis</strong> → microspherocytes"
+         "Bacterial products: <strong>clostridial sepsis</strong> → <strong>microspherocytes</strong>"
         ],
         [
          "<strong>Mechanical trauma</strong>",
          "Intravascular",
-         "<strong>Mechanical valves</strong>: high shear (damaged valves, paravalvular leaks) → schistocytes"
+         "<strong>Mechanical valves</strong>: high shear (damaged valves, paravalvular leaks) → <strong>schistocytes</strong>"
         ],
         [
          "",
@@ -757,7 +769,7 @@
          "<strong>Iron</strong>",
          "Heme iron (meat) — most bioavailable<br>Iron bound to organic compounds (vegetables)<br>Iron bound to inorganic compounds (supplements)",
          "10-15 mg/day intake; ~10% absorbed (~1 mg/day)<br>2/3 in Hb, 1/3 stored<br>Acidity (vitamin C) ↑ absorption",
-         "<strong>Oral</strong>: ferrous gluconate (30 mg), sulfate (60 mg), fumarate (90 mg), iron polysaccharide (150 mg), heme iron polypeptide/Proferrin (11 mg)<br>Response: retics at 1 wk → Hb rises 2-4 wk → anemia corrected 3 mo → stores replenished 3-6 mo<br><strong>IV</strong>: inadequate absorption, rapid blood loss"
+         "<strong>Oral</strong>: ferrous gluconate (30 mg), sulfate (60 mg), fumarate (90 mg), iron polysaccharide (150 mg), heme iron polypeptide/Proferrin (11 mg)<br>Response: <strong>retics at 1 wk</strong> → Hb rises 2-4 wk → anemia corrected 3 mo → stores replenished 3-6 mo<br><strong>IV</strong>: inadequate absorption, rapid blood loss"
         ],
         [
          "<strong>Folate</strong>",
@@ -779,6 +791,12 @@
         ]
        ],
        "lead": "<p><strong>Pharmacologic treatment of anemia</strong></p>"
+      },
+      {
+       "t": "callout",
+       "kind": "tip",
+       "title": "Schulich Reviews",
+       "html": "<ul><li>Warm AIHA: idiopathic in 60%; <strong>steroids 1st line → splenectomy 2nd line</strong></li><li>Cold AIHA: <strong>steroids, splenectomy and immunosuppressants are not effective</strong> → treat the underlying cause</li></ul>"
       }
      ]
     },
@@ -845,6 +863,12 @@
       {
        "t": "pathway",
        "mermaid": "flowchart TD\n A[\"Homocysteine\"] -->|\"methionine synthase<br/>needs B12 + methyl-THF\"| B[\"Methionine\"]\n C[\"Methylmalonyl-CoA\"] -->|\"methylmalonyl-CoA mutase<br/>needs B12 only\"| D[\"Succinyl-CoA<br/>TCA cycle\"]\n E[\"Folate deficiency\"] -.->|\"blocks\"| A\n F[\"B12 deficiency\"] -.->|\"blocks\"| A\n F -.->|\"blocks\"| C"
+      },
+      {
+       "t": "callout",
+       "kind": "tip",
+       "title": "Schulich Reviews",
+       "html": "<ul><li>MDS film: <strong>hypogranular, hyposegmented neutrophils (pseudo-Pelger-Huët)</strong></li></ul>"
       }
      ]
     },
@@ -952,17 +976,17 @@
        "rows": [
         [
          "<strong>Clopidogrel</strong>",
-         "P2Y12 (ADP) receptor",
+         "<strong>P2Y12 (ADP) receptor</strong>",
          "Blocks ADP-driven activation"
         ],
         [
          "<strong>Aspirin</strong>",
-         "Cyclooxygenase",
+         "<strong>Cyclooxygenase</strong>",
          "↓ Thromboxane A2"
         ],
         [
          "<strong>Abciximab</strong>",
-         "Glycoprotein IIb/IIIa",
+         "<strong>Glycoprotein IIb/IIIa</strong>",
          "Prevents aggregation"
         ]
        ],
@@ -1362,6 +1386,12 @@
       {
        "t": "list",
        "html": "<h5>What turns up in adults</h5><ul><li><strong>Mild-moderate congenital phenotypes</strong> — severe forms are usually identified earlier in life</li><li><strong>Congenital deficiencies with clinico-laboratory discrepancy</strong> — a low factor level may not confer a severe bleeding phenotype</li><li><strong>Acquired bleeding disorders</strong> — acquired hemophilia A, acquired vWD, platelet disorders</li></ul>"
+      },
+      {
+       "t": "callout",
+       "kind": "tip",
+       "title": "Schulich Reviews",
+       "html": "<ul><li><strong>FVIII is made mainly by endothelium, not liver</strong> → normal or ↑ in liver disease while the liver-made factors fall</li></ul>"
       }
      ]
     },
@@ -1377,6 +1407,12 @@
       {
        "t": "list",
        "html": "<h5>Neonatal hemostasis</h5><ul><li>Hemostatic system matures over the <strong>first 6 months of life</strong></li><li>Liver immaturity → lower levels of most factors: <strong>vitamin K-dependent factors, protein C, protein S</strong></li><li><strong>PT and aPTT are physiologically longer</strong> in premature infants and neonates than in adults</li></ul>"
+      },
+      {
+       "t": "callout",
+       "kind": "tip",
+       "title": "Schulich Reviews",
+       "html": "<ul><li><strong>vWD = most common hereditary bleeding disorder</strong> (0.1-1% of population); vWF recruits platelets and carries FVIII</li></ul>"
       }
      ]
     },
@@ -1484,15 +1520,15 @@
          "<strong>Diagnosis of exclusion</strong>: Hx, PEx, CBC, INR, PTT, film, electrolytes, urea/creatinine, liver enzymes<br>Consider: pregnancy test, IgG/IgA/IgM, DAT, RhD typing, hemolysis markers",
          "<strong>Schistocytes</strong><br>Suspicion: acute thrombocytopenia + hemolytic anemia + AKI with a trigger<br><strong>Low ADAMTS-13</strong>",
          "<strong>Schistocytes</strong><br>Same triad after a <strong>diarrheal illness</strong><br><strong>Normal ADAMTS-13</strong>",
-         "<strong>Schistocytes</strong><br><strong>ISTH score</strong>: underlying condition, platelets &lt; 100, ↑ D-dimer, fibrinogen &lt; 1 g/L, ↑ INR",
-         "<strong>4 T's score</strong>: thrombocytopenia, timing of fall, thrombosis/sequelae, other causes<br>Anti-PF4 ELISA (EIA)<br><strong>Functional serotonin release assay</strong>"
+         "<strong>Schistocytes</strong><br><strong>ISTH score</strong>: underlying condition, <strong>platelets &lt; 100</strong>, ↑ D-dimer, <strong>fibrinogen &lt; 1 g/L</strong>, ↑ INR",
+         "<strong>4 T's score</strong>: thrombocytopenia, timing of fall, thrombosis/sequelae, other causes<br><strong>Anti-PF4 ELISA (EIA)</strong><br><strong>Functional serotonin release assay</strong>"
         ],
         [
          "Management",
          "<strong>Glucocorticoids</strong> (prednisone, dexamethasone); IVIg; splenectomy; rituximab; TPO mimetics (romiplostim, eltrombopag); immunosuppression (azathioprine)",
          "<strong>Plasma exchange</strong> — removes antibody and ultra-large multimers, replaces ADAMTS-13 and normal vWF; steroids; rituximab; <strong>avoid platelet transfusion</strong>",
          "Supportive (monitoring, IV fluids); <strong>avoid antibiotics</strong> (some worsen it); <strong>avoid platelet transfusion</strong>; dialysis in some",
-         "Supportive; <strong>treat the cause</strong><br>If bleeding: cryo if fibrinogen &lt; 1.0; platelets if &lt; 50; FFP if INR &gt; 1.5; RBCs if Hb &lt; 70-80",
+         "Supportive; <strong>treat the cause</strong><br>If bleeding: <strong>cryo if fibrinogen &lt; 1.0; platelets if &lt; 50; FFP if INR &gt; 1.5</strong>; RBCs if Hb &lt; 70-80",
          "<strong>STOP ALL HEPARIN</strong>; start non-heparin anticoagulant (fondaparinux, argatroban, danaparoid); <strong>avoid platelet transfusion</strong>; warfarin once platelets normalize; with thrombosis treat ≥ 3 months"
         ]
        ],
@@ -1736,8 +1772,8 @@
         ],
         [
          "Imaging / tests",
-         "Ascending venogram — gold standard (invasive, radiation)<br><strong>Compression ultrasound</strong> — non-invasive; repeat in 1 week if positive (as written in source)<br>D-dimer — <strong>negative excludes; positive means nothing</strong>",
-         "Pulmonary angiogram — gold standard (invasive, right-heart catheter)<br><strong>V/Q scan</strong> — V/Q mismatch; for younger women and renal failure<br><strong>CT pulmonary angiogram</strong> — negative excludes<br>Bilateral compression ultrasound — repeat in 1 week if positive<br>D-dimer — <strong>negative excludes; positive means nothing</strong>"
+         "<strong>Ascending venogram — gold standard</strong> (invasive, radiation)<br><strong>Compression ultrasound</strong> — non-invasive; repeat in 1 week if positive (as written in source)<br>D-dimer — <strong>negative excludes; positive means nothing</strong>",
+         "<strong>Pulmonary angiogram — gold standard</strong> (invasive, right-heart catheter)<br><strong>V/Q scan</strong> — V/Q mismatch; for younger women and renal failure<br><strong>CT pulmonary angiogram</strong> — negative excludes<br>Bilateral compression ultrasound — repeat in 1 week if positive<br>D-dimer — <strong>negative excludes; positive means nothing</strong>"
         ],
         [
          "Setting",
@@ -1772,13 +1808,13 @@
        ],
        "rows": [
         [
-         "Factor V Leiden",
+         "<strong>Factor V Leiden</strong>",
          "Autosomal dominant",
          "5% of Caucasians; 10-20% of DVT/PE",
          "3-5× heterozygous; 80× homozygous"
         ],
         [
-         "Prothrombin gene mutation",
+         "<strong>Prothrombin gene mutation</strong>",
          "Autosomal dominant",
          "1-2% of Caucasians; 5% of DVT/PE",
          "3-5× heterozygous; 80× homozygous"
@@ -1808,6 +1844,12 @@
          "<strong>80×</strong>"
         ]
        ]
+      },
+      {
+       "t": "callout",
+       "kind": "tip",
+       "title": "Schulich Reviews",
+       "html": "<ul><li>HIT is <strong>10× more common with UFH than LMWH</strong></li></ul>"
       }
      ],
      "covers": [
@@ -1833,7 +1875,16 @@
      "id": "b3-w10-07",
      "num": "07",
      "name": "Pharmacology and Reversal of Anticoagulants",
-     "hasNote": false
+     "hasNote": true,
+     "title": "Pharmacology and Reversal of Anticoagulants",
+     "blocks": [
+      {
+       "t": "callout",
+       "kind": "tip",
+       "title": "Schulich Reviews",
+       "html": "<ul><li>Warfarin: <strong>FVII has the shortest half-life (3-8 h)</strong> → PT/INR rises first; the extrinsic pathway goes first</li></ul>"
+      }
+     ]
     }
    ]
   },
@@ -1955,7 +2006,7 @@
         [
          "<strong>Lymphocytosis</strong>",
          "Atypical lymphocytes that wrap around RBCs (EBV)",
-         "<strong>EBV mononucleosis</strong>: Monospot test; flow cytometry if persistent after 4-6 weeks"
+         "<strong>EBV mononucleosis</strong>: <strong>Monospot test</strong>; flow cytometry if persistent after 4-6 weeks"
         ]
        ],
        "lead": "<p><strong>Other cytoses</strong></p>"
@@ -2011,7 +2062,7 @@
         ],
         [
          "Minor criteria",
-         "Subnormal serum EPO",
+         "<strong>Subnormal serum EPO</strong>",
          "Clonal marker, or no evidence of reactive thrombocytosis",
          "Anemia not due to comorbidity; WBC ≥ 11 × 10<sup>9</sup>/L; palpable splenomegaly; LDH &gt; ULN; leukoerythroblastosis"
         ],
@@ -2046,6 +2097,12 @@
       {
        "t": "pathway",
        "mermaid": "flowchart LR\n A[\"EPO binds receptor\"] --> B[\"Conformation change\"]\n M[\"JAK2 V617F<br/>JH2 domain lost brake\"] -->|\"no EPO needed\"| B\n B --> C[\"JAK2 phosphorylated\"]\n C --> D[\"STAT, PI3K, RAS-MAPK\"]\n D --> E[\"Proliferation<br/>erythrocytosis\"]"
+      },
+      {
+       "t": "callout",
+       "kind": "tip",
+       "title": "Schulich Reviews",
+       "html": "<ul><li>Benign lymphocytosis: <strong>viral infection</strong> is the common cause; <strong>EBV</strong> most often in the young</li><li>CML chronic phase: PB blasts usually <strong>&lt; 10%</strong>; basophilia + eosinophilia</li><li>PV: <strong>phlebotomy lowers the Hct</strong>; <strong>hydroxyurea cytoreduces</strong> (high risk)</li></ul>"
       }
      ]
     },
@@ -2160,8 +2217,8 @@
         [
          "Treatment",
          "4-6 months (4-6 weeks in hospital)<br><strong>Induction</strong>: chemo (7+3 or 3+7)<br><strong>Consolidation</strong>: more chemo, or allogeneic HSCT (high risk)<br>Supportive: transfusion, antibiotics",
-         "2-3 years (<strong>Dana-Farber protocol</strong>)<br>Induction → consolidation (chemo or allogeneic HSCT) → <strong>maintenance</strong> low-dose chemo 2-3 yr<br><strong>CNS prophylaxis</strong> (intrathecal or radiation); testes<br>Newer: blinatumomab, inotuzumab (listed as CAR-T in source)",
-         "<strong>Allopurinol</strong> prophylaxis<br><strong>TKIs</strong>: imatinib (Gleevec), nilotinib, dasatinib<br>HSCT (possibly curative)",
+         "2-3 years (<strong>Dana-Farber protocol</strong>)<br>Induction → consolidation (chemo or allogeneic HSCT) → <strong>maintenance</strong> low-dose chemo 2-3 yr<br><strong>CNS prophylaxis</strong> (intrathecal or radiation); testes<br>Newer: <strong>blinatumomab</strong>, inotuzumab (listed as CAR-T in source)",
+         "<strong>Allopurinol</strong> prophylaxis<br><strong>TKIs</strong>: <strong>imatinib (Gleevec)</strong>, nilotinib, dasatinib<br>HSCT (possibly curative)",
          "<strong>Incurable</strong>; <strong>do NOT treat low-risk/asymptomatic</strong><br>Chemo (chlorambucil, fludarabine); anti-CD20 mAb; <strong>ibrutinib</strong> (BTK/TKI)"
         ],
         [
@@ -2227,6 +2284,12 @@
       {
        "t": "pathway",
        "mermaid": "flowchart TD\n A[\"Tumour cells die<br/>spontaneously or with chemo\"] --> B[\"Release K, PO4, nucleic acids\"]\n B --> C[\"↑ K\"]\n B --> D[\"↑ PO4 binds Ca\"]\n B --> E[\"Nucleic acids to uric acid\"]\n C --> F[\"Arrhythmia\"]\n D --> G[\"↓ Ca: seizures, arrhythmia\"]\n D --> H[\"Acute kidney injury\"]\n E --> H\n H --> I[\"Metabolic acidosis\"]"
+      },
+      {
+       "t": "callout",
+       "kind": "tip",
+       "title": "Schulich Reviews",
+       "html": "<ul><li>APL → DIC: malignant promyelocyte granules release <strong>procoagulant (tissue factor-related) and fibrinolytic</strong> activity (↑ t-PA/u-PA, annexin II)</li></ul>"
       }
      ]
     },
@@ -2379,7 +2442,16 @@
      "id": "b3-w11-08",
      "num": "08",
      "name": "Leukemia in Pediatrics",
-     "hasNote": false
+     "hasNote": true,
+     "title": "Leukemia in Pediatrics",
+     "blocks": [
+      {
+       "t": "callout",
+       "kind": "tip",
+       "title": "Schulich Reviews",
+       "html": "<ul><li><strong>ALL = 80% of childhood acute leukemia</strong>; 80% precursor B-lymphoblastic</li><li>Sanctuary sites <strong>CNS and testes</strong> → CNS-directed therapy (LP at diagnosis)</li><li><strong>Blinatumomab (CD19)</strong> for relapsed B-ALL</li></ul>"
+      }
+     ]
     },
     {
      "id": "b3-w11-10",
@@ -2573,7 +2645,7 @@
        "t": "callout",
        "kind": "warning",
        "title": "Features concerning for malignancy",
-       "html": "<ul><li>Systemic symptoms: fever &gt; 1 week, fatigue, night sweats, weight loss &gt; 10%</li><li><strong>Supraclavicular</strong> node</li><li>Generalized lymphadenopathy (malignant or other systemic disease)</li><li><strong>Fixed, non-tender, matted</strong> nodes without other symptoms</li><li>Non-tender node &gt; 1 cm starting in the neonatal period</li><li>Non-tender node <strong>≥ 2 cm</strong> growing, or not resolving after 2 weeks of antibiotics</li><li>Abnormal CXR: mediastinal mass, hilar adenopathy</li><li>Abnormal CBC: lymphoblasts, cytopenias</li><li>No ear, nose or throat symptoms</li><li>Persistently high or rising ESR/CRP</li></ul>"
+       "html": "<ul><li>Systemic symptoms: fever &gt; 1 week, fatigue, night sweats, weight loss &gt; 10%</li><li><strong>Supraclavicular</strong> node</li><li><strong>Generalized lymphadenopathy</strong> (malignant or other systemic disease)</li><li><strong>Fixed, non-tender, matted</strong> nodes without other symptoms</li><li>Non-tender node &gt; 1 cm starting in the neonatal period</li><li>Non-tender node <strong>≥ 2 cm</strong> growing, or not resolving after 2 weeks of antibiotics</li><li>Abnormal CXR: mediastinal mass, hilar adenopathy</li><li>Abnormal CBC: lymphoblasts, cytopenias</li><li><strong>No ear, nose or throat symptoms</strong></li><li>Persistently high or rising ESR/CRP</li></ul>"
       },
       {
        "t": "pathway",
@@ -2745,7 +2817,7 @@
          "Presentation",
          "<strong>Painless, rapidly enlarging mass</strong>; B symptoms; lymphadenopathy; 75% advanced at diagnosis; <strong>rapidly fatal untreated</strong>",
          "Indolent",
-         "Indolent, often asymptomatic; lymphadenopathy, splenomegaly; usually stage III/IV at diagnosis"
+         "<strong>Indolent, often asymptomatic</strong>; lymphadenopathy, splenomegaly; usually stage III/IV at diagnosis"
         ],
         [
          "Cells",
@@ -2763,7 +2835,7 @@
          "Treatment",
          "<strong>R-CHOP</strong>: stage I/II 3 cycles; III/IV 6 cycles",
          "<strong>Incurable; do NOT treat low-risk/asymptomatic</strong>; chlorambucil, fludarabine; anti-CD20 mAb; ibrutinib",
-         "Mostly incurable, relapsing-remitting<br><strong>Watch and wait</strong> until symptomatic<br>Stage I: radiation (potentially curative)<br>Stage II-IV: 6 cycles <strong>BR</strong> (bendamustine-rituximab) + 2 years maintenance rituximab"
+         "<strong>Mostly incurable</strong>, relapsing-remitting<br><strong>Watch and wait</strong> until symptomatic<br>Stage I: radiation (potentially curative)<br>Stage II-IV: 6 cycles <strong>BR</strong> (bendamustine-rituximab) + 2 years maintenance rituximab"
         ],
         [
          "Prognosis",
@@ -2992,6 +3064,12 @@
          "Common first strategy in <strong>incurable</strong> lymphomas — immediate treatment does not improve outcomes"
         ]
        ]
+      },
+      {
+       "t": "callout",
+       "kind": "tip",
+       "title": "Schulich Reviews",
+       "html": "<ul><li>HL history clue: pruritus and <strong>node pain with alcohol</strong></li><li>B symptoms = <strong>fever, night sweats, weight loss</strong></li></ul>"
       }
      ]
     },
@@ -3021,14 +3099,14 @@
         [
          "<strong>MGUS</strong> (monoclonal gammopathy of undetermined significance)",
          "No — asymptomatic",
-         "&lt; 10% plasma cells",
+         "<strong>&lt; 10% plasma cells</strong>",
          "Monitor 1-2×/year",
          "0.5-2% to myeloma"
         ],
         [
          "<strong>Smoldering myeloma</strong>",
          "No — asymptomatic",
-         "≥ 10% plasma cells",
+         "<strong>≥ 10% plasma cells</strong>",
          "Close follow-up every 3-6 months",
          "5-25% to myeloma"
         ],
@@ -3356,7 +3434,7 @@
         ],
         [
          "<strong>Differentiating agent</strong>",
-         "All-trans retinoic acid (ATRA)",
+         "All-trans retinoic acid (<strong>ATRA</strong>)",
          "—",
          "<strong>APL</strong>"
         ]
@@ -3685,6 +3763,12 @@
        "w": 540,
        "h": 161,
        "cap": "Study aside from the note set: how to pronounce \"macrophage\"."
+      },
+      {
+       "t": "callout",
+       "kind": "tip",
+       "title": "Schulich Reviews",
+       "html": "<ul><li><strong>Standard fractionation 1.8-2 Gy/fraction</strong>; hypofractionation &gt; 2 Gy/fraction</li></ul>"
       }
      ]
     }

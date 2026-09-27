@@ -28,7 +28,7 @@
      "blocks": [
       {
        "t": "list",
-       "html": "<h5>Ventilation — moving air in and out of the lung</h5><p><strong>Inspiration</strong> — active; contraction of the inspiratory muscles</p><ul><li><strong>Diaphragm</strong> — phrenic nerves (C3-5); referred pain to shoulder and trapezius ridge</li><li><strong>External intercostals</strong> — intercostal nerves</li><li>↑ thoracic cavity volume → ↑ negative intrapleural pressure → lung expands → intrapulmonary pressure -1 mm Hg → <strong>air flows in</strong></li></ul><p><strong>Expiration</strong> — passive; elastic recoil of lung and chest wall to their equilibrium positions</p><ul><li>Becomes <strong>active</strong> during exercise and voluntary hyperventilation, using:</li><li>Abdominal wall muscles (rectus abdominis, internal and external obliques, transversus abdominis)</li><li>Internal intercostals</li></ul>"
+       "html": "<h5>Ventilation — moving air in and out of the lung</h5><p><strong>Inspiration</strong> — active; contraction of the inspiratory muscles</p><ul><li><strong>Diaphragm</strong> — phrenic nerves (C3-5); referred pain to shoulder and trapezius ridge</li><li><strong>External intercostals</strong> — intercostal nerves</li><li>↑ thoracic cavity volume → ↑ negative intrapleural pressure → lung expands → intrapulmonary pressure -1 mm Hg → <strong>air flows in</strong></li></ul><p><strong>Expiration</strong> — <strong>passive</strong>; elastic recoil of lung and chest wall to their equilibrium positions</p><ul><li>Becomes <strong>active</strong> during exercise and voluntary hyperventilation, using:</li><li>Abdominal wall muscles (rectus abdominis, internal and external obliques, transversus abdominis)</li><li>Internal intercostals</li></ul>"
       },
       {
        "t": "list",
@@ -126,7 +126,7 @@
       },
       {
        "t": "list",
-       "html": "<h5>Pulmonary function tests</h5><p><strong>Spirometry</strong> measures lung volumes and function; <strong>body plethysmography</strong> (body box) is based on Boyle's law (P1V1 = P2V2)</p><ul><li><strong>Indications</strong>: diagnosis of dyspnea or cough NYD, prognosis and severity (obstructive, restrictive), monitoring treatment response</li><li><strong>Contraindications</strong>: aneurysms (cerebral &gt; thoracic, abdominal), pneumothorax, recent brain or eye surgery, severe hypertension (&gt; 200/120), recent MI/arrhythmias, stress/strain syncope</li><li><strong>Effort-dependent</strong>: maximal inspiration (FVC) and rapid expiration (FEV1) with prolonged expiratory effort; nose clipped</li><li>Standardized by age, sex, height and ethnicity</li></ul><h5>What is measured</h5><ul><li><strong>FEV1</strong> — fraction of VC expired in 1 second; normal = 80% VC</li><li><strong>FVC</strong> — maximum volume forcibly exhaled after maximal inspiration</li><li><strong>FEV1/FVC (Tiffeneau-Pinelli index)</strong> — defines obstructive lung disease</li><li><strong>Static lung volumes</strong>: most people breathe at 50% (highest compliance); <strong>hyperinflation &gt; 120%</strong> (↑ RV, gas trapping); <strong>restriction &lt; 80%</strong> — parenchymal (lung) or extraparenchymal (diaphragm, chest wall, pleura)</li><li><strong>Diffusion capacity (DLCO)</strong> — conductance of CO from inspired gas to RBCs (CO has a much higher affinity than O2)</li></ul><h5>DLCO details</h5><ul><li>KCO = DLCO/VA; normal &gt; 75%</li><li><strong>↓ CO uptake = parenchymal pathology</strong>; ↓ perfusion, thickened membrane, ↑ volume, ↑ surface area</li><li><strong>Isolated DLCO abnormalities</strong>: anemia (no RBCs to take up CO), pulmonary vascular disorders (PE, pulmonary hypertension), early ILD (not enough to cause restriction), non-obstructive emphysema, early pneumonia</li></ul>"
+       "html": "<h5>Pulmonary function tests</h5><p><strong>Spirometry</strong> measures lung volumes and function; <strong>body plethysmography</strong> (body box) is based on Boyle's law (P1V1 = P2V2)</p><ul><li><strong>Indications</strong>: diagnosis of <strong>dyspnea or cough NYD</strong>, prognosis and severity (obstructive, restrictive), monitoring treatment response</li><li><strong>Contraindications</strong>: aneurysms (cerebral &gt; thoracic, abdominal), pneumothorax, recent brain or eye surgery, severe hypertension (&gt; 200/120), recent MI/arrhythmias, stress/strain syncope</li><li><strong>Effort-dependent</strong>: maximal inspiration (FVC) and rapid expiration (FEV1) with prolonged expiratory effort; nose clipped</li><li>Standardized by age, sex, height and ethnicity</li></ul><h5>What is measured</h5><ul><li><strong>FEV1</strong> — fraction of VC expired in 1 second; normal = 80% VC</li><li><strong>FVC</strong> — maximum volume forcibly exhaled after maximal inspiration</li><li><strong>FEV1/FVC (Tiffeneau-Pinelli index)</strong> — defines obstructive lung disease</li><li><strong>Static lung volumes</strong>: most people breathe at 50% (highest compliance); <strong>hyperinflation &gt; 120%</strong> (↑ RV, gas trapping); <strong>restriction &lt; 80%</strong> — parenchymal (lung) or extraparenchymal (diaphragm, chest wall, pleura)</li><li><strong>Diffusion capacity (DLCO)</strong> — conductance of CO from inspired gas to RBCs (CO has a much higher affinity than O2)</li></ul><h5>DLCO details</h5><ul><li>KCO = DLCO/VA; normal &gt; 75%</li><li><strong>↓ CO uptake = parenchymal pathology</strong>; <strong>↓ perfusion, thickened membrane, ↑ volume, ↑ surface area</strong></li><li><strong>Isolated DLCO abnormalities</strong>: anemia (no RBCs to take up CO), pulmonary vascular disorders (PE, pulmonary hypertension), early ILD (not enough to cause restriction), non-obstructive emphysema, early pneumonia</li></ul>"
       },
       {
        "t": "figure",
@@ -243,7 +243,7 @@
       },
       {
        "t": "list",
-       "html": "<h5>Hypoxia vs hypoxemia</h5><ul><li><strong>Hypoxia</strong> — ↓ O2 delivery to tissues; SpO2 = 88-92% (normal SpO2 = 95+%)</li><li><strong>Hypoxemia</strong> — ↓ PaO2 (&lt; 80 mm Hg), insufficient oxygenation of blood; O2 is not reaching the alveoli or not diffusing from alveoli to blood</li><li><strong>Hyperventilation = low PaCO2</strong>; <strong>hypoventilation = high PaCO2</strong></li></ul>"
+       "html": "<h5>Hypoxia vs hypoxemia</h5><ul><li><strong>Hypoxia</strong> — ↓ O2 delivery to tissues; SpO2 = 88-92% (normal SpO2 = 95+%)</li><li><strong>Hypoxemia</strong> — <strong>↓ PaO2 (&lt; 80 mm Hg)</strong>, insufficient oxygenation of blood; O2 is not reaching the alveoli or not diffusing from alveoli to blood</li><li><strong>Hyperventilation = low PaCO2</strong>; <strong>hypoventilation = high PaCO2</strong></li></ul>"
       },
       {
        "t": "table",
@@ -327,7 +327,13 @@
       },
       {
        "t": "list",
-       "html": "<h5>Regulation of respiration</h5><p>Spontaneous respiration comes from rhythmic discharges of the motor neurons to the respiratory muscles.</p><ul><li><strong>Voluntary control</strong> — influences ventilation within limits: cerebral cortex → corticospinal tract → spinal neurons</li><li><strong>Automatic control</strong> — keeps blood PO2 and PCO2 in the normal range; three parts:</li></ul><p><strong>1. Respiratory muscles</strong> — receive impulses from the controller</p><p><strong>2. Central controller</strong> — coordinates and responds to receptor input</p><ul><li><strong>Inspiratory area</strong>: dorsal medulla; inspiratory drive — inherent rhythmic excitability</li><li><strong>Pneumotaxic center</strong>: pons; limits the duration of the inspiratory drive — inhibits inspiration</li><li><strong>Apneustic center</strong>: lower pons; prevents termination of the inspiratory drive — stimulates inspiration</li><li><strong>Expiratory area</strong>: ventral medulla; dormant during quiet breathing — forced expiration</li></ul><p><strong>3. Receptors</strong> — report blood gases and other factors</p><ul><li><strong>Central chemoreceptors</strong>: medulla; respond to blood PCO2 (via change in H+)</li><li><strong>Peripheral chemoreceptors</strong>: carotid and aortic bodies; respond to blood PO2 (&lt; 60 mm Hg = ↑ RR and VT)</li><li><strong>Lung receptors</strong>: pulmonary stretch (overdistention = ↓ RR), irritant (dust, cigarette smoke)</li><li><strong>Other</strong>: nose and upper airway (chemical, mechanical), joint and muscle (exercise), pain and temperature</li></ul><h5>Responses</h5><ul><li>Responses to <strong>PaCO2 are rapid and sensitive</strong> — ↑ PaCO2 = ↑ ventilation; ↓ PaCO2 = ↓ ventilation</li><li>Responses to PaO2 are less marked — important at high altitude and in certain clinical conditions</li><li>Combined PaCO2 + PaO2 changes can exceed the sum of the individual responses</li><li>During exercise, arterial PCO2, PO2 and pH stay relatively constant</li></ul>"
+       "html": "<h5>Regulation of respiration</h5><p>Spontaneous respiration comes from rhythmic discharges of the motor neurons to the respiratory muscles.</p><ul><li><strong>Voluntary control</strong> — influences ventilation within limits: cerebral cortex → corticospinal tract → spinal neurons</li><li><strong>Automatic control</strong> — keeps blood PO2 and PCO2 in the normal range; three parts:</li></ul><p><strong>1. Respiratory muscles</strong> — receive impulses from the controller</p><p><strong>2. Central controller</strong> — coordinates and responds to receptor input</p><ul><li><strong>Inspiratory area</strong>: dorsal medulla; inspiratory drive — inherent rhythmic excitability</li><li><strong>Pneumotaxic center</strong>: pons; limits the duration of the inspiratory drive — inhibits inspiration</li><li><strong>Apneustic center</strong>: lower pons; prevents termination of the inspiratory drive — stimulates inspiration</li><li><strong>Expiratory area</strong>: ventral medulla; dormant during quiet breathing — forced expiration</li></ul><p><strong>3. Receptors</strong> — report blood gases and other factors</p><ul><li><strong>Central chemoreceptors</strong>: medulla; respond to <strong>blood PCO2</strong> (via change in H+)</li><li><strong>Peripheral chemoreceptors</strong>: carotid and aortic bodies; respond to <strong>blood PO2</strong> (&lt; 60 mm Hg = ↑ RR and VT)</li><li><strong>Lung receptors</strong>: pulmonary stretch (overdistention = ↓ RR), irritant (dust, cigarette smoke)</li><li><strong>Other</strong>: nose and upper airway (chemical, mechanical), joint and muscle (exercise), pain and temperature</li></ul><h5>Responses</h5><ul><li>Responses to <strong>PaCO2 are rapid and sensitive</strong> — ↑ PaCO2 = ↑ ventilation; ↓ PaCO2 = ↓ ventilation</li><li>Responses to PaO2 are less marked — important at high altitude and in certain clinical conditions</li><li>Combined PaCO2 + PaO2 changes can exceed the sum of the individual responses</li><li>During exercise, arterial PCO2, PO2 and pH stay relatively constant</li></ul>"
+      },
+      {
+       "t": "callout",
+       "kind": "tip",
+       "title": "Schulich Reviews",
+       "html": "<ul><li><strong>Bases are more compliant</strong> than the apex at FRC (apical alveoli already distended) → <strong>bases take most of the tidal volume</strong></li><li>Obstruction on spirometry: <strong>reverses with bronchodilator (FEV1 ↑ ≥ 12%) = asthma</strong>; does not reverse = COPD</li></ul>"
       }
      ]
     },
@@ -589,7 +595,7 @@
         ],
         [
          "<strong>Px</strong>",
-         "Rapid progression; mean survival 4-5 years<br>Respiratory failure, pulmonary hypertension, cor pulmonale",
+         "Rapid progression; <strong>mean survival 4-5 years</strong><br>Respiratory failure, pulmonary hypertension, cor pulmonale",
          "Varies widely: spontaneous resolution, persistent non-progressive symptoms, or widespread pulmonary fibrosis",
          "Complete, long-term remission with proper treatment",
          "<strong>High mortality (30-50%)</strong>, mostly from the underlying cause rather than the lung injury",
@@ -651,6 +657,12 @@
        "src": "assets/figures/731ec8f37b68.jpg",
        "alt": "Chest X-ray, sarcoidosis example 4",
        "cap": "Sarcoidosis CXR, fourth example (IV): upper-lobe fibrosis."
+      },
+      {
+       "t": "callout",
+       "kind": "tip",
+       "title": "Schulich Reviews",
+       "html": "<ul><li>AECOPD, <strong>Anthonisen (Winnipeg) criteria</strong>: ↑ dyspnea, ↑ sputum volume, ↑ sputum purulence → <strong>all 3 = antibiotics</strong> (high likelihood of bacterial infection)</li></ul>"
       }
      ]
     },
@@ -799,6 +811,12 @@
       {
        "t": "list",
        "html": "<h5>Pancoast (superior sulcus) tumour — carcinoma at the lung apex</h5><p>Pancoast syndrome from invasion/compression of local structures:</p><ul><li>Recurrent laryngeal nerve → hoarseness</li><li>Stellate ganglion → <strong>Horner syndrome</strong></li><li>SVC syndrome; brachiocephalic vein</li><li>Brachial plexus</li><li>Phrenic nerve → hemidiaphragm paralysis</li></ul>"
+      },
+      {
+       "t": "callout",
+       "kind": "tip",
+       "title": "Schulich Reviews",
+       "html": "<ul><li><strong>Spacer</strong> on an MDI: ↑ lung deposition, <strong>↓ systemic absorption</strong></li><li><strong>DPI</strong>: breath-actuated, less coordination, but needs a <strong>deep, forceful inspiration (≥ 60 L/min)</strong></li></ul>"
       }
      ]
     },
@@ -931,6 +949,12 @@
        "src": "assets/figures/549810701fbe.png",
        "alt": "Flowchart of chronic dyspnea, pulmonary and other causes",
        "cap": "Chronic dyspnea, pulmonary and other branches: an abnormal CXR points to the parenchyma (alveoli, interstitium, vessels)."
+      },
+      {
+       "t": "callout",
+       "kind": "tip",
+       "title": "Schulich Reviews",
+       "html": "<ul><li>Pneumonia in the <strong>immunocompromised host</strong>: many unusual organisms → often needs <strong>invasive testing (bronchoscopy)</strong>; empiric therapy has to be very broad</li></ul>"
       }
      ]
     },
@@ -1015,6 +1039,12 @@
       {
        "t": "pathway",
        "mermaid": "flowchart LR\n A[\"↓ PAO2 in a<br/>poorly ventilated region\"] --> B[\"Hypoxic arterial<br/>vasoconstriction\"]\n B --> C[\"Blood shifted to<br/>ventilated alveoli\"]\n B --> D[\"↑ pulmonary vascular<br/>resistance\"]\n D --> E[\"Pulmonary hypertension\"]"
+      },
+      {
+       "t": "callout",
+       "kind": "tip",
+       "title": "Schulich Reviews",
+       "html": "<ul><li>Room-air shortcut: <strong>PAO2 = 150 − (PaCO2 × 1.25)</strong>, then A-a = PAO2 − PaO2 vs age/4 + 4</li></ul>"
       }
      ]
     },
@@ -1033,7 +1063,16 @@
      "id": "resp-w7-04",
      "num": "04",
      "name": "Blood Gases Interpretation",
-     "hasNote": false
+     "hasNote": true,
+     "title": "Blood Gases Interpretation",
+     "blocks": [
+      {
+       "t": "callout",
+       "kind": "tip",
+       "title": "Schulich Reviews",
+       "html": "<ul><li>Expected compensation — <strong>respiratory acidosis</strong>: ↑ 10 PaCO2 → HCO3 ↑ 1 <strong>acute</strong>, ↑ 3 <strong>chronic</strong></li><li><strong>Respiratory alkalosis</strong>: ↓ 10 PaCO2 → HCO3 ↓ 2 <strong>acute</strong>, ↓ 5 <strong>chronic</strong></li><li><strong>Metabolic acidosis</strong>: ↓ 1 HCO3 → PaCO2 ↓ 1; <strong>metabolic alkalosis</strong>: ↑ 1 HCO3 → PaCO2 ↑ 0.5</li><li>Metabolic acidosis (e.g. DKA) → lungs compensate by <strong>hyperventilating</strong> (Kussmaul) → ↓ PaCO2</li></ul>"
+      }
+     ]
     },
     {
      "id": "resp-w7-05",
@@ -1095,7 +1134,7 @@
         ],
         [
          "Pleural effusion",
-         "Blunted costophrenic angle; compare supine vs sitting and POCUS"
+         "<strong>Blunted costophrenic angle</strong>; compare supine vs sitting and POCUS"
         ],
         [
          "Pulmonary edema",
@@ -1230,6 +1269,12 @@
       {
        "t": "pathway",
        "mermaid": "flowchart TD\n A[\"Epistaxis\"] --> B[\"ABCs<br/>first aid, ATLS, ACLS\"]\n B --> C[\"Reverse coagulopathy\"]\n C --> D[\"Anterior nasal pressure<br/>10-15 min\"]\n D --> E[\"Unilateral silver nitrate<br/>cautery, outside in\"]\n E --> F[\"Packing<br/>tampon, ribbon gauze, posterior\"]\n F --> G[\"Topical hemostatics<br/>Floseal, tranexamic acid\"]\n G --> H{\"Still bleeding?\"}\n H --> I[\"Surgery: ligate anterior ethmoid<br/>and sphenopalatine arteries\"]\n H --> J[\"IR: embolize external carotid<br/>branches, not anterior ethmoid\"]"
+      },
+      {
+       "t": "callout",
+       "kind": "tip",
+       "title": "Schulich Reviews",
+       "html": "<ul><li><strong>AP (portable) film magnifies the heart</strong> → judge heart size on a <strong>PA</strong> film (heart closest to the film)</li><li>Lateral view <strong>localizes pathology</strong>; posterior lungs should <strong>get darker going down</strong></li><li>Epistaxis: <strong>anterior</strong> (Kiesselbach's) = most common, controlled by pressure/cautery; <strong>posterior</strong> (sphenopalatine) = more severe, <strong>elderly and hypertensive</strong>, needs packing or IR</li></ul>"
       }
      ]
     }
@@ -1416,7 +1461,7 @@
        ],
        "rows": [
         [
-         "<strong>Solitary</strong><br>(&lt; 7 mm likely benign, &gt; 7 mm likely malignant)",
+         "<strong>Solitary</strong><br>(<strong>&lt; 7 mm likely benign, &gt; 7 mm likely malignant</strong>)",
          "Hamartoma, granuloma, abscess, rheumatoid nodule, infarction",
          "Lung cancer, lymphoid, carcinoid tumour (airway-centric)"
         ],
@@ -1429,7 +1474,7 @@
       },
       {
        "t": "list",
-       "html": "<h5>Lung cancer</h5><ul><li><strong>Non-small cell</strong>: adenocarcinoma (most common), squamous cell carcinoma, large cell carcinoma</li><li><strong>Small cell</strong> (most common in smokers)</li><li><strong>\"S\" cancers are central</strong> — bulky and symptomatic</li><li><strong>Presentation</strong>: cough, dyspnea, chest pain, hemoptysis, constitutional symptoms, clubbing — or <strong>ASYMPTOMATIC</strong></li><li><strong>Risk factors</strong>: age, smoking, emphysema, FHx; nodule size, spiculation, upper lobe; CT density (semisolid &gt; solid &gt; ground glass); calcification (↓ risk)</li><li><strong>Metastatic sites</strong>: pleura, liver (jaundice, hepatomegaly), bone (pathologic fracture), brain, adrenals</li><li><strong>Important presentations</strong>: central airway obstruction, SVC obstruction, Pancoast tumour, paraneoplastic syndromes (SIADH, hypercalcemia, Lambert-Eaton, hypertrophic osteoarthropathy)</li></ul>"
+       "html": "<h5>Lung cancer</h5><ul><li><strong>Non-small cell</strong>: adenocarcinoma (most common), squamous cell carcinoma, large cell carcinoma</li><li><strong>Small cell</strong> (most common in smokers)</li><li><strong>\"S\" cancers are central</strong> — bulky and symptomatic</li><li><strong>Presentation</strong>: cough, dyspnea, chest pain, hemoptysis, constitutional symptoms, clubbing — or <strong>ASYMPTOMATIC</strong></li><li><strong>Risk factors</strong>: age, smoking, emphysema, FHx; nodule size, spiculation, upper lobe; CT density (semisolid &gt; solid &gt; ground glass); <strong>calcification (↓ risk)</strong></li><li><strong>Metastatic sites</strong>: pleura, liver (jaundice, hepatomegaly), bone (pathologic fracture), brain, adrenals</li><li><strong>Important presentations</strong>: central airway obstruction, SVC obstruction, Pancoast tumour, paraneoplastic syndromes (SIADH, hypercalcemia, Lambert-Eaton, hypertrophic osteoarthropathy)</li></ul>"
       },
       {
        "t": "figure",
@@ -1630,6 +1675,12 @@
       {
        "t": "list",
        "html": "<h5>Head and neck cancers</h5><ul><li>Most skin cancers occur in the H&amp;N; H&amp;N cancer patients have the poorest health-related quality of life of all cancer patients</li><li>Non-melanoma skin cancers are the most common (1 in 6 Canadians)</li><li><strong>Squamous cell carcinoma</strong> — epithelial lining of nose, paranasal sinuses, oral cavity, pharynx, larynx, esophagus, ear</li><li><strong>Risk factors</strong>: smoking/EtOH, <strong>HPV-16</strong> (oropharyngeal; base of tongue, tonsils), <strong>EBV</strong> (nasopharyngeal), sun, previous cancers, radiation, FHx, wood dust/heavy metals, immunosuppression</li><li><strong>HPV-positive</strong>: younger, healthy, educated, high SES, many sexual partners, no smoking/EtOH, lower T-stage, <strong>good prognosis</strong></li><li><strong>PEx / red flags</strong>: persistent otalgia, unilateral otitis media with effusion, hearing loss, aural fullness, pulsatile tinnitus, recurrent epistaxis, unilateral nasal obstruction, persistent rhinorrhea/sinusitis, sore throat &gt; 3 weeks, odynophagia, dysphagia, trismus, non-healing ulcers, halitosis, numbness over teeth, hemoptysis, leukoplakia, erythroplasia, hoarseness, throat pain, stridor, neurologic asymmetry, diplopia, mental status change, constitutional symptoms</li><li><strong>Ix</strong>: flexible endoscopy, FNAB, tissue biopsy, CT/MRI, CT chest (staging), panendoscopy (primary site)</li><li><strong>Tx</strong>: early — surgical excision, radiation; advanced — surgical excision + radiation, or chemotherapy + radiation</li></ul>"
+      },
+      {
+       "t": "callout",
+       "kind": "tip",
+       "title": "Schulich Reviews",
+       "html": "<ul><li>Biopsy route: <strong>peripheral → CT-guided transthoracic needle</strong> (pneumothorax risk); <strong>central → bronchoscopy / EBUS</strong></li><li>Pick the biopsy site that gives <strong>stage and diagnosis in one procedure</strong></li></ul>"
       }
      ]
     },
@@ -2147,7 +2198,7 @@
         ],
         [
          "Cystic fibrosis",
-         "<strong>Nutrition</strong>: fat-soluble vitamins, pancreatic enzymes, calories (NG feeds, G tube, TPN)<br><strong>Mechanical</strong>: percussion, postural drainage, positive expiratory physiotherapy, oscillating devices, thAIRapy vest, BiPAP, exercise<br><strong>Airway clearance</strong>: slow inhale, long open-mouth exhale; coughing<br>DNase (aerosolized dornase alfa); inhaled hypertonic saline; azithromycin<br><strong>CF modulators — Trikafta = ivacaftor (potentiator; opens Cl- channels) + tezacaftor (corrector; chaperones misfolded protein) + elexacaftor</strong><br>Lung transplant — FEV1 &lt; 30%, severe hypoxemia and/or hypercapnia, multiple admissions, major hemoptysis<br>Gene therapy: mRNA, gene transfer, gene editing"
+         "<strong>Nutrition</strong>: fat-soluble vitamins, pancreatic enzymes, calories (NG feeds, G tube, TPN)<br><strong>Mechanical</strong>: percussion, postural drainage, positive expiratory physiotherapy, oscillating devices, thAIRapy vest, BiPAP, exercise<br><strong>Airway clearance</strong>: slow inhale, long open-mouth exhale; coughing<br>DNase (aerosolized dornase alfa); inhaled hypertonic saline; azithromycin<br><strong>CF modulators — Trikafta = ivacaftor (potentiator; opens Cl- channels) + tezacaftor (corrector; chaperones misfolded protein) + elexacaftor</strong><br>Lung transplant — <strong>FEV1 &lt; 30%</strong>, severe hypoxemia and/or hypercapnia, multiple admissions, major hemoptysis<br>Gene therapy: mRNA, gene transfer, gene editing"
         ],
         [
          "Idiopathic pulmonary fibrosis",
@@ -2155,7 +2206,7 @@
         ],
         [
          "Sarcoidosis",
-         "Stages I-II: can resolve spontaneously; stages III-IV: corticosteroids, other immunosuppressants"
+         "<strong>Stages I-II: can resolve spontaneously</strong>; stages III-IV: corticosteroids, other immunosuppressants"
         ],
         [
          "Pneumonia",

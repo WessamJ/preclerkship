@@ -478,6 +478,10 @@ def build(slug, pdf, weeks):
     return out, notes
 
 
+# families authored by hand into data/questions/, which a rerun must keep
+HAND_FAMILIES = ("reviews",)
+
+
 def main():
     grand = 0
     wb, wbrep = parse_workbook_pom1.build_blocks(WEEK_LABEL)
@@ -488,6 +492,11 @@ def main():
         qs, notes = build(slug, pdf, weeks)
         qs.extend(wb.get(slug, []))
         path = os.path.join(ROOT, "pom1", "data", "questions", "%s.json" % slug)
+        # the Schulich Reviews set is hand-authored and no PDF here produces it,
+        # so carry it over rather than letting this rewrite drop it
+        if os.path.exists(path):
+            qs.extend(q for q in json.load(io.open(path, encoding="utf-8"))
+                      if q.get("family") in HAND_FAMILIES)
         if not os.path.isdir(os.path.dirname(path)):
             os.makedirs(os.path.dirname(path))
         io.open(path, "w", encoding="utf-8", newline="\n").write(

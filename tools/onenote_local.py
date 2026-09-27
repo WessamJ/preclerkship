@@ -38,6 +38,7 @@ import html
 import re
 import subprocess
 import sys
+import os
 import tempfile
 from pathlib import Path
 from typing import Iterator, NamedTuple
@@ -144,7 +145,11 @@ def fetch_page_xml(page_id: str) -> str:
     through stdout: a lecture page runs to roughly a megabyte, and the console
     mangles it.
     """
-    tmp = Path(tempfile.gettempdir()) / "onenote_local_page.xml"
+    # one file per call: a shared name let two concurrent calls read back each
+    # other's page, silently, since both files parse as a valid lecture
+    fd, name = tempfile.mkstemp(prefix="onenote_local_", suffix=".xml")
+    os.close(fd)
+    tmp = Path(name)
     win_tmp = _windows_path(tmp)
     safe_id = page_id.replace("'", "''")
     body = (
@@ -152,8 +157,11 @@ def fetch_page_xml(page_id: str) -> str:
         '$c | Out-File -Encoding utf8 \'%s\'; "ok"'
         % (safe_id, win_tmp.replace("'", "''"))
     )
-    _run_powershell(_com_preamble(body))
-    return tmp.read_text(encoding="utf-8-sig")
+    try:
+        _run_powershell(_com_preamble(body))
+        return tmp.read_text(encoding="utf-8-sig")
+    finally:
+        tmp.unlink(missing_ok=True)
 
 
 def _strip_markup(fragment: str) -> str:

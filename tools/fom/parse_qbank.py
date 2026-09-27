@@ -646,6 +646,10 @@ def build(slug, bno, pdf, weeks):
     return out, notes
 
 
+# families authored by hand into data/questions/, which a rerun must keep
+HAND_FAMILIES = ("reviews",)
+
+
 def main():
     # tools/fom/ -> tools/ -> the repo root; the course's data sits under fom/
     root = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -663,6 +667,11 @@ def main():
         qs, notes = build(slug, bno, pdf, weeks)
         qs.extend(wb.get(slug, []))
         path = os.path.join(root, "fom", "data", "questions", "%s.json" % slug)
+        # the Schulich Reviews set is hand-authored and no PDF here produces it,
+        # so carry it over rather than letting this rewrite drop it
+        if os.path.exists(path):
+            qs.extend(q for q in json.load(io.open(path, encoding="utf-8"))
+                      if q.get("family") in HAND_FAMILIES)
         io.open(path, "w", encoding="utf-8", newline="\n").write(
             json.dumps(qs, ensure_ascii=False))
         grand += len(qs)

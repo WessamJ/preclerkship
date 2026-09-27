@@ -27,7 +27,16 @@
      "id": "gu-w14-04",
      "num": "04",
      "name": "GFR Physiology",
-     "hasNote": false
+     "hasNote": true,
+     "title": "GFR Physiology",
+     "blocks": [
+      {
+       "t": "callout",
+       "kind": "tip",
+       "title": "Schulich Reviews",
+       "html": "<ul><li><strong>Filtration = Kf (ΔP − Δπ)</strong>; obstruction ↑ Bowman's space pressure → ↓ GFR</li><li>RPF = (1 − Hct) × RBF; <strong>filtration fraction ~20%</strong> of RPF</li><li>GFR set by arteriole diameter: <strong>Ang II constricts efferent</strong> (holds GFR), <strong>prostaglandins dilate afferent</strong></li><li>CHF + <strong>NSAID + ACEi</strong> → afferent constriction + efferent dilation → ↓↓ GFR</li><li>JGA: <strong>macula densa</strong> (TAL, senses tubular ionic content) + <strong>granular cells</strong> of afferent arteriole (store renin) + extraglomerular mesangial cells</li></ul>"
+      }
+     ]
     },
     {
      "id": "gu-w14-05",
@@ -39,49 +48,121 @@
      "id": "gu-w14-06",
      "num": "06",
      "name": "Reabsorption and Secretion",
-     "hasNote": false
+     "hasNote": true,
+     "title": "Reabsorption and Secretion",
+     "blocks": [
+      {
+       "t": "callout",
+       "kind": "tip",
+       "title": "Schulich Reviews",
+       "html": "<ul><li><strong>RBF ~25% of CO</strong>; ~20% of RPF filtered</li><li>PCT reabsorbs <strong>50–60%</strong> of solute + water; Na-coupled glucose/amino acids/phosphate</li><li><strong>Fanconi</strong> = proximal RTA + glucosuria + phosphaturia + aminoaciduria; carbonic anhydrase inhibitors → NaHCO₃ loss</li><li>TAL: <strong>Na-K-2Cl</strong> (loop diuretics, <strong>Bartter</strong>); K⁺ back-leak → lumen + → paracellular Ca²⁺/Mg²⁺; loops → urinary Ca loss</li><li>DCT: <strong>Na-Cl (thiazides, Gitelman)</strong>; major site of active Ca reabsorption; <strong>thiazides ↓ urinary Ca</strong> → Ca stones</li><li>CD: amiloride/triamterene block principal-cell Na channel; spironolactone = aldosterone antagonist (blood side)</li><li><strong>Principal cell fails</strong> (↓ aldo, K-sparing) → ↑K⁺ + RTA; <strong>α-intercalated only</strong> → ↓K⁺ + RTA</li></ul>"
+      }
+     ]
     },
     {
      "id": "gu-w14-07",
      "num": "07",
      "name": "Sodium Handling by the Kidney",
-     "hasNote": false
+     "hasNote": true,
+     "title": "Sodium Handling by the Kidney",
+     "blocks": [
+      {
+       "t": "callout",
+       "kind": "tip",
+       "title": "Schulich Reviews",
+       "html": "<ul><li><strong>House's law</strong>: ECF volume disorders = Na problems; serum [Na] disorders = water problems</li><li>RAAS fires in <strong>true</strong> ECF contraction (hemorrhage, diuretics) <strong>and \"imagined\"</strong> (CHF, cirrhosis, nephrotic)</li><li>Aldosterone → Na retention, K⁺ secretion, alkalosis; mimics: Conn's, Cushing's, licorice</li><li>ANP/BNP block CD Na channel → natriuresis; <strong>NSAIDs</strong> block PGs → Na retention, HTN, renal failure</li></ul>"
+      }
+     ]
     },
     {
      "id": "gu-w14-08",
      "num": "08",
      "name": "Edema and Volume Status",
-     "hasNote": false
+     "hasNote": true,
+     "title": "Edema and Volume Status",
+     "blocks": [
+      {
+       "t": "callout",
+       "kind": "tip",
+       "title": "Schulich Reviews",
+       "html": "<ul><li>ECF contraction: dry mucosa, ↓ turgor, tachycardia, <strong>flat JVP</strong>; <strong>postural tachycardia may be the only sign in the young</strong> → isotonic saline</li><li>ECF overload: edema, ascites, effusions, ↑ JVP; BP ↑ (renal) or normal/low (heart, liver) → diuretics/dialysis</li></ul>"
+      }
+     ]
     },
     {
      "id": "gu-w14-09",
      "num": "09",
      "name": "Water Handling by the Kidney",
-     "hasNote": false
+     "hasNote": true,
+     "title": "Water Handling by the Kidney",
+     "blocks": [
+      {
+       "t": "callout",
+       "kind": "tip",
+       "title": "Schulich Reviews",
+       "html": "<ul><li>ADH released mainly for <strong>↑ osmolality</strong>; ECF contraction is weaker but ultimately potent</li><li>ADH → <strong>V2 → aquaporins</strong> in principal cells; also ↑ urea reabsorption in medullary CD</li><li>Non-osmotic ADH: ↓ effective volume, pain/stress, <strong>SSRIs</strong>, carbamazepine, CNS/lung tumours</li></ul>"
+      }
+     ]
     },
     {
      "id": "gu-w14-10",
      "num": "10",
      "name": "Hyponatremia and Hypernatremia",
-     "hasNote": false
+     "hasNote": true,
+     "title": "Hyponatremia and Hypernatremia",
+     "blocks": [
+      {
+       "t": "callout",
+       "kind": "tip",
+       "title": "Schulich Reviews",
+       "html": "<ul><li>Hypernatremia (Na >144) = water deficit; correct <strong>≤10 mmol/L per day</strong> (cerebral edema); oral water or D5W</li><li>Hyponatremia (Na <136): check P<sub>osm</sub>; normal/high = <strong>pseudohyponatremia</strong> (glucose, mannitol)</li><li><strong>Symptomatic → 3% saline</strong> first; asymptomatic → fluid restrict, ≤8–10 mmol/L/day</li><li>SIADH: <strong>0.9% saline can lower Na further</strong> (hypotonic to a concentrated urine)</li></ul>"
+      }
+     ]
     },
     {
      "id": "gu-w14-11",
      "num": "11",
      "name": "Acid Base Disturbances",
-     "hasNote": false
+     "hasNote": true,
+     "title": "Acid Base Disturbances",
+     "blocks": [
+      {
+       "t": "callout",
+       "kind": "tip",
+       "title": "Schulich Reviews",
+       "html": "<ul><li><strong>AG = Na − (Cl + HCO₃)</strong> ≈ 12; <strong>expected AG ↓ 3 per 10 g/L ↓ albumin</strong></li><li>MUDPILES AGMA → check <strong>osmolal gap</strong> (2Na + urea + glucose); ↑ gap = <strong>toxic alcohol</strong> → fomepizole/ethanol ± HD</li><li>RTA: <strong>type 1</strong> (α-intercalated) ↓K⁺; <strong>type 2</strong> proximal HCO₃ loss; <strong>type 4</strong> (aldosterone) ↑K⁺</li><li>Give HCO₃ when <strong>pH <7.10</strong> (or HCO₃ <10–12)</li><li>Metabolic alkalosis = mineralocorticoid: primary (Conn's, HTN) vs secondary (vomiting, diuretics) → NaCl + replace K⁺</li></ul>"
+      }
+     ]
     },
     {
      "id": "gu-w14-12",
      "num": "12",
      "name": "Potassium Handling by the Kidney",
-     "hasNote": false
+     "hasNote": true,
+     "title": "Potassium Handling by the Kidney",
+     "blocks": [
+      {
+       "t": "callout",
+       "kind": "tip",
+       "title": "Schulich Reviews",
+       "html": "<ul><li><strong>TTKG >7</strong> = aldosterone working; <strong><2</strong> = absent/blocked or poor distal Na/flow</li><li>HyperK⁺: <strong>ECG first</strong>; <strong>Ca gluconate</strong> protects the heart; shift (insulin-glucose, β-agonist); then eliminate</li><li>Normal ECG → think <strong>pseudohyperkalemia</strong> (hemolysis, very high cell counts)</li><li>HypoK⁺: urine K >30 or TTKG >7 = renal wasting; oral preferred, <strong>IV <40 mmol/h</strong></li></ul>"
+      }
+     ]
     },
     {
      "id": "gu-w14-13",
      "num": "13",
      "name": "IV Fluids",
-     "hasNote": false
+     "hasNote": true,
+     "title": "IV Fluids",
+     "blocks": [
+      {
+       "t": "callout",
+       "kind": "tip",
+       "title": "Schulich Reviews",
+       "html": "<ul><li><strong>NS and RL → ECF only</strong>; colloid → plasma</li><li><strong>D5W = free water: 2/3 ICF, 1/3 ECF</strong>; ½NS → 1/3 ICF, 2/3 ECF</li><li>3% saline for symptomatic hyponatremia; D5W for hypernatremia</li></ul>"
+      }
+     ]
     }
    ]
   },
@@ -99,37 +180,91 @@
      "id": "gu-w15-02",
      "num": "02",
      "name": "Measurement of Renal Function",
-     "hasNote": false
+     "hasNote": true,
+     "title": "Measurement of Renal Function",
+     "blocks": [
+      {
+       "t": "callout",
+       "kind": "tip",
+       "title": "Schulich Reviews",
+       "html": "<ul><li><strong>Creatinine clearance overestimates GFR</strong> (15–25% tubular secretion); inulin = gold standard</li><li>CKD-EPI underestimates GFR >60; <strong>cystatin C</strong> more accurate in children</li><li>BUN:Cr <strong>>80</strong> = volume contracted (urea follows Na)</li></ul>"
+      }
+     ]
     },
     {
      "id": "gu-w15-03",
      "num": "03",
      "name": "Hematuria and Proteinuria",
-     "hasNote": false
+     "hasNote": true,
+     "title": "Hematuria and Proteinuria",
+     "blocks": [
+      {
+       "t": "callout",
+       "kind": "tip",
+       "title": "Schulich Reviews",
+       "html": "<ul><li>Dipstick detects ≥300 mg/day, misses immunoglobulins → <strong>UPEP</strong> for light chains</li><li>ACR: <strong>microalbuminuria 2–20 mg/mmol</strong> (dipstick negative); macro >20</li><li>Orthostatic proteinuria (adolescents) = benign</li><li>Nephrotic: <strong>>3.5 g/day</strong>, ↓ albumin, edema, lipids; MCD (children), membranous (Caucasian adults), FSGS (Black patients)</li><li>Child with nephrotic syndrome → <strong>prednisone without biopsy</strong>; adult → biopsy</li><li>Hematuria ≥3 RBC/HPF; <strong>glomerular = >70% dysmorphic RBCs, RBC casts, protein >1 g/day</strong></li><li>RPGN (crescents) → high-dose steroids + IV cyclophosphamide/rituximab ± plasmapheresis</li></ul>"
+      }
+     ]
     },
     {
      "id": "gu-w15-04",
      "num": "04",
      "name": "Acute Kidney Injury",
-     "hasNote": false
+     "hasNote": true,
+     "title": "Acute Kidney Injury",
+     "blocks": [
+      {
+       "t": "callout",
+       "kind": "tip",
+       "title": "Schulich Reviews",
+       "html": "<ul><li>AKI: ↑ Cr 44 or >50% from baseline, or CrCl ↓ 50%</li><li><strong>Sudden anuria → postrenal</strong>; renal U/S for hydronephrosis</li><li>Prerenal: hyaline casts, low urine Na/FENa, BUN:Cr >80; <strong>ATN: muddy brown granular casts</strong></li><li>AIN: drug hypersensitivity, <strong>not dose-dependent</strong>, fever/eosinophilia/rash, sterile pyuria + <strong>WBC casts</strong></li><li>Atheroemboli after catheterization: livedo, purple toes; <strong>Cr does not improve with IV fluids</strong></li><li>Urgent dialysis: <strong>AEIOU</strong> (acidosis, hyperK⁺, ingestion, overload, uremia)</li></ul>"
+      }
+     ]
     },
     {
      "id": "gu-w15-05",
      "num": "05",
      "name": "Chronic Kidney Disease",
-     "hasNote": false
+     "hasNote": true,
+     "title": "Chronic Kidney Disease",
+     "blocks": [
+      {
+       "t": "callout",
+       "kind": "tip",
+       "title": "Schulich Reviews",
+       "html": "<ul><li>CKD = damage or <strong>eGFR <60 for ≥3 months</strong>, not on dialysis/transplant</li><li>GFR <25% of normal → declines even if insult removed</li><li>Slow progression: <strong>ACEi/ARB</strong>, BP, lipids, glycemia; avoid NSAIDs/aminoglycosides/contrast</li></ul>"
+      }
+     ]
     },
     {
      "id": "gu-w15-06",
      "num": "06",
      "name": "Diabetic Nephropathy",
-     "hasNote": false
+     "hasNote": true,
+     "title": "Diabetic Nephropathy",
+     "blocks": [
+      {
+       "t": "callout",
+       "kind": "tip",
+       "title": "Schulich Reviews",
+       "html": "<ul><li>Earliest DN = <strong>microalbuminuria (30–300 mg/day)</strong></li><li>Targets: <strong>A1C ≤7%, BP <130/80, ACEi/ARB</strong></li><li>ACEi/ARB → <strong>efferent dilation</strong>; SGLT2i → <strong>afferent constriction</strong>; both ↓ intraglomerular pressure</li></ul>"
+      }
+     ]
     },
     {
      "id": "gu-w15-07",
      "num": "07",
      "name": "Kidney Transplantation",
-     "hasNote": false
+     "hasNote": true,
+     "title": "Kidney Transplantation",
+     "blocks": [
+      {
+       "t": "callout",
+       "kind": "tip",
+       "title": "Schulich Reviews",
+       "html": "<ul><li>Transplant = best survival + QoL of RRT</li><li>MMF more effective than azathioprine; CNIs nephrotoxic</li><li>Acute cellular rejection → <strong>pulse steroids + switch cyclosporine → tacrolimus</strong></li></ul>"
+      }
+     ]
     },
     {
      "id": "gu-w15-08",
@@ -147,31 +282,76 @@
      "id": "gu-w16-01",
      "num": "01",
      "name": "Urinary Tract Infections",
-     "hasNote": false
+     "hasNote": true,
+     "title": "Urinary Tract Infections",
+     "blocks": [
+      {
+       "t": "callout",
+       "kind": "tip",
+       "title": "Schulich Reviews",
+       "html": "<ul><li>Uncomplicated cystitis: <strong>no culture needed</strong>; nitrofurantoin 5 d, TMP/SMX 3 d, or fosfomycin 3 g once</li><li><strong>Asymptomatic bacteriuria: treat in pregnancy</strong> (e.g., cephalexin 7 d); <strong>not in LTC patients without urinary symptoms</strong></li><li>Men: culture, treat ≥7 d; complicated = immunosuppressed, uncontrolled DM, structural, fever/flank pain</li></ul>"
+      }
+     ]
     },
     {
      "id": "gu-w16-02",
      "num": "02",
      "name": "Urinary Tract Obstruction",
-     "hasNote": false
+     "hasNote": true,
+     "title": "Urinary Tract Obstruction",
+     "blocks": [
+      {
+       "t": "callout",
+       "kind": "tip",
+       "title": "Schulich Reviews",
+       "html": "<ul><li>Retention: <strong>urethral catheter first</strong></li><li><strong>Post-obstructive diuresis</strong> after relief of bilateral/bladder-outlet obstruction; usually mild, self-limiting</li></ul>"
+      }
+     ]
     },
     {
      "id": "gu-w16-03",
      "num": "03",
      "name": "Benign Prostatic Hyperplasia",
-     "hasNote": false
+     "hasNote": true,
+     "title": "Benign Prostatic Hyperplasia",
+     "blocks": [
+      {
+       "t": "callout",
+       "kind": "tip",
+       "title": "Schulich Reviews",
+       "html": "<ul><li>Medical: α-blocker, 5-ARI, combination, PDE5i</li><li>Surgery if <strong>retention</strong>, stones, recurrent UTI/hematuria, upper-tract damage, or failed meds; <strong>TURP = gold standard</strong></li></ul>"
+      }
+     ]
     },
     {
      "id": "gu-w16-04",
      "num": "04",
      "name": "Prostate Cancer",
-     "hasNote": false
+     "hasNote": true,
+     "title": "Prostate Cancer",
+     "blocks": [
+      {
+       "t": "callout",
+       "kind": "tip",
+       "title": "Schulich Reviews",
+       "html": "<ul><li><strong>TRUS-guided biopsy</strong> needed for diagnosis (palpable nodule or ↑ PSA); imaging alone not sensitive enough</li><li>Active surveillance for low-grade disease</li></ul>"
+      }
+     ]
     },
     {
      "id": "gu-w16-05",
      "num": "05",
      "name": "Approach to Scrotal Pain and Masses",
-     "hasNote": false
+     "hasNote": true,
+     "title": "Approach to Scrotal Pain and Masses",
+     "blocks": [
+      {
+       "t": "callout",
+       "kind": "tip",
+       "title": "Schulich Reviews",
+       "html": "<ul><li><strong>Torsion</strong>: sudden, rock-hard testis, no Doppler flow → <strong>surgical emergency (6–8 h)</strong></li><li>Epididymo-orchitis: gradual, tender epididymis, UTI signs/fever</li><li>Varicocele: <strong>left</strong>, bag of worms; <strong>right-sided → image the retroperitoneum</strong></li><li>Spermatocele = \"third testicle\"; hydrocele transilluminates</li></ul>"
+      }
+     ]
     },
     {
      "id": "gu-w16-06",
@@ -183,19 +363,46 @@
      "id": "gu-w16-07",
      "num": "07",
      "name": "Urothelial Cancer",
-     "hasNote": false
+     "hasNote": true,
+     "title": "Urothelial Cancer",
+     "blocks": [
+      {
+       "t": "callout",
+       "kind": "tip",
+       "title": "Schulich Reviews",
+       "html": "<ul><li>Painless gross hematuria + <strong>smoking</strong> → urothelial cancer until proven otherwise</li><li>Work-up: urine microscopy ± cytology, CT (excretory phase), <strong>cystoscopy</strong></li></ul>"
+      }
+     ]
     },
     {
      "id": "gu-w16-08",
      "num": "08",
      "name": "Special Issues in Pediatric Nephrology",
-     "hasNote": false
+     "hasNote": true,
+     "title": "Special Issues in Pediatric Nephrology",
+     "blocks": [
+      {
+       "t": "callout",
+       "kind": "tip",
+       "title": "Schulich Reviews",
+       "html": "<ul><li>Nephrotic syndrome in a child → MCD → <strong>steroids without biopsy</strong></li></ul>"
+      }
+     ]
     },
     {
      "id": "gu-w16-09",
      "num": "09",
      "name": "Special Issues in Pediatric Urology",
-     "hasNote": false
+     "hasNote": true,
+     "title": "Special Issues in Pediatric Urology",
+     "blocks": [
+      {
+       "t": "callout",
+       "kind": "tip",
+       "title": "Schulich Reviews",
+       "html": "<ul><li><strong>Appendage torsion = most common acute scrotum in children</strong>; blue-dot sign; conservative (NSAIDs)</li><li>UDT: most descend by 3–6 months; operate by 18 months; retractile testis stays down when brought down</li><li><strong>Bilateral non-palpable testes in phenotypic male = emergency</strong> (CAH, salt wasting)</li><li>Circumcision for pathological phimosis, paraphimosis, recurrent balanitis</li><li>Enuresis: >5 y; secondary = dry ≥6 months then regressed</li></ul>"
+      }
+     ]
     }
    ]
   },
@@ -213,13 +420,31 @@
      "id": "gu-w17-02",
      "num": "02",
      "name": "Nephrolithiasis",
-     "hasNote": false
+     "hasNote": true,
+     "title": "Nephrolithiasis",
+     "blocks": [
+      {
+       "t": "callout",
+       "kind": "tip",
+       "title": "Schulich Reviews",
+       "html": "<ul><li><strong>≥8 mm: <10% pass</strong>; medical expulsive therapy = α-blocker (tamsulosin)</li><li><strong>Fever + obstructing stone = urgent drainage</strong> (nephrostomy/stent) → sepsis risk</li><li>Low calcium intake predisposes; keep <strong>normal Ca intake</strong>; thiazide for hypercalciuria</li></ul>"
+      }
+     ]
     },
     {
      "id": "gu-w17-03",
      "num": "03",
      "name": "Renal Replacement Therapies",
-     "hasNote": false
+     "hasNote": true,
+     "title": "Renal Replacement Therapies",
+     "blocks": [
+      {
+       "t": "callout",
+       "kind": "tip",
+       "title": "Schulich Reviews",
+       "html": "<ul><li>Urgent dialysis: seizures/coma/confusion, pericarditis, uncontrollable ↑K⁺/acidosis/overload</li><li>PD = home, cheaper; transplant = optimal RRT</li></ul>"
+      }
+     ]
     }
    ]
   }

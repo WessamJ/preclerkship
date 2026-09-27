@@ -1709,7 +1709,7 @@
      ],
      "title": "Microcirculation, Vascular Flow and BP Regulation",
      "framing": "<p>How the capillary bed exchanges material and fluid, and how flow and pressure are controlled – from Poiseuille’s law through the baroreflex to local metabolites. The organising idea: <strong>Flow = ΔP/R</strong>, and nearly every control mechanism works by changing <strong>R at the arterioles</strong>.</p>",
-     "keypoints": "<p><strong>R = 8ηl/πr⁴</strong> – radius to the fourth power dominates. Optimal O2 delivery at hematocrit ~40%. <strong>Net fluid out at the arteriolar end, in at the venous end</strong>; small ↑ interstitial pressure → 10-fold ↑ lymph flow. <strong>Aortic baroreceptors = vagus; carotid sinus = glossopharyngeal.</strong> Parasympathetics do not innervate vessels. <strong>Neurogenic shock = hypotension + bradycardia</strong> from lost T1–T4 sympathetic outflow. NO → cGMP → vasodilation; sildenafil blocks PDE5; bosentan blocks endothelin receptors.</p>",
+     "keypoints": "<p><strong>R = 8ηl/πr⁴</strong> – radius to the fourth power dominates. Optimal O2 delivery at <strong>hematocrit ~40%</strong>. <strong>Net fluid out at the arteriolar end, in at the venous end</strong>; small ↑ interstitial pressure → 10-fold ↑ lymph flow. <strong>Aortic baroreceptors = vagus; carotid sinus = glossopharyngeal.</strong> Parasympathetics do not innervate vessels. <strong>Neurogenic shock = hypotension + bradycardia</strong> from lost T1–T4 sympathetic outflow. NO → cGMP → vasodilation; sildenafil blocks PDE5; bosentan blocks endothelin receptors.</p>",
      "blocks": [
       {
        "t": "list",
@@ -1941,6 +1941,12 @@
        "t": "figure",
        "src": "assets/figures/ecf0f0c2f608.png",
        "alt": "Endothelin receptors on endothelium and smooth muscle and their interaction with nitric oxide"
+      },
+      {
+       "t": "callout",
+       "kind": "tip",
+       "title": "Schulich Reviews",
+       "html": "<ul><li><strong>MAP = (SBP + 2 × DBP) / 3</strong></li><li><strong>Arterioles</strong> = the <strong>greatest pressure drop</strong> in the circulation (resistance vessels)</li></ul>"
       }
      ]
     },
@@ -2147,7 +2153,7 @@
          "Block beta 1 and beta 2 receptors",
          "<strong>Beta 1:</strong> ↓ HR, ↓ myocardial contractility, ↓ conduction velocity<br><strong>Beta 2:</strong> vasoconstriction, bronchoconstriction",
          "Myocardial ischemia (angina)<br>Post-MI — decrease mortality<br>Hypertension<br>Systolic heart failure (HFrEF)<br>Atrial fibrillation",
-         "Hypotension<br>Bradycardia<br>Symptomatic poorly controlled heart failure<br>Severe reactive airway disease",
+         "Hypotension<br>Bradycardia<br>Symptomatic poorly controlled heart failure<br><strong>Severe reactive airway disease</strong>",
          "Bronchospasm (beta 2)<br>Bradycardia<br>Worsening heart failure<br>Fatigue<br>Headache<br>Abrupt withdrawal: reflex tachycardia, ischemia"
         ]
        ]
@@ -2475,7 +2481,16 @@
      "id": "cardio-w2-01",
      "num": "01",
      "name": "Intro to Valvular Disease, Heart Sounds, and Clinical Assessment",
-     "hasNote": false
+     "hasNote": true,
+     "title": "Intro to Valvular Disease, Heart Sounds, and Clinical Assessment",
+     "blocks": [
+      {
+       "t": "callout",
+       "kind": "tip",
+       "title": "Schulich Reviews",
+       "html": "<ul><li>Systolic at the base <strong>radiating to the carotids</strong>, sustained apex, single S2 → <strong>aortic stenosis</strong></li><li><strong>Wide, fixed split S2</strong> → <strong>ASD</strong></li><li>Holosystolic, <strong>RV heave</strong>, louder with inspiration → <strong>tricuspid regurgitation</strong></li><li>Holosystolic + <strong>parasternal thrill</strong> → <strong>VSD</strong></li><li><strong>Triple apex beat</strong> → <strong>hypertrophic cardiomyopathy</strong></li><li>Holosystolic at the apex <strong>radiating to the axilla</strong> → <strong>MR</strong>; <strong>mid-systolic click</strong> → <strong>mitral valve prolapse</strong></li><li>Triphasic, scratchy → <strong>pericardial rub</strong></li><li>Diastolic: <strong>high-pitched at the border → AR</strong>; <strong>rumble + opening snap at the apex → MS</strong></li><li>Systolic grades I–VI, diastolic I–IV; <strong>grade IV = palpable thrill</strong></li></ul>"
+      }
+     ]
     },
     {
      "id": "cardio-w2-02",
@@ -3433,25 +3448,61 @@
      "id": "cardio-w2-04",
      "num": "04",
      "name": "Aortic Stenosis",
-     "hasNote": false
+     "hasNote": true,
+     "title": "Aortic Stenosis",
+     "blocks": [
+      {
+       "t": "callout",
+       "kind": "tip",
+       "title": "Schulich Reviews",
+       "html": "<ul><li>Systolic ejection murmur at the base → carotids; <strong>later peak = more severe</strong>; soft S2, <strong>pulsus parvus et tardus</strong>, LV heave, S4</li><li>Symptoms <strong>angina / syncope / dyspnea (CHF)</strong> → 50% survival at <strong>5 / 3 / 2 years</strong></li><li><strong>Symptomatic → valve replacement</strong>; asymptomatic → follow for symptoms</li><li><strong>Bioprosthetic</strong>: ~15 y, no long-term anticoagulation; <strong>mechanical</strong>: long life, lifelong OAC (INR 2–3)</li><li>Degenerative: 60s–80s; <strong>bicuspid</strong>: men, 40s–50s</li></ul>"
+      }
+     ]
     },
     {
      "id": "cardio-w2-05",
      "num": "05",
      "name": "Aortic Regurgitation",
-     "hasNote": false
+     "hasNote": true,
+     "title": "Aortic Regurgitation",
+     "blocks": [
+      {
+       "t": "callout",
+       "kind": "tip",
+       "title": "Schulich Reviews",
+       "html": "<ul><li><strong>High-pitched diastolic murmur at the border</strong>, end-expiration leaning forward; <strong>length, not loudness, tracks severity</strong></li><li><strong>Widened pulse pressure</strong>; S3 once in CHF</li><li><strong>Acute AR</strong> (endocarditis, dissection) into a normal-size LV → pulmonary edema, hypotension → <strong>emergency surgery</strong></li><li>Chronic: operate if symptomatic or <strong>LVEF &lt; 50%</strong>, LVESD &gt; 50 mm, LVEDD &gt; 65 mm</li></ul>"
+      }
+     ]
     },
     {
      "id": "cardio-w2-06",
      "num": "06",
      "name": "Mitral Stenosis",
-     "hasNote": false
+     "hasNote": true,
+     "title": "Mitral Stenosis",
+     "blocks": [
+      {
+       "t": "callout",
+       "kind": "tip",
+       "title": "Schulich Reviews",
+       "html": "<ul><li>Rheumatic fever after GAS → MS; <strong>Jones majors</strong>: joints, carditis, nodules, erythema marginatum, Sydenham chorea</li><li><strong>Opening snap</strong> + <strong>mid-diastolic rumble at the apex</strong>, heard in the left lateral position</li><li>LA enlargement → <strong>AF → LA thrombus → stroke</strong> → anticoagulate</li><li>Open the valve: <strong>balloon valvuloplasty</strong> or valve replacement</li></ul>"
+      }
+     ]
     },
     {
      "id": "cardio-w2-07",
      "num": "07",
      "name": "Mitral Regurgitation",
-     "hasNote": false
+     "hasNote": true,
+     "title": "Mitral Regurgitation",
+     "blocks": [
+      {
+       "t": "callout",
+       "kind": "tip",
+       "title": "Schulich Reviews",
+       "html": "<ul><li><strong>Holosystolic, high-pitched blowing murmur at the apex</strong>, left lateral decubitus; soft or absent in acute MR</li><li><strong>Normal carotid upstroke</strong> (vs AS), loud P2, <strong>S3</strong></li><li>AF → <strong>anticoagulate + rate control</strong>; diuretics, BP control</li><li>Surgery if symptomatic severe, or asymptomatic with LV dysfunction; <strong>repair &gt; replacement</strong></li></ul>"
+      }
+     ]
     },
     {
      "id": "cardio-w2-09",
@@ -3954,7 +4005,16 @@
      "id": "cardio-w3-03",
      "num": "03",
      "name": "Tests for the Heart",
-     "hasNote": false
+     "hasNote": true,
+     "title": "Tests for the Heart",
+     "blocks": [
+      {
+       "t": "callout",
+       "kind": "tip",
+       "title": "Schulich Reviews",
+       "html": "<ul><li>Pretest probability: age, sex, and chest pain type – <strong>typical angina = all 3</strong>: substernal, provoked by exertion/stress, relieved by rest or nitro</li><li>Can exercise + normal ECG → <strong>exercise stress test</strong></li><li>Cannot exercise or abnormal ECG (LBBB, paced) → <strong>stress imaging</strong> (stress echo, perfusion); <strong>dobutamine</strong> stands in for exercise</li><li>High suspicion or high-risk features → <strong>CCTA or invasive angiography</strong></li></ul>"
+      }
+     ]
     },
     {
      "id": "cardio-w3-04",
@@ -5118,7 +5178,7 @@
       }
      ],
      "framing": "<p>Coronary atherosclerosis becomes an emergency when a <strong>vulnerable plaque ruptures and thrombus forms</strong>: an occlusive thrombus gives a STEMI (reperfuse now), a non-occlusive one an NSTEMI (stabilize, then angiography). The note then follows the damage through healing and its complications, and closes with aortic aneurysm and dissection.</p>",
-     "keypoints": "<p><strong>Most MIs arise from plaques &lt; 50% stenosed</strong> – rupture, not stenosis, is the trigger. <strong>STEMI is diagnosed on ECG, not troponin</strong>: ASA 162-325 mg, then primary PCI (gold standard) or fibrinolysis within 12 h; benefit is maximal within 1 h. <strong>Inferior MI + hypotension, JVD, clear lungs = RV infarct</strong> – fluids, no nitro. <strong>Post-MI: ASA + P2Y12 (12 months) + beta-blocker + ACEI + high-intensity statin regardless of LDL</strong>. <strong>AAA: repair at ≥ 5.5 cm in men, 5 cm in women, or growth &gt; 1 cm/yr</strong>; the leading cause of death on surveillance is cardiovascular, not rupture. Dissection: <strong>type A = surgery, type B = medical</strong>.</p>"
+     "keypoints": "<p><strong>Most MIs arise from plaques &lt; 50% stenosed</strong> – rupture, not stenosis, is the trigger. <strong>STEMI is diagnosed on ECG, not troponin</strong>: ASA 162-325 mg, then primary PCI (gold standard) or <strong>fibrinolysis within 12 h</strong>; benefit is maximal within 1 h. <strong>Inferior MI + hypotension, JVD, clear lungs = RV infarct</strong> – fluids, no nitro. <strong>Post-MI: ASA + P2Y12 (12 months) + beta-blocker + ACEI + high-intensity statin regardless of LDL</strong>. <strong>AAA: repair at ≥ 5.5 cm in men, 5 cm in women, or growth &gt; 1 cm/yr</strong>; the leading cause of death on surveillance is cardiovascular, not rupture. Dissection: <strong>type A = surgery, type B = medical</strong>.</p>"
     },
     {
      "id": "cardio-w3-05",
@@ -7245,7 +7305,7 @@
       }
      ],
      "framing": "<p>Heart failure is a <strong>clinical syndrome</strong>, not a disease: symptoms and signs plus structural heart disease. Its engine is <strong>neurohormonal activation</strong> (SNS, RAAS, AVP) – an appropriate response to dehydration turned harmful – and nearly every HFrEF drug blocks one limb of it.</p>",
-     "keypoints": "<p><strong>EF is not needed for the diagnosis; symptoms are always the last stage.</strong> HFpEF is 60%, HFrEF 40% (ischemic 65% of HFrEF). <strong>AHA stages never go backwards; NYHA class can.</strong> <strong>Low BNP rules out HF; a normal ECG makes it very unlikely.</strong> <strong>Cold and wet has the worst prognosis.</strong> HFrEF: <strong>ACEI/ARB→ARNI + BB + MRA + SGLT2i</strong>, ivabradine if sinus HR ≥ 70; <strong>ICD/CRT if LVEF ≤ 35%</strong>. HFpEF has no proven therapy beyond diuretics.</p>"
+     "keypoints": "<p><strong>EF is not needed for the diagnosis; symptoms are always the last stage.</strong> HFpEF is 60%, HFrEF 40% (ischemic 65% of HFrEF). <strong>AHA stages never go backwards; NYHA class can.</strong> <strong>Low BNP rules out HF; a normal ECG makes it very unlikely.</strong> <strong>Cold and wet has the worst prognosis.</strong> HFrEF: <strong>ACEI/ARB→ARNI + BB + MRA + SGLT2i</strong>, <strong>ivabradine if sinus HR ≥ 70</strong>; <strong>ICD/CRT if LVEF ≤ 35%</strong>. HFpEF has no proven therapy beyond diuretics.</p>"
     },
     {
      "id": "cardio-w4-02",
@@ -7268,7 +7328,16 @@
      "id": "cardio-w4-04",
      "num": "04",
      "name": "Heart Failure Treatments",
-     "hasNote": false
+     "hasNote": true,
+     "title": "Heart Failure Treatments",
+     "blocks": [
+      {
+       "t": "callout",
+       "kind": "tip",
+       "title": "Schulich Reviews",
+       "html": "<ul><li>Symptomatic HFrEF despite GDMT → <strong>ARNI in place of ACEI/ARB</strong></li><li><strong>Ivabradine</strong> (I<sub>f</sub> blocker, sinus node): benefit when <strong>sinus HR ≥ 70</strong></li></ul>"
+      }
+     ]
     },
     {
      "id": "cardio-w4-05",
@@ -8239,6 +8308,12 @@
        "src": "assets/figures/ba404b145317.jpg",
        "alt": "Kawasaki features: conjunctivitis, strawberry tongue and cracked lips, rash, hand and foot changes",
        "cap": "Kawasaki features: conjunctivitis, strawberry tongue and cracked lips, rash, hand and foot changes."
+      },
+      {
+       "t": "callout",
+       "kind": "tip",
+       "title": "Schulich Reviews",
+       "html": "<ul><li>Most pediatric chest pain is benign <strong>MSK – costochondritis</strong>: sharp, <strong>reproducible on palpation</strong>, can occur at rest</li><li>Suggests cardiac: pain <strong>only with exertion</strong>, never at rest</li></ul>"
       }
      ],
      "title": "Congenital Heart Disease",
@@ -9574,7 +9649,7 @@
          "1"
         ],
         [
-         "<strong>A</strong>ge &gt; 65 years",
+         "<strong>A</strong>ge &gt; 75 years",
          "1"
         ],
         [
@@ -9624,7 +9699,7 @@
      ],
      "title": "Atrial Fibrillation",
      "framing": "<p>AF is chaotic re-entry in the atria producing an irregularly irregular rhythm. It harms in three ways – <strong>stroke, rapid rate, lost atrial kick</strong> – and management matches each: <strong>anticoagulate, rate-control, rhythm-control</strong>.</p>",
-     "keypoints": "<p><strong>Irregularly irregular with fibrillatory waves.</strong> <strong>10% of over-80s</strong> have AF. <strong>CHADS2</strong>: CHF, HTN, age &gt; 65, diabetes (1 each), stroke/TIA (2); mitral stenosis is also very high risk. Rate control = <strong>beta blocker, CCB, digoxin</strong>; rhythm control = <strong>class I/III drugs or DC cardioversion</strong>. <strong>&gt; 48 h or unknown → 3 weeks anticoagulation before cardioversion.</strong></p>"
+     "keypoints": "<p><strong>Irregularly irregular with fibrillatory waves.</strong> <strong>10% of over-80s</strong> have AF. <strong>CHADS2</strong>: CHF, HTN, age &gt; 75, diabetes (1 each), stroke/TIA (2); mitral stenosis is also very high risk. Rate control = <strong>beta blocker, CCB, digoxin</strong>; rhythm control = <strong>class I/III drugs or DC cardioversion</strong>. <strong>&gt; 48 h or unknown → 3 weeks anticoagulation before cardioversion.</strong></p>"
     },
     {
      "id": "cardio-w5-06",

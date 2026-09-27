@@ -1527,6 +1527,12 @@
       {
        "t": "note",
        "html": "<p><strong>Workup skeleton</strong></p><p>- <strong>Hx/PEx</strong> — the <strong>triad is abdominal pain, vaginal bleeding and a positive <span class=\"wl\">β-hCG</span></strong>; then displaced or enlarged uterus, <strong>orthostatic hypotension</strong>, pelvic mass, bulging fornix, <span class=\"wl\">cervical motion tenderness</span>, <strong>shoulder pain from diaphragmatic irritation</strong></p><p>- <strong>Ix</strong> — <strong>β-hCG doubles every 1.4-2.1 days, and 85% of viable IUPs rise ≥ 66% in 48 h</strong> · CBC, group and screen · <strong>TVUS should see an IUP above a β-hCG of 1500, and 99% by 3150</strong> (transabdominal needs <strong>6500</strong>) · <strong>\"ring of fire\"</strong> · free fluid</p><p>- <strong>Tx</strong> — expectant if <strong>β-hCG declining and < 200, mass < 3.5 cm, no rupture, asymptomatic</strong> · <strong><span class=\"wl\">methotrexate</span> 50 mg/m² IM</strong> ⚠ <strong>not mg/kg</strong> · surgery for instability, rupture, MTX contraindication</p><p>- ⭐ <strong>Any Rh-negative patient with a positive β-hCG and vaginal bleeding needs Rh immunoglobulin</strong> — WinRho or Rhogam — to protect her future pregnancies</p>"
+      },
+      {
+       "t": "callout",
+       "kind": "tip",
+       "title": "Schulich Reviews",
+       "html": "<ul><li>Ectopic risk factors: <strong>previous ectopic</strong> · <strong>previous tubal surgery</strong> (ligation, reanastomosis) · <strong>PID</strong> · IVF · congenital uterine anomaly</li><li>IUD: prevents intrauterine, not ectopic, pregnancy → <strong>IUD + positive β-hCG = high chance of ectopic</strong>, but an IUD does not ↑ overall ectopic risk</li><li>Absolute CIs to <span class=\"wl\">methotrexate</span>: <strong>breastfeeding</strong> · <strong>liver disease / alcoholism</strong> · immunodeficiency · blood dyscrasias · renal dysfunction · PUD · acute pulmonary disease · viable IUP</li></ul>"
       }
      ]
     },
@@ -1813,7 +1819,7 @@
          "<strong>Dx</strong>",
          "<strong>Clinical</strong>",
          "<strong>Laparoscopy + biopsy</strong> (2 of 3: glands, stroma, hemosiderin)",
-         "⚠ <strong>NOT by biopsy — the glands are too deep</strong>; largely clinical, often incidental at hysterectomy",
+         "⚠ <strong>NOT by biopsy — the glands are too deep</strong>; largely clinical, <strong>often incidental at hysterectomy</strong>",
          "Ultrasound",
          "<strong>Clinical</strong>"
         ],
@@ -3331,7 +3337,7 @@
         [
          "<strong>Tx / cancer risk</strong>",
          "Very commonly biopsied",
-         "Antibiotics, skin care, keep draining",
+         "Antibiotics, skin care, <strong>keep draining</strong>",
          "<strong>Local excision</strong>; proliferative without atypia, <strong>RR 1.5-2</strong>",
          "Watch clinically; <strong>RR x1</strong> (complex fibroadenoma RR 1.5-2)",
          "Non-proliferative, <strong>RR x1</strong>"
@@ -3445,7 +3451,7 @@
         ],
         [
          "<strong>Worrisome</strong>",
-         "• single · hard · immovable · irregular borders<br>• <strong>> 2 cm</strong>",
+         "• <strong>single · hard · immovable · irregular borders</strong><br>• <strong>> 2 cm</strong>",
          "• older woman · mass<br>• only <strong>8% of breast cancers</strong> present with pain",
          "• <strong>unilateral, single duct, spontaneous</strong><br>• <strong>bloody or serous</strong> · mass · <strong>> 50</strong>"
         ],
@@ -3964,7 +3970,7 @@
       },
       {
        "t": "table",
-       "lead": "<p><strong>Workup skeleton</strong></p><p>- <strong>Hx</strong>: onset vs <strong>20 weeks</strong> · headache, visual disturbance, <strong>clonus / photosensitivity</strong> (eclampsia precursors) · RUQ pain, N/V · chest pain, dyspnea · co-morbid <strong>diabetes / kidney disease</strong> · parity (pre-eclampsia favours <strong>primiparous</strong>)</p><p>- <strong>PEx</strong>: <strong>2 readings >15 min apart</strong>, seated, calm, correct cuff size · exclude <strong>white-coat</strong> and <strong>pain-driven</strong> elevation · neuro symptoms ⇒ <strong>rule out an intracranial event</strong></p><p>- <strong>Ix</strong>: urine protein · <strong>platelets, WBC, INR, PTT</strong> · <strong>creatinine, uric acid</strong> · <strong>LFTs, albumin</strong> · O2 sat · fetal: growth, amniotic fluid, <strong>umbilical artery end-diastolic flow</strong></p><p>- <strong>Tx</strong>: chronic / gestational ⇒ <strong>treat the BP</strong> · pre-eclampsia ⇒ <strong>BP is secondary; minimise maternal / fetal morbidity</strong>, MgSO4 once delivery is decided · ⚠ no <span class=\"wl\">diuretics</span>, no <span class=\"wl\">ACEi</span> / <span class=\"wl\">ARB</span></p><p>- <strong>Follow-up</strong>: complications decide <strong>delivery planning</strong> · MgSO4 continues <strong>12-48 h post-partum</strong></p>",
+       "lead": "<p><strong>Workup skeleton</strong></p><p>- <strong>Hx</strong>: onset vs <strong>20 weeks</strong> · headache, visual disturbance, <strong>clonus / photosensitivity</strong> (eclampsia precursors) · RUQ pain, N/V · chest pain, dyspnea · co-morbid <strong>diabetes / kidney disease</strong> · parity (pre-eclampsia favours <strong>primiparous</strong>)</p><p>- <strong>PEx</strong>: <strong>2 readings >15 min apart</strong>, seated, calm, correct cuff size · exclude <strong>white-coat</strong> and <strong>pain-driven</strong> elevation · neuro symptoms ⇒ <strong>rule out an intracranial event</strong></p><p>- <strong>Ix</strong>: urine protein · <strong>platelets, WBC, INR, PTT</strong> · <strong>creatinine, uric acid</strong> · <strong>LFTs, albumin</strong> · O2 sat · fetal: growth, amniotic fluid, <strong>umbilical artery end-diastolic flow</strong></p><p>- <strong>Tx</strong>: chronic / gestational ⇒ <strong>treat the BP</strong> · pre-eclampsia ⇒ <strong>BP is secondary; minimise maternal / fetal morbidity</strong>, MgSO4 once delivery is decided · ⚠ <strong>no <span class=\"wl\">diuretics</span>, no <span class=\"wl\">ACEi</span> / <span class=\"wl\">ARB</span></strong></p><p>- <strong>Follow-up</strong>: complications decide <strong>delivery planning</strong> · MgSO4 continues <strong>12-48 h post-partum</strong></p>",
        "cols": [
         "",
         "<strong>Pre-existing (chronic)</strong>",
@@ -5279,6 +5285,12 @@
       {
        "t": "note",
        "html": "<p><strong>Newborn scalp:</strong> <strong>subgaleal hemorrhage spreads</strong> · <strong>cephalohematoma is cut off</strong> · caput succedaneum is a poorly defined serosanguinous subcutaneous collection.</p>"
+      },
+      {
+       "t": "callout",
+       "kind": "tip",
+       "title": "Schulich Reviews",
+       "html": "<ul><li><strong>Labour dystocia is the most common reason cited for C/S</strong></li><li>Cord prolapse: <strong>overt</strong> = loops palpable/visible · <strong>occult</strong> = beside the presenting part · <strong>cord presentation</strong> = below the presenting part, before ROM · lowest in vertex, highest in transverse</li></ul>"
       }
      ]
     },
@@ -5507,6 +5519,12 @@
       {
        "t": "note",
        "html": "<p><strong>Numbers:</strong> storage <strong>laws of 6</strong> - room 6 h · fridge 6 d · freezer 6 mo · medications: milk concentration <strong>< 10% of maternal weight-adjusted dose</strong> · start <strong>within 1 hour of birth</strong>, skin to skin, feed on infant cues.</p>"
+      },
+      {
+       "t": "callout",
+       "kind": "tip",
+       "title": "Schulich Reviews",
+       "html": "<ul><li>4 stages: <strong>mammogenesis</strong> (breast preparation) → <strong>lactogenesis</strong> (synthesis from alveoli; stage 1 mid-pregnancy, stage 2 copious after delivery) → <strong>galactokinesis</strong> (ejection) → <strong>galactopoiesis</strong> (maintenance)</li></ul>"
       }
      ]
     },

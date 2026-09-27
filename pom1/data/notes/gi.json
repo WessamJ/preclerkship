@@ -27,7 +27,16 @@
      "id": "gi-w10-04",
      "num": "04",
      "name": "Esophageal Dysphagia",
-     "hasNote": false
+     "hasNote": true,
+     "title": "Esophageal Dysphagia",
+     "blocks": [
+      {
+       "t": "callout",
+       "kind": "tip",
+       "title": "Schulich Reviews",
+       "html": "<ul><li><strong>Eosinophilic esophagitis</strong>: young males, allergy/asthma, <strong>food bolus impaction</strong>; vertical furrows, rings</li><li>Dx <strong>&gt; 15 eosinophils/HPF</strong> in mid esophagus → PPI, swallowed topical steroids, dilation, food elimination</li><li>Benign stricture: <strong>peptic most common</strong>; also pill-induced, caustic, radiation → dilation</li></ul>"
+      }
+     ]
     },
     {
      "id": "gi-w10-05",
@@ -454,7 +463,16 @@
      "id": "gi-w10-09",
      "num": "09",
      "name": "GERD",
-     "hasNote": false
+     "hasNote": true,
+     "title": "GERD",
+     "blocks": [
+      {
+       "t": "callout",
+       "kind": "tip",
+       "title": "Schulich Reviews",
+       "html": "<ul><li>GERD = <strong>clinical Dx</strong>: classic symptoms, no alarm features, <strong>response to PPI trial</strong></li><li><strong>Endoscopy if</strong>: alarm features, multiple Barrett risk factors, refractory symptoms/uncertain Dx, abnormal upper GI imaging</li></ul>"
+      }
+     ]
     },
     {
      "id": "gi-w10-10",
@@ -667,18 +685,36 @@
      "id": "gi-w11-04",
      "num": "04",
      "name": "Luminal GI Malignancies",
-     "hasNote": false
+     "hasNote": true,
+     "title": "Luminal GI Malignancies",
+     "blocks": [
+      {
+       "t": "callout",
+       "kind": "tip",
+       "title": "Schulich Reviews",
+       "html": "<ul><li><strong>R-sided CRC → non-GI signs: anemia, weight loss</strong>; <strong>L-sided → GI signs</strong>: rectal bleeding, change in bowel habit, mass on DRE</li><li><strong>Sessile serrated adenomas</strong>: right side, flat, easily missed, MSI</li><li>Average risk: <strong>FIT q2y age 50–74</strong> or colonoscopy q10y</li></ul>"
+      }
+     ]
     },
     {
      "id": "gi-w11-05",
      "num": "05",
      "name": "Infectious Diarrhea",
-     "hasNote": false,
+     "hasNote": true,
      "coveredBy": {
       "num": "03",
       "name": "Diarrhea & Malabsorption",
       "key": "gi-w11-03"
-     }
+     },
+     "title": "Infectious Diarrhea",
+     "blocks": [
+      {
+       "t": "callout",
+       "kind": "tip",
+       "title": "Schulich Reviews",
+       "html": "<ul><li><strong>Non-inflammatory</strong> (enterotoxin, small bowel): watery, high volume, no fever. <strong>Inflammatory</strong> (cytotoxin, colon): blood/mucus, fever</li><li><strong>Antimotility agents: never with bloody stools or C. difficile</strong></li><li>Empiric ABX: <strong>ciprofloxacin</strong> – unless <strong>C. difficile</strong> or <strong>E. histolytica</strong> likely</li></ul>"
+      }
+     ]
     },
     {
      "id": "gi-w11-06",
@@ -720,17 +756,17 @@
       },
       {
        "t": "list",
-       "html": "<h5>Constipation workup</h5><ul><li><strong>Hx</strong>: symptoms, dietary Hx (fibre/water), adequate time for toileting, willingness to use public bathrooms, PMHx (look for 2° causes), medications, allergies, social Hx (ADLs, IADLs, abuse)</li><li><strong>PEx</strong>: <strong>DRE</strong> – inspect for anal fissures/hemorrhoids/soiling, anal tone at rest and with squeeze, palpate for rectal mass, exclude fecal impaction</li><li><strong>Ix</strong>: CBC, calcium, TSH; colonoscopy for red flags<ul><li><strong>Colon transit study</strong>: 24 radio-opaque Sitz markers swallowed on day 1; AXR on day 5</li><li><strong>Anorectal manometry + balloon expulsion</strong>: pressure catheter and balloon in the rectum measure rectal sensation, anal pressure, anorectal inhibitory reflex and ability to expel the balloon</li><li><strong>Defecating proctogram</strong>: barium instilled into the rectum, then defecation on a commode under x-ray – shows anatomic abnormalities</li></ul></li></ul><h5>Treatment</h5><ul><li>Patient education; diet/lifestyle – adequate fluid, <strong>20–30 g/day fibre</strong>, physical activity</li><li><strong>Osmotic laxatives</strong>: PEG 3350 17 g in 8 oz water; lactulose 15–30 cc; magnesium-based</li><li><strong>Stimulant laxatives</strong>: senna 1 tab; bisacodyl 5 mg</li><li><strong>Stool softeners</strong>: docusate 100 mg b.i.d.; mineral oil 15 mL NOT recommended</li><li><strong>Enemas</strong>: sodium phosphate, tap water, soap suds</li><li><strong>Secretagogues</strong>: linaclotide (145 mcg constipation, 290 mcg IBS-C); prucalopride</li><li><strong>Surgery</strong>: subtotal colectomy with ileorectal anastomosis; rectocele repair</li><li><strong>Biofeedback</strong>: relaxation/coordination retraining of the pelvic floor</li><li>PEG 3350 has no electrolytes and is tasteless; <strong>PegLyte</strong> is the bowel prep before colonoscopy</li></ul>"
+       "html": "<h5>Constipation workup</h5><ul><li><strong>Hx</strong>: symptoms, dietary Hx (fibre/water), adequate time for toileting, willingness to use public bathrooms, PMHx (look for 2° causes), medications, allergies, social Hx (ADLs, IADLs, abuse)</li><li><strong>PEx</strong>: <strong>DRE</strong> – inspect for anal fissures/hemorrhoids/soiling, anal tone at rest and with squeeze, palpate for rectal mass, exclude fecal impaction</li><li><strong>Ix</strong>: CBC, calcium, TSH; colonoscopy for red flags<ul><li><strong>Colon transit study</strong>: 24 radio-opaque Sitz markers swallowed on day 1; AXR on day 5</li><li><strong>Anorectal manometry + balloon expulsion</strong>: pressure catheter and balloon in the rectum measure rectal sensation, anal pressure, anorectal inhibitory reflex and ability to expel the balloon</li><li><strong>Defecating proctogram</strong>: barium instilled into the rectum, then defecation on a commode under x-ray – shows anatomic abnormalities</li></ul></li></ul><h5>Treatment</h5><ul><li>Patient education; diet/lifestyle – adequate fluid, <strong>20–30 g/day fibre</strong>, physical activity</li><li><strong>Osmotic laxatives</strong>: PEG 3350 17 g in 8 oz water; lactulose 15–30 cc; magnesium-based</li><li><strong>Stimulant laxatives</strong>: senna 1 tab; bisacodyl 5 mg</li><li><strong>Stool softeners</strong>: docusate 100 mg b.i.d.; mineral oil 15 mL – <strong>NOT recommended</strong> (lack of efficacy)</li><li><strong>Enemas</strong>: sodium phosphate, tap water, soap suds</li><li><strong>Secretagogues</strong>: linaclotide (145 mcg constipation, 290 mcg IBS-C); prucalopride</li><li><strong>Surgery</strong>: subtotal colectomy with ileorectal anastomosis; rectocele repair</li><li><strong>Biofeedback</strong>: relaxation/coordination retraining of the pelvic floor</li><li>PEG 3350 has no electrolytes and is tasteless; <strong>PegLyte</strong> is the bowel prep before colonoscopy</li></ul>"
       },
       {
        "t": "callout",
        "kind": "note",
        "title": "Myths and Choosing Wisely",
-       "html": "<ul><li>Long-term laxative use will <strong>NOT</strong> cause dependency or a “lazy colon”</li><li>Do <strong>NOT</strong> colonoscope for constipation under age 50 without a family history of colon cancer or alarm features</li><li>Do <strong>NOT</strong> use stool softeners alone to prevent opioid-induced constipation</li></ul>"
+       "html": "<ul><li>Long-term laxative use will <strong>NOT</strong> cause dependency or a “lazy colon”</li><li>Do <strong>NOT</strong> colonoscope for constipation under age 50 without a family history of colon cancer or alarm features</li><li>Do <strong>NOT</strong> use <strong>stool softeners alone</strong> to prevent <strong>opioid-induced constipation</strong></li></ul>"
       },
       {
        "t": "list",
-       "html": "<h5>Pediatric constipation</h5><ul><li>The withholding cycle is shown below</li><li><strong>Red flags for organic causes</strong>: onset &lt; 1 month, delayed meconium &gt; 48 hrs, failure to thrive, abdominal distension, hematochezia, systemic symptoms (fever, vomiting), no response to Tx</li><li><strong>PEx red flags</strong>: anorectal malformation, tight anal sphincter, empty rectum, gush of stool on DRE, extreme fear/anal scars, sacral dimple/tuft, abnormal lower-limb neurologic exam</li><li><strong>Ix not needed</strong> if Hx and PEx fit a functional cause; otherwise AXR (fecal loading/mass, transit), barium enema (Hirschsprung’s), labs (celiac, hypothyroid), sweat test (CF), MRI spine (cord), rectal suction biopsy (ganglion cells), anorectal/colonic manometry</li><li><strong>Tx</strong>: cleanout (PEG, Pico-Salax, NG GoLytely, enemas, manual disimpaction) → maintenance (PEG 3350, stimulant laxatives) + toilet hygiene (scheduled sits 2–3×/day, 20–30 min after meals, position, correct pushing, positive reinforcement) + parental guidance</li><li>↑ fluid and fibre alone is <strong>NOT</strong> sufficient to treat functional constipation</li></ul>"
+       "html": "<h5>Pediatric constipation</h5><ul><li>The withholding cycle is shown below</li><li><strong>Red flags for organic causes</strong>: onset &lt; 1 month, delayed meconium &gt; 48 hrs, failure to thrive, abdominal distension, hematochezia, systemic symptoms (fever, vomiting), no response to Tx</li><li><strong>PEx red flags</strong>: anorectal malformation, tight anal sphincter, empty rectum, gush of stool on DRE, extreme fear/anal scars, sacral dimple/tuft, abnormal lower-limb neurologic exam</li><li><strong>Ix not needed</strong> if Hx and PEx fit a functional cause; otherwise AXR (fecal loading/mass, transit), barium enema (Hirschsprung’s), labs (celiac, hypothyroid), sweat test (CF), MRI spine (cord), rectal suction biopsy (ganglion cells), anorectal/colonic manometry</li><li><strong>Tx</strong>: cleanout (PEG, Pico-Salax, NG GoLytely, enemas, manual disimpaction) → maintenance (<strong>PEG 3350</strong> – preferred in pediatrics, stimulant laxatives) + toilet hygiene (scheduled sits 2–3×/day, 20–30 min after meals, position, correct pushing, positive reinforcement) + parental guidance</li><li>↑ fluid and fibre alone is <strong>NOT</strong> sufficient to treat functional constipation</li></ul>"
       },
       {
        "t": "pathway",
@@ -918,7 +954,7 @@
       },
       {
        "t": "list",
-       "html": "<h5>Colorectal cancer – epidemiology</h5><ul><li>New cancer cases: <strong>3rd</strong> (M, F); cancer deaths: 2nd (M), 3rd (F)</li><li>Commonest cause of cancer death in <strong>non-smokers</strong></li><li>Sporadic 90–95%; hereditary 5–10%</li><li><strong>Almost all CRCs arise from polyps</strong></li></ul><h5>Polyps</h5><ul><li><strong>Conventional adenoma</strong> (tubular, tubulovillous, villous): head and stalk easily removed at biopsy</li><li><strong>Sessile serrated adenoma</strong>: common on the R side, flat/fusiform, cancers associated with microsatellite instability, <strong>easily missed</strong></li></ul><h5>Colorectal cancer workup</h5><ul><li>Etiology: environmental (diet, physical activity), IBD (Crohn disease, UC)</li><li><strong>GI symptoms = R-sided</strong> colon cancers: rectal bleeding, change in bowel habit, diarrhea/constipation, mass on DRE</li><li><strong>Non-GI symptoms = L-sided</strong> colon cancers: anemia, weight loss</li><li>Ix: DRE, double-contrast barium enema (<strong>“apple core” lesions</strong>), colonoscopy/sigmoidoscopy + biopsy; staging: CXR, CT chest/abdomen</li><li>Spread: direct extension (bladder, vagina, skin, other bowel), metastases (lymph nodes, hematogenous), transperitoneal</li></ul><h5>Pathological staging</h5>"
+       "html": "<h5>Colorectal cancer – epidemiology</h5><ul><li>New cancer cases: <strong>3rd</strong> (M, F); cancer deaths: 2nd (M), 3rd (F)</li><li>Commonest cause of cancer death in <strong>non-smokers</strong></li><li>Sporadic 90–95%; hereditary 5–10%</li><li><strong>Almost all CRCs arise from polyps</strong></li></ul><h5>Polyps</h5><ul><li><strong>Conventional adenoma</strong> (tubular, tubulovillous, villous): head and stalk easily removed at biopsy</li><li><strong>Sessile serrated adenoma</strong>: common on the R side, flat/fusiform, cancers associated with microsatellite instability, <strong>easily missed</strong></li></ul><h5>Colorectal cancer workup</h5><ul><li>Etiology: environmental (diet, physical activity), IBD (Crohn disease, UC)</li><li><strong>Non-GI symptoms = R-sided</strong> colon cancers: <strong>anemia, weight loss</strong></li><li><strong>GI symptoms = L-sided</strong> colon cancers: rectal bleeding, change in bowel habit, diarrhea/constipation, mass on DRE</li><li>Ix: DRE, double-contrast barium enema (<strong>“apple core” lesions</strong>), colonoscopy/sigmoidoscopy + biopsy; staging: CXR, CT chest/abdomen</li><li>Spread: direct extension (bladder, vagina, skin, other bowel), metastases (lymph nodes, hematogenous), transperitoneal</li></ul><h5>Pathological staging</h5>"
       },
       {
        "t": "figure",
@@ -962,7 +998,7 @@
         [
          "",
          "<strong>Longstanding IBD</strong>",
-         "Colonoscopy every 1–2 yrs for pancolitis or left-sided involvement, starting 8 yrs after Dx; regular random biopsies for dysplasia"
+         "Colonoscopy every <strong>1–3 yrs</strong> for pancolitis or left-sided involvement, starting <strong>8 yrs after Dx</strong>; regular random biopsies for dysplasia"
         ],
         [
          "<strong>Symptomatic</strong>",
@@ -1605,6 +1641,12 @@
       {
        "t": "list",
        "html": "<h5>Non-neoplastic liver masses</h5><ul><li><strong>Focal nodular hyperplasia</strong> (benign): central stellate scar; women 35–50</li><li><strong>Bile duct hamartoma</strong> (benign): von Meyenburg complex; multiple, small (&lt; 0.5 cm), grey/white, irregular cystic lesions</li><li><strong>Abscess</strong>: localized collection of pus (neutrophils, liquefied debris of dead cells, edema fluid)</li></ul>"
+      },
+      {
+       "t": "callout",
+       "kind": "tip",
+       "title": "Schulich Reviews",
+       "html": "<ul><li><strong>Mild Crohn (ileitis, R colon) → budesonide</strong> (high first-pass, fewer side effects); moderate–severe → prednisone, AZA/MTX, anti-TNF</li><li><strong>Mild–moderate UC → 5-ASA (mesalamine)</strong>; 5-ASA works in only a few Crohn patients</li><li><strong>Absent HLA-DQ2/DQ8 → rules out celiac</strong> – use it when TTG/biopsy are unreliable (e.g. already gluten-free)</li></ul>"
       }
      ],
      "title": "IBD, Colorectal Cancer & Liver Disease",
@@ -1777,7 +1819,16 @@
      "id": "gi-w11-10",
      "num": "10",
      "name": "Upper and Lower GI Bleeding",
-     "hasNote": false
+     "hasNote": true,
+     "title": "Upper and Lower GI Bleeding",
+     "blocks": [
+      {
+       "t": "callout",
+       "kind": "tip",
+       "title": "Schulich Reviews",
+       "html": "<ul><li>LGIB: <strong>stable → colonoscopy</strong>; <strong>unstable → upper endoscopy</strong> ± angiography + surgical consult (brisk UGIB can present as hematochezia)</li><li>Variceal UGIB: pantoprazole + <strong>octreotide</strong> + <strong>ABX (mortality benefit)</strong> + band ligation</li></ul>"
+      }
+     ]
     },
     {
      "id": "gi-w11-11",
@@ -2186,7 +2237,16 @@
      "id": "gi-w12-03",
      "num": "03",
      "name": "Approach to Abnormal Liver Enzymes",
-     "hasNote": false
+     "hasNote": true,
+     "title": "Approach to Abnormal Liver Enzymes",
+     "blocks": [
+      {
+       "t": "callout",
+       "kind": "tip",
+       "title": "Schulich Reviews",
+       "html": "<ul><li><strong>MRCP = diagnostic only</strong> (cannot offer therapy); <strong>ERCP = diagnostic + therapeutic</strong> (sphincterotomy, stone removal, stent)</li><li><strong>PTC</strong> (percutaneous transhepatic cholangiogram) when <strong>ERCP is contraindicated or failed</strong>; best for proximal biliary tree</li></ul>"
+      }
+     ]
     },
     {
      "id": "gi-w12-04",
@@ -2249,7 +2309,7 @@
         ],
         [
          "<strong>Causes</strong>",
-         "Older adults<br>Male = female<br>70% <em>H. pylori</em> infection<br><strong>NSAIDs</strong>",
+         "Older adults<br>Male = female<br><strong>NSAIDs – most frequent cause</strong><br><em>H. pylori</em> infection",
          "Any age<br>Male &gt; female<br><strong>90%</strong> <em><strong>H. pylori</strong></em> <strong>infection</strong><br>NSAIDs<br>Zollinger-Ellison syndrome<br><em>H. pylori</em> resides in the stomach<br>• Can cause duodenitis directly<br>• ↑ basal acid secretion<br>• Gastritis raises basal gastric acid secretion and releases cytokines to cause duodenitis"
         ],
         [
@@ -2504,7 +2564,7 @@
          "<strong>Dx</strong>",
          "Leukocytosis, ↑ <strong>serum lipase/amylase</strong><br><strong>Histology</strong>: <strong>acinar cell injury</strong>, <strong>duct obstruction</strong>, <strong>fat necrosis</strong> with pale basophilic calcium soaps, hemorrhage, necrotic debris, inflammatory response, edema<br>Ultrasound, <strong>CT scan</strong><br><strong>High probability CBD stone: ERCP</strong><br><strong>Low probability CBD stone: MRCP, EUS</strong>",
          "<strong>Histology</strong>: irregular ducts, loss of normal architecture and cytology, fibrous stroma; <strong>potential for misdiagnosis as malignancy</strong><br><strong>Pancreatic calcification, steatorrhea, DM</strong><br>↓ fecal elastase<br>↑ 72-hr fecal fat collection<br><strong>CT scan</strong>/<strong>MRI</strong> (most common)<br><strong>Endoscopic ultrasound</strong> (most sensitive)",
-         "<strong>Biopsy</strong>: ERCP biliary brushing<strong>, EUS FNA</strong><br><strong>CA 19-9 tumour marker</strong> (monitoring)<br>CT scan"
+         "<strong>Biopsy</strong>: ERCP biliary brushing (low yield)<strong>, EUS FNA</strong> (<strong>higher yield</strong>)<br><strong>CA 19-9 tumour marker</strong> (monitoring)<br>CT scan"
         ],
         [
          "<strong>Tx</strong>",
@@ -2527,7 +2587,7 @@
       },
       {
        "t": "list",
-       "html": "<h5>Other upper GI pathologies</h5><ul><li><strong>Mallory-Weiss syndrome</strong>: longitudinal lacerations at the GE junction from severe vomiting (alcohol use disorder, bulimia nervosa); painful hematemesis</li><li><strong>Zollinger-Ellison syndrome</strong>: multiple peptic ulcers in stomach and duodenum from excess gastrin secreted by a <strong>gastrinoma</strong> → excess acid; associated with multiple endocrine neoplasia (MEN) type 1</li></ul><h5>Gastroparesis</h5><p>Objectively delayed gastric emptying without mechanical obstruction.</p><ul><li>Nausea, vomiting, early satiety, bloating, upper abdominal pain, weight loss</li><li>Etiology: <strong>type 1 diabetes</strong> (longstanding, poor control), idiopathic (1/3), post-viral (norovirus, rotavirus), medications (opioids, TCAs, CCBs, dopamine agonists, anticholinergics), post-surgical, neurologic (MS, Parkinson’s), autoimmune (scleroderma), hypothyroidism</li><li>Ix: EGD, CT enterography/small bowel follow-through; <strong>gastric emptying study</strong> – normal 2 hr &lt; 60% retained; 4 hr &lt; 10% (mild 10–15%, moderate 15–35%, severe &gt; 35%)</li><li>Tx: low-fat, low-fibre diet; small frequent meals 4–5×/day; avoid carbonated drinks, alcohol, smoking; tight glycemic control; antiemetics (5-HT3 antagonists); promotility drugs (domperidone, metoclopramide, erythromycin) – lowest dose, drug holidays (2 wks q 3 months), cycle rather than combine, monitor DDIs/QT</li></ul><h5>Cannabinoid hyperemesis syndrome</h5><ul><li>Chronic heavy cannabis use (~1 g/day) → repeated severe vomiting</li><li>Temporary relief from <strong>hot baths or showers</strong>; resolves after stopping cannabis</li><li>Tx: stop cannabis (6 months), haloperidol, topical capsaicin cream</li></ul><h5>Lactose intolerance</h5><ul><li>Lactase (brush border enzyme) deficiency: primary (↓ expression), secondary (after enteric infection, 4–6 weeks), congenital</li><li>Osmotic diarrhea (unabsorbed lactose), bloating, flatus (bacterial fermentation)</li><li>Tx: avoid milk products, lactase supplements</li></ul><h5>Functional dyspepsia (indigestion)</h5><p>≥ 12 weeks of ≥ 1 of bothersome postprandial fullness, early satiety, epigastric pain or epigastric burning, with <strong>no structural disease</strong> (normal gastroscopy).</p><ul><li>DDx: GERD, PUD, drug-induced (ASA/NSAIDs), <em>H. pylori</em> gastritis, gastric cancer, biliary tract disease, pancreatic disease</li><li>Red flags: onset &gt; 40, GI bleeding, abdominal mass, vomiting, weight loss, nocturnal pain, dysphagia</li><li>Ix: CBC, stool occult blood, <em>H. pylori</em> serology, ultrasound; endoscopy if red flags or failed empiric therapy</li><li>Tx: reassurance/education, diet, lifestyle (exercise, ↓ caffeine/alcohol, smoking cessation, weight loss), stress management; acid suppression (PPIs, H2 antagonists); tricyclic antidepressants; treat the underlying cause</li></ul>"
+       "html": "<h5>Other upper GI pathologies</h5><ul><li><strong>Mallory-Weiss syndrome</strong>: longitudinal lacerations at the GE junction from severe vomiting (alcohol use disorder, bulimia nervosa); painful hematemesis</li><li><strong>Zollinger-Ellison syndrome</strong>: multiple peptic ulcers in stomach and duodenum from excess gastrin secreted by a <strong>gastrinoma</strong> → excess acid; associated with multiple endocrine neoplasia (MEN) type 1</li></ul><h5>Gastroparesis</h5><p>Objectively delayed gastric emptying without mechanical obstruction.</p><ul><li>Nausea, vomiting, early satiety, bloating, upper abdominal pain, weight loss</li><li>Etiology: <strong>type 1 diabetes</strong> (longstanding, poor control), idiopathic (1/3), post-viral (norovirus, rotavirus), medications (opioids, TCAs, CCBs, dopamine agonists, anticholinergics), post-surgical, neurologic (MS, Parkinson’s), autoimmune (scleroderma), hypothyroidism</li><li>Ix: EGD, CT enterography/small bowel follow-through; <strong>gastric emptying study</strong> – normal 2 hr &lt; 60% retained; <strong>4 hr &lt; 10%</strong> (mild 10–15%, moderate 15–35%, severe &gt; 35%)</li><li>Tx: low-fat, low-fibre diet; small frequent meals 4–5×/day; avoid carbonated drinks, alcohol, smoking; tight glycemic control; antiemetics (5-HT3 antagonists); promotility drugs (domperidone, metoclopramide, erythromycin) – lowest dose, drug holidays (2 wks q 3 months), cycle rather than combine, monitor DDIs/QT</li></ul><h5>Cannabinoid hyperemesis syndrome</h5><ul><li>Chronic heavy cannabis use (~1 g/day) → repeated severe vomiting</li><li>Temporary relief from <strong>hot baths or showers</strong>; resolves after stopping cannabis</li><li>Tx: stop cannabis (6 months), haloperidol, topical capsaicin cream</li></ul><h5>Lactose intolerance</h5><ul><li>Lactase (brush border enzyme) deficiency: primary (↓ expression), secondary (after enteric infection, 4–6 weeks), congenital</li><li>Osmotic diarrhea (unabsorbed lactose), bloating, flatus (bacterial fermentation)</li><li>Tx: avoid milk products, lactase supplements</li></ul><h5>Functional dyspepsia (indigestion)</h5><p>≥ 12 weeks of ≥ 1 of bothersome postprandial fullness, early satiety, epigastric pain or epigastric burning, with <strong>no structural disease</strong> (normal gastroscopy).</p><ul><li>DDx: GERD, PUD, drug-induced (ASA/NSAIDs), <em>H. pylori</em> gastritis, gastric cancer, biliary tract disease, pancreatic disease</li><li>Red flags: onset &gt; 40, GI bleeding, abdominal mass, vomiting, weight loss, nocturnal pain, dysphagia</li><li>Ix: CBC, stool occult blood, <em>H. pylori</em> serology, ultrasound; endoscopy if red flags or failed empiric therapy</li><li>Tx: reassurance/education, diet, lifestyle (exercise, ↓ caffeine/alcohol, smoking cessation, weight loss), stress management; acid suppression (PPIs, H2 antagonists); tricyclic antidepressants; treat the underlying cause</li></ul>"
       },
       {
        "t": "table",
@@ -2545,7 +2605,7 @@
       },
       {
        "t": "list",
-       "html": "<h5>Appendicitis</h5><p>Acute inflammation of the appendix (a congenital true diverticulum).</p><ul><li>Lymphoid hyperplasia (children), fecalith obstruction (adults); ages 4–25, recent viral URTI</li><li><strong>Periumbilical pain localizing to the RLQ</strong> (McBurney point: 1/3 of the way from R ASIS to umbilicus); guarding, rebound tenderness</li><li>Nausea, fever, anorexia, vomiting, constipation/diarrhea</li><li>Dx: clinical; labs (CBC, chemistry, CRP); CT abdomen, ultrasound</li><li>Tx: ABX (ceftriaxone + metronidazole; imipenem; piperacillin-tazobactam); appendectomy</li></ul><h5>Appendiceal neoplasm</h5><ul><li>0.5–1% of all appendectomies; 5–10% of interval appendectomies</li><li>Presents like appendicitis</li><li>Neuroendocrine (carcinoid) tumour – cured by appendectomy; low/high-grade appendiceal mucinous neoplasm; goblet cell carcinoid</li></ul><h5>Inguinal hernia</h5><p>Protrusion of parietal peritoneum and viscera through a normal or abnormal opening from the abdominal cavity. Tx: herniorrhaphy.</p>"
+       "html": "<h5>Appendicitis</h5><p>Acute inflammation of the appendix (a <strong>congenital true diverticulum</strong> – all 4 layers; colonic diverticula are false).</p><ul><li>Lymphoid hyperplasia (children), fecalith obstruction (adults); ages 4–25, recent viral URTI</li><li><strong>Periumbilical pain localizing to the RLQ</strong> (McBurney point: 1/3 of the way from R ASIS to umbilicus); guarding, rebound tenderness</li><li>Nausea, fever, anorexia, vomiting, constipation/diarrhea</li><li>Dx: clinical; labs (CBC, chemistry, CRP); CT abdomen, ultrasound</li><li>Tx: ABX (ceftriaxone + metronidazole; imipenem; piperacillin-tazobactam); appendectomy</li></ul><h5>Appendiceal neoplasm</h5><ul><li>0.5–1% of all appendectomies; 5–10% of interval appendectomies</li><li>Presents like appendicitis</li><li>Neuroendocrine (carcinoid) tumour – cured by appendectomy; low/high-grade appendiceal mucinous neoplasm; goblet cell carcinoid</li></ul><h5>Inguinal hernia</h5><p>Protrusion of parietal peritoneum and viscera through a normal or abnormal opening from the abdominal cavity. Tx: herniorrhaphy.</p>"
       },
       {
        "t": "table",
@@ -2568,7 +2628,7 @@
       },
       {
        "t": "list",
-       "html": "<h5>Anorectal pathologies</h5><h5>Hemorrhoids</h5><p>Enlarged veins in the submucosal space of the anal canal – classic positions R posterior, R anterior, L lateral.</p><ul><li>Grade I: no prolapse</li><li>Grade II: prolapse, spontaneous reduction</li><li>Grade III: prolapse, manual reduction</li><li>Grade IV: not reducible</li><li>Tx: fibre, water; hemorrhoidectomy for large or irreducible hemorrhoids</li></ul>"
+       "html": "<h5>Anorectal pathologies</h5><h5>Hemorrhoids</h5><p>Enlarged veins in the submucosal space of the anal canal – classic positions R posterior, R anterior, L lateral.</p><ul><li>Grade I: no prolapse</li><li>Grade II: prolapse, <strong>spontaneous reduction</strong></li><li>Grade III: prolapse, <strong>manual reduction</strong></li><li>Grade IV: not reducible</li><li>Tx: fibre, water; hemorrhoidectomy for large or irreducible hemorrhoids</li></ul>"
       },
       {
        "t": "table",
@@ -2596,6 +2656,12 @@
       {
        "t": "list",
        "html": "<h5>Pruritus ani</h5><ul><li>Anal itching and a need to scratch</li><li>Causes: hemorrhoids, skin tags, incontinence, fistula-in-ano, anal fissure, anal condylomata, infection (bacterial, viral, fungal, parasitic), inadequate hygiene (sweat, stool, mucus), overzealous hygiene (soaps, lotions, wiping), diet (coffee, caffeine, chocolate, citrus, tomatoes, spicy food, beer, dairy), dermatologic (psoriasis, dermatitis, lichen planus/simplex/sclerosus), anal cancer, diabetes, renal failure, obstructive jaundice</li><li>Tx: define the cause, avoid scratching, bulk the stool, keep dry, barrier cream, short course of hydrocortisone cream</li></ul><h5>Anal condyloma (anal warts)</h5><ul><li>STI from <strong>HPV 6, 11</strong>; pruritus ani, sensation of a mass; may be latent for years</li><li>Tx: anoscopy, perineal and genital exam, remove all lesions (electrocautery, excision, cryotherapy, laser)</li></ul><h5>Pilonidal disease</h5><ul><li>Ingrown hair in the natal cleft that can become infected → pilonidal abscess</li><li>Tx: keep hair-free; procedure to remove all hair and drain the abscess</li></ul><h5>Anal cancer</h5><ul><li>Squamous cell cancer of the anal canal or perianal skin</li><li>Skin: wide local excision ± chemoradiotherapy</li><li>Anal canal: chemoradiotherapy; abdominoperineal resection if incomplete response</li></ul>"
+      },
+      {
+       "t": "callout",
+       "kind": "tip",
+       "title": "Schulich Reviews",
+       "html": "<ul><li><strong>Acalculous cholecystitis</strong> (critically ill, post-op) is <strong>more serious</strong> than calculous: ↑ gangrene, perforation</li><li>Diverticulitis 2014 → 2016: <strong>uncomplicated = outpatient</strong> (oral ABX → NSAIDs, no colonoscopy); abscess &lt; 5 cm = admit + IV ABX; <strong>&gt; 5 cm = percutaneous drain</strong>; perforation/shock = OR</li></ul>"
       }
      ],
      "title": "Gastric, Intestinal, Biliary, Pancreatic & Anorectal Pathology",
@@ -2612,7 +2678,16 @@
      "id": "gi-w12-06",
      "num": "06",
      "name": "Chronic Liver Failure",
-     "hasNote": false
+     "hasNote": true,
+     "title": "Chronic Liver Failure",
+     "blocks": [
+      {
+       "t": "callout",
+       "kind": "tip",
+       "title": "Schulich Reviews",
+       "html": "<ul><li>Varices screening EGD: <strong>none → repeat 2–3 yrs</strong>; <strong>small → 1–2 yrs</strong>; <strong>large/high-risk → NSBB or band ligation</strong></li><li>Hepatic encephalopathy: <strong>lactulose first</strong>, <strong>rifaximin added if recurrent</strong>; don’t follow ammonia</li><li>Ascites: Na &lt; 2 g/day, diuretics; <strong>fluid restrict only if Na &lt; 125</strong></li></ul>"
+      }
+     ]
     },
     {
      "id": "gi-w12-07",
@@ -2639,7 +2714,7 @@
         ],
         [
          "<strong>Nasojejunal tube</strong>",
-         "Strokes, risk of aspiration with oral and NG feeding",
+         "Strokes, <strong>risk of aspiration with oral and NG feeding</strong>",
          "Complicated patients, food aversion, sinusitis, aspiration"
         ],
         [
@@ -2861,7 +2936,7 @@
        "rows": [
         [
          "<strong>Radiographs</strong>: form of electromagnetic radiation with 10 nm wavelength<br>• <strong>High absorption = white = metal, bone</strong><br>• <strong>Low absorption = black = fat, air</strong>",
-         "Quick assessment of GI tract:<br>• <strong>Bowel obstruction</strong> (colonic volvulus)<br>• Concern for <strong>bowel perforation</strong> (<strong>free air</strong>)<br>Looking for radiopaque objects – <strong>renal stone calcifications</strong>, foreign body<br>Placement of NG tubes<br>Cannot reasonably assess solid organs – limited tissue/organ differentiation"
+         "Quick assessment of GI tract:<br>• <strong>Bowel obstruction</strong> (colonic volvulus)<br>• Concern for <strong>bowel perforation</strong> (<strong>free air</strong>)<br>Looking for radiopaque objects – <strong>renal stone calcifications</strong>, foreign body<br>Placement of NG tubes<br><strong>Cannot reasonably assess solid organs</strong> – limited tissue/organ differentiation"
         ],
         [
          "<strong>Ultrasound</strong>: uses sound waves with frequencies above the range of human hearing and records the way sound is reflected back from various tissues<br>• <strong>Black = fluid</strong><br>• Patients should fast for at least <strong>4 hrs</strong> prior to reduce bowel gas<br>• Best for <strong>children</strong> and <strong>pregnant women</strong> – no radiation<br>• Portable for very sick or injured patients",
@@ -3056,13 +3131,31 @@
      "id": "gi-w12-09",
      "num": "09",
      "name": "Pancreatic Diseases & Malignancies",
-     "hasNote": false
+     "hasNote": true,
+     "title": "Pancreatic Diseases & Malignancies",
+     "blocks": [
+      {
+       "t": "callout",
+       "kind": "tip",
+       "title": "Schulich Reviews",
+       "html": "<ul><li><strong>Lipase &gt; amylase</strong> – more specific (amylase ↑ in salivary, renal, bowel, ovarian disease)</li><li>Acute pancreatitis Tx: IV fluids, NPO, analgesia; <strong>no prophylactic antibiotics</strong>; severe → early CT, <strong>NJ tube</strong> or TPN</li><li>Gallstone pancreatitis: <strong>high-probability CBD stone → ERCP</strong>; low → MRCP/EUS first; then cholecystectomy. <strong>ERCP itself: 5% pancreatitis risk</strong></li><li>Chronic pancreatitis: CT/MRI most common, <strong>EUS most sensitive</strong></li><li>Pancreatic mass: tissue by <strong>EUS-FNA</strong> (higher yield) over ERCP brushings</li></ul>"
+      }
+     ]
     },
     {
      "id": "gi-w12-10",
      "num": "10",
      "name": "Approach to Jaundice",
-     "hasNote": false
+     "hasNote": true,
+     "title": "Approach to Jaundice",
+     "blocks": [
+      {
+       "t": "callout",
+       "kind": "tip",
+       "title": "Schulich Reviews",
+       "html": "<ul><li>Newborn: bilirubin <strong>rapidly rising &gt; 340 μmol/L</strong> → kernicterus risk → <strong>phototherapy / exchange transfusion</strong></li><li><strong>Jaundice &gt; 2 weeks</strong> → total + conjugated bilirubin → <strong>biliary atresia</strong> (Kasai)</li></ul>"
+      }
+     ]
     }
    ]
   },
@@ -3271,12 +3364,21 @@
      "id": "gi-w13-02",
      "num": "02",
      "name": "Bowel Obstruction",
-     "hasNote": false,
+     "hasNote": true,
      "coveredBy": {
       "num": "01",
       "name": "Approach to Abdominal Pain & Distension",
       "key": "gi-w13-01"
-     }
+     },
+     "title": "Bowel Obstruction",
+     "blocks": [
+      {
+       "t": "callout",
+       "kind": "tip",
+       "title": "Schulich Reviews",
+       "html": "<ul><li><strong>SBO #1 = adhesions</strong>; <strong>LBO #1 = neoplasm</strong></li><li>AXR upper limits <strong>3-6-9 cm</strong> (small bowel, colon, cecum)</li><li><strong>LBO = closed loop</strong> (competent ileocecal valve) → <strong>surgery</strong>; adhesive SBO → NG, fluids, surgery only if no resolution 24–48 h</li></ul>"
+      }
+     ]
     },
     {
      "id": "gi-w13-03",
@@ -3311,7 +3413,16 @@
      "id": "gi-w13-07",
      "num": "07",
      "name": "Appendicitis and Diverticular Disease",
-     "hasNote": false
+     "hasNote": true,
+     "title": "Appendicitis and Diverticular Disease",
+     "blocks": [
+      {
+       "t": "callout",
+       "kind": "tip",
+       "title": "Schulich Reviews",
+       "html": "<ul><li><strong>Appendix = congenital true diverticulum</strong> (all 4 layers); <strong>colonic diverticula = acquired false</strong></li><li>Appendicitis: midgut/SMA → umbilical → RLQ pain; young, recent URTI. Diverticulitis: hindgut/IMA → suprapubic → LLQ; rare &lt; 35</li><li>Appendicitis → <strong>surgery usually</strong>; diverticulitis → <strong>usually not</strong></li><li>Diverticulitis: <strong>uncomplicated = outpatient</strong> (ABX, or NSAIDs alone, no colonoscopy); abscess &lt; 5 cm = admit + IV ABX; <strong>&gt; 5 cm = percutaneous drain</strong>; perforation/shock = urgent OR</li><li><strong>Diverticular bleeding is painless</strong> – never during a diverticulitis attack</li></ul>"
+      }
+     ]
     },
     {
      "id": "gi-w13-08",

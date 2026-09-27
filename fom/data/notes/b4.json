@@ -172,7 +172,7 @@
         ],
         [
          "<strong>IgA</strong> — α heavy chain",
-         "Low blood concentration (monomer and dimer)<br><strong>Most abundant and active in mucosal secretions, as a dimer</strong> — primary defence at bronchioles, nasal mucosa, prostate, vagina, intestine<br>Abundant in saliva, tears, breast milk (especially colostrum)"
+         "Low blood concentration (monomer and dimer)<br><strong>Most abundant and active in mucosal secretions, as a dimer</strong> — primary defence at bronchioles, nasal mucosa, prostate, vagina, intestine<br>Abundant in saliva, tears, <strong>breast milk</strong> (especially colostrum)"
         ],
         [
          "<strong>IgE</strong> — ε heavy chain",
@@ -353,7 +353,7 @@
         [
          "<strong>TNF-α</strong>",
          "Monocytes, macrophages",
-         "Binds TNF receptors → caspase pathway → apoptosis<br>Recruits neutrophils, monocytes, T cells, NK cells by changing endothelial adhesion molecules<br>Resets the hypothalamic thermoregulatory centre → fever — <strong>endogenous pyrogen</strong><br>Overproduction → tissue-destructive inflammation: arthritis, septic shock"
+         "Binds TNF receptors → caspase pathway → apoptosis<br>Recruits neutrophils, monocytes, T cells, NK cells by changing endothelial adhesion molecules<br>Resets the hypothalamic thermoregulatory centre → fever — <strong>endogenous pyrogen</strong><br>Overproduction → tissue-destructive inflammation: arthritis, <strong>septic shock</strong>"
         ],
         [
          "<strong>TGF-β</strong>",
@@ -799,7 +799,7 @@
         [
          "Diseases",
          "<strong>SSTI</strong>: cellulitis, abscess<br><strong>Invasive</strong>: bacteremia, endocarditis, surgical site infection, septic arthritis, vertebral osteomyelitis/discitis",
-         "<strong>Non-invasive</strong>: pharyngitis (strep throat), cellulitis<br><strong>Invasive</strong>: bacteremia, TSS, necrotizing fasciitis, endometritis<br><strong>Post-infectious</strong>: rheumatic fever (rheumatic heart disease), post-streptococcal glomerulonephritis"
+         "<strong>Non-invasive</strong>: pharyngitis (strep throat), cellulitis<br><strong>Invasive</strong>: bacteremia, TSS, <strong>necrotizing fasciitis</strong>, endometritis<br><strong>Post-infectious</strong>: rheumatic fever (rheumatic heart disease), post-streptococcal glomerulonephritis"
         ],
         [
          "Transmission",
@@ -1071,7 +1071,7 @@
      "hasNote": true,
      "title": "Important Gram-Negatives and Mycobacteria",
      "framing": "<p><em>E. coli</em> shows how one species causes different diseases by <strong>which adhesin it carries and which toxin it secretes</strong>; mycobacteria, by contrast, are defined by a <strong>mycolic-acid wall</strong> that makes them acid-fast and drives chronic infection.</p>",
-     "keypoints": "<p><strong>PapG → galactose glycolipids → pyelonephritis; FimH → mannose → cystitis.</strong> LPS O-polysaccharide blocks MAC assembly; a <strong>sialic acid capsule</strong> blocks complement (mimicry). <strong>STEC O157:H7</strong>: intimin/Tir actin pedestal → Shiga toxin → Gb3 → retrograde transport to ER → rRNA damaged → protein synthesis stops. <strong>Mycobacteria are acid-fast</strong> because acid-alcohol cannot wash out the stain from their mycolic-acid wall.</p>",
+     "keypoints": "<p><strong>PapG → galactose glycolipids → pyelonephritis; FimH → mannose → cystitis.</strong> <strong>LPS O-polysaccharide blocks MAC assembly</strong>; a <strong>sialic acid capsule</strong> blocks complement (mimicry). <strong>STEC O157:H7</strong>: intimin/Tir actin pedestal → Shiga toxin → Gb3 → retrograde transport to ER → rRNA damaged → protein synthesis stops. <strong>Mycobacteria are acid-fast</strong> because acid-alcohol cannot wash out the stain from their mycolic-acid wall.</p>",
      "blocks": [
       {
        "t": "table",
@@ -1221,7 +1221,7 @@
        "t": "callout",
        "kind": "warning",
        "title": "Abscesses need drainage",
-       "html": "<p>An abscess is walled off with an avascular necrotic centre, so <strong>antibiotics alone struggle to reach it</strong> — incision and drainage is the treatment.</p>"
+       "html": "<p>An abscess is walled off with an avascular necrotic centre, so <strong>antibiotics alone struggle to reach it</strong> — <strong>incision and drainage</strong> is the treatment.</p>"
       }
      ]
     },
@@ -1286,8 +1286,8 @@
        "rows": [
         [
          "Blocks release of",
-         "GABA/glycine (inhibitory)",
-         "Acetylcholine"
+         "<strong>GABA/glycine</strong> (inhibitory)",
+         "<strong>Acetylcholine</strong>"
         ],
         [
          "Result",
@@ -2174,6 +2174,12 @@
       {
        "t": "list",
        "html": "<h5>Epidemiologic terms</h5><ul><li><strong>Incubation period</strong>: exposure to first symptoms (unique for each disease)</li><li><strong>Infectious period / period of communicability</strong>: when the agent can pass to another person; may start/stop before, during or after symptoms</li><li><strong>Generation time</strong>: onset of infectiousness in a primary case → onset of infectiousness in the secondary case it infects</li><li><strong>Basic reproductive number (R0)</strong>: mean secondary infections from a typical case in a fully susceptible population — <strong>R0 &gt; 1</strong> outbreak continues (exponential growth); <strong>R0 &lt; 1</strong> outbreak ends</li><li><strong>Effective reproductive number (R)</strong>: the same in a mixed susceptible/non-susceptible population — <strong>R &gt; 1</strong> cases rise; <strong>R = 1</strong> endemic; <strong>R &lt; 1</strong> cases decline</li><li><strong>Antigenic drift</strong>: slow point mutations in one virus → may cause an <strong>epidemic</strong></li><li><strong>Antigenic shift</strong>: genetic elements of two viruses <strong>reassort</strong> into a new strain → may cause a <strong>pandemic</strong></li></ul>"
+      },
+      {
+       "t": "callout",
+       "kind": "tip",
+       "title": "Schulich Reviews",
+       "html": "<ul><li><strong>Anaerobes → metronidazole or clindamycin</strong> (go-to drugs); metronidazole covers anaerobes only, so it is paired with an aerobic agent (e.g. ceftriaxone + metronidazole for intra-abdominal)</li></ul>"
       }
      ]
     },
@@ -2571,6 +2577,12 @@
       {
        "t": "list",
        "html": "<h5>Vaccine Injury Support Program (VISP)</h5><ul><li>Gives everyone in Canada who has a <strong>serious and permanent injury</strong> from a Health Canada-authorised vaccine, given in Canada <strong>on or after December 8, 2020</strong>, fair and timely access to financial support</li></ul>"
+      },
+      {
+       "t": "callout",
+       "kind": "tip",
+       "title": "Schulich Reviews",
+       "html": "<ul><li><strong>Absolute contraindications</strong>: anaphylaxis to the vaccine or a component; encephalopathy after pertussis vaccine</li><li><strong>Precautions</strong>: moderate/severe acute illness; extensive limb swelling or high fever after a previous dose; GBS within 6 weeks of flu vaccine; <strong>live vaccines in immunocompromised or pregnancy</strong></li></ul>"
       }
      ]
     },
@@ -3013,7 +3025,7 @@
         ],
         [
          "<strong>2. Early treatment</strong>",
-         "<strong>Nothing saves lives in sepsis like early, appropriate antibiotics</strong> — get the drug into the blood ASAP<br>From onset of hypotension minutes count: <strong>~8% ↑ mortality per hour of delay</strong><br>Broad spectrum, often multidrug<br>Draw cultures before antibiotics <strong>only if this WILL NOT DELAY antibiotics</strong>"
+         "<strong>Nothing saves lives in sepsis like early, appropriate antibiotics</strong> — get the drug into the blood ASAP<br>From onset of hypotension minutes count: <strong>~8% ↑ mortality per hour of delay</strong><br><strong>Broad spectrum</strong>, often multidrug<br>Draw cultures before antibiotics <strong>only if this WILL NOT DELAY antibiotics</strong>"
         ],
         [
          "<strong>3. Source control</strong>",
@@ -3748,7 +3760,7 @@
         ],
         [
          "Tx",
-         "Allergen avoidance<br><strong>2nd-generation antihistamines</strong> daily or PRN (Claritin, Reactine/cetirizine, Aerius); avoid 1st-generation (Benadryl)<br>Daily nasal steroid (mometasone); eye drops (Patanol)<br>Immunotherapy: subcutaneous, sublingual<br>Avoid decongestant sprays — dependence",
+         "Allergen avoidance<br><strong>2nd-generation antihistamines</strong> daily or PRN (Claritin, Reactine/cetirizine, Aerius); avoid 1st-generation (Benadryl)<br>Daily nasal steroid (mometasone); eye drops (Patanol)<br>Immunotherapy: subcutaneous, sublingual<br><strong>Avoid decongestant sprays</strong> — dependence",
          "Avoidance (\"may contain\" labels are an issue)<br><strong>Epinephrine</strong> (standard of care) — EpiPen: blue to the sky, orange to the thigh<br><strong>Oral immunotherapy</strong>: small incremental doses so accidental exposure is tolerated; extensively baked milk and egg"
         ],
         [
@@ -3790,7 +3802,7 @@
         [
          "Classification",
          "<strong>Type A — predictable</strong>: overdose/toxicity, side effects, secondary effects, interactions<br><strong>Type B — unpredictable</strong>: intolerance, idiosyncrasy, <strong>immunologic (allergy)</strong>, pseudoallergic<br>Immediate vs delayed; mild vs severe; Gell and Coombs",
-         "<strong>Normal local</strong>: pain, itch, erythema, edema — hours<br><strong>Large local</strong>: swelling &gt; 10 cm — 1–2 days<br><strong>Systemic cutaneous</strong> (children): flushing, itch, urticaria, not contiguous<br><strong>Systemic extracutaneous</strong>: multiple organs — bronchospasm, upper airway edema, hypotension, GI, cardiac arrhythmia"
+         "<strong>Normal local</strong>: pain, itch, erythema, edema — hours<br><strong>Large local</strong>: swelling <strong>&gt; 10 cm</strong> — 1–2 days<br><strong>Systemic cutaneous</strong> (children): flushing, itch, urticaria, not contiguous<br><strong>Systemic extracutaneous</strong>: multiple organs — bronchospasm, upper airway edema, hypotension, GI, cardiac arrhythmia"
         ],
         [
          "Allergens",
@@ -3809,7 +3821,7 @@
         ],
         [
          "Prognosis",
-         "Immediate reactions wane (80% not allergic after 10 years' avoidance); <strong>delayed reactions persist for life</strong>",
+         "Immediate reactions wane (<strong>80% not allergic after 10 years' avoidance</strong>); <strong>delayed reactions persist for life</strong>",
          "Sensitivity often lost (after 7 years, 70% of initially positive patients did not react)"
         ],
         [
@@ -4035,7 +4047,7 @@
      "hasNote": true,
      "title": "Chronic Inflammation, Granulomas, Herpesviruses and Fungi",
      "framing": "<p>Chronic inflammation is inflammation that <strong>persists for weeks to months alongside attempts at repair</strong>, driven by macrophages and lymphocytes; its signature structure is the <strong>granuloma</strong>, the body's attempt to wall off what it cannot clear. The lecture then catalogues two persistent pathogen groups — <strong>latent herpesviruses</strong> and <strong>medically important fungi</strong>.</p>",
-     "keypoints": "<p>Causes of chronic inflammation: <strong>persistent infection (TB), hypersensitivity (RA, asthma, IBD), chronic toxin exposure (silicosis, atherosclerosis)</strong>. <strong>Granuloma = epithelioid macrophages ringed by T cells</strong>, ± Langhans giant cells and caseation. <strong>Rule out TB before immunosuppression.</strong> Herpesviruses are <strong>dsDNA and latent</strong>, reactivating with stress, fever, UV, immunosuppression: HSV-1/2 and VZV in ganglia, CMV in WBCs (commonest congenital infection in Canada), EBV in B cells (malignancy). <strong>Mucor/Rhizopus thrive in hyperglycemic, acidotic states</strong>; invasive <em>Aspergillus</em> → voriconazole.</p>",
+     "keypoints": "<p>Causes of chronic inflammation: <strong>persistent infection (TB), hypersensitivity (RA, asthma, IBD), chronic toxin exposure (silicosis, atherosclerosis)</strong>. <strong>Granuloma = epithelioid macrophages ringed by T cells</strong>, ± Langhans giant cells and caseation. <strong>Rule out TB before immunosuppression.</strong> Herpesviruses are <strong>dsDNA and latent</strong>, reactivating with stress, fever, UV, immunosuppression: HSV-1/2 and VZV in ganglia, CMV in WBCs (commonest congenital infection in Canada), EBV in B cells (malignancy). <strong>Mucor/Rhizopus thrive in hyperglycemic, acidotic states</strong>; <strong>invasive <em>Aspergillus</em> → voriconazole</strong>.</p>",
      "blocks": [
       {
        "t": "list",
@@ -4160,7 +4172,7 @@
         [
          "<strong>KSHV / HHV-8</strong> (gamma)",
          "—",
-         "Kaposi's sarcoma, Castleman disease",
+         "<strong>Kaposi's sarcoma</strong>, Castleman disease",
          "—",
          "—"
         ]

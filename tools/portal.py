@@ -67,6 +67,11 @@ COURSES = [
                       u"inferred; where nothing in a question placed it, it says so on "
                       u"its face. The Foundations chapter's own subject labels are in the "
                       u"Topic filter."},
+            {"key": "reviews", "name": u"Schulich Reviews",
+             "blurb": u"The Schulich Reviews sessions, run by upper years before each exam. "
+                      u"Their own practice questions, keyed by the deck, plus questions "
+                      u"written from their high-yield slides. Where a review disagrees "
+                      u"with this year's lecture, the lecture wins and the question says so."},
         ],
     },
     {
@@ -109,6 +114,11 @@ COURSES = [
                       u"The workbook files by organ system rather than by week, so the "
                       u"block is its own and the week here is inferred; where nothing in "
                       u"a question placed it, it says so on its face."},
+            {"key": "reviews", "name": u"Schulich Reviews",
+             "blurb": u"The Schulich Reviews sessions, run by upper years before each exam. "
+                      u"Their own practice questions, keyed by the deck, plus questions "
+                      u"written from their high-yield slides. Where a review disagrees "
+                      u"with this year's lecture, the lecture wins and the question says so."},
         ],
     },
     {
@@ -145,8 +155,10 @@ COURSES = [
              "blurb": u"Questions built from patient cases in the modules, DSSGs and "
                       u"in-class lectures, since exams tend to recycle similar cases."},
             {"key": "reviews", "name": u"Schulich Reviews",
-             "blurb": u"The Schulich Reviews sessions, both their practice questions and "
-                      u"their summary content. TBD."},
+             "blurb": u"The Schulich Reviews sessions, run by upper years before each exam. "
+                      u"Their own practice questions, keyed by the deck, plus questions "
+                      u"written from their high-yield slides. Where a review disagrees "
+                      u"with this year's lecture, the lecture wins and the question says so."},
             {"key": "hipponotes", "name": u"HippoNotes",
              "blurb": u"The question banks at the back of the Meds 2025 HippoNotes "
                       u"(Academic Resources Team, May 2023) - one document per block, "

@@ -9,7 +9,16 @@
      "id": "ent-w9-01",
      "num": "01",
      "name": "Anatomy of the Neck",
-     "hasNote": false
+     "hasNote": true,
+     "title": "Anatomy of the Neck",
+     "blocks": [
+      {
+       "t": "callout",
+       "kind": "tip",
+       "title": "Schulich Reviews",
+       "html": "<ul><li>Vagus in carotid sheath → <strong>superior laryngeal n.</strong>: external = <strong>motor to cricothyroid</strong> (injury → weak, tired voice / ↓ pitch); internal = sensory to superior larynx (cough reflex)</li><li><strong>Recurrent laryngeal n.</strong> = motor to most laryngeal muscles → injury = <strong>hoarseness (unilateral)</strong>, loss of voice (bilateral)</li><li><strong>Right RLN loops the subclavian a.</strong>; <strong>left RLN loops the aortic arch</strong></li></ul>"
+      }
+     ]
     },
     {
      "id": "ent-w9-02",
@@ -21,31 +30,76 @@
      "id": "ent-w9-03",
      "num": "03",
      "name": "Thyroid Masses",
-     "hasNote": false
+     "hasNote": true,
+     "title": "Thyroid Masses",
+     "blocks": [
+      {
+       "t": "callout",
+       "kind": "tip",
+       "title": "Schulich Reviews",
+       "html": "<ul><li>Nodules very common, <strong>more common in females</strong>; only <strong>10-15% of palpable nodules malignant</strong> (Roth)</li><li>Work-up: <strong>TSH first</strong> → low TSH → <strong>RAI scan</strong> (hot nodule = benign, treat hyperthyroidism); normal/high → <strong>U/S (TI-RADS)</strong> → FNAB (Bethesda); thyroglobulin not recommended</li><li>Cancer risk: <strong>child, male, 1st-degree FHx, neck radiation</strong>; sx dysphagia, <strong>hoarseness</strong>, stridor, rapid growth; signs <strong>firm/fixed mass</strong>, suspicious LN</li><li><strong>Papillary = most common</strong> thyroid ca (&gt;85%), best prognosis</li><li>Post-thyroidectomy voice: <strong>RLN</strong> injury → unilateral hoarseness, bilateral airway obstruction; <strong>SLN</strong> injury → loss of pitch control</li></ul>"
+      }
+     ]
     },
     {
      "id": "ent-w9-04",
      "num": "04",
      "name": "Adult Head & Neck Masses",
-     "hasNote": false
+     "hasNote": true,
+     "title": "Adult Head & Neck Masses",
+     "blocks": [
+      {
+       "t": "callout",
+       "kind": "tip",
+       "title": "Schulich Reviews",
+       "html": "<ul><li>Midline mass = <strong>thyroid thing 90%</strong> of the time; other 10%: LN, dermoid cyst, lymphatic malformation</li><li><strong>Rule of 7s</strong>: 7 d infection · 7 wk-7 mo neoplasm · 7 y congenital</li><li><strong>80% rule</strong>: neoplastic → malignant → metastatic → H&amp;N primary; + age rule → <strong>elderly lateral neck mass = cancer until proven otherwise</strong></li><li>Reactive LN (reacts TO infection) vs <strong>suppurative lymphadenitis</strong> (node itself infected)</li><li>Stones: <strong>submandibular most common</strong>; 90% submandibular <strong>radiopaque</strong>, 90% parotid radiolucent; pain + swelling <strong>worse with meals</strong></li><li>Acute sialadenitis: <strong>S. aureus</strong>, 25% bilateral; massage, warm compress, hydration, sialagogues, abx; <strong>no improvement in 3 d → assess for complications</strong></li><li>Salivary tumours &gt;80% parotid; <strong>smaller gland = greater chance of cancer</strong> (parotid 25%, SMG 50%, others 75%); risk = radiation, <strong>not smoking/EtOH except Warthin's</strong></li><li>Salivary tumour red flags: <strong>facial nerve weakness</strong>, pain, skin changes, hard fixed mass, neck nodes</li><li><strong>Every salivary gland mass → surgical excision</strong>, even if benign; cancers → post-op RT</li><li>SCC: <strong>HPV+</strong> younger, healthier, non-smoker → <strong>better prognosis</strong>; HPV− older, smoker/drinker → poor</li><li><strong>Leukoplakia (white) + erythroplasia (red) = premalignant</strong></li><li>Tx by site: oral cavity <strong>surgery</strong> ± post-op RT · oropharynx <strong>RT + chemo</strong> · larynx RT (advanced → surgery + RT) · neck surgery ± RT</li></ul>"
+      }
+     ]
     },
     {
      "id": "ent-w9-05",
      "num": "05",
      "name": "Infections of the Head and Neck",
-     "hasNote": false
+     "hasNote": true,
+     "title": "Infections of the Head and Neck",
+     "blocks": [
+      {
+       "t": "callout",
+       "kind": "tip",
+       "title": "Schulich Reviews",
+       "html": "<ul><li>Normal flora: skin <strong>S. aureus, GAS</strong>; mouth <strong>viridans strep + anaerobes</strong> (± yeast)</li><li>Not normal flora: <strong>otitis externa → Pseudomonas</strong>; bacterial sinusitis / OM → <strong>S. pneumoniae</strong>, H. influenzae, M. catarrhalis, S. aureus</li><li>Red flags: <strong>progressive sx, fever, ↓ neck ROM, trismus, prior abx</strong>; always consider the airway</li><li>Tonsillitis: <strong>peritonsillar swelling + uvula deviation → PTA → I&amp;D</strong>; trismus + ↓ neck ROM → deep neck infection</li><li>Tonsillectomy (<strong>Paradise</strong>): <strong>7 in 1 yr, 5/yr × 2 yr, 3/yr × 3 yr</strong>; also OSA, recurrent PTA, suspected malignancy</li><li>Epiglottitis (<strong>H. influenzae B</strong>, now uncommon): hot potato voice, tripod, drooling → <strong>secure airway, don't agitate</strong></li><li>Diphtheria (<strong>C. diphtheriae</strong>): <strong>grey pharyngeal membrane</strong> + toxin myocarditis; unvaccinated</li><li>Deep neck space: <strong>oral flora</strong> → <strong>ceftriaxone + metronidazole</strong>; + <strong>vancomycin</strong> if MRSA colonized / PWID; + <strong>pip-tazo</strong> if immunocompromised / healthcare-associated; I&amp;D ± steroids</li><li><strong>Lemierre's</strong> = IJ septic thrombophlebitis, <strong>Fusobacterium necrophorum</strong>, after pharyngitis; CT with contrast; ceftriaxone + metronidazole; septic emboli</li><li><strong>Rhinocerebral mucormycosis</strong>: <strong>DKA</strong>, immunocompromise, steroids, deferoxamine; rapid fever, sinus pain, headache → <strong>surgical debridement + liposomal amphotericin</strong>; very high mortality</li></ul>"
+      }
+     ]
     },
     {
      "id": "ent-w9-06",
      "num": "06",
      "name": "Pediatric Neck Masses",
-     "hasNote": false
+     "hasNote": true,
+     "title": "Pediatric Neck Masses",
+     "blocks": [
+      {
+       "t": "callout",
+       "kind": "tip",
+       "title": "Schulich Reviews",
+       "html": "<ul><li><strong>LN &gt;2 cm → not typical</strong> in children</li><li>Labs: CBC + diff, <strong>cat-scratch serology</strong>, tumour markers (VMA)</li><li><strong>TGDC</strong>: 70% of congenital cysts, midline, <strong>elevates on tongue protrusion</strong>, enlarges/infected after URI</li><li>TGDC Tx: <strong>Sistrunk</strong> = cyst + central hyoid + tract up to foramen cecum; <strong>not during acute infection</strong></li><li><strong>2nd branchial cleft</strong> = &gt;90% of BC anomalies; lateral, usually right if unilateral; recurrent swelling with URI, discharge in lower neck</li><li>BC Tx: <strong>complete excision of sinus + tract</strong>; prior drainage/partial excision → recurrence 3% → 20% (<strong>don't drain</strong>)</li><li>Lymphatic malformation: <strong>present at birth, grows with child</strong>; <strong>surgery = Tx of choice</strong></li></ul>"
+      }
+     ]
     },
     {
      "id": "ent-w9-07",
      "num": "07",
      "name": "Pediatric Airway Pathology",
-     "hasNote": false
+     "hasNote": true,
+     "title": "Pediatric Airway Pathology",
+     "blocks": [
+      {
+       "t": "callout",
+       "kind": "tip",
+       "title": "Schulich Reviews",
+       "html": "<ul><li>DDx stridor: <strong>croup most common</strong>, epiglottitis; less likely FB, VC paralysis</li><li>Croup: parainfluenza/RSV/influenza, <strong>6 mo-3 y</strong>, subglottic; low fever, inspiratory stridor, <strong>barking \"seal\" cough</strong>, <strong>steeple sign</strong></li><li>Croup Tx: hydration, cold humidification; mod-severe → <strong>nebulized epi + steroids</strong>; intubation rare</li><li>FB: <strong>1-3 y, boys</strong>, <strong>vegetable matter</strong> 70-80%; 3 phases acute (choking) → asymptomatic → complication</li><li>FB Ix: <strong>inspiratory/expiratory CXR</strong>; most often <strong>right mainstem</strong>; <strong>rigid bronchoscopy</strong> if any 1 of Hx / exam / imaging positive</li></ul>"
+      }
+     ]
     }
    ]
   }

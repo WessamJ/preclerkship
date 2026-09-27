@@ -38,9 +38,9 @@ Questions, corrections and contributions: <schulichmedfriends@gmail.com>.
 
 | Course | Year | State |
 | --- | --- | --- |
-| [Foundations of Medicine](fom/) | 1 | 4 blocks, weeks 1–15, 1,979 questions |
-| [Principles of Medicine 1](pom1/) | 1 | 5 blocks, weeks 1–17, 2,109 questions |
-| [Principles of Medicine 2](pom2/) | 2 | 5 blocks, weeks 1–20, 1,487 questions |
+| [Foundations of Medicine](fom/) | 1 | 4 blocks, weeks 1–15, 2,084 questions |
+| [Principles of Medicine 1](pom1/) | 1 | 5 blocks, weeks 1–17, 2,302 questions |
+| [Principles of Medicine 2](pom2/) | 2 | 5 blocks, weeks 1–20, 1,898 questions |
 | [Transition to Clerkship](t2c/) | 2 | 6 blocks, weeks 1–13, 214 questions |
 
 A course with nothing behind it keeps a card on the hub, greyed and unlinked,

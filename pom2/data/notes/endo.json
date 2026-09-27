@@ -253,6 +253,12 @@
       {
        "t": "note",
        "html": "<p><strong>Treatment: give ~15 g of fast-acting sugar</strong> — glucose tablet or juice · <strong>glucose gel (absorbed rapidly across buccal mucosa)</strong> · <strong>glucagon (IM, SC or intranasal)</strong> · <strong>IV dextrose</strong>. <strong>Prevention:</strong> treat early symptoms promptly, monitor regularly, <strong>adjust insulin before and after exercise</strong>, adhere to the meal plan.</p>"
+      },
+      {
+       "t": "callout",
+       "kind": "tip",
+       "title": "Schulich Reviews",
+       "html": "<ul><li><strong>Adjusting MDI doses: fix the insulin given BEFORE the abnormal reading</strong> — low at lunch → ↓ breakfast rapid-acting · high at bedtime → ↑ supper rapid-acting</li></ul>"
       }
      ]
     },
@@ -828,6 +834,12 @@
       {
        "t": "note",
        "html": "<p><strong>Why complications happen at all</strong> — hyperglycemia is <strong>toxic to vessels and nerves</strong> · drives <strong>oxidative stress and free radicals</strong> · <strong>↑ intracellular sorbitol → osmotic swelling</strong> · <strong>↑ VEGF → angiogenesis</strong>. Contributing: hypertension, cholesterol/atherosclerosis, <strong>protein glycation</strong>, inflammation and a <strong>hypercoagulable state</strong> driving thrombosis.</p>"
+      },
+      {
+       "t": "callout",
+       "kind": "tip",
+       "title": "Schulich Reviews",
+       "html": "<ul><li><strong>Add dextrose once BG reaches 12–14 mmol/L</strong> (D5W with NS) → lower glucose slowly while the insulin drip keeps clearing ketones</li></ul>"
       }
      ]
     },
@@ -1020,6 +1032,12 @@
          "amputation history"
         ]
        ]
+      },
+      {
+       "t": "callout",
+       "kind": "tip",
+       "title": "Schulich Reviews",
+       "html": "<ul><li><strong>GLP-1RAs (and tirzepatide) are contraindicated with medullary thyroid cancer or MEN2</strong> — as well as pancreatic cancer</li><li>DPP-4 inhibitors: <strong>caution in heart failure — saxagliptin ↑ HF risk</strong></li></ul>"
       }
      ]
     },
@@ -1321,6 +1339,12 @@
        "kind": "warning",
        "title": "Bias, stigma and the clinic itself",
        "html": "<p><strong>56% of patients have already attempted weight loss two or more times</strong> — assume effort, not inaction. Chairs, exam tables, bathrooms and scales must accommodate the patient. <strong>Place the scale in a private area, and do not announce weight unless they ask to hear it.</strong></p>"
+      },
+      {
+       "t": "callout",
+       "kind": "tip",
+       "title": "Schulich Reviews",
+       "html": "<ul><li>Before bariatric surgery: <strong>smoking cessation is mandatory, and must be maintained after</strong> · limit alcohol + carbonated drinks · <strong>treat and manage mental health conditions first</strong></li><li><strong>Not a candidate</strong>: unstable psychiatric illness · untreated substance use · malignancy / ↓ life expectancy · cannot adhere to long-term follow-up</li><li>Post-op deficiencies (worst after Roux-en-Y, BPD): <strong>protein</strong> (commonest macronutrient) · <strong>iron, B12, Ca/vit D, thiamine, vit A</strong></li></ul>"
       }
      ]
     },
@@ -2722,6 +2746,12 @@
       {
        "t": "note",
        "html": "<p><strong>ECG and symptom split</strong> — <strong>hypercalcaemia: short QT</strong>, Osborn wave, bradycardia, AV block, weakness and hyporeflexia, nephrolithiasis, pancreatitis, confusion and apathy. <strong>Hypocalcaemia: QT PROLONGATION → <span class=\"wl\">torsades de pointes</span></strong>, tetany, paraesthesia, brain fog, and chronically <strong>cataracts, dry skin, brittle nails</strong>. The mechanism of the neuro signs is that <strong>low calcium lets sodium channels depolarise more easily</strong>.</p>"
+      },
+      {
+       "t": "callout",
+       "kind": "tip",
+       "title": "Schulich Reviews",
+       "html": "<ul><li>Chronic hypocalcaemia: calcitriol + 1–2 g elemental Ca, and <strong>a thiazide ↓ urine calcium</strong> (↓ stone risk) — the one setting where a thiazide is wanted</li><li>Monitor for ectopic calcification: <strong>renal US (nephrocalcinosis)</strong> · <strong>head MRI (basal ganglia calcification)</strong></li></ul>"
       }
      ]
     },
@@ -4265,7 +4295,13 @@
       },
       {
        "t": "note",
-       "html": "<p><strong>Cushing signs by likelihood ratio</strong> — ecchymoses <strong>10-11.3</strong> · osteopenia or fracture <strong>8-13.8</strong> · proximal muscle weakness <strong>8-12.6</strong> · hypertension 4.35-5.29 · edema 2.82-3.88 · purple striae >1 cm 2.72-2.91 · plethora 2.51-3.03 · hirsutism 2.21-2.90 · <strong>general obesity 1.75-3.10</strong> · headache 1.27-1.57.</p>"
+       "html": "<p><strong>Cushing signs by likelihood ratio</strong> — <strong>ecchymoses</strong> <strong>10-11.3</strong> · <strong>osteopenia or fracture</strong> <strong>8-13.8</strong> · <strong>proximal muscle weakness</strong> <strong>8-12.6</strong> · hypertension 4.35-5.29 · edema 2.82-3.88 · purple striae >1 cm 2.72-2.91 · plethora 2.51-3.03 · hirsutism 2.21-2.90 · <strong>general obesity 1.75-3.10</strong> · headache 1.27-1.57.</p>"
+      },
+      {
+       "t": "callout",
+       "kind": "tip",
+       "title": "Schulich Reviews",
+       "html": "<ul><li><strong>Glomerulosa → aldosterone · fasciculata → cortisol · reticularis → androgens</strong> · medulla → catecholamines</li><li><strong>Cortisol peaks in the early morning, nadir at night</strong> — why the AM cortisol is the test</li><li><strong>Stress dosing — rule of 3s: flu etc. → 3× the dose for 3 days</strong>; surgery → hydrocortisone 50–100 mg 1 h before, then 50–100 mg q6–8h; injection if vomiting</li><li>Over-replacement shows as <strong>weight gain, hyperglycaemia, hypertension, osteopenia</strong></li><li><strong>1 mg DST is not useful on an estrogen-containing OCP</strong> → use 24-h urine free cortisol</li><li>Pheo: <strong>urine VMA is the most specific (95%) but least sensitive (64%)</strong> — plasma metanephrines screen</li></ul>"
       }
      ]
     },
@@ -4358,6 +4394,12 @@
       {
        "t": "note",
        "html": "<p><strong>Why a normal TSH does not reassure</strong> — TSH is an excellent screen for <strong>primary</strong> thyroid disease and unreliable for <strong>secondary</strong>. In the deck's case TSH was <strong>4.11 (range 0.27-4.2)</strong> beside a <strong>free T4 of 5 (range 10-24)</strong>: <em>inappropriately normal</em>. Free T4 also needs conversion to free T3, which needs TSH.</p>"
+      },
+      {
+       "t": "callout",
+       "kind": "tip",
+       "title": "Schulich Reviews",
+       "html": "<ul><li>Lactotroph hyperplasia / ↑ PRL also in <strong>pregnancy, estrogen treatment, primary hypothyroidism</strong>, and some Cushing's disease</li><li><strong>PRL > 200 ng/mL = lactotroph macroadenoma</strong> (pregnancy can just reach it); microadenoma, drugs, stalk and other pituitary disease stay below</li></ul>"
       }
      ]
     },
@@ -4547,6 +4589,12 @@
       {
        "t": "note",
        "html": "<p><strong>The two benign variants</strong> — <strong>premature thelarche</strong> (breast only, 6 mo to 2 y, <strong>no growth spurt and no bone-age advance</strong>, usually regresses) and <strong>premature pubarche</strong> (pubic hair 6-8 y, adrenal, <strong>linked to insulin resistance and later PMOS</strong>). ⚠ <strong>Pubarche is adrenal and is not a marker of puberty at all.</strong></p>"
+      },
+      {
+       "t": "callout",
+       "kind": "tip",
+       "title": "Schulich Reviews",
+       "html": "<ul><li><strong>Estrogen</strong>: breast development (thelarche) · ↑ growth rate · mood swings · <strong>vaginal discharge</strong> · menses</li><li><strong>Androgen</strong>: <strong>acne, oily skin and hair, body odour</strong> · pubic/axillary hair · penile/clitoral enlargement · voice · ↑ growth rate</li><li>Girls: thelarche → growth spurt → pubarche → menarche, but <strong>15% of girls have pubarche as the first sign</strong></li></ul>"
       }
      ]
     },
@@ -4941,6 +4989,12 @@
       {
        "t": "note",
        "html": "<p><strong>Guidelines</strong> — <strong>WPATH Standards of Care v8 (2022)</strong> and the <strong>Endocrine Society Clinical Practice Guideline (2017)</strong>. The endocrinologist's role is bounded: initial treatment considerations, advice when issues arise, and <strong>explicitly not necessarily diagnostic</strong>.</p>"
+      },
+      {
+       "t": "callout",
+       "kind": "tip",
+       "title": "Schulich Reviews",
+       "html": "<ul><li><strong>Puberty blockers need Tanner 2</strong> + informed consent (dysphoria long-standing, worse with puberty, co-existing problems addressed)</li><li><strong>Gender-affirming hormones: usually around age 16</strong>, patient able to consent, <strong>preferably with parental consent/support</strong> — not \"any age\"</li><li><strong>Genital surgery only after the age of majority</strong> + 1 year living in the gender role; <strong>top surgery can be earlier — age 16</strong>, after 1 year of hormones</li></ul>"
       }
      ]
     },

@@ -452,6 +452,14 @@ rather than by an answer letter.
 Invoke **`med-chart`** per lecture in the week whose note is current after Stage 1. One chart per
 lecture, at the top of the lecture note itself.
 
+**Apply the block's Schulich Reviews digest when one exists.** MSK, Neuro and Psych were
+reviewed before they were taught, so their review points wait in
+`<block folder>/Schulich Reviews - <Block>.md`, filed by week and lecture. When charting a lecture
+listed there, **bold** each point the chart already carries, and put the rest in one
+`> [!tip] Schulich Reviews` callout inside the chart region. **This year's lecture outranks the
+review**: a point OneNote contradicts goes in as the lecture says it, or not at all, and is
+reported. The review decides what is high yield, not what is true.
+
 **The chart is written after the questions, and reads them.** By this point the week's questions
 are banked, and they are the best available evidence of what the course actually tests. Open the
 week's new questions for the lecture before charting it: what they turn on belongs on the chart,
