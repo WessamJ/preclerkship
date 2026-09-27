@@ -246,7 +246,7 @@ CF = ""
 # Where "All courses" points. Absolute, not relative: the portal is served from
 # more than one place, and the hub every page should return to is this one
 # wherever the copy being read happens to live.
-HUB_URL = "https://schulichmedfriend.github.io/preclerkship/"
+HUB_URL = "https://schulichmed.github.io/preclerkship/"
 
 
 def uplink(depth=None):

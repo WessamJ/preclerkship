@@ -175,7 +175,7 @@ thrombosis</strong>.
 
 <p>
 The portal is open source at
-<a href="https://github.com/schulichmedfriend/preclerkship" target="_blank" rel="noopener noreferrer">github.com/schulichmedfriend/preclerkship</a>.
+<a href="https://github.com/schulichmed/preclerkship" target="_blank" rel="noopener noreferrer">github.com/schulichmed/preclerkship</a>.
 </p>
 
 <p>
@@ -189,7 +189,7 @@ the questions in them to the wording, the layout and the tooling around it. Past
 Claude Code:
 </p>
 
-<p class="prompt">Clone https://github.com/schulichmedfriend/preclerkship and read the README so you understand how the portal is built. I want to make it mine: [what you want changed, for example: cut it down to the blocks I am on, import my own lecture notes and questions, restyle the pages, or build an Anki deck from only the questions I got wrong]. Work out which files that touches, make the change, and rebuild the pages with the scripts in tools/.</p>
+<p class="prompt">Clone https://github.com/schulichmed/preclerkship and read the README so you understand how the portal is built. I want to make it mine: [what you want changed, for example: cut it down to the blocks I am on, import my own lecture notes and questions, restyle the pages, or build an Anki deck from only the questions I got wrong]. Work out which files that touches, make the change, and rebuild the pages with the scripts in tools/.</p>
 
 <p>
 You can also just take the material out. The questions and the notes are both plain JSON under
@@ -204,7 +204,7 @@ in questions of your own. You need a GitHub account; Claude Code can do the rest
 this into it:
 </p>
 
-<p class="prompt">Clone https://github.com/schulichmedfriend/preclerkship and read the README so you understand how the portal is built. I want to contribute: [what you are adding, for example: the questions from the week 8 MSK module, a correction to an answer, or a feature]. Match the format the existing files use, rebuild the pages with the scripts in tools/, then create a branch, commit, and open a pull request against schulichmedfriend/preclerkship explaining what changed and why.</p>
+<p class="prompt">Clone https://github.com/schulichmed/preclerkship and read the README so you understand how the portal is built. I want to contribute: [what you are adding, for example: the questions from the week 8 MSK module, a correction to an answer, or a feature]. Match the format the existing files use, rebuild the pages with the scripts in tools/, then create a branch, commit, and open a pull request against schulichmedfriend/preclerkship explaining what changed and why.</p>
 
 <p>
 Corrections and questions are the two most useful things to send.

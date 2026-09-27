@@ -31,7 +31,7 @@ a folder of JSON per course. Serve the folder and it works.
 
 By the **Open-Source Medicine Club** and the **AI in Medicine Club**.
 
-Live at **<https://schulichmedfriend.github.io/preclerkship/>**.
+Live at **<https://schulichmed.github.io/preclerkship/>**.
 Questions, corrections and contributions: <schulichmedfriends@gmail.com>.
 
 ## The four courses
