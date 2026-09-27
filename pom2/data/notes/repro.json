@@ -2608,97 +2608,2016 @@
      "id": "repro-w5-01",
      "num": "01",
      "name": "Hysterectomy Approaches",
-     "hasNote": false
+     "hasNote": true,
+     "title": "Hysterectomy approaches",
+     "framing": "<p><strong>Choose the least invasive route the anatomy allows.</strong> Every approach is a <strong>\"short stay\" with same-day discharge except abdominal</strong>, and the whole lecture is a ladder: <strong>vaginal → LAVH → TLH or robotic → abdominal</strong>, where each rung is what to use when the one above is blocked. ⚠ <strong>When the indication is bleeding control, medical options come first</strong> - hysterectomy is for <strong>failed medical management and special circumstances</strong>.</p>",
+     "keypoints": "<p>⭐ <strong>Abdominal is the only approach not planned as same-day discharge - it needs a 2-3 day hospital stay.</strong> <strong>Vaginal is the only approach without abdominal entry</strong>, and the one that cannot get at tubes and ovaries. <strong>Shared limitation of every minimally invasive route is a large uterus</strong>; the vaginal-route pair add <strong>narrow introitus/pelvis and poor uterine descent</strong>, and the laparoscopic pair add <strong>suturing skill and operative time</strong>. <strong>TLH and robotic replace abdominal, not vaginal/LAVH.</strong></p>",
+     "blocks": [
+      {
+       "t": "pathway",
+       "mermaid": "flowchart TD\n    A[\"Hysterectomy planned\"] --> B{\"Anatomy amenable to a vaginal route?<br/>(uterine descent, introitus/pelvis, uterine size)\"}\n    B -->|\"Yes, and no prior pelvic surgery / scarring, tubes and ovaries not needed\"| C[\"VAGINAL - no abdominal incision\"]\n    B -->|\"Yes, but the pelvis must be assessed or tubes/ovaries removed\"| D[\"LAVH - abdomen entered, uterus out through the vagina\"]\n    B -->|No| E{\"Very large uterus, complex cancer, or a failed minimally invasive attempt?\"}\n    E -->|No| F[\"TLH or ROBOTIC - replaces abdominal, never vaginal/LAVH<br/>Robotic: morbidly obese patients\"]\n    E -->|Yes| G[\"ABDOMINAL - not minimally invasive<br/>2-3 day hospital stay\"]"
+      },
+      {
+       "t": "table",
+       "cols": [
+        "",
+        "<strong><span class=\"wl\">Vaginal</span></strong>",
+        "<strong><span class=\"wl\">LAVH</span></strong>",
+        "<strong><span class=\"wl\">TLH</span></strong>",
+        "<strong><span class=\"wl\">Robotic</span></strong>",
+        "<strong><span class=\"wl\">Abdominal</span></strong>"
+       ],
+       "rows": [
+        [
+         "<strong>Invasiveness</strong>",
+         "Minimally invasive · <strong>no abdominal incisions</strong>",
+         "Minimally invasive · <strong>requires entry into the abdomen</strong> · uterus removed <strong>via the vagina</strong>",
+         "Minimally invasive · requires entry into the abdomen",
+         "Minimally invasive · requires entry into the abdomen",
+         "<strong>NOT minimally invasive</strong>"
+        ],
+        [
+         "<strong>Stay</strong>",
+         "Short stay · <strong>same-day discharge</strong>",
+         "Short stay · same-day discharge",
+         "Short stay · same-day discharge",
+         "Short stay · same-day discharge",
+         "<strong>2-3 day hospital stay</strong>"
+        ],
+        [
+         "<strong>Limitations</strong>",
+         "• <strong>prior pelvic surgery</strong> • <strong>extensive scarring</strong> • large uterus • narrow introitus/pelvis • <strong>tubes/ovaries not as accessible</strong> • poor uterine descent",
+         "• large uterus • narrow introitus/pelvis • poor uterine descent",
+         "• large uterus • <strong>laparoscopic suturing takes skill and more operative time</strong>",
+         "• large uterus (<strong>articulating instruments make it more manageable</strong>) • laparoscopic suturing takes skill and more operative time",
+         "-"
+        ],
+        [
+         "<strong>What it adds</strong>",
+         "The fewest incisions of any approach",
+         "<strong>Assess the pelvis/scarring</strong> · <strong>bladder flap</strong> · <strong>remove tubes/ovaries</strong> · <strong>\"second look\" for hemostasis</strong>",
+         "-",
+         "<strong>Excellent option for morbidly obese patients</strong>",
+         "-"
+        ],
+        [
+         "<strong>Used in place of</strong>",
+         "-",
+         "Vaginal, when the pelvis needs assessing or the adnexa need removing",
+         "<strong>Abdominal</strong> - <strong>should NOT replace vaginal/LAVH</strong>",
+         "<strong>Abdominal</strong> - <strong>should NOT replace vaginal/LAVH</strong>",
+         "Reserved for <strong>more complex cancers</strong>, <strong>patient factors not amenable to a minimally invasive approach</strong>, <strong>very large uterus</strong>, or <strong>complications during a minimally invasive attempt</strong>"
+        ]
+       ]
+      },
+      {
+       "t": "table",
+       "cols": [
+        "Term",
+        "What comes out",
+        "What stays"
+       ],
+       "rows": [
+        [
+         "<strong>Total hysterectomy</strong>",
+         "Uterus <strong>and cervix</strong>",
+         "-"
+        ],
+        [
+         "<strong>Subtotal hysterectomy</strong>",
+         "Uterus",
+         "<strong>Cervix retained</strong>"
+        ],
+        [
+         "<strong>Salpingectomy</strong>",
+         "Fallopian tubes",
+         "Ovaries"
+        ],
+        [
+         "<strong>Salpingoopherectomy</strong>",
+         "Fallopian tubes <strong>AND ovaries</strong>",
+         "-"
+        ],
+        [
+         "<strong>\"Partial\" hysterectomy</strong> (lay term)",
+         "Uterus ± cervix ± tubes",
+         "<strong>Ovaries retained</strong> - <strong>no surgical menopause</strong>"
+        ]
+       ]
+      }
+     ]
     },
     {
      "id": "repro-w5-02",
      "num": "02",
      "name": "Dilation and Curettage",
-     "hasNote": false
+     "hasNote": true,
+     "title": "Dilation and curettage",
+     "framing": "<p><strong>One procedure, one objective: know what goes wrong and what you do about it.</strong> A D&amp;C is <strong>vacuum aspiration of a pregnancy under 14 weeks</strong> through a rigid cannula on electric suction; every complication is a consequence of one step, so <strong>learn the complications by the step that causes them</strong>.</p>",
+     "keypoints": "<p>⭐ <strong>Antibiotic prophylaxis is indicated for therapeutic abortion but NOT for a D&amp;C done for missed abortion or pregnancy loss</strong> - the same procedure, two indications, one gets antibiotics. ⚠ <strong>Asherman's follows curettage in 8%, and repeat curettage (for retained products or retained placenta post partum) raises it to 30% by a third consecutive procedure</strong> - which is why retained products are managed with misoprostol where possible rather than a reflex second D&amp;C. <strong>Hematometra is re-evacuated immediately; retained products may wait for medical management</strong> - the two \"something is still in the uterus\" complications get opposite tempos.</p>",
+     "blocks": [
+      {
+       "t": "table",
+       "lead": "<p><strong>Procedure sequence:</strong> cervical preparation (chemical or osmotic) → <strong>bimanual exam confirms gestation</strong> → <strong>paracervical block</strong> → mechanical dilation <strong>only if preparation was inadequate</strong> → suction curettage of all products · <strong>sharp curettage is unnecessary in most cases</strong>.</p>",
+       "cols": [
+        "Cervical preparation",
+        "Agent",
+        "Timing",
+        "Note"
+       ],
+       "rows": [
+        [
+         "<strong>Chemical</strong>",
+         "<span class=\"wl\">misoprostol</span> · oral, buccal or vaginal",
+         "<strong>1-12 hours</strong> before",
+         "may be unnecessary if the cervix is already open (incomplete / inevitable abortion)"
+        ],
+        [
+         "<strong>Osmotic</strong>",
+         "<strong>laminaria</strong> (seaweed) or <strong>Dilapan</strong> (synthetic)",
+         "<strong>24 hours</strong> before, placed in the <strong>internal os</strong>",
+         "swells as it takes up fluid"
+        ],
+        [
+         "<strong>Mechanical</strong>",
+         "<strong>Hegar dilators</strong>",
+         "in the procedure",
+         "<strong>amount of dilatation = weeks of gestation</strong> · <strong>skipping it lowers discomfort and infection</strong>"
+        ]
+       ]
+      },
+      {
+       "t": "table",
+       "cols": [
+        "Complication",
+        "Step that causes it",
+        "What it looks like",
+        "What you do"
+       ],
+       "rows": [
+        [
+         "<strong>Cervical shock</strong>",
+         "<strong>paracervical block</strong>",
+         "<strong>vasovagal</strong> reaction",
+         "nothing: <strong>limited to a few minutes</strong>"
+        ],
+        [
+         "<strong>Uterine perforation</strong>",
+         "<strong>dilatation or suction</strong>",
+         "suspected intra-op; <strong>visceral injury</strong> in rarer cases",
+         "<strong>finish under ultrasound or laparoscopic guidance</strong>"
+        ],
+        [
+         "<strong>Infection</strong>",
+         "instrumentation",
+         "",
+         "<strong>prophylaxis for therapeutic abortion, NOT for missed abortion / pregnancy loss</strong>"
+        ],
+        [
+         "<strong>Cervical trauma</strong>",
+         "<strong>tenaculum</strong> or instruments",
+         "lacerations",
+         ""
+        ],
+        [
+         "<strong>Hemorrhage</strong>",
+         "evacuation",
+         "points to <strong>uterine atony</strong>, <strong>low implantation</strong>, or <strong>larger gestational age</strong>",
+         "<strong>repeat curettage</strong> may be needed"
+        ],
+        [
+         "<strong>Hematometra</strong> (post abortal syndrome)",
+         "post-procedure",
+         "<strong>blood accumulating in the uterine cavity</strong>",
+         "<strong>re-evacuate immediately</strong>"
+        ],
+        [
+         "<strong>Retained products of conception</strong>",
+         "incomplete evacuation",
+         "products remain after evacuation",
+         "<strong>secondary D&amp;C</strong> or <strong>misoprostol</strong>"
+        ],
+        [
+         "<strong>Asherman's syndrome</strong>",
+         "curettage, above all <strong>repeat</strong> curettage",
+         "<strong>adhesions in the endometrial cavity</strong> → <strong>secondary amenorrhea</strong>",
+         "prevention: avoid repeat and sharp curettage"
+        ]
+       ]
+      },
+      {
+       "t": "note",
+       "html": "<p><strong>Indications, and the three things it is not for:</strong> first-trimester pregnancy loss (<strong>incomplete, inevitable, missed abortion</strong>) and <strong>therapeutic abortion</strong>, both <strong>under 14 weeks</strong>. Not for <strong>ectopic pregnancy</strong> (nothing in the cavity), not for <strong>termination over 14 weeks</strong>, not for <strong>endometritis</strong>.</p>"
+      },
+      {
+       "t": "note",
+       "html": "<p><strong>Anesthesia:</strong> local (cervical block ± conscious sedation) or general.</p>"
+      }
+     ]
     },
     {
      "id": "repro-w5-03",
      "num": "03",
      "name": "Clinical Approach to Menopause",
-     "hasNote": false
+     "hasNote": true,
+     "title": "Clinical approach to menopause",
+     "framing": "<p>Every treatment decision splits on <strong>which symptom you are treating</strong>: <strong>vasomotor symptoms are systemic and need systemic therapy; GSM is local and is treated locally.</strong> Estrogen is the gold standard for VMS and the second line for GSM, so the real question is whether she can have it systemically: <strong>no contraindications, younger than 60, and < 10 years post menopause</strong>.</p>",
+     "keypoints": "<p>⭐ <strong>Estrogen is the gold standard for VMS, and a woman with a uterus must have progesterone with it</strong>; estrogen alone only after hysterectomy. <strong>Vaginal estrogen treats GSM but not VMS</strong>, and systemic MHT can under-treat GSM, so some women need both. <strong>Transdermal estrogen skips first-pass metabolism</strong> and has the better clotting profile. After menopause <strong>estradiol and progesterone fall while FSH and LH rise</strong> (loss of feedback). <strong>A history of VTE or stroke is enough to contraindicate estrogen</strong> - it need not be active.</p>",
+     "blocks": [
+      {
+       "t": "pathway",
+       "mermaid": "flowchart TD\n    A[\"53 y/o with menopause concerns\"] --> B[\"History: menses, symptoms,<br/>contraindications to MHT\"]\n    B --> C{\"Which symptom?\"}\n    C -->|\"GSM\"| D[\"Lifestyle, lubricants, moisturizers, physio<br/>2nd line: vaginal estrogen, DHEA, ospemifene\"]\n    C -->|\"VMS\"| E{\"Contraindication to estrogen?\"}\n    E -->|Yes| F[\"Non-hormonal: antidepressants, gabapentinoids,<br/>NK3R antagonists, CBT, cooling\"]\n    E -->|No| G{\"Younger than 60 and<br/>< 10 years post menopause?\"}\n    G -->|\"No\"| F2[\"Outside the deck's safe-start window<br/>weigh risk; non-hormonal options\"]\n    G -->|Yes| H{\"Does she have a uterus?\"}\n    H -->|Yes| I[\"Estrogen + progesterone<br/>(progestin pill or LNG IUD)\"]\n    H -->|\"No - hysterectomy\"| J[\"Estrogen alone\"]"
+      },
+      {
+       "t": "table",
+       "lead": "<p><strong>Workup skeleton</strong></p><p>- <strong>Hx</strong>: menses - <strong>LMP</strong>, regular, heavy, <strong>intermenstrual spotting</strong> · symptoms - hot flashes, sleep, mood, GSM, libido · contraindications to MHT - <strong>blood clot, breast cancer history</strong></p><p>- <strong>PEx</strong>: <strong>examine the vulva if she has GSM symptoms, to r/o skin conditions</strong> · GSM signs: pale vulva, ↓ labial volume, loss of pubic hair, introital stenosis, thin vestibule, <strong>vaginal pH > 5.0</strong></p><p>- <strong>Ix</strong>: menopause is a clinical diagnosis (amenorrhea x 12 months) · Pap on her routine schedule · ⚠ an endometrial biopsy is driven by abnormal bleeding, not by menopause itself (the deck asks, and leaves it open) · POI < 40: <strong>disordered menses ≥ 4 months + FSH > 25 IU/L</strong></p><p>- <strong>Tx</strong>: grid below · <strong>lowest effective dose</strong>, titrated up</p><p>- <strong>Follow-up</strong>: review the risk-benefit profile annually · evaluate the endometrium for bleeding on MHT</p>",
+       "cols": [
+        "Class",
+        "Examples",
+        "Mechanism",
+        "Treats",
+        "Discriminator"
+       ],
+       "rows": [
+        [
+         "<strong>Systemic MHT</strong>",
+         "Estrogen: pill, <strong>transdermal patch or gel</strong> · progesterone: pill, <strong>LNG IUD (5 years)</strong> · combined pill or patch",
+         "Replaces estrogen; progestin protects the endometrium",
+         "<strong>VMS - gold standard</strong>",
+         "<strong>75% reduction in VMS</strong> · <strong>uterus → must add progesterone</strong>"
+        ],
+        [
+         "<strong>Vaginal estrogen</strong>",
+         "Premarin cream, Vagifem, Imvexxy, Estring",
+         "Local estradiol",
+         "<strong>GSM</strong>, 2nd line",
+         "<strong>Treats GSM, not VMS</strong> - no systemic absorption"
+        ],
+        [
+         "<strong>Vaginal DHEA</strong>",
+         "Prasterone (Intrarosa)",
+         "<strong>Converted to testosterone and estrogen in the vaginal mucosa</strong>",
+         "GSM",
+         "Nightly vaginal ovule"
+        ],
+        [
+         "<strong>Ospemifene</strong>",
+         "Osphena",
+         "<strong>SERM</strong>, tissue-selective agonist on epithelium",
+         "GSM",
+         "<strong>Oral</strong> - the one GSM drug not inserted"
+        ],
+        [
+         "<strong>Antidepressants</strong>",
+         "SNRIs: venlafaxine, desvenlafaxine · SSRIs: paroxetine, citalopram, escitalopram",
+         "/",
+         "VMS",
+         "<strong>27-61% reduction</strong>"
+        ],
+        [
+         "<strong>Gabapentinoids</strong>",
+         "Gabapentin, pregabalin",
+         "/",
+         "VMS",
+         "<strong>45-71% reduction</strong>"
+        ],
+        [
+         "<strong>Clonidine</strong>",
+         "Clonidine 0.05 mg BID",
+         "/",
+         "VMS",
+         "<strong>Not listed in The Menopause Society guideline</strong>"
+        ],
+        [
+         "<strong>Oxybutynin</strong>",
+         "IR or XL",
+         "/",
+         "Urinary incontinence",
+         "Dry mouth, GI upset, constipation, blurred vision"
+        ],
+        [
+         "<strong>NK receptor antagonists</strong>",
+         "<strong>Fezolinetant, elinzanetant</strong>",
+         "<strong>Damp hyperactive KNDy neurons</strong>",
+         "VMS",
+         "The only class aimed at the mechanism"
+        ]
+       ]
+      },
+      {
+       "t": "table",
+       "cols": [
+        "Term",
+        "Definition"
+       ],
+       "rows": [
+        [
+         "<strong>Menopause</strong>",
+         "<strong>Amenorrhea x 12 months</strong> · average age <strong>51-52</strong> in Canada"
+        ],
+        [
+         "<strong>Early menopause</strong>",
+         "<strong>40-45</strong> years"
+        ],
+        [
+         "<strong>Premature ovarian insufficiency</strong>",
+         "<strong>< 40</strong> years"
+        ],
+        [
+         "<strong>Perimenopause</strong>",
+         "The transition; symptoms begin, <strong>possibly years before the LMP</strong> · cycles <strong>shorten, then lengthen, then cease</strong>"
+        ]
+       ]
+      },
+      {
+       "t": "table",
+       "cols": [
+        "Contraindication",
+        "Estrogen",
+        "Progestogen"
+       ],
+       "rows": [
+        [
+         "Undiagnosed abnormal vaginal bleeding",
+         "✔",
+         "✔"
+        ],
+        [
+         "Breast cancer - known, suspected or history",
+         "✔",
+         "✔"
+        ],
+        [
+         "Estrogen-dependent cancer (endometrial, ovarian) · CHD · <strong>VTE or stroke, active or history</strong> · thrombophilia · active liver disease · pregnancy",
+         "✔",
+         "/"
+        ]
+       ]
+      },
+      {
+       "t": "note",
+       "html": "<p><strong>Why early menopause matters (< 45):</strong> CHD events ↑ 50% · stroke ↑ 23% · CV mortality ↑ 19% · all-cause mortality ↑ 12% · cognition, quality of life, bone · <strong>MHT started before 50 → ↓ all-cause mortality</strong> (Nurses' Health Study).</p>"
+      },
+      {
+       "t": "note",
+       "html": "<p><strong>Lifestyle:</strong> CBT · clinical hypnosis · weight loss may help · cooling, avoid triggers · <strong>sodium < 1300 mg · vitamin D 800 IU · calcium 1200 mg</strong> · natural health products: <strong>no benefit shown</strong> · exercise and yoga: healthy, but <strong>not recommended for VMS specifically</strong>.</p>"
+      },
+      {
+       "t": "note",
+       "html": "<p><strong>Three theories of VMS:</strong> narrowed thermoregulatory zone · <strong>KNDy neurons hyperactivated by lack of estrogen</strong> · ↓ serotonin up-regulating hypothalamic 5-HT2A, shifting the set point.</p>"
+      }
+     ]
     },
     {
      "id": "repro-w5-04",
      "num": "04",
      "name": "Approach to and Pathology of a Pelvic Mass",
-     "hasNote": false
+     "hasNote": true,
+     "title": "Ovarian neoplasms",
+     "framing": "<p><strong>Every ovarian tumour is named by its lineage (epithelial, germ cell, sex cord/stromal) plus its behaviour (benign, borderline, malignant), and the age of the patient predicts the lineage</strong>: <strong>epithelial in adults, germ cell in the young</strong>. Most ovarian neoplasms are <strong>not malignant</strong>; cancer is more likely <strong>post-menopausal</strong>.</p>",
+     "keypoints": "<p>⭐ <strong>Beware the bilateral atypical mucinous tumour: it is a metastasis until the appendix has been checked</strong>, and the classic metastatic pattern is <strong>bilateral and multi-nodular</strong>. <strong>Serous carcinoma is the #1 ovarian cancer and presents late</strong>, which is why mortality is high. <strong>Borderline vs carcinoma = invasion</strong>, not architecture. <strong>Mucinous carcinoma is the one carcinoma that is usually unilateral.</strong> <strong>Granulosa cell tumour recurs late (> 10 yr) and ruptures</strong>; its estrogen shows up in the endometrium first.</p>",
+     "blocks": [
+      {
+       "t": "figure",
+       "src": "assets/figures/12cfbe186c65.jpg",
+       "alt": "ovarian tumor cell types.png",
+       "w": 500,
+       "h": 360,
+       "cap": "The ovary and the three lineages an ovarian tumour arises from"
+      },
+      {
+       "t": "pathway",
+       "mermaid": "flowchart TD\n    A[\"Ovarian mass on exam / imaging\"] --> B{\"Age?\"}\n    B -->|\"Young (0-25)\"| C[\"Germ cell lineage likely<br/>Send serum markers: α-FP, LDH, β-hCG\"]\n    B -->|\"Adult / post-menopausal\"| D[\"Epithelial lineage likely<br/>Cancer more likely after menopause\"]\n    D --> E{\"Bilateral, multi-nodular?\"}\n    E -->|Yes| F[\"Think METASTASIS<br/>GI (appendix, stomach, colon), pancreatobiliary, breast, endometrium\"]\n    E -->|No| G[\"Primary epithelial tumour<br/>Behaviour set by invasion: benign / borderline / carcinoma\"]\n    A --> H{\"Endocrine features?\"}\n    H -->|\"Estrogenic: AUB, endometrial hyperplasia / Ca\"| I[\"Granulosa cell tumour\"]"
+      },
+      {
+       "t": "table",
+       "lead": "<p><strong>Workup skeleton</strong></p><p>- <strong>Hx</strong>: pain (<strong>rupture, torsion</strong>) · distension (<strong>ascites, mass effect</strong>) · compression (<strong>change in bladder / bowel habits</strong>) · systemic (weight loss, fever, anorexia) · endocrine (<strong>estrogenic or androgenic</strong>) · often <strong>asymptomatic until late</strong></p><p>- <strong>Ix</strong>: imaging finds the mass; in a <strong>young woman</strong> add <strong>germ cell serum markers</strong> (diagnosis and post-op monitoring); the diagnosis is <strong>histologic</strong>, and what separates borderline from carcinoma is <strong>stromal invasion</strong></p><p>- <strong>Tx</strong>: carcinoma is treated <strong>surgically first</strong> (uterus, ovaries, tubes, omentum, peritoneal biopsies, ± lymph nodes), <strong>chemotherapy for advanced stage</strong> · <strong>Px: confined = good; higher stage = poor</strong></p><p>- ⚠ Before calling a <strong>bilateral mucinous</strong> tumour a primary, <strong>check the appendix</strong></p>",
+       "cols": [
+        "Tumour",
+        "Lineage · who",
+        "Gross / histology",
+        "Behaviour",
+        "Clue"
+       ],
+       "rows": [
+        [
+         "<strong>Serous cystadenoma</strong>",
+         "Epithelial · adult",
+         "Unilocular cyst, <strong>clear fluid</strong>, single bland layer",
+         "Benign",
+         "<strong>Serous = the most common epithelial subtype</strong>"
+        ],
+        [
+         "<strong>Mucinous cystadenoma</strong>",
+         "Epithelial · adult",
+         "<strong>Multilocular</strong>, <strong>jelly-like mucin</strong>, tall columnar mucin-filled cells; can be <strong>enormous</strong>",
+         "Benign",
+         "Increasing abdominal girth"
+        ],
+        [
+         "<strong>Serous borderline tumour</strong>",
+         "Epithelial · adult",
+         "<strong>Papillary excrescences</strong>, complex architecture, atypical cells, <strong>no frank invasion</strong>",
+         "Pre-cancerous; excision, very good Px; can seed <strong>implants</strong> (serous only), adhere, recur, progress to <strong>low-grade carcinoma</strong>",
+         "<strong>Only the serous subtype forms implants</strong>"
+        ],
+        [
+         "<strong>Serous carcinoma</strong>",
+         "Epithelial · <strong>post-menopausal</strong> (younger if familial)",
+         "<strong>Stromal invasion</strong>; solid and cystic, haemorrhage and necrosis",
+         "<strong>#1 ovarian cancer</strong>; <strong>often advanced at presentation</strong>; <strong>bilateral common</strong>",
+         "Spreads across the peritoneum"
+        ],
+        [
+         "<strong>Mucinous carcinoma</strong>",
+         "Epithelial · adult",
+         "Invasive mucinous glands",
+         "Bilaterality is the <strong>exception</strong> among carcinomas",
+         "<strong>Bilateral + atypical mucinous = look for an appendix primary</strong>"
+        ],
+        [
+         "<strong>Mature cystic teratoma</strong>",
+         "Germ cell · <strong>young women</strong>",
+         "\"<strong>Dermoid cyst</strong>\": hair, sebum, teeth; <strong>mix of mature tissues</strong> (skin, cartilage)",
+         "<strong>Benign</strong>; the <strong>most common benign germ cell tumour</strong>",
+         "Unilateral mass in a young patient"
+        ],
+        [
+         "<strong>Immature teratoma</strong>",
+         "Germ cell · young",
+         "<strong>Primitive (neural) tissue</strong>; <strong>more primitive tissue = higher grade</strong>",
+         "Malignant",
+         "α-FP +, β-hCG +"
+        ],
+        [
+         "<strong>Dysgerminoma</strong>",
+         "Germ cell · young",
+         "Undifferentiated germ cells (ovarian <strong>seminoma</strong> analogue)",
+         "Malignant",
+         "<strong>LDH +++</strong>, β-hCG +"
+        ],
+        [
+         "<strong>Yolk sac tumour</strong>",
+         "Germ cell · young",
+         "Extra-embryonic differentiation; <strong>Schiller-Duval bodies</strong>",
+         "Malignant",
+         "<strong>α-FP +++</strong>"
+        ],
+        [
+         "<strong>Embryonal carcinoma</strong>",
+         "Germ cell · young",
+         "Embryonic differentiation",
+         "Malignant",
+         "α-FP +, β-hCG +"
+        ],
+        [
+         "<strong>Choriocarcinoma</strong>",
+         "Germ cell · young",
+         "Trophoblast",
+         "Malignant",
+         "<strong>β-hCG +++</strong>"
+        ],
+        [
+         "<strong>Fibroma</strong>",
+         "Sex cord/stromal · around menopause",
+         "<strong>Firm, white, nodular</strong> solid mass; whorled spindle cells",
+         "<strong>Common; benign</strong>; often incidental",
+         "Found during a hysterectomy for other reasons"
+        ],
+        [
+         "<strong>Granulosa cell tumour</strong>",
+         "Sex cord/stromal · any age",
+         "Yellow, solid and cystic with <strong>haemorrhage</strong>; cells form <strong>microfollicles</strong>",
+         "<strong>Uncommon; malignant but slow growing</strong>; <strong>late recurrence (> 10 yr)</strong>; <strong>prone to rupture (haemoperitoneum)</strong>",
+         "<strong>Estrogenic</strong>: endometrial hyperplasia or carcinoma may be the first sign"
+        ],
+        [
+         "<strong>Krukenberg tumour</strong>",
+         "Metastasis · adult",
+         "<strong>Bilateral solid white ovaries</strong>; <strong>signet ring</strong> adenocarcinoma",
+         "Metastatic",
+         "<strong>Gastric origin</strong>, also breast"
+        ],
+        [
+         "<strong>Pseudomyxoma peritonei</strong>",
+         "Metastasis · adult",
+         "Abundant <strong>gelatinous mucin</strong> filling the abdomen (\"<strong>jelly belly</strong>\")",
+         "Metastatic",
+         "<strong>Appendiceal</strong> origin; also mucinous ovarian tumours"
+        ]
+       ]
+      },
+      {
+       "t": "table",
+       "cols": [
+        "Germ cell marker",
+        "+++",
+        "+"
+       ],
+       "rows": [
+        [
+         "<strong>α-FP</strong>",
+         "<strong>Yolk sac tumour</strong>",
+         "Immature teratoma · embryonal carcinoma"
+        ],
+        [
+         "<strong>LDH</strong>",
+         "<strong>Dysgerminoma</strong>",
+         "-"
+        ],
+        [
+         "<strong>β-hCG</strong>",
+         "<strong>Choriocarcinoma</strong>",
+         "Dysgerminoma · immature teratoma · embryonal carcinoma"
+        ]
+       ]
+      },
+      {
+       "t": "note",
+       "html": "<p><strong>Naming an epithelial tumour:</strong> cell subtype (<strong>serous, mucinous, endometrioid, clear cell, transitional</strong>) + architecture (cyst-, -fibroma) + behaviour: serous cyst<strong>adenoma</strong> (benign) · serous cystadeno<strong>fibroma</strong> (cystic and fibrous, benign) · serous <strong>borderline</strong> tumour (pre-cancerous) · serous <strong>adenocarcinoma</strong> (malignant).</p>"
+      },
+      {
+       "t": "note",
+       "html": "<p><strong>Where ovarian carcinoma goes:</strong> pelvic peritoneum · omentum · bowel serosa · liver serosa · diaphragm · stomach · pelvic and para-aortic lymph nodes · lungs; the uterus, tubes and broad ligament by direct extension.</p>"
+      },
+      {
+       "t": "note",
+       "html": "<p><strong>Origins of epithelial tumours:</strong> the ovary has no epithelium of its own; <strong>surface epithelium</strong> dragged in at ovulation forms <strong>epithelial inclusions</strong> that give rise to the epithelial tumours, and the deck's second pathway runs from <strong>serous tubal intraepithelial carcinoma (STIC) in the fimbria</strong> that exfoliates onto the ovary and peritoneum.</p>"
+      }
+     ]
     },
     {
      "id": "repro-w5-05",
      "num": "05",
      "name": "Post-menopausal Woman Presenting with Bleeding",
-     "hasNote": false
+     "hasNote": true,
+     "title": "Post-menopausal bleeding",
+     "framing": "<p>Any bleeding after 12 months without menses is PMB, and the whole approach turns on one rule: <strong>endometrial carcinoma must be excluded in every woman with PMB</strong>, however benign the story. <strong>The most common cause is atrophy; the most serious is carcinoma or hyperplasia.</strong> The investigation is the same for both: <strong>speculum exam, <span class=\"wl\">TVUS</span>, and endometrial biopsy</strong>.</p>",
+     "keypoints": "<p>⭐ <strong>Without atypia the management is medical; with atypia it is surgical</strong> - the atypia line is the whole biopsy-report question. Risk factors for <strong>hyperplasia and type 1 carcinoma are the same: unopposed estrogen</strong>. ⚠ <strong>Insufficient endometrial tissue is not a benign result</strong> - repeat the sampling. Endometrial cancer is the <strong>#1 gyn malignancy and the 4th most common cancer in women</strong>; <strong>endometrial</strong> names the site, <strong>endometrioid</strong> names the (most common) type.</p>",
+     "blocks": [
+      {
+       "t": "pathway",
+       "mermaid": "flowchart TD\n    A[\"Post-menopausal woman with bleeding\"] --> B{\"Is she stable?\"}\n    B -->|No| C[\"Resuscitate first\"]\n    B -->|Yes| D[\"Full gyn/obs history<br/>Abdominal + pelvic exam<br/>SPECULUM: mass at the os? ulcerated cervix?\"]\n    D --> E[\"TVUS: endometrial thickness\"]\n    E -->|\"> 5 mm, or any PMB\"| F[\"Endometrial biopsy<br/>(99.6% sensitive for cancer)\"]\n    E -->|\"< 5 mm but bleeding RECURS\"| F\n    F -->|\"Insufficient tissue\"| G[\"Repeat sampling<br/>(hysteroscopy or D&C)\"]\n    F -->|\"Atrophy\"| H[\"Diagnosis of exclusion; treat GSM<br/>Return if bleeding recurs\"]\n    F -->|\"Hyperplasia WITHOUT atypia\"| I[\"Progestin (Megace / LNG-IUD)<br/>Re-biopsy in 3 months\"]\n    F -->|\"ATYPICAL hyperplasia<br/>or carcinoma\"| J[\"Refer to Gyn<br/>Hysterectomy + BSO\"]"
+      },
+      {
+       "t": "table",
+       "lead": "<p><strong>Workup skeleton</strong></p><p>- <strong>Hx</strong>: bleeding after <strong>12 months</strong> of amenorrhea · <strong>HRT</strong> (63% bleed in the first six cycles) · <strong>tamoxifen</strong> · risk factors for unopposed estrogen (obesity, PCOS, nulliparity, early menarche, late menopause) · family history of colorectal or endometrial cancer (<strong>Lynch</strong>)</p><p>- <strong>PEx</strong>: general + abdominal + pelvic · <strong>speculum exam every time</strong> - an endometrial mass at the os or an <strong>ulcerated cervical mass</strong> is a different diagnosis · uterus normal or enlarged</p><p>- <strong>Ix</strong>: <strong>TVUS</strong> (normal <strong>< 5 mm</strong> off HRT) → <strong>endometrial biopsy</strong> for <strong>> 5 mm, any PMB, or recurrent bleeding at < 5 mm</strong> (skipping the last group misses <strong>4%</strong> of cancers) · <strong>SIS</strong> for a thickened stripe (finds focal lesions, <strong>cannot tell benign from malignant</strong>) · <strong>hysteroscopy</strong> for focal lesions and when office biopsy is impossible · <strong>D&amp;C</strong> when nothing else is available · ⚠ <strong>a negative Pap does NOT end the workup</strong></p><p>- <strong>Tx</strong>: by the pathology report (grid below) · <strong>atrophy → local estrogen</strong> (cream, pill, ring) or nothing</p><p>- <strong>Refer to Gyn</strong>: PMB + risk factors for endometrial cancer · symptomatic or recurrent bleeding with a focal lesion on biopsy · <strong>stripe > 5 mm or a \"vascular pedicle\"</strong></p>",
+       "cols": [
+        "",
+        "<strong>Atrophy (GSM)</strong>",
+        "<strong>Exogenous hormones</strong>",
+        "<strong>Hyperplasia without atypia</strong>",
+        "<strong>Atypical hyperplasia</strong>",
+        "<strong>Type 1 carcinoma</strong>",
+        "<strong>Type 2 carcinoma</strong>"
+       ],
+       "rows": [
+        [
+         "<strong>Causes</strong>",
+         "<strong>Hypoestrogenism</strong> → microerosion, inflammation, spotting; endometrium, vagina or vulva",
+         "<span class=\"wl\">HRT</span> (<strong>63%</strong> bleed in first six cycles, 37% later) · <span class=\"wl\">tamoxifen</span> · <strong>unopposed systemic estrogen with a uterus</strong> → hyperplasia in <strong>10% at 12 mo, up to 50% at 24 mo</strong>",
+         "<strong>Unopposed estrogen</strong>: endogenous (<span class=\"wl\">obesity</span>, <span class=\"wl\">PCOS</span>, <span class=\"wl\">granulosa cell tumor</span>, infertility, nulliparity, early menarche, late menopause) or exogenous (HRT, topical, tamoxifen)",
+         "Same unopposed-estrogen risk factors",
+         "<strong>Estrogen dependent</strong>; same risk factors as hyperplasia · <strong>Lynch syndrome</strong> (40-70% lifetime risk; often the sentinel cancer)",
+         "<strong>Estrogen independent</strong>; no unopposed-estrogen history; <strong>older</strong>, <strong>atrophic endometrium</strong>"
+        ],
+        [
+         "<strong>Pathology</strong>",
+         "Scant fragments of atrophic endometrium; <strong>diagnosis of exclusion</strong>",
+         "Bleeding reflects regimen and hormone type",
+         "↑ <strong>gland:stroma ratio</strong>, crowded glands, <strong>no cytologic atypia</strong>",
+         "Crowded glands <strong>with atypia</strong>; <strong>30-40% have concurrent adenocarcinoma at hysterectomy</strong>",
+         "<strong>Endometrioid</strong> adenocarcinoma, <strong>90%</strong> of endometrial cancer; precursor is hyperplasia",
+         "<strong>Serous</strong>, <strong>10%</strong>"
+        ],
+        [
+         "<strong>Presentation</strong>",
+         "Loss of labial fullness · <strong>pallor</strong> of urethral and vaginal epithelium · <strong>narrow introitus</strong> · minimal moisture · loss of urethral meatal turgor",
+         "PMB on HRT, most in the first cycles",
+         "PMB",
+         "PMB",
+         "<strong>90% present with bleeding</strong>; 72% Stage 1; cramping, pressure; uterus normal or enlarged",
+         "PMB in an older woman"
+        ],
+        [
+         "<strong>Dx</strong>",
+         "Biopsy + fits the other investigations",
+         "History; investigate if bleeding <strong>persists</strong> (> 50% on HRT have a stripe > 5 mm, < 4% have pathology)",
+         "Biopsy",
+         "Biopsy",
+         "Biopsy; <strong>MMR testing on every endometrial carcinoma</strong> (Ontario)",
+         "Biopsy"
+        ],
+        [
+         "<strong>Tx</strong>",
+         "Nothing if not troublesome · HRT · <strong>local estrogen</strong> (cream, pill, ring); usually the family physician",
+         "Adjust regimen; <strong>never unopposed estrogen with a uterus</strong>",
+         "<strong>Progestin</strong> (Megace, <span class=\"wl\">LNG-IUD</span>) · <strong>repeat biopsy at 3 months</strong> · remove exogenous estrogen · weight loss",
+         "<strong><span class=\"wl\">hysterectomy</span> + BSO</strong> (abdominal, laparoscopic or vaginal) · high-dose progestin <strong>only if surgery contraindicated</strong>",
+         "<strong>Hysterectomy + BSO</strong>; ± lymphadenectomy, staging, radiation/chemo if higher grade or stage",
+         "As type 1, more often needing adjuvant therapy"
+        ],
+        [
+         "<strong>Px</strong>",
+         "Benign",
+         "Benign",
+         "Malignancy risk <strong>1-3%</strong>",
+         "Malignancy risk <strong>8-29%</strong>",
+         "<strong>Better</strong>",
+         "<strong>Poorer</strong>"
+        ]
+       ]
+      },
+      {
+       "t": "table",
+       "cols": [
+        "Investigation",
+        "Discriminator"
+       ],
+       "rows": [
+        [
+         "<strong><span class=\"wl\">TVUS</span></strong>",
+         "<strong>< 5 mm = normal</strong> off HRT; on HRT the same cutoff applies but > 50% exceed it"
+        ],
+        [
+         "<strong><span class=\"wl\">SIS</span></strong>",
+         "Indicated for <strong>> 5 mm</strong>; sensitivity for <strong>focal lesions 93-100%</strong>, false positives 6-15%; <strong>cannot discriminate benign from malignant</strong>"
+        ],
+        [
+         "<strong><span class=\"wl\">Endometrial biopsy</span></strong>",
+         "<strong>99.6% sensitivity for cancer</strong> but <strong>blind</strong>, so <strong>poor for polyps and focal lesions</strong>"
+        ],
+        [
+         "<strong><span class=\"wl\">Hysteroscopy</span></strong>",
+         "<strong>Direct visualization and biopsy</strong> of focal lesions; standard surgical risks"
+        ],
+        [
+         "<strong><span class=\"wl\">D&amp;C</span></strong>",
+         "When office sampling or hysteroscopy is unavailable or contraindicated; <strong>in 50% of cases < 60% of the endometrium is sampled</strong>"
+        ]
+       ]
+      },
+      {
+       "t": "note",
+       "html": "<p><strong>Incidental thickening without bleeding:</strong> no routine sampling; decide case by case on risk factors · <strong>no routine ultrasound on tamoxifen</strong> · asymptomatic polyps triaged by size, age and risk factors.</p>"
+      },
+      {
+       "t": "note",
+       "html": "<p><strong>Spread and staging:</strong> direct invasion of <strong>myometrium</strong> (common) and <strong>cervix</strong> (fairly common) → <strong>lymphovascular</strong> to nodes and distant organs (rare) · <strong>transtubal</strong> to peritoneum (rare) · staged by the pathologist after resection with <strong>TNM</strong>, translated to <strong>FIGO</strong>; the stage decides adjuvant treatment.</p>"
+      }
+     ]
     },
     {
      "id": "repro-w5-06",
      "num": "06",
      "name": "Pathology of the Breast",
-     "hasNote": false
+     "hasNote": true,
+     "title": "Pathology of the breast",
+     "framing": "<p><strong>Place the lesion by the tissue it arises from, then tell the lesions of that tissue apart by presentation.</strong> The <strong>TDLU</strong> grows fibrocystic change and carcinoma (in situ and invasive); the <strong>large ducts and nipple</strong> grow papillomas, duct ectasia, mastitis and Paget's; the <strong>intralobular stroma</strong> grows fibroadenoma and phyllodes; the <strong>interlobular stroma and fat</strong> grow fat necrosis, PASH and mesenchymal tumours.</p>",
+     "keypoints": "<p>⭐ <strong>inflammatory carcinoma is defined by the clinical appearance of diffuse acute mastitis; peau d'orange is neither necessary nor sufficient</strong>, and a skin punch biopsy confirms the cancer. ⚠ Breast cancer is the <strong>#1 cancer</strong> in Canadian women but the <strong>#2 cancer death, behind lung</strong>. ⚠ Two benign lesions <strong>mimic cancer clinically</strong>: fat necrosis (irregular mass, skin retraction) and a healed abscess (fixation by fibrosis). ⚠ <strong>Not every non-sporadic cancer is BRCA</strong>: 20% are non-sporadic but only 5-7% carry a high-penetrance mutation.</p>",
+     "blocks": [
+      {
+       "t": "figure",
+       "src": "assets/figures/db63978ed0df.jpg",
+       "alt": "breast anatomy and disorders.png",
+       "w": 900,
+       "h": 612,
+       "cap": "The breast by tissue of origin"
+      },
+      {
+       "t": "table",
+       "lead": "<p><strong>Workup skeleton</strong></p><p>- <strong>Presentation</strong> (only five): palpable mass · lumpiness without a discrete mass · pain · nipple discharge · mammographic abnormality</p><p>- <strong>Sampling</strong>: nipple discharge (low-yield) · <span class=\"wl\">FNA</span> · <span class=\"wl\">core biopsy</span> · <span class=\"wl\">punch biopsy</span> (skin and nipple, and the fast route to a tissue diagnosis of inflammatory carcinoma) · breast duct excision · lumpectomy / partial mastectomy · <span class=\"wl\">mastectomy</span></p>",
+       "cols": [
+        "",
+        "<strong>Fat necrosis</strong>",
+        "<strong>Acute <span class=\"wl\">mastitis</span></strong>",
+        "<strong><span class=\"wl\">Intraductal papilloma</span></strong>",
+        "<strong><span class=\"wl\">Fibroadenoma</span></strong>",
+        "<strong><span class=\"wl\">Fibrocystic change</span></strong>"
+       ],
+       "rows": [
+        [
+         "<strong>Origin</strong>",
+         "Interlobular stroma / fat",
+         "Large ducts and nipple",
+         "Large ducts and nipple",
+         "Intralobular stroma",
+         "TDLU"
+        ],
+        [
+         "<strong>Who / cause</strong>",
+         "<strong>May be a history of trauma</strong>; often superficial",
+         "<strong>Lactation</strong>: fissures and engorgement let <strong>Staph or Strep</strong> in",
+         "Females in their <strong>30s-50s</strong>",
+         "Females in their <strong>20s-30s</strong>; <strong>one of the most common benign lesions</strong>",
+         "Common; <strong>physiological, not pathological</strong>"
+        ],
+        [
+         "<strong>Presentation</strong>",
+         "<strong>Firm, irregular mass ± erythema, skin retraction and dimpling</strong> (the benign lesion that <strong>mimics cancer</strong>)",
+         "<strong>Tense, hot, painful breast</strong> ± enlarged tender axillary nodes",
+         "<strong>Bloody nipple discharge</strong>; more rarely a palpable areolar mass",
+         "<strong>Discrete, mobile, usually non-tender</strong>, rounded / lobulated, rubbery-to-firm; <strong>no skin dimpling or retraction</strong>",
+         "Lumpy masses that <strong>fluctuate with the menstrual cycle</strong> ± pain / tenderness"
+        ],
+        [
+         "<strong>Pathology</strong>",
+         "Benign, despite the look",
+         "May progress to <strong>abscess</strong>; <strong>heals by fibrosis, so fixation can mimic cancer</strong>",
+         "<strong>Tan-pink friable lesion inside a dilated duct</strong>",
+         "<strong>Biphasic: stromal + epithelial elements</strong>; no atypia, few stromal mitoses; may calcify",
+         "Cysts, fibrosis, <strong>apocrine metaplasia</strong>, mild usual epithelial hyperplasia"
+        ],
+        [
+         "<strong>Tx / cancer risk</strong>",
+         "Very commonly biopsied",
+         "Antibiotics, skin care, keep draining",
+         "<strong>Local excision</strong>; proliferative without atypia, <strong>RR 1.5-2</strong>",
+         "Watch clinically; <strong>RR x1</strong> (complex fibroadenoma RR 1.5-2)",
+         "Non-proliferative, <strong>RR x1</strong>"
+        ]
+       ]
+      },
+      {
+       "t": "table",
+       "lead": "<p><strong>Epithelial lesion tiers (relative risk of invasive carcinoma):</strong> <strong>non-proliferative x1</strong> (fibrocystic change, duct ectasia, cysts, apocrine change, fibroadenoma) · <strong>proliferative without atypia x1.5-2</strong> (moderate / florid epithelial hyperplasia, papillomas, sclerosing adenosis, radial scar, complex fibroadenoma) · <strong>atypical hyperplasia x4-5</strong> (ADH, ALH), <strong>x9-10 with a family history</strong>.</p>",
+       "cols": [
+        "",
+        "<strong>DCIS</strong>",
+        "<strong>LCIS</strong>"
+       ],
+       "rows": [
+        [
+         "<strong>Presentation</strong>",
+         "<strong>Linear / casting / pleomorphic calcifications</strong> on mammography; sometimes nipple discharge",
+         "<strong>Incidental</strong> on a biopsy done for another reason; <strong>no clinical, anatomical or mammographic correlate</strong>"
+        ],
+        [
+         "<strong>Management</strong>",
+         "<strong>Complete excision with negative margins</strong>",
+         "<strong>Close clinical follow-up</strong>"
+        ],
+        [
+         "<strong>Invasive risk</strong>",
+         "<strong>Precursor</strong> of invasive carcinoma",
+         "<strong>Risk factor (non-obligate precursor)</strong>"
+        ]
+       ]
+      },
+      {
+       "t": "table",
+       "cols": [
+        "",
+        "<strong>Paget's disease of the nipple</strong>",
+        "<strong>Inflammatory carcinoma</strong>"
+       ],
+       "rows": [
+        [
+         "<strong>Looks like</strong>",
+         "<strong>Eczema of the nipple-areola</strong>: reddening, scaling, erosion, ulceration",
+         "<strong>Diffuse acute mastitis</strong>, often but not always with <strong>peau d'orange</strong>"
+        ],
+        [
+         "<strong>Underneath</strong>",
+         "<strong>Always an underlying carcinoma</strong> (DCIS or invasive; <strong>a palpable mass means invasive</strong>) that has reached the nipple via the ducts",
+         "<strong>Diffuse dermal lymphatic obstruction by tumour</strong>"
+        ],
+        [
+         "<strong>Defined by</strong>",
+         "Carcinoma cells in the nipple epithelium",
+         "<strong>The clinical picture</strong>: peau d'orange alone, or dermal lymphatic obstruction alone, is <strong>NOT inflammatory carcinoma</strong>"
+        ],
+        [
+         "<strong>Prognosis</strong>",
+         "That of the underlying cancer",
+         "<strong>T4 disease, poor prognosis</strong>"
+        ]
+       ]
+      },
+      {
+       "t": "note",
+       "html": "<p><strong>Invasive carcinoma:</strong> <strong>80% no special type (ductal)</strong>: poorly defined, <strong>stellate / \"crab-like\", gritty</strong> mass, graded on <strong>tubule formation, nuclear atypia, mitotic rate</strong>. <strong>20% special type</strong> (tubular, cribriform, mucinous, medullary, papillary, lobular, metaplastic), recognised by morphology and in pure form <strong>better prognosis than NST, except metaplastic and lobular</strong>.</p>"
+      },
+      {
+       "t": "note",
+       "html": "<p><strong>Risk factors:</strong> F > M · <strong>75% at age 50+</strong> · <strong>80% sporadic, 20% non-sporadic</strong> (high-penetrance hereditary 5-7%: BRCA1/2, p53, PTEN, STK11; moderate <3%: CHEK2, ATM; the rest familial / polygenic) · Americas / Europe > Asia / Africa · <strong>European descent highest incidence (more ER+)</strong>, Hispanic / African ancestry lower incidence but <strong>aggressive cancers at a younger age</strong> · early menarche, nulliparity, no breastfeeding, older first pregnancy · ionizing radiation to the developing breast · <span class=\"wl\">obesity</span>, <span class=\"wl\">HRT</span>, mammographic density, EtOH.</p>"
+      },
+      {
+       "t": "note",
+       "html": "<p><strong>Prognosis:</strong> major = invasive vs in situ · distant metastases (lung, pleura, liver, bone; adrenal, brain) · <strong>axillary node status, the most important factor once distant metastases are excluded</strong> · tumour size · local extension (deep = fixed to <span class=\"wl\">pectoralis</span>; superficial = skin fixation, nipple retraction, ulceration, peau d'orange) · inflammatory carcinoma. Minor = subtype, grade, lymphovascular invasion (<strong>H&amp;E</strong>); <strong>ER / PR</strong> (favourable, <strong>predict response to <span class=\"wl\">tamoxifen</span> / <span class=\"wl\">aromatase inhibitors</span></strong>) and <strong>Her2/neu</strong> (unfavourable, <strong>predicts response to <span class=\"wl\">trastuzumab</span></strong>) (special tests) ± gene expression profiling, proliferative rate, PD-L1.</p>"
+      }
+     ]
     },
     {
      "id": "repro-w5-07",
      "num": "07",
      "name": "Approach to Common Breast Problems",
-     "hasNote": false
+     "hasNote": true,
+     "title": "Approach to common breast problems",
+     "framing": "<p>Three presentations reach the family physician - <strong>a lump, a sore breast, nipple discharge</strong> - and every one is sorted the same way: <strong>the older the woman, the more likely the complaint is serious</strong>. Most lumps are not cancer (<strong>~10% of masses</strong>).</p>",
+     "keypoints": "<p>⭐ <strong>pre-menopausal with a benign history and exam: re-examine after the next menstrual cycle; post-menopausal or high risk: investigate immediately.</strong> Imaging splits at <strong>35</strong> - ultrasound below, mammogram above. Galactorrhea is <strong>bilateral, multiple ducts</strong>; worrisome discharge is <strong>unilateral, single duct, spontaneous, bloody</strong>. Mammography misses <strong>12-15%</strong>, and <strong>NNS 721</strong> per death prevented.</p>",
+     "blocks": [
+      {
+       "t": "pathway",
+       "mermaid": "flowchart TD\n    A[\"Breast lump<br/>Hx + breast exam + axilla and nodes\"] --> B{\"Post-menopausal<br/>or high risk?\"}\n    B -->|Yes| INV[\"INVESTIGATE NOW\"]\n    B -->|\"No - pre-menopausal\"| C{\"Hx and exam benign?\"}\n    C -->|No| INV\n    C -->|Yes| D[\"Re-examine after the next menstrual cycle\"]\n    D --> E{\"Resolved?\"}\n    E -->|Yes| F[\"Follow\"]\n    E -->|No| INV\n    INV --> G{\"Age?\"}\n    G -->|\"< 35\"| H[\"ULTRASOUND first<br/>MRI if high risk\"]\n    G -->|\"> 35\"| I[\"MAMMOGRAM first +/- US\"]"
+      },
+      {
+       "t": "table",
+       "lead": "<p><strong>Workup skeleton</strong></p><p>- <strong>Hx</strong>: age · location · how and when found · skin changes · change in size · <strong>change with menstrual cycle</strong> · other lumps in axilla · family history</p><p>- <strong>PEx</strong>: offer a <strong>chaperone</strong> · inspect with <strong>hands pushing on hips</strong> · nodes: central, pectoral, subscapular, lateral, infra- and supraclavicular · supine, <strong>vertical strips</strong> (better than pie or spiral), clavicle to inframammary fold, midsternal to <strong>posterior axillary line</strong>, pads of fingers 2-4, light/medium/deep · <strong>tail of Spence</strong></p><p>- <strong>Ix</strong>: <strong>< 35 ultrasound</strong> (tissue too dense, risk too low for mammography) · <strong>MRI if < 35 and high risk</strong> · <strong>> 35 mammogram first +/- US</strong></p><p>- <strong>Follow-up</strong>: ⚠ skin changes, peau d'orange and nipple retraction are <strong>late findings and rarely seen</strong> - their absence reassures nothing</p>",
+       "cols": [
+        "",
+        "<strong>Lump</strong>",
+        "<strong>Pain</strong>",
+        "<strong>Nipple discharge</strong>"
+       ],
+       "rows": [
+        [
+         "<strong>Key Hx</strong>",
+         "• how/when found<br>• change with cycle<br>• axillary lumps · FHx",
+         "• uni vs bilateral<br>• <strong>phasic with periods</strong><br>• HRT/BCP · pregnancy, birth, loss · vigorous exercise",
+         "• spontaneous vs expressed<br>• <strong>single vs multiple ducts</strong><br>• bloody or serous · mass"
+        ],
+        [
+         "<strong>Benign pattern</strong>",
+         "• smooth<br>• normal/fibroglandular tissue, cyst, <span class=\"wl\">fibroadenoma</span>",
+         "• <strong>cyclical (2/3)</strong>: luteal phase (day 14) to menses<br>• ducts (estrogen), stroma (progesterone)",
+         "• <strong>galactorrhea</strong>: usually bilateral, <strong>multiple ducts</strong>, expressed on compression<br>• <strong>not related to pregnancy/lactation</strong>"
+        ],
+        [
+         "<strong>Worrisome</strong>",
+         "• single · hard · immovable · irregular borders<br>• <strong>> 2 cm</strong>",
+         "• older woman · mass<br>• only <strong>8% of breast cancers</strong> present with pain",
+         "• <strong>unilateral, single duct, spontaneous</strong><br>• <strong>bloody or serous</strong> · mass · <strong>> 50</strong>"
+        ],
+        [
+         "<strong>Causes</strong>",
+         "cancer <strong>~10% of masses</strong>",
+         "non-cyclic: <span class=\"wl\">mastitis</span> · HRT/OCP · <strong>Cooper's ligament stretch</strong> · extramammary",
+         "galactorrhea: stimulation · <strong><span class=\"wl\">hyperprolactinemia</span></strong> · dopamine suppressors · chest wall injury · CKD, hypothyroid, cirrhosis<br>pathologic: <strong><span class=\"wl\">papilloma</span> (most common)</strong> · ectasia · fibrocystic · <strong>malignancy 5-10%</strong>"
+        ],
+        [
+         "<strong>Ix</strong>",
+         "<strong>< 35 US</strong> · <strong>> 35 mammogram ± US</strong>",
+         "<strong>< 35 + normal exam: no testing</strong> · suspicious finding: the lump approach",
+         "identify duct/quadrant · r/o <span class=\"wl\">Paget's</span> · periareolar US, mammogram · galactogram · cytology"
+        ],
+        [
+         "<strong>Tx</strong>",
+         "pre-menopausal, benign: <strong>re-examine after next cycle</strong>",
+         "low-fat high-complex-carb diet · bra · compresses · NSAIDs · stop OCP/HRT · tamoxifen · treat if severe <strong>> 7 days</strong>",
+         "galactogram <strong>not diagnostic</strong> · <strong>must excise to be sure</strong> · surgical consult"
+        ]
+       ]
+      },
+      {
+       "t": "table",
+       "cols": [
+        "<span class=\"wl\">Breast infection</span>",
+        "<strong>Lactating</strong>",
+        "<strong>Non-lactating</strong>"
+       ],
+       "rows": [
+        [
+         "<strong>Management</strong>",
+         "antibiotics · <strong>continue breastfeeding</strong>, fully empty the breast",
+         "antibiotics"
+        ],
+        [
+         "<strong>Abscess</strong>",
+         "only <strong>if antibiotics fail</strong>: US, US-guided aspiration, I&amp;D",
+         "US, US-guided aspiration, I&amp;D"
+        ],
+        [
+         "<strong>Malignancy</strong>",
+         "/",
+         "<strong>rule out malignancy</strong>, esp. if persistent · if imaging OK, <strong>repeat in 3 months</strong>"
+        ]
+       ]
+      },
+      {
+       "t": "table",
+       "cols": [
+        "Screening",
+        "<strong>Usual risk</strong>",
+        "<strong>High risk</strong>"
+       ],
+       "rows": [
+        [
+         "<strong>Who</strong>",
+         "<strong>age 50-74</strong> (OBSP, self-referral)",
+         "1st-degree relative <strong>< 50</strong> · <strong>two</strong> 1st-degree relatives any age · ovarian ca (self or 1st-degree) · male breast ca in family · ADH/ALH, radial scar, phyllodes, LCIS · <strong>density > 75%</strong>"
+        ],
+        [
+         "<strong>Mammogram</strong>",
+         "<strong>biennial</strong> (CTFPHC: every 2-3 years)",
+         "<strong>annual</strong>"
+        ],
+        [
+         "<strong>Not recommended</strong>",
+         "age 40-49 (conditional) · MRI, tomosynthesis, US (<strong>strong</strong>) · CBE · breast self-exam",
+         "BRCA: <strong>annual MRI + mammogram</strong>"
+        ]
+       ]
+      },
+      {
+       "t": "note",
+       "html": "<p><strong>Family history (RR):</strong> two 1st-degree <strong>4-5</strong> · one 1st-degree <strong>2-3</strong> · one 2nd-degree <strong>1.2-1.5</strong>. <strong>Minor factors (RR 1.1-1.3):</strong> inactivity · BMI > 30 · > 2 drinks/day · early menarche, late menopause · nulliparity, no breastfeeding · BCP > 5 years · combined HRT.</p>"
+      },
+      {
+       "t": "note",
+       "html": "<p><strong>BRCA carriers:</strong> lifetime <strong>55-85% breast, 15-65% ovarian</strong> · prophylactic mastectomy <strong>90%</strong> reduction, oophorectomy <strong>50%</strong>, tamoxifen <strong>?50%</strong>. <strong>Men:</strong> pubertal swelling <strong>85-90% resolve within 2 years</strong>; a mass reported as <strong><span class=\"wl\">gynecomastia</span> is benign</strong> - ask about meds.</p>"
+      }
+     ]
     },
     {
      "id": "repro-w5-08",
      "num": "08",
      "name": "OB Care Providers",
-     "hasNote": false
+     "hasNote": true,
+     "title": "Obstetrical care providers",
+     "framing": "<p>Three providers, one team. The chart turns on <strong>who can do what, and at which point a pregnancy leaves their scope</strong>: family medicine and midwives each carry a <strong>low-risk pregnancy from antenatal care to 6 weeks post partum</strong>, while the obstetrician is the <strong>consultant for anything complicated</strong> and the only one who operates.</p>",
+     "keypoints": "<p>⭐ <strong>Midwives provide informed choice rather than informed consent</strong>, which is why a client can choose outside the regular recommendations. ⚠ <strong>The obstetrician provides no care for the infant and has no lactation training</strong>; the family physician follows the baby from birth onward and the midwife for 6 weeks. <strong>Fetal anomalies at any stage go to MFM</strong>, not a general OB. <strong>Preeclampsia is a consult trigger in all three phases</strong>, and the post partum list is short: PPH, a 3rd or 4th degree tear, preeclampsia. Asking for help is not a failure.</p>",
+     "blocks": [
+      {
+       "t": "table",
+       "cols": [
+        "",
+        "<strong>Family medicine OB</strong>",
+        "<strong>Midwife</strong>",
+        "<strong>Obstetrician (OB / MFM)</strong>"
+       ],
+       "rows": [
+        [
+         "<strong>Training</strong>",
+         "Family medicine + <strong>6-12 months</strong> of extra obstetrical training",
+         "<strong>Direct entry, 4 years</strong>; 7 programs in Canada; regulated by province (<strong>unregulated only in PEI and Yukon</strong>)",
+         "Generalist: <strong>5-year OBGYN residency</strong> · <strong>MFM = the same + a 2-year fellowship</strong>"
+        ],
+        [
+         "<strong>Who they care for</strong>",
+         "<strong>Low-risk</strong> pregnancies: their own patients plus referrals from other physicians; all routine antenatal, intrapartum and post partum care",
+         "<strong>Low-risk</strong> pregnancy and birth, client-centred; delivery <strong>at home, in a birthing centre or clinic, or in hospital</strong>",
+         "<strong>Consultant</strong> to FM and midwives for complicated antenatal, intrapartum or post partum care · <strong>preconception counselling</strong> (MFM optimises the medically complex patient before conception)"
+        ],
+        [
+         "<strong>Delivery</strong>",
+         "Vaginal; <strong>many perform vacuum-assisted</strong> deliveries; <span class=\"wl\">cesarean</span> is a referral (rural exceptions)",
+         "Vaginal, low-risk",
+         "<strong>All forms: <span class=\"wl\">operative vaginal</span> and <span class=\"wl\">cesarean section</span></strong>"
+        ],
+        [
+         "<strong><span class=\"wl\">Oxytocin</span> in labour</strong>",
+         "<strong>All</strong> manage it (induction / augmentation)",
+         "<strong>Variable</strong>: use without an OB consult depends on location and training; some sites also need nursing support for an <span class=\"wl\">epidural</span> (changing in London)",
+         "Yes"
+        ],
+        [
+         "<strong>Post partum: the patient</strong>",
+         "Many see the patient <strong>until 6 weeks</strong>, then ongoing if in their practice; primary-care knowledge throughout",
+         "<strong>6 weeks post partum</strong>, including <strong>breastfeeding</strong>; <strong>home visits</strong> are commonplace",
+         "Low-risk: <strong>often only a 6-week visit</strong>; not involved in most of the post partum transition; <strong>no lactation training</strong> (encourages breastfeeding from personal experience only)"
+        ],
+        [
+         "<strong>Post partum: the infant</strong>",
+         "<strong>From birth onward</strong>, for years if their patient; some return the baby to the referring physician immediately",
+         "Cares for the <strong>infant for 6 weeks</strong>",
+         "<strong>No care for the infant after delivery</strong>"
+        ],
+        [
+         "<strong>Distinct advantage</strong>",
+         "<strong>Continuity of care and the \"whole patient\"</strong>: recognises and treats <span class=\"wl\">depression</span>, <span class=\"wl\">URTI</span> etc. during antenatal and post partum care",
+         "<strong>Informed choice, not informed consent</strong> (the client may choose outside the recommendations) · <strong>30-90 min appointments</strong> · prenatal and post partum home visits",
+         "Manages the complicated case and every operative delivery"
+        ]
+       ]
+      },
+      {
+       "t": "table",
+       "lead": "<p><strong>When to consult OB</strong></p>",
+       "cols": [
+        "<strong>Antepartum</strong>",
+        "<strong>Intrapartum</strong>",
+        "<strong>Post partum</strong>"
+       ],
+       "rows": [
+        [
+         "<strong>Medically complicated</strong> patient (<span class=\"wl\">diabetic</span>, <span class=\"wl\">essential hypertension</span>, prior <span class=\"wl\">preeclampsia</span>, elevated <span class=\"wl\">BMI</span>, <span class=\"wl\">SLE</span>) · fetal anomalies (<strong>MFM</strong>) · atypical or abnormal antepartum fetal surveillance · need for a <strong>planned cesarean</strong>",
+         "Fetal anomalies (<strong>MFM</strong>) · atypical or abnormal fetal surveillance · <strong><span class=\"wl\">labour dystocia</span>, failure to descend</strong>, assessment and rotation of fetal position · considering <strong>operative vaginal delivery or cesarean</strong> · <strong>preeclampsia / <span class=\"wl\">eclampsia</span></strong>",
+         "<strong>Significant <span class=\"wl\">PPH</span></strong> · <strong>3rd or 4th degree tear</strong> · preeclampsia"
+        ]
+       ]
+      },
+      {
+       "t": "note",
+       "html": "<p><strong>Abbreviations the deck defines:</strong> OB obstetrician · OBGYN obstetrics and gynecology · MFM maternal fetal medicine · SLE lupus · BPP biophysical profile · NST <span class=\"wl\">non-stress test</span>.</p>"
+      }
+     ]
     },
     {
      "id": "repro-w5-09",
      "num": "09",
      "name": "Pathology of 1st Trimester Bleeding",
-     "hasNote": false
+     "hasNote": true,
+     "title": "Pathology of first trimester bleeding",
+     "framing": "<p><strong>Three \"baby\" causes of first trimester bleeding, told apart by where the products of conception are and what the trophoblast is doing.</strong> Every one is worked up the same way: <strong>serum β-hCG + pelvic ultrasound</strong>, then <strong>the tissue goes to pathology</strong>, because only the microscope proves where the gestation was.</p>",
+     "keypoints": "<p><strong>complete = paternal only, diploid, no fetus, high hCG, big uterus; partial = triploid, fetus possible, low-normal hCG, small uterus.</strong> <strong>Choriocarcinoma has no villi</strong>; a mole has too many swollen ones. <strong>hCG can be negative in an ectopic.</strong> <strong>Choriocarcinoma goes to the lung first (> 90%) but kills through liver or brain.</strong></p>",
+     "blocks": [
+      {
+       "t": "pathway",
+       "mermaid": "flowchart TD\n    A[\"Reproductive-age woman: bleeding ± pain, positive β-hCG\"] --> B[\"Serum β-hCG + pelvic ultrasound\"]\n    B --> C{\"Gestational sac in the uterus?\"}\n    C -->|\"No sac, adnexal mass\"| D[\"ECTOPIC<br/>endometrium decidualized, no products of conception\"]\n    C -->|\"Sac, no fetal heart\"| E[\"SPONTANEOUS ABORTION<br/>villi + trophoblast + decidua on curettage\"]\n    C -->|\"Snow storm, no fetus, hCG markedly high\"| F[\"COMPLETE MOLE\"]\n    C -->|\"Focal cystic change with a fetus, hCG low-normal\"| G[\"PARTIAL MOLE\"]\n    B --> H{\"Persistent, markedly elevated hCG after ANY gestation?\"}\n    H -->|Yes| I[\"CHORIOCARCINOMA<br/>malignant trophoblast, no villi\"]"
+      },
+      {
+       "t": "table",
+       "lead": "<p><strong>Workup skeleton</strong></p><p>- <strong>Hx</strong> - amenorrhea or a light last period, bleeding, cramping, <strong>passage of clot or tissue</strong> · ectopic risk factors: <strong>PID</strong>, adhesions, <span class=\"wl\">endometriosis</span>, <span class=\"wl\">IUD</span>, previous ectopic</p><p>- <strong>PEx</strong> - vitals (<strong>shock = rupture</strong>) · <strong>uterus large for dates = complete mole, small for dates = partial</strong> · adnexal mass · cervix open or closed</p><p>- <strong>Ix</strong> - ⭐ <strong><span class=\"wl\">β-hCG</span> + pelvic ultrasound are the two investigations that matter</strong>; then <strong>every piece of tissue passed or sampled goes to pathology</strong> · ⚠ <strong>an endometrial sample cannot diagnose an ectopic, it can only fail to find products of conception</strong></p><p>- <strong>Follow-up</strong> - <strong>serial hCG to baseline after any mole</strong> · <strong>≥ 3 spontaneous abortions = recurrent</strong>: work-up + medical genetics</p>",
+       "cols": [
+        "",
+        "<strong><span class=\"wl\">Spontaneous abortion</span></strong>",
+        "<strong><span class=\"wl\">Ectopic pregnancy</span></strong>",
+        "<strong><span class=\"wl\">Complete mole</span></strong>",
+        "<strong><span class=\"wl\">Partial mole</span></strong>",
+        "<strong><span class=\"wl\">Choriocarcinoma</span></strong>"
+       ],
+       "rows": [
+        [
+         "<strong>Causes</strong>",
+         "Mostly unknown · <strong>fetal chromosomal / congenital abnormality is #1</strong> · <span class=\"wl\">TORCH</span> · maternal: implantation, chronic disease, endocrine, infection",
+         "<strong>PID (commonest)</strong> · intrapelvic adhesions (surgery, appendicitis) · endometriosis · IUD · previous ectopic",
+         "<strong>Empty ovum + 1 sperm that duplicates (90%)</strong> or 2 sperm (10%) · <strong>diploid 46 XX or XY, paternal only</strong>",
+         "<strong>Ovum + 2 sperm (diandric)</strong>, or 1 that duplicates · <strong>triploid 69 XXX or XXY</strong>: 2 paternal + 1 maternal",
+         "<strong>Any gestational event: 50% mole, 25% SA, 25% normal pregnancy</strong>, recent or years later"
+        ],
+        [
+         "<strong>Pathology</strong>",
+         "<strong>Products of conception</strong> (villi, trophoblast, ± fetal parts) + <strong>gestational endometrium</strong> (glands, <strong>decidualized stroma</strong>)",
+         "<strong>Hematosalpinx</strong>, wall thinned or ruptured · villi, trophoblast, fetal parts in the tube · <strong>endometrium decidualized but NO products of conception</strong>",
+         "<strong>Abundant swollen hydropic villi, no fetal tissue</strong> · <strong>diffuse hydropic change + trophoblastic proliferation</strong>",
+         "Lower volume · <strong>two villous sizes</strong> (hydropic + small normal or fibrotic) · <strong>less trophoblastic proliferation</strong> · <strong>fetal tissue may be present</strong>",
+         "Red hemorrhagic uterine mass, any size · <strong>no villi, malignant trophoblast, hemorrhage + necrosis</strong>"
+        ],
+        [
+         "<strong>Presentation</strong>",
+         "<strong>15% of known pregnancies</strong> (underestimated) · bleeding, cramping, clot or tissue",
+         "<strong>1-2% of gestations</strong> · <strong>triad: amenorrhea, pain, adnexal mass</strong> · shock if ruptured · <strong>hCG normal, declining or negative</strong>",
+         "<strong>1/1000 USA, 1/500 Asia</strong> · bleeding · <strong>uterus large for dates</strong> · hyperemesis 25%, HTN / pre-eclampsia 25%, hyperthyroidism · <strong>hCG markedly elevated</strong>",
+         "Bleeding · <strong>uterus small for dates</strong> · the complete-mole symptoms are rare · <strong>hCG low to normal</strong>",
+         "Abnormal bleeding · <strong>persistent, markedly elevated hCG</strong>"
+        ],
+        [
+         "<strong>Dx</strong>",
+         "Clinical, or microscopy of curettage or passed tissue · <strong>must see products of conception to prove intrauterine gestation</strong>",
+         "<strong>No sac in the uterus + adnexal mass on ultrasound</strong> · POC absent from endometrium, present at the ectopic site",
+         "<strong>\"Snow storm\" without fetus</strong> · caught early (8-12 wk) on routine ultrasound",
+         "<strong>Focal cystic change with fetus formation</strong> · <strong>often under-recognized clinically</strong>",
+         "Often presumptive on clinical findings · malignant trophoblast in the sample"
+        ],
+        [
+         "<strong>Px</strong>",
+         "Incomplete may need D&amp;C",
+         "Rupture and hemorrhage",
+         "<strong>80% cured by curettage</strong> · 15% invade or persist · <strong>2-3% become choriocarcinoma</strong> · serial hCG",
+         "Most cured by curettage · 5-10% invade or persist · <strong>rarely</strong> choriocarcinoma · serial hCG",
+         "<strong>> 90% lung metastases at diagnosis</strong> · <strong>80% 5-year survival with chemotherapy</strong> · death from liver or brain mets"
+        ]
+       ]
+      },
+      {
+       "t": "table",
+       "cols": [
+        "Type of abortion",
+        "Vaginal bleeding",
+        "Products passed",
+        "Note"
+       ],
+       "rows": [
+        [
+         "<strong><span class=\"wl\">Threatened</span></strong>",
+         "Yes",
+         "<strong>No</strong>",
+         ""
+        ],
+        [
+         "<strong><span class=\"wl\">Inevitable</span></strong>",
+         "Yes",
+         "<strong>No</strong>",
+         ""
+        ],
+        [
+         "<strong><span class=\"wl\">Incomplete</span></strong>",
+         "Yes",
+         "<strong>Yes</strong>",
+         "<strong>May need <span class=\"wl\">D&amp;C</span></strong> for the remainder"
+        ],
+        [
+         "<strong>Complete</strong>",
+         "Yes",
+         "<strong>Yes</strong>",
+         ""
+        ],
+        [
+         "<strong><span class=\"wl\">Missed</span></strong>",
+         "<strong>Yes or no</strong>",
+         "No",
+         ""
+        ],
+        [
+         "<strong>Recurrent</strong>",
+         "",
+         "",
+         "<strong>≥ 3</strong>: investigate, refer to medical genetics"
+        ]
+       ]
+      },
+      {
+       "t": "note",
+       "html": "<p><strong>Causes of bleeding in a reproductive-age woman, ABCDEHIN:</strong> <strong>A</strong>natomic (<strong>PALE</strong>: <span class=\"wl\">polyp</span>, <span class=\"wl\">adenomyosis</span>, <span class=\"wl\">leiomyoma</span>, <span class=\"wl\">endometritis</span>) · <strong>B</strong>aby (SA, ectopic, GTD) · <strong>C</strong>oagulopathy · <strong>D</strong>ysfunctional uterine bleeding · <strong>E</strong>ndocrine · <strong>H</strong>ormones (exogenous) · <strong>I</strong>nfectious · <strong>N</strong>eoplasia</p>"
+      }
+     ]
     },
     {
      "id": "repro-w5-10",
      "num": "10",
      "name": "Teratogenesis",
-     "hasNote": false
+     "hasNote": true,
+     "title": "Teratogenesis",
+     "framing": "<p>A teratogen is judged by <strong>what it hits and when</strong>: the same exposure does nothing in weeks 1-2, produces a <strong>major structural anomaly during organogenesis (weeks 3-8)</strong>, and a functional or minor defect in the fetal period. <strong>9 in 10 pregnant women take at least one medication</strong>, so the question is rarely <em>whether</em> she is exposed but how to counsel her.</p>",
+     "keypoints": "<p>⭐ <strong>Weeks 3-8 (organogenesis) is the window of greatest sensitivity; weeks 1-2 are usually not susceptible, and the fetal period is less sensitive</strong> - CNS, eyes and external genitalia stay sensitive to term. ⚠ <strong>FDA category C means no data, not safety</strong>; the D/X split is <em>benefit may outweigh risk</em> vs. <em>risk outweighs any benefit</em>. <strong>Hyperthermia and maternal diabetes both cause NTDs and cardiovascular defects</strong> - hyperthermia adds abdominal wall defects and spontaneous abortion, diabetes adds CNS, spine and limb defects.</p>",
+     "blocks": [
+      {
+       "t": "figure",
+       "src": "assets/figures/2394960d5354.jpg",
+       "alt": "tereatogenesis timeline.png",
+       "w": 900,
+       "h": 669,
+       "cap": "The susceptibility timeline: embryonic period (organogenesis) vs. fetal period"
+      },
+      {
+       "t": "table",
+       "lead": "<p><strong>Workup skeleton</strong></p><p>- <strong>Hx</strong>: every drug, supplement, herbal, recreational drug and occupational exposure · <strong>timing against the LMP</strong> (organogenesis or not) · infections, fever ≥ 39°C, radiation · maternal <strong>diabetes</strong> and its control · rubella immunity</p><p>- <strong>Counsel</strong>: <strong>pre-conception</strong> is the moment (see below) · ⚠ do NOT tell her to stop exercising or to fear a short sauna - core temperature does NOT exceed 39°C with exercise in pregnancy</p><p>- <strong>Ix / refer</strong>: rubella titres · FRAME Clinic · Reprotox / LactMed for the specific drug</p>",
+       "cols": [
+        "Category",
+        "Deck examples",
+        "Defects the deck names",
+        "What separates the rows"
+       ],
+       "rows": [
+        [
+         "<strong>Physical</strong>",
+         "radiation · <strong>hyperthermia</strong> (core ≥ 39°C, extreme or prolonged)",
+         "<strong>spontaneous abortion, <span class=\"wl\">NTDs</span>, cardiovascular defects, abdominal wall defects</strong>",
+         "fetal radiation dose <strong>not to exceed 50 rads</strong> · the hazard is <em>extreme</em> heat, not exercise"
+        ],
+        [
+         "<strong>Infectious</strong>",
+         "<strong><span class=\"wl\">TORCH</span></strong>: <span class=\"wl\">toxoplasmosis</span> · other (<strong>syphilis, zika, parvovirus</strong>, VZV, Listeria) · <span class=\"wl\">rubella</span> · <span class=\"wl\">CMV</span> · <span class=\"wl\">HSV</span>",
+         "<strong>vertical transmission</strong>: in utero, at delivery, or after birth via breast milk",
+         "<strong>CMV = #1 infectious cause of birth defects in North America</strong>, <strong>40% transmission with a 1st maternal infection</strong> · <strong>HSV caught in the last 3 months: 30-50% transmission → <span class=\"wl\">cesarean section</span></strong> · rubella: vaccinate, <strong>check titres</strong> · toxoplasmosis: cat feces, uncooked meat; <strong>not routinely screened</strong> in Canada"
+        ],
+        [
+         "<strong>Maternal condition</strong>",
+         "<strong><span class=\"wl\">diabetes</span></strong>",
+         "<strong>neural tube, CNS, spine, cardiovascular, and limb defects</strong>",
+         "<strong>glycemic control before conception</strong> and through pregnancy · <span class=\"wl\">folic acid</span> before conception"
+        ],
+        [
+         "<strong>Chemical</strong>",
+         "medications · vitamins/minerals/herbal products · recreational drugs · toxins",
+         "the deck's case: <strong><span class=\"wl\">mycophenolate</span> ~25% malformation, ~50% spontaneous abortion</strong>",
+         "<strong><span class=\"wl\">doxylamine-pyridoxine</span> (Diclectin) is the only anti-nausea drug approved in pregnancy</strong> · risk graded by the FDA categories below"
+        ]
+       ]
+      },
+      {
+       "t": "table",
+       "cols": [
+        "FDA category",
+        "The discriminator: which studies, and what they show",
+        "Examples"
+       ],
+       "rows": [
+        [
+         "<strong>A</strong>",
+         "<strong>controlled human studies</strong> show no risk",
+         "<span class=\"wl\">doxylamine-pyridoxine</span> · <span class=\"wl\">folic acid</span> · <span class=\"wl\">levothyroxine</span>"
+        ],
+        [
+         "<strong>B</strong>",
+         "<strong>no human studies</strong>; animal studies show no risk",
+         "<span class=\"wl\">amoxicillin</span> · <span class=\"wl\">loratadine</span> · <span class=\"wl\">ondansetron</span>"
+        ],
+        [
+         "<strong>C</strong>",
+         "<strong>no controlled studies in animals OR humans</strong>",
+         "<span class=\"wl\">fluconazole</span> · <span class=\"wl\">metoprolol</span> · <span class=\"wl\">sertraline</span>"
+        ],
+        [
+         "<strong>D</strong>",
+         "<strong>evidence of human risk exists</strong>; benefits may outweigh risks in certain situations",
+         "<span class=\"wl\">paroxetine</span> · <span class=\"wl\">diazepam</span> · <span class=\"wl\">lisinopril</span> · <span class=\"wl\">phenytoin</span> · <span class=\"wl\">lithium</span>"
+        ],
+        [
+         "<strong>X</strong>",
+         "<strong>both animal and human studies show fetal abnormalities</strong>; risk outweighs any possible benefit",
+         "<span class=\"wl\">methotrexate</span> · <span class=\"wl\">simvastatin</span> · <span class=\"wl\">warfarin</span>"
+        ]
+       ]
+      },
+      {
+       "t": "note",
+       "html": "<p><strong>Counselling by phase:</strong> <strong>Pre-conception</strong> - optimize disease management · <strong>1 mg folic acid daily for antiepileptics</strong> · <strong>minimize dose and number of therapeutics</strong> · <strong>consider switching to an alternative medication</strong> · counsel on potential teratogenesis · <strong>Antenatal</strong> - potential <strong>dose increases</strong> · <strong>Post-partum</strong> - dose adjustments · breastfeeding considerations · restarting medications · switching back to previous therapeutics.</p>"
+      },
+      {
+       "t": "note",
+       "html": "<p><strong>Anomaly size:</strong> <strong>major</strong> = affects life expectancy, health status, physical or social functioning · <strong>minor</strong> = little or no impact on health or short- or long-term function.</p>"
+      },
+      {
+       "t": "note",
+       "html": "<p><strong>Resources:</strong> FRAME Clinic (<strong>Fetal Risk After Maternal Exposure</strong>, Western / Children's Hospital LHSC) · Reprotox · LactMed · MotherToBaby.</p>"
+      }
+     ]
     },
     {
      "id": "repro-w5-11",
      "num": "11",
      "name": "Approach to First Trimester Bleeding & Ultrasound",
-     "hasNote": false
+     "hasNote": true,
+     "title": "First trimester ultrasound and hCG",
+     "framing": "<p><strong>Two questions, one for each half of the lecture.</strong> For dating: <strong>which landmark is visible decides which measurement dates the pregnancy</strong>, and each landmark is retired the moment the next one appears. For a positive test with an empty uterus: <strong>a single hCG value never settles a pregnancy of unknown location; only the rate of change does</strong>, so the answer is almost always to repeat it.</p>",
+     "keypoints": "<p>⭐ <strong>Once an embryo is seen, MSD is never used again: CRL dates the pregnancy, best when > 10 mm (7 weeks), accurate to 3-8 days.</strong> <strong>A gestational sac is visible from 32 days, a yolk sac from 5 to 5+5 weeks, a heartbeat by 6+0.</strong> <strong>hCG level does not predict ectopic rupture</strong>, and a falling hCG does not exclude an ectopic: <strong>8% of untreated ectopics fall at the same rate as a miscarriage</strong> (Silva 2006). <strong>All women should be offered a dating scan at 7-12 weeks</strong>; it beats LMP and <strong>cuts inductions for post-dates</strong>.</p>",
+     "blocks": [
+      {
+       "t": "pathway",
+       "mermaid": "flowchart TD\n    A[\"Positive hCG ± bleeding or pain<br/>Hemodynamically stable\"] --> B[\"Transvaginal ultrasound of uterus + adnexa<br/>(± transabdominal for high mass / free fluid)\"]\n    B --> C{\"Intrauterine pregnancy seen?\"}\n    C -->|Yes| D[\"Date it by the landmark present:<br/>MSD → CRL → BPD\"]\n    C -->|\"No: pregnancy of unknown location\"| E{\"hCG 2000-3000 mIU and<br/>no clear evidence of ectopic?\"}\n    E -->|Yes| F[\"REPEAT hCG ± ultrasound a few days later<br/>2x more likely NVIUP than ectopic; 0.5-2% viable IUP\"]\n    F --> G{\"What does the serial hCG do?\"}\n    G -->|\"Rises past 3000 (~3500), still no IUP\"| H[\"ECTOPIC LIKELY\"]\n    G -->|\"Falls 15-50% per 24 h\"| I[\"Likely NVIUP: follow until < 5 mIU/mL\"]\n    G -->|\"Decline off the predictable curve\"| J[\"Re-evaluate: incomplete abortion<br/>or non-resolving ectopic\"]"
+      },
+      {
+       "t": "table",
+       "lead": "<p><strong>Workup skeleton</strong></p><p>- <strong>Hx</strong> - LMP dating assumes <strong>regular 28-day cycles, mid-cycle ovulation and fertilization, correct recall, off the OCP for months</strong>; even a correct LMP cannot fix implantation <strong>without ART</strong> (follicular waves · sperm survive <strong>5-7 days</strong> · ovulation-to-implantation varies by <strong>up to 11 days</strong>)</p><p>- <strong>Ix</strong> - <strong><span class=\"wl\">TVUS</span> of uterus and adnexa</strong> is the quality standard, TA only for a high mass or free fluid · <strong><span class=\"wl\">serial hCG</span></strong> rather than one absolute value · ⚠ <strong>a single hCG in the overlap zone does not distinguish viable IUP, <span class=\"wl\">NVIUP</span> and <span class=\"wl\">ectopic</span></strong></p><p>- <strong>Tx</strong> - stable + hCG 2000-3000 + no ectopic seen → <strong>repeat, do not act</strong>; this spares inappropriate <span class=\"wl\">misoprostol</span>, <span class=\"wl\">D&amp;C</span> and laparoscopy</p><p>- <strong>Follow-up</strong> - a pregnancy is <strong>resolved only below 5 mIU/mL</strong> · ⚠ <strong>a resolving ectopic can still rupture while its hCG falls</strong> · rupture under close surveillance: <strong>0.03% of all PUL, 1.7% of diagnosed ectopics</strong></p>",
+       "cols": [
+        "Landmark",
+        "First seen",
+        "What it is / how measured",
+        "Dating accuracy",
+        "Retire it when"
+       ],
+       "rows": [
+        [
+         "<strong>Gestational sac (<span class=\"wl\">MSD</span>)</strong>",
+         "<strong>2-3 mm at ~32-33 days</strong> on high-frequency TVUS · present weeks 3-5 · grows <strong>~1 mm/day</strong>",
+         "Chorionic cavity; echogenic rim = implanting villi + decidua · <strong>mean of 3 orthogonal inner-to-inner diameters</strong>, cursors on the sac not the rim · <strong>GA (days) ≈ MSD (mm) + 30</strong>",
+         "<strong>4-11 days</strong> · <strong>greater inter-observer variability than CRL</strong>",
+         "<strong>MSD > 14 mm</strong>, or <strong>as soon as an embryo is identified</strong>"
+        ],
+        [
+         "<strong>Yolk sac</strong>",
+         "<em>Can</em> be seen at <strong>MSD 5-6 mm (~5 wk)</strong> · <em>should</em> be seen at <strong>MSD 8 mm (5+5 wk)</strong>",
+         "<strong>First structure inside the sac; confirms an intrauterine pregnancy</strong> · max <strong>6 mm by 10 wk</strong>, then disappears",
+         "<strong>Not used for GA</strong>",
+         "Disappears after 10 wk"
+        ],
+        [
+         "<strong>Embryo (<span class=\"wl\">CRL</span>)</strong>",
+         "<strong>5+5 wk at ~1-2 mm</strong> · <strong>fetal heart by 6+0 wk at ~3 mm</strong>",
+         "Longest straight line, outer cephalic margin to rump, <strong>neck neutral</strong> · TA is not inferior to TV <strong>if a CRL is used and measured after 6 wk</strong>",
+         "<strong>3-8 days</strong> · smallest error at <strong>7-60 mm</strong> · <strong>most reliable > 10 mm (7 wk)</strong>; with several scans, <strong>use the earliest with CRL > 10 mm</strong>",
+         "<strong>CRL > 84 mm (14 wk)</strong>"
+        ],
+        [
+         "<strong><span class=\"wl\">BPD</span></strong>",
+         "12-14 wk",
+         "Head measurement",
+         "<strong>Equal to CRL at 12-14 wk</strong>",
+         "<strong>More reliable than CRL after 84 mm / 14 wk</strong>"
+        ]
+       ]
+      },
+      {
+       "t": "table",
+       "cols": [
+        "<span class=\"wl\">hCG</span> timeline (single IUP)",
+        ""
+       ],
+       "rows": [
+        [
+         "<strong>Source</strong>",
+         "Placental <strong>syncytiotrophoblast</strong>"
+        ],
+        [
+         "<strong>Turns positive</strong>",
+         "As implantation begins: <strong>21-22 days post LMP = 8 days post ovulation</strong>"
+        ],
+        [
+         "<strong>Shape of the curve</strong>",
+         "<strong>Exponential rise → plateau late 1st trimester → decline → steady state through T2-T3</strong> · peaks <strong>9-12 wk LMP (25,700-288,000 mIU/mL)</strong>"
+        ],
+        [
+         "<strong>Shifted by</strong>",
+         "Maternal <strong>age</strong>, <strong>BMI (↓ with BMI)</strong>, <strong>smoking (↓ if continued)</strong>, <strong>fetal sex (girls higher)</strong>; all four also raise adverse-outcome risk · <strong>total hCG ∝ placental weight at birth</strong>"
+        ],
+        [
+         "<strong>Does</strong>",
+         "Maintains the <span class=\"wl\">corpus luteum</span> and drives progesterone → implantation · placenta + cord development · <strong>suppresses myometrial contractions</strong> · fetal organ growth and angiogenesis"
+        ]
+       ]
+      },
+      {
+       "t": "table",
+       "cols": [
+        "Rate of rise in a viable IUP",
+        "Study",
+        "Consequence"
+       ],
+       "rows": [
+        [
+         "<strong>Doubling every 2 days</strong>",
+         "Historical teaching",
+         "Any deviation read as failing fetus, threatened miscarriage or ectopic"
+        ],
+        [
+         "<strong>≥ 66% in 2 days</strong>",
+         "Kadar 1990, 20 women",
+         "Lower limit of an <strong>85% CI, so 8% of viable IUPs rose slower</strong>"
+        ],
+        [
+         "<strong>≥ 53% in 2 days (as low as 35%)</strong>",
+         "Barnhart 2004, 287 patients",
+         "99% CI: <strong>< 1% of viable pregnancies rise slower</strong>"
+        ]
+       ]
+      },
+      {
+       "t": "note",
+       "html": "<p><strong>Discriminatory zone:</strong> the hCG <strong>above which TVUS should show a gestational sac</strong> in a normal IUP. The old <strong>1000-2000</strong> cut-off ignored slow-rising and low-normal viable pregnancies and mislabelled them as failed or ectopic; <strong>2000-3000 keeps them in the PUL differential</strong>.</p>"
+      }
+     ]
     },
     {
      "id": "repro-w5-12",
      "num": "12",
      "name": "Hypertension in Pregnancy",
-     "hasNote": false
+     "hasNote": true,
+     "title": "Hypertensive disorders in pregnancy",
+     "framing": "<p>Every decision turns on two questions: <strong>when did the BP rise relative to 20 weeks</strong>, and <strong>is the high BP the disease itself (chronic / gestational) or a symptom of it (pre-eclampsia / eclampsia)?</strong> The first sets the diagnosis; the second sets whether you treat the number or deliver the patient.</p>",
+     "keypoints": "<p>⭐ <strong>20 weeks is the line: HTN diagnosed before it is chronic, after it (with normal BPs documented) is gestational; pre-eclampsia adds proteinuria.</strong> Mild is <strong>>140 / >90</strong>, severe is <strong>>160 / >110</strong>, always <strong>2 readings >15 min apart</strong>. ⚠ <strong>HELLP can present with a completely normal BP.</strong> The <strong>primary maternal danger of severe HTN is stroke</strong>, so any neurological symptom means investigate for an intracranial event. Treat the number in chronic / gestational HTN; in pre-eclampsia the number is a symptom and <strong>complications drive delivery planning</strong>.</p>",
+     "blocks": [
+      {
+       "t": "pathway",
+       "mermaid": "flowchart TD\n    A[\"BP >140/90 on 2 readings >15 min apart\"] --> B{\"Onset before or after 20 weeks?\"}\n    B -->|\"Before pregnancy or <20 wk\"| C[\"PRE-EXISTING (chronic) hypertension\"]\n    B -->|\">20 wk, normal BPs documented before\"| D{\"Proteinuria or adverse conditions?\"}\n    D -->|No| E[\"GESTATIONAL hypertension<br/>isolated BP elevation\"]\n    D -->|Yes| F[\"PRE-ECLAMPSIA<br/>hypertension + proteinuria\"]\n    F -->|\"Seizure\"| G[\"ECLAMPSIA\"]\n    F -.->|\"Hemolysis + high liver enzymes + low platelets<br/>BP may be NORMAL\"| H[\"HELLP\"]\n    A --> I{\"SBP >160 or DBP >110?\"}\n    I -->|Yes| J[\"SEVERE - urgent IV lowering to <160/<110\"]"
+      },
+      {
+       "t": "table",
+       "lead": "<p><strong>Workup skeleton</strong></p><p>- <strong>Hx</strong>: onset vs <strong>20 weeks</strong> · headache, visual disturbance, <strong>clonus / photosensitivity</strong> (eclampsia precursors) · RUQ pain, N/V · chest pain, dyspnea · co-morbid <strong>diabetes / kidney disease</strong> · parity (pre-eclampsia favours <strong>primiparous</strong>)</p><p>- <strong>PEx</strong>: <strong>2 readings >15 min apart</strong>, seated, calm, correct cuff size · exclude <strong>white-coat</strong> and <strong>pain-driven</strong> elevation · neuro symptoms ⇒ <strong>rule out an intracranial event</strong></p><p>- <strong>Ix</strong>: urine protein · <strong>platelets, WBC, INR, PTT</strong> · <strong>creatinine, uric acid</strong> · <strong>LFTs, albumin</strong> · O2 sat · fetal: growth, amniotic fluid, <strong>umbilical artery end-diastolic flow</strong></p><p>- <strong>Tx</strong>: chronic / gestational ⇒ <strong>treat the BP</strong> · pre-eclampsia ⇒ <strong>BP is secondary; minimise maternal / fetal morbidity</strong>, MgSO4 once delivery is decided · ⚠ no <span class=\"wl\">diuretics</span>, no <span class=\"wl\">ACEi</span> / <span class=\"wl\">ARB</span></p><p>- <strong>Follow-up</strong>: complications decide <strong>delivery planning</strong> · MgSO4 continues <strong>12-48 h post-partum</strong></p>",
+       "cols": [
+        "",
+        "<strong>Pre-existing (chronic)</strong>",
+        "<strong>Gestational</strong>",
+        "<strong><span class=\"wl\">Pre-eclampsia</span></strong>",
+        "<strong><span class=\"wl\">Eclampsia</span></strong>",
+        "<strong><span class=\"wl\">HELLP</span></strong>"
+       ],
+       "rows": [
+        [
+         "<strong>Definition</strong>",
+         "HTN <strong>before pregnancy or <20 weeks</strong>",
+         "HTN <strong>>20 weeks</strong>, <strong>normal BPs documented</strong> to that point · <strong>isolated BP elevation</strong>, no adverse conditions",
+         "<strong>HTN + proteinuria</strong> · ± adverse conditions / severe complications",
+         "Pre-eclampsia <strong>+ seizures</strong>",
+         "<strong>H</strong>emolysis, <strong>E</strong>levated <strong>L</strong>iver enzymes, <strong>L</strong>ow <strong>P</strong>latelets · <strong>hypertension NOT required</strong>"
+        ],
+        [
+         "<strong>Onset / who</strong>",
+         "Earlier onset ⇒ <strong>more placental dysfunction</strong>, <strong>more progression to pre-eclampsia</strong>",
+         "Earlier onset ⇒ more severe, more progression to pre-eclampsia",
+         "<strong>Late gestation</strong>, <strong>primiparous</strong> · de novo, or secondary to chronic / gestational HTN",
+         "Typically from <strong>poorly controlled pre-eclampsia</strong> · rarely de novo (more so with <strong>chronic HTN or kidney disease</strong>)",
+         "From any HDP, or <strong>de novo</strong>"
+        ],
+        [
+         "<strong>Mechanism</strong>",
+         "Pre-dates the pregnancy",
+         "Pregnancy-related",
+         "<strong>Abnormal response to vasoactive substances</strong> ⇒ <strong>hyperactive vasoconstriction</strong> in end organs · normal 8-24 wk BP dip <strong>fails</strong> (↑ SVR)",
+         "Progression of the above",
+         "Atypical form of pre-eclampsia / eclampsia"
+        ],
+        [
+         "<strong>Warning signs</strong>",
+         "Co-morbid <strong>diabetes, kidney disease</strong> ↑ severity",
+         "Co-morbidities ↑ severity",
+         "Adverse conditions by system (table below)",
+         "<strong>New / worsening proteinuria, headache, neurological irritability (clonus, photosensitivity)</strong>",
+         "Hemolysis, ↑ LFTs, platelets ↓ <strong>with a normal BP</strong>"
+        ],
+        [
+         "<strong>Role of BP in Tx</strong>",
+         "<strong>BP is the primary problem ⇒ treat the BP</strong>",
+         "<strong>BP is the primary problem ⇒ treat the BP</strong>",
+         "<strong>BP is a symptom ⇒ secondary</strong>; goal is maternal / fetal morbidity and mortality",
+         "As pre-eclampsia, plus seizure control",
+         "As pre-eclampsia"
+        ]
+       ]
+      },
+      {
+       "t": "table",
+       "cols": [
+        "System",
+        "<strong>Adverse conditions</strong> (warning)",
+        "<strong>Severe complications</strong> (delivery-determining)"
+       ],
+       "rows": [
+        [
+         "<strong>CNS</strong>",
+         "Headache, visual disturbances",
+         "<strong>Eclampsia</strong>, <span class=\"wl\">PRES</span>, <span class=\"wl\">TIA</span> / <span class=\"wl\">stroke</span>, <strong>GCS <13</strong>, <span class=\"wl\">retinal detachment</span> / cortical blindness"
+        ],
+        [
+         "<strong>Cardiorespiratory</strong>",
+         "Chest pain / dyspnea, <strong>O2 sat <97%</strong>",
+         "Severe HTN, <span class=\"wl\">MI</span>, <strong>O2 sat <90%</strong>, <span class=\"wl\">pulmonary edema</span>, inotrope support"
+        ],
+        [
+         "<strong>Hematologic</strong>",
+         "↑ WBC, INR, PTT · ↓ platelets",
+         "<strong>Platelets <50</strong>, need for blood products"
+        ],
+        [
+         "<strong>Renal</strong>",
+         "↑ <strong>creatinine, uric acid</strong>",
+         "<span class=\"wl\">AKI</span>, dialysis"
+        ],
+        [
+         "<strong>Hepatic</strong>",
+         "N/V, <strong>RUQ pain</strong>, ↑ LFTs, ↓ albumin",
+         "Hepatic dysfunction (<strong>INR >2</strong>), hepatic rupture / hematoma"
+        ],
+        [
+         "<strong>Feto-placental</strong>",
+         "<span class=\"wl\">IUGR</span>, oligohydramnios, <strong>reversed / absent end-diastolic flow</strong>",
+         "<span class=\"wl\">Abruption</span> with compromise, <strong>reversed ductus venosus flow</strong>, IUFD"
+        ]
+       ]
+      },
+      {
+       "t": "table",
+       "cols": [
+        "Drug",
+        "Oral maintenance",
+        "Severe (IV)",
+        "Note"
+       ],
+       "rows": [
+        [
+         "<strong><span class=\"wl\">Labetalol</span></strong>",
+         "100-400 mg PO BID-TID, <strong>max 1200 mg/d</strong>",
+         "20 mg IV, repeat 20-80 mg q30 min to <strong>max 300 mg</strong>; or 1-2 mg/min infusion, then oral",
+         "Beta blocker"
+        ],
+        [
+         "<strong><span class=\"wl\">Nifedipine</span></strong>",
+         "XL 20-60 mg PO OD-BID, <strong>max 60 mg/d</strong>",
+         "5-10 mg q30 min",
+         "CCB"
+        ],
+        [
+         "<strong>Methyldopa</strong>",
+         "250-500 mg PO BID-QID, <strong>max 2 g/d</strong>",
+         "/",
+         "Central alpha agonist"
+        ],
+        [
+         "<strong><span class=\"wl\">Hydralazine</span></strong>",
+         "/",
+         "5 mg IV, repeat 5-10 mg q30 min; or 0.5-10 mg/h to <strong>max 20 mg</strong>",
+         "Severe cases only"
+        ],
+        [
+         "<strong><span class=\"wl\">MgSO4</span></strong>",
+         "/",
+         "<strong>Load 4 g in 100 mL NS over 20 min</strong>, then <strong>1-2 g/h until delivery + 12-48 h post-partum</strong>",
+         "<strong>Raises the seizure threshold</strong>; started when <strong>delivery is decided in severe pre-eclampsia</strong>"
+        ]
+       ]
+      },
+      {
+       "t": "note",
+       "html": "<p><strong>Contraindicated:</strong> <span class=\"wl\">diuretics</span> - <strong>↓ intravascular volume in a state built for fluid retention</strong> · <span class=\"wl\">ACEi</span> / <span class=\"wl\">ARBs</span> - <strong>toxic to fetal kidneys (2nd-3rd trimester) ⇒ oligohydramnios, renal failure</strong>; increasing evidence of <strong>1st-trimester teratogenicity</strong>.</p>"
+      },
+      {
+       "t": "note",
+       "html": "<p><strong>Normal BP trend:</strong> ↓ SVR outpaces ↑ blood volume, so BP <strong>falls from weeks 8-12</strong> and <strong>returns to pre-pregnancy norms at 20-24 weeks</strong> · early severe HTN with no HDP ⇒ think <span class=\"wl\">thyroid storm</span> (high <span class=\"wl\">hCG</span>), <span class=\"wl\">molar pregnancy</span> (extremely high hCG), theca lutein cysts (ovarian hyperstimulation).</p>"
+      }
+     ]
     },
     {
      "id": "repro-w5-13",
      "num": "13",
      "name": "Second Trimester Ultrasound",
-     "hasNote": false
+     "hasNote": true,
+     "title": "Second trimester ultrasound",
+     "framing": "<p><strong>One screening scan with five jobs.</strong> The chart turns on two questions: <strong>which of the five purposes a finding belongs to</strong>, and <strong>which findings belong to a different trimester's scan altogether</strong>. The scan is a <strong>screen</strong>, so what it finds leads to more testing, not to a diagnosis.</p>",
+     "keypoints": "<p>⭐ <strong>Every pregnant person in Canada should have the screening anatomy scan between 18 and 22 weeks; no risk factor is required to earn it</strong>, so age, prior losses, a prior affected baby and a normal amniocentesis all get the same scan. ⚠ <strong>Fetal well-being (biophysical profile) is a 3rd trimester assessment and is not part of the 2nd trimester scan.</strong> ⚠ <strong>A soft marker is not a birth defect</strong>; it changes a risk, not a diagnosis. Dating, fetal number and chorionicity are all done in the 2nd trimester <strong>only if the 1st trimester did not settle them</strong>.</p>",
+     "blocks": [
+      {
+       "t": "table",
+       "cols": [
+        "Trimester",
+        "Weeks",
+        "What the ultrasound is for"
+       ],
+       "rows": [
+        [
+         "<strong>1st</strong>",
+         "to 13+6",
+         "<strong>Pregnancy dating</strong> (the most accurate time to do it) · <strong>genetic screening</strong> (<span class=\"wl\">nuchal translucency</span>)"
+        ],
+        [
+         "<strong>2nd</strong>",
+         "<strong>14+0 to 27+6</strong>",
+         "The <strong>screening anatomical scan at 18-22 weeks</strong>, with the five purposes below"
+        ],
+        [
+         "<strong>3rd</strong>",
+         "28+0 on",
+         "<strong>Fetal growth and well-being</strong> (the biophysical profile lives here, NOT in the 2nd trimester scan)"
+        ]
+       ]
+      },
+      {
+       "t": "table",
+       "cols": [
+        "Purpose",
+        "What is measured or looked at",
+        "What it settles"
+       ],
+       "rows": [
+        [
+         "<strong>1. Dating and growth</strong>",
+         "<strong>Fetal biometry</strong>: standardized measurements and formulas · <span class=\"wl\">BPD</span> and <span class=\"wl\">OFD</span> across the skull, <span class=\"wl\">HC</span> around it, <span class=\"wl\">FL</span> end to end",
+         "Sonographic dating <strong>only if not already done in the 1st trimester</strong>; growth against gestational age"
+        ],
+        [
+         "<strong>2. Number of fetuses</strong>",
+         "Count, then <strong>a full anatomical assessment of each fetus</strong> · <strong><span class=\"wl\">chorionicity</span></strong> (the type of multiple pregnancy)",
+         "Confirms the multiple pregnancy; easier and more accurate in the 1st trimester"
+        ],
+        [
+         "<strong>3. Placental location</strong>",
+         "<strong>Anterior or posterior</strong> wall · <strong>relationship to the cervix</strong> · umbilical cord insertion into the placenta and into the fetus",
+         "A placenta reaching the internal os is <strong><span class=\"wl\">placenta previa</span></strong>"
+        ],
+        [
+         "<strong>4. Screen of fetal anatomy</strong>",
+         "Head (posterior fossa: cerebellum, vermis; thalami, fornices, choroid plexus), <strong>facial profile</strong>, <strong>spine</strong>, <strong>4-chamber heart with its axis</strong>, outflow tracts, abdomen, cord vessels, limbs; each reported <strong>normal or abnormal</strong>",
+         "Rules out <strong>major congenital anomalies</strong>; birth defects affect <strong>2-3% of all pregnancies</strong>, and many are diagnosed antenatally"
+        ],
+        [
+         "<strong>5. Soft markers for aneuploidy</strong>",
+         "Ultrasound findings tied to <strong>↑ risk of trisomy 21 or 18</strong>: choroid plexus cysts, short femurs, intracardiac echogenic focus, echogenic bowel",
+         "<strong>They are NOT birth defects</strong>; if seen, <strong>further genetic screening/testing may be offered</strong>"
+        ]
+       ]
+      },
+      {
+       "t": "table",
+       "cols": [
+        "",
+        "Birth defect (purpose 4)",
+        "Soft marker (purpose 5)"
+       ],
+       "rows": [
+        [
+         "<strong>What it is</strong>",
+         "A <strong>structural anomaly</strong> in the fetus",
+         "A <strong>normal-variant finding</strong> that raises the odds of aneuploidy"
+        ],
+        [
+         "<strong>What follows</strong>",
+         "<strong>Further genetic testing or more detailed imaging</strong> for prenatal diagnosis, especially when several combine",
+         "An <strong>offer of further genetic screening or testing</strong>, not a diagnosis"
+        ]
+       ]
+      },
+      {
+       "t": "note",
+       "html": "<p><strong>Why look for anomalies at all</strong> (the module's own three reasons): counsel the parents on what to expect · direct further investigations antenatally or postnatally · decide the <strong>place of delivery and level of care</strong> the finding needs.</p>"
+      }
+     ]
     },
     {
      "id": "repro-w5-14",
      "num": "14",
      "name": "Topics of Antenatal Care",
-     "hasNote": false
+     "hasNote": true,
+     "title": "Topics in antenatal care",
+     "framing": "<p>Three routine pieces of antenatal care, each with a <strong>when</strong> and a <strong>why</strong>: feed the pregnancy (<strong>folate + iron</strong>), vaccinate it (<strong>inactivated only</strong>), and screen the mother's blood. The antibody question turns on one thing: <strong>does she already have an antibody?</strong> If not, <strong><span class=\"wl\">RhIG</span> prevents one</strong>; if so, <strong>the titre decides whether the fetus is watched</strong>.</p>",
+     "keypoints": "<p>⭐ <strong>The only vaccine category not considered safe is live attenuated (MMR, varicella, BCG)</strong>, and the reason is a theoretical one, not an observed one. <strong>Tdap is timed (27-32 wk) because the point is the baby's passive immunity; influenza is not timed because the point is the mother.</strong> <strong>RhIG is prophylaxis for the unsensitized</strong>: it clears fetal cells before the maternal immune system responds, so it does nothing once an antibody exists. ⚠ <strong>A titre of 1/8 or greater</strong> is the line for severe-anemia risk; below it, keep testing monthly. <strong>Sensitization needs a source</strong>: previous pregnancy, transfusion, or drug abuse (module Q94), and the fetus is only at risk if it carries the antigen, hence the partner screen.</p>",
+     "blocks": [
+      {
+       "t": "pathway",
+       "mermaid": "flowchart TD\n    A[\"Group & screen, 1st trimester<br/>blood type + Rh status + maternal antibodies\"] --> B{\"Maternal antibody present?\"}\n    B -->|No| C{\"Rh negative?\"}\n    C -->|Yes| D[\"RhIG: after 8-10 wk with bleeding / invasive procedure / trauma<br/>routinely 28-30 wk<br/>post-partum if baby Rh positive\"]\n    C -->|No| E[\"Routine care\"]\n    B -->|Yes| F[\"Titre + find the source of sensitization<br/>screen partner for zygosity\"]\n    F --> G{\"Titre ≥ 1/8?\"}\n    G -->|\"No\"| H[\"Serial titres, usually monthly\"]\n    G -->|\"Yes: at risk of severe anemia\"| I[\"US: MCA peak systolic velocity<br/>correlates with fetal Hb\"]\n    I -->|Stable| J[\"Deliver 37-38 wk\"]\n    I -->|\"Severe anemia, ≥ 34-35 wk\"| K[\"Deliver\"]\n    I -->|\"Severe anemia, early gestation\"| L[\"Intrauterine transfusion of antigen-negative blood, serially if needed\"]"
+      },
+      {
+       "t": "table",
+       "lead": "<p><strong>Workup skeleton</strong></p><p>- <strong>Hx</strong>: sources of sensitization - <strong>previous pregnancy, blood transfusion, drug abuse</strong>; diet, BMI (kcal need is <strong>less if high BMI, more if low</strong>); vaccines received or needed</p><p>- <strong>Ix</strong>: <strong>group &amp; screen in the 1st trimester</strong> for all · antibody found → <strong>titre</strong> + <strong>partner zygosity</strong> · ≥ 1/8 → <strong>MCA peak systolic velocity</strong> on US · ⚠ an antibody generally has to be <strong>present at the beginning of pregnancy</strong> to cause trouble</p><p>- <strong>Tx</strong>: daily <strong>prenatal multivitamin</strong> (not an adult one) · <strong>Tdap 27-32 wk</strong> + <strong>influenza any GA</strong> · <strong>RhIG</strong> to every Rh negative mother · sensitized → <strong>deliver 37-38 wk</strong>, earlier (<strong>34-35 wk</strong>) or <strong>intrauterine transfusion</strong> if severe anemia</p><p>- <strong>Follow-up</strong>: titre < 1/8 → <strong>monthly</strong>; worsening anemia → <strong>polyhydramnios and fetal hydrops</strong></p>",
+       "cols": [
+        "",
+        "<strong>Live attenuated - AVOID</strong>",
+        "<strong>Recommended in ALL pregnancies</strong>",
+        "<strong>Inactivated, select scenarios</strong>"
+       ],
+       "rows": [
+        [
+         "<strong>Examples</strong>",
+         "<strong>MMR, varicella, BCG</strong>",
+         "<strong>Tdap (pertussis)</strong> · <strong>influenza</strong>",
+         "Hepatitis A and B · Hib · meningococcus · rabies"
+        ],
+        [
+         "<strong>Why</strong>",
+         "<strong>Theoretical risk of improper preparation → active infection</strong> (realistically very low)",
+         "Safety established by <strong>decades of observational data</strong>; clear benefit to mother and/or fetus",
+         "Indicated by exposure or risk, not routine"
+        ],
+        [
+         "<strong>When</strong>",
+         "<strong>Delay until post-partum</strong>; may consider if risk/benefit favours vaccinating",
+         "<strong>Tdap 27-32 wk</strong> → maternal antibodies cross the placenta = <strong>passive immunity to the baby</strong> · <strong>Influenza any GA or post-partum, in flu season</strong> → ↓ maternal risk/severity",
+         "As indicated"
+        ]
+       ]
+      },
+      {
+       "t": "table",
+       "cols": [
+        "Nutrient (per day)",
+        "Non-pregnant",
+        "<strong>Pregnant</strong>",
+        "Breastfeeding",
+        "Note"
+       ],
+       "rows": [
+        [
+         "<strong><span class=\"wl\">Folate</span></strong> (mcg)",
+         "400",
+         "<strong>600</strong>",
+         "500",
+         "<strong>Most commonly required supplement</strong>"
+        ],
+        [
+         "<strong><span class=\"wl\">Iron</span></strong> (mg)",
+         "18",
+         "<strong>27</strong>",
+         "9",
+         "<strong>Most commonly required supplement</strong>; fetal + maternal RBCs"
+        ],
+        [
+         "Vitamin A (mcg RAE)",
+         "700",
+         "770",
+         "1300",
+         ""
+        ],
+        [
+         "Vitamin C (mg)",
+         "75",
+         "85",
+         "120",
+         "Gastric bypass"
+        ],
+        [
+         "Vitamin D (mcg)",
+         "5",
+         "5",
+         "5",
+         "Gastric bypass; <strong>unchanged</strong>"
+        ],
+        [
+         "Calcium (mg)",
+         "1000",
+         "1000",
+         "1000",
+         "Gastric bypass; <strong>unchanged</strong>"
+        ],
+        [
+         "<span class=\"wl\">Zinc</span> (mg)",
+         "8",
+         "11",
+         "12",
+         "Gastric bypass"
+        ],
+        [
+         "Vitamin B6 (mg)",
+         "1.3",
+         "1.9",
+         "2.0",
+         ""
+        ],
+        [
+         "Vitamin B12 (mcg)",
+         "2.4",
+         "2.6",
+         "2.8",
+         ""
+        ]
+       ]
+      },
+      {
+       "t": "note",
+       "html": "<p><strong>Energy:</strong> +<strong>350-450 kcal/day</strong> on average, but <strong>healthy eating matters more than specific foods or weight gain</strong> · the extra goes to <strong>uterine muscle</strong>, breast tissue, and <strong>↑ blood volume / hemoglobin</strong> · <strong>iodine</strong> where locally deficient.</p>"
+      }
+     ]
     },
     {
      "id": "repro-w5-15",
      "num": "15",
      "name": "Care for Pregnancy in the First Trimester",
-     "hasNote": false
+     "hasNote": true,
+     "title": "Care for pregnancy in the first trimester",
+     "framing": "<p>Three jobs in the first 12 weeks: <strong>confirm</strong> the pregnancy, <strong>date</strong> it, and <strong>screen</strong> it. Every question turns on a threshold or a counting rule, and the one rule above the rest: <strong>once the EDB is set by the most reliable method (IVF transfer date, or 1st-trimester ultrasound) it is FIXED</strong> - a later scan that disagrees is reporting <strong>growth</strong>, not a new due date.</p>",
+     "keypoints": "<p>⭐ <strong>EDB is fixed once set by the most reliable method</strong> - later discrepancies are growth, not dating. ⚠ <strong>Early symptoms should never be relied on exclusively</strong>; some have none, some are misattributed (the flu). ⚠ Bleeding in early pregnancy is mistaken for menses and <strong>delays diagnosis</strong>, especially at the extremes of age and on the OCP. A <strong>gestational sac alone does not confirm a pregnancy - the yolk sac is required</strong>, and location must be established to exclude ectopic. <strong>CRL after 14 weeks is not a dating tool.</strong> SFH matches weeks <strong>only from 20 weeks</strong>.</p>",
+     "blocks": [
+      {
+       "t": "pathway",
+       "mermaid": "flowchart TD\n    A[\"Missed menses ± N/V, urinary frequency, breast tenderness, bloating\"] --> B[\"Urine or serum hCG\"]\n    B --> C{\"Serum hCG > 25?\"}\n    C -->|No| D[\"Not pregnant (< 5), or very early / assay error (5-25) - repeat\"]\n    C -->|Yes| E[\"Ultrasound: gestational sac AND yolk sac = confirmed, and located (intrauterine vs ectopic)\"]\n    E --> F{\"How was it conceived?\"}\n    F -->|IVF| G[\"EDB from embryo transfer date\"]\n    F -->|\"Spontaneous\"| H[\"EDB from 1st US with CRL ≥ 10 mm (~7 wk), any US < 23 wk beats LNMP\"]\n    G --> I[\"EDB FIXED - order routine first-trimester investigations, offer eFTS at 11-14 wk\"]\n    H --> I"
+      },
+      {
+       "t": "table",
+       "lead": "<p><strong>Workup skeleton</strong></p><p>- <strong>Hx</strong>: LNMP and <strong>cycle regularity</strong> (irregular cycles: symptoms matter more, amenorrhea is not apparent) · <span class=\"wl\">GTPAL</span> · prior <strong>ectopic / recurrent miscarriage</strong> (the reason to bother confirming with hCG) · IVF and its transfer date</p><p>- <strong>PEx</strong>: uterus <strong>closed fist → small grapefruit by 12 wk</strong>, fundus reaching the <strong>pelvic brim / symphysis</strong>; not a dating tool in the first trimester</p><p>- <strong>Ix</strong>: hCG thresholds → US for sac + yolk sac + location → CRL → routine bloods (below) ⚠ <strong>HSV, hep C are NOT routine</strong> - selected populations only</p><p>- <strong>Follow-up</strong>: eFTS <strong>11-14 wk</strong> (NT ultrasound + 4 serum analytes), <strong>offered to all regardless of age or risk</strong></p>",
+       "cols": [
+        "Dating method",
+        "When",
+        "Rule",
+        "Caveat"
+       ],
+       "rows": [
+        [
+         "<strong>Naegele's rule</strong>",
+         "Rough estimate at booking",
+         "<strong>LNMP + 7 days - 3 months + 1 year</strong> (gestation ~<strong>280 days = 40 completed weeks</strong>)",
+         "Depends on a known, normal LNMP"
+        ],
+        [
+         "Pregnancy wheel / app",
+         "Most common",
+         "Same arithmetic",
+         "Same limitation"
+        ],
+        [
+         "<strong>1st-trimester US - CRL</strong>",
+         "<strong>< 14 wk</strong>",
+         "<strong>Most accurate</strong>: little biological variability; use the <strong>first scan with CRL ≥ 10 mm (~7 wk)</strong> if several exist",
+         "<strong>Unreliable after 14 wk</strong> - flexion and orientation vary"
+        ],
+        [
+         "2nd-trimester US - multiple parameters",
+         "<strong>> 14 wk</strong>",
+         "<strong>HC, BPD, AC, FL</strong> combined",
+         "Any US <strong>< 23 wk still beats LNMP</strong> (SOGC #303)"
+        ],
+        [
+         "<strong>IVF transfer date</strong>",
+         "IVF pregnancies",
+         "<strong>Overrides every ultrasound</strong>",
+         "-"
+        ]
+       ]
+      },
+      {
+       "t": "table",
+       "cols": [
+        "Serum hCG",
+        "Meaning"
+       ],
+       "rows": [
+        [
+         "<strong>< 5</strong>",
+         "Negative"
+        ],
+        [
+         "5-25",
+         "Very early pregnancy or assay error"
+        ],
+        [
+         "<strong>> 25</strong>",
+         "<strong>Diagnostic of pregnancy</strong>"
+        ],
+        [
+         "<strong>1500</strong>",
+         "Intrauterine gestation visible on <strong>transvaginal</strong> US"
+        ],
+        [
+         "<strong>5000</strong>",
+         "Intrauterine gestation visible on <strong>transabdominal</strong> US"
+        ]
+       ]
+      },
+      {
+       "t": "table",
+       "cols": [
+        "Trimester",
+        "Uterine size",
+        "Landmark"
+       ],
+       "rows": [
+        [
+         "1st (to 12 wk)",
+         "Fist → <strong>small grapefruit</strong>",
+         "Fundus at <strong>pelvic brim / symphysis</strong>"
+        ],
+        [
+         "2nd (14-20 wk)",
+         "Small/medium cantaloupe, now abdominal",
+         "<strong>Fundus at umbilicus by 20 wk</strong>; from then <strong>SFH in cm = weeks</strong>"
+        ],
+        [
+         "2nd (20-26 wk)",
+         "Fundus turns to anterior abdominal wall",
+         "Organ displacement begins"
+        ],
+        [
+         "3rd (28 wk on)",
+         "<strong>Watermelon</strong> at term",
+         "Rectus diastasis; diaphragm displaced up - perceived dyspnea"
+        ]
+       ]
+      },
+      {
+       "t": "table",
+       "cols": [
+        "GTPAL letter",
+        "Counts",
+        "Trap"
+       ],
+       "rows": [
+        [
+         "<strong>G</strong>",
+         "Pregnancies, <strong>including the current one</strong>",
+         "Twins = <strong>one</strong> G"
+        ],
+        [
+         "<strong>T</strong>",
+         "Pregnancies to <strong>≥ 37 wk</strong>",
+         "A neonatal death after a term delivery <strong>still counts as T</strong>"
+        ],
+        [
+         "<strong>P</strong> (preterm)",
+         "Pregnancies <strong>20-37 wk</strong>",
+         "A <strong>32-wk stillbirth counts here</strong>"
+        ],
+        [
+         "<strong>A</strong>",
+         "Losses <strong>< 20 wk</strong>",
+         "Miscarriage, ectopic, therapeutic"
+        ],
+        [
+         "<strong>L</strong>",
+         "<strong>Living children</strong>",
+         "Twins = <strong>two</strong> L; stillbirth and neonatal death = <strong>not L</strong>"
+        ],
+        [
+         "<strong>Para</strong> (G/P form)",
+         "Pregnancies delivered <strong>> 20 wk</strong>",
+         "Hides term/preterm, multiples, deaths"
+        ]
+       ]
+      },
+      {
+       "t": "note",
+       "html": "<p><strong>Routine for ALL pregnancies:</strong> CBC (Hb, MCV, platelets) · group and screen (type, <strong>Rh</strong>, antibodies) · rubella immunity · hepatitis B, HIV, VDRL · GC/chlamydia · urine culture (<strong>asymptomatic bacteriuria</strong>) · eFTS offered.</p><p><strong>Selected populations only:</strong> TSH (known thyroid disease, dose adjustment) · hep C / HSV (high risk or exposure) · hemoglobinopathy screen (Mediterranean, Southeast Asian, African for sickle cell, or low MCV/Hb) · NIPT / CVS (known carrier: balanced translocation, muscular dystrophy).</p>"
+      }
+     ]
     },
     {
      "id": "repro-w5-16",
      "num": "16",
      "name": "Approach to Sexual Health",
-     "hasNote": false
+     "hasNote": true,
+     "title": "Approach to sexual health",
+     "framing": "<p><strong>Two halves to this lecture: the physiology you contrast between cis-men and cis-women, and the interview you run so the patient can raise the problem they came in with.</strong> The whole conversation turns on one move: <strong>acknowledge your own implicit biases before you walk into the room</strong>, then <strong>ask permission</strong> to talk about sexual health, so the patient never has to raise it first.</p>",
+     "keypoints": "<p>⭐ <strong>The refractory period is the sex difference: males are physiologically incapable of another orgasm after the first; females have none and can have multiple orgasms.</strong> <strong>NO is the neurotransmitter of clitoral engorgement</strong>, and <strong>photoplethysmography</strong> is how VBV is measured. <strong>Orgasm is cerebral</strong>, not spinal. The interview separates on <strong>repetition</strong> as the tool that unpacks a euphemism, and on <strong>asking permission first</strong>. ⚠ Never assume orientation or monogamy in the wording: <em>\"How many partners in the past year?\"</em>, not <em>\"Are you monogamous?\"</em>; say <strong>\"partner\"</strong>.</p>",
+     "blocks": [
+      {
+       "t": "figure",
+       "src": "assets/figures/0067de0df129.jpg",
+       "alt": "sexual response cycle - Masters & Johnson (1996).png",
+       "w": 900,
+       "h": 320,
+       "cap": "The Masters &amp; Johnson sexual response cycle, male vs female"
+      },
+      {
+       "t": "pathway",
+       "mermaid": "flowchart TD\n    A[\"Before the room: self-assess implicit biases\"] --> B[\"Safe space: inclusive forms, two-step method,<br/>pronouns + sexual preference as routine intake questions\"]\n    B --> C[\"Ask permission to talk about sexual health<br/>(proactive, NOT waiting for the patient)\"]\n    C --> D{\"Euphemism? 'I need a check up',<br/>'soreness down below'\"}\n    D -->|Yes| E[\"Clarify: lay terms, open questions,<br/>silence, REPETITION\"]\n    D -->|No| F[\"5 P's: Partners, Practices, Protection/Past STI,<br/>Pregnancy plans, ± Pleasure\"]\n    E --> F\n    F --> G[\"Plan of management WITH the patient<br/>(45-60 min ideal; book a longer appt if needed)\"]"
+      },
+      {
+       "t": "table",
+       "lead": "<p><strong>Workup skeleton</strong></p><p>- <strong>Hx</strong>: assure <strong>complete confidentiality</strong> very early · <strong>nonjudgmental whatever the patient admits to</strong> · terminology the patient knows (<em>\"sex\"</em>, not <em>\"intercourse\"</em>) · <strong>open questions</strong>, <strong>silence</strong>, <strong>repetition</strong> (\"Checkup?\" → \"Performing?\" → \"Ashamed?\") · body language: hands/arms, <strong>pectoral flush</strong>, position in chair, <strong>postural echo</strong> (mirror-image sitting = harmony) · ⚠ <strong>there is NO standard validated comprehensive sexual health assessment tool</strong></p><p>- <strong>Safe space</strong>: staff trained in culturally sensitive terminology · gender-inclusive forms · diverse waiting-room images · <strong>two-step method</strong> (gender identity + sex assigned at birth) · ask <strong>pronouns</strong> · trauma-informed: <strong>adverse childhood experiences</strong> limit what a patient can discuss</p><p>- <strong>When illness may affect sex</strong>: give permission to be curious (<em>\"Many people are concerned about how this condition might affect their sex life. What is your experience?\"</em>); <strong>the patient's response decides what information you offer</strong></p>",
+       "cols": [
+        "Phase",
+        "Shared (both sexes)",
+        "Female",
+        "Male"
+       ],
+       "rows": [
+        [
+         "<strong>Excitement</strong>",
+         "↑ myotonia, HR, BP · nipple erection · <strong><span class=\"wl\">nitric oxide (NO)</span> drives clitoral engorgement and penile erection</strong>",
+         "clitoral + labial engorgement · <strong>inner ⅔ of vagina expands</strong> · ↑ vaginal blood flow · vaginal walls thicken · uterus elevates + engorges · breast enlargement",
+         "<strong>penile erection</strong> · ↑ testicular volume · testes elevate · scrotum contracts"
+        ],
+        [
+         "<strong>Plateau</strong>",
+         "sexual flush · further ↑ myotonia, HR, BP · breathing more rapid",
+         "vasocongestion of <strong>lower ⅓ of vagina</strong> · inner vagina fully expanded · uterus fully elevated · <strong>clitoris withdraws under hood</strong> · labia minora darken",
+         "↑ circumference of <strong>coronal ridge</strong> · glans turns <strong>purplish</strong> · testes elevate further · <strong>Cowper's gland droplets at meatus</strong>"
+        ],
+        [
+         "<strong>Orgasm</strong>",
+         "physiology unclear · <strong>primarily a cerebral event</strong> (occurs after complete spinal cord injury) · contractions at <strong>0.8-second intervals</strong>",
+         "rhythmic contractions of vaginal walls, anal sphincter, uterus · pleasure located subjectively in different genital areas",
+         "<strong>internal bladder sphincter spasm</strong> → vas deferens, seminal vesicles, prostate contract → <strong>emission</strong> into bulbous urethra → <strong>propulsion</strong> via external sphincter relaxation + bulbocavernosus contraction · pleasure ∝ contraction strength"
+        ],
+        [
+         "<strong>Resolution</strong>",
+         "myotonia dissipates · BP, HR, respiration return to baseline",
+         "nipples, clitoris, vaginal walls, uterus, labia shrink back · <strong>NO refractory period → multiple orgasms possible</strong>",
+         "loss of erection · testes + scrotum return to size · <strong>refractory period: physiologically incapable of another orgasm or ejaculation</strong>"
+        ]
+       ]
+      },
+      {
+       "t": "table",
+       "cols": [
+        "Model",
+        "Year",
+        "Phases",
+        "What it adds"
+       ],
+       "rows": [
+        [
+         "<strong>Masters &amp; Johnson</strong>",
+         "<strong>1966</strong>",
+         "<strong>4</strong>: excitement → plateau → orgasm → resolution",
+         "<strong>direct laboratory observation</strong> (>10,000 episodes; 382 women, 312 men) · criteria precise but <strong>arbitrary</strong>, vary dramatically between individuals"
+        ],
+        [
+         "<strong>Kaplan</strong>",
+         "1979",
+         "<strong>3</strong>: <strong>sexual drive</strong> → excitement → orgasm",
+         "puts <strong>desire</strong> first, drops plateau + resolution"
+        ],
+        [
+         "<strong>Basson</strong>",
+         "2001",
+         "circular",
+         "<strong>most widely used</strong> · intimacy / motivations → variable desire → attention to stimuli → <strong>subjective arousal + ANS response</strong> → arousal <em>triggers</em> desire → satisfaction feeds back"
+        ]
+       ]
+      },
+      {
+       "t": "table",
+       "cols": [
+        "Orientation",
+        "Attracted to"
+       ],
+       "rows": [
+        [
+         "<strong>Heterosexual</strong> (straight)",
+         "only or almost only the \"other\" gender"
+        ],
+        [
+         "<strong>Homosexual</strong> (gay, lesbian, queer)",
+         "only or almost only the same gender"
+        ],
+        [
+         "<strong>Bisexual</strong>",
+         "both men and women, <strong>not necessarily equally or at the same time</strong>"
+        ],
+        [
+         "<strong>Pansexual</strong> (omnisexual)",
+         "those of <strong>any</strong> gender"
+        ],
+        [
+         "<strong>Asexual</strong>",
+         "<strong>no gender</strong> - ≠ choosing not to have sex (abstinence, celibacy)"
+        ]
+       ]
+      },
+      {
+       "t": "note",
+       "html": "<p><strong>Modulators of desire and subjective arousal:</strong> pro-sexual = noradrenalin · dopamine · melanocortin · oxytocin · serotonin at <em>some</em> receptors; inhibitory = prolactin · <strong>serotonin at 5-HT2 and 5-HT3</strong> · glutamate · vasopressin · GABA.</p>"
+      },
+      {
+       "t": "note",
+       "html": "<p><strong>Female arousal is measured, not assumed:</strong> <strong>vaginal blood volume (VBV)</strong> by <strong>photoplethysmography</strong> (refractive index of light entering the vagina as vasocongestion varies); in women <strong>genital and subjective responses are not necessarily concordant</strong>, and visual/tactile awareness of genital arousal matters less.</p>"
+      },
+      {
+       "t": "note",
+       "html": "<p><strong>Who has concerns:</strong> <strong>50-98% of women</strong> (interest, orgasm, lubrication, <span class=\"wl\">dyspareunia</span>, body image, unmet needs, need for information, abuse/coercion) · <strong>40% of men</strong>, mainly <strong><span class=\"wl\">erectile dysfunction</span> and premature ejaculation</strong> · men are the ones most likely to feel <strong>ashamed</strong> asking for help.</p>"
+      },
+      {
+       "t": "note",
+       "html": "<p><strong>Terminology:</strong> <strong>sex</strong> = biologic category assigned at birth (chromosomes, anatomy, hormones) · <strong>gender identity</strong> = self-determined sense of being along or outside the spectrum · <strong>cisgender</strong> = gender consistent with sex assigned · <strong>transgender</strong> = gender does not match, or is inconsistent over time · <strong>gender expression</strong> = external signals · <strong>gender perception</strong> = how others read it · <strong>sexual orientation</strong> = self-determined identity in relation to the gender(s) attracted to.</p>"
+      }
+     ]
     }
    ]
   },
@@ -2710,55 +4629,1177 @@
      "id": "repro-w6-01",
      "num": "01",
      "name": "Antepartum Hemorrhage & Abnormal Placentation",
-     "hasNote": false
+     "hasNote": true,
+     "title": "Antepartum hemorrhage",
+     "framing": "<p>Bleeding in the 2nd/3rd trimester turns on two questions: <strong>is it painful, and whose blood is it?</strong> A <strong>painful bleed with a tender uterus is an <span class=\"wl\">abruption</span></strong>, a <strong>painless bleed is a <span class=\"wl\">previa</span></strong> until the ultrasound says otherwise, and a <strong>small bleed with a distressed fetus is fetal blood</strong> - a <span class=\"wl\">vasa previa</span>. Whatever the cause, <strong>assess mother and fetus together, continuously</strong>, and remember that <strong>ongoing bleeding depletes clotting factors</strong> at the placental interface.</p>",
+     "keypoints": "<p>⭐ <strong>Painful bleeding + tender uterus = abruption; painless bleeding = previa; small bleed + fetal distress = vasa previa, and the blood is fetal.</strong> ⚠ <strong>Never examine the cervix of a bleeder until ultrasound has cleared the placenta.</strong> <strong>Kleihaur-Betke</strong> finds fetal blood in the <strong>mother</strong>; <strong>Apt</strong> finds it in the <strong>vaginal blood</strong> - only Apt diagnoses vasa previa. <strong>Abruption is a diagnosis of exclusion</strong>; previa is an ultrasound diagnosis. A <strong>previous C/S</strong> raises the risk of <strong>previa and accreta, not vasa previa</strong>; vasa previa comes from a <strong>velamentous cord (type 1)</strong> or a <strong>succenturiate lobe (type 2)</strong>.</p>",
+     "blocks": [
+      {
+       "t": "pathway",
+       "mermaid": "flowchart TD\n    A[\"2nd/3rd trimester vaginal bleeding\"] --> B[\"ABCs for mom: O2 + IV access if unstable<br/>NST for the fetus: baseline, accelerations, decelerations\"]\n    B --> C{\"Non-obstetrical source?<br/>hemorrhoids/varices, bladder infection/renal stones, masses, lacerations\"}\n    C -->|Yes| D[\"Treat the cause, as in a non-pregnant patient\"]\n    C -->|No| E{\"Labour?<br/>cervical dilatation frequently causes bleeding/show\"}\n    E -->|No| F{\"Painful, with a tender or rigid uterus?\"}\n    F -->|Yes| G[\"PLACENTAL ABRUPTION<br/>a diagnosis of exclusion\"]\n    F -->|\"No - painless\"| H{\"Ultrasound: placenta over, or within 2 cm of, the internal os?\"}\n    H -->|Yes| I[\"PLACENTA PREVIA<br/>complete = C/S; no cervical exam\"]\n    H -->|\"No, but fetal distress out of keeping with the volume\"| J[\"Apt test positive = fetal blood<br/>VASA PREVIA\"]"
+      },
+      {
+       "t": "table",
+       "lead": "<p><strong>Workup skeleton</strong></p><p>- <strong>Hx</strong>: previous bleeding this pregnancy · <strong>previous abruption</strong> · trauma (MVC, fall) · <strong>hypertension</strong>, autoimmune disease · smoking/cocaine · <strong>previous C/S or uterine surgery</strong> (accreta) · <strong>placental location on the anatomy scan</strong></p><p>- <strong>PEx</strong>: maternal vitals · abdominal exam for <strong>uterine tenderness/rigidity</strong> and fetal presentation · speculum for the source · ⚠ <strong>no cervical examination until ultrasound has shown the placenta is clear of the cervix</strong> - examining a previa can precipitate massive hemorrhage</p><p>- <strong>Ix</strong>: stat <strong>CBC</strong> (baseline Hb, platelets) · <strong>INR/PTT/fibrinogen</strong> (coagulopathy) · creatinine · ± LFTs (r/o <span class=\"wl\">pre-eclampsia</span>, acute liver injury) · <strong>group and screen</strong> · <span class=\"wl\">Kleihaur-Betke test</span> = <strong>fetal blood in the maternal circulation</strong> (trauma, abruption) · <span class=\"wl\">Apt test</span> = <strong>fetal blood in the vaginal bleed</strong> (vasa previa) · ultrasound for placental location</p><p>- <strong>Tx</strong>: active bleed + preterm: <strong>birthing unit, continuous fetal monitoring</strong>, <span class=\"wl\">steroids</span> for lungs, <span class=\"wl\">MgSO4</span> for neuroprotection, NICU/tertiary consult if <strong><28-32 weeks</strong>, serial bloods <strong>q4-6 h</strong> · <strong>term or late preterm (>35-36 weeks): deliver</strong> - induction if reassuring, <span class=\"wl\">C/S</span> if not</p><p>- <strong>Follow-up</strong>: preterm, stable and bleeding settled: antenatal ward, <strong>NST + growth/placental-function ultrasound</strong>, periodic bloods by initial values and rebleeding</p>",
+       "cols": [
+        "",
+        "<strong><span class=\"wl\">Placental abruption</span></strong>",
+        "<strong><span class=\"wl\">Placenta previa</span></strong>",
+        "<strong><span class=\"wl\">Vasa previa</span></strong>",
+        "<strong><span class=\"wl\">Accreta / increta / percreta</span></strong>"
+       ],
+       "rows": [
+        [
+         "<strong>Definition</strong>",
+         "<strong>Premature separation of the placental/maternal interface</strong> (1st trimester = subchorionic hemorrhage)",
+         "Implantation <strong>over, or just adjacent to, the internal cervical os</strong> · <strong>marginal/partial = within 2 cm</strong> · <strong>complete = covering the os</strong>",
+         "<strong>Unprotected umbilical vessels traverse the cervix / within 2 cm</strong> · Type 1 = <strong>velamentous cord insertion</strong> · Type 2 = <strong>succenturiate lobe / multilobed placenta</strong>",
+         "Abnormal placental <strong>invasion into the uterus</strong> over a <strong>previous uterine incision</strong> lacking complete endometrial cover"
+        ],
+        [
+         "<strong>Incidence, timing</strong>",
+         "<strong>1/200-1/300</strong> · mostly <strong>35-38 weeks</strong>, any gestation",
+         "<strong>~1/300 at term</strong> · seen at the <strong>18-20 week morphology scan</strong>, often resolves by 3rd trimester · <strong>sentinel bleed 26-28 weeks</strong>, then <strong>30-40% rebleed</strong>",
+         "<strong>~1/2500</strong>",
+         "Risk rises with <strong>previous C/S / uterine surgery</strong> ± previa"
+        ],
+        [
+         "<strong>Whose blood</strong>",
+         "Maternal",
+         "Maternal",
+         "<strong>Fetal</strong>",
+         "Maternal"
+        ],
+        [
+         "<strong>Presentation</strong>",
+         "<strong>Painful active bleeding</strong>, mild to profuse · \"<strong>unrelenting contractions</strong>\" · <strong>tender, sometimes rigid uterus</strong> · mother and fetus usually stable unless severe · <strong>concealed</strong> (central) form: <strong>no bleeding, pain out of keeping, fetal distress</strong>",
+         "<strong>Painless</strong> bleeding, mild or severe · fetus stable unless mother hemodynamically unstable",
+         "<strong>Volume may be very small but fetal distress is frequent</strong>",
+         "Often silent until delivery: <strong>bleeding the myometrium cannot contract to control</strong>"
+        ],
+        [
+         "<strong>Dx</strong>",
+         "<strong>Diagnosis of exclusion</strong> once other sources are ruled out (edge bleeds drain out, so ultrasound is often unrevealing)",
+         "<strong>Ultrasound</strong> placental location",
+         "<strong>Apt test</strong> on vaginal blood; heightened suspicion with known velamentous cord",
+         "Ultrasound, history of uterine surgery"
+        ],
+        [
+         "<strong>Tx</strong>",
+         "Blood irritates the myometrium, so it may <strong>progress to labour</strong>; <strong>risk of ROM</strong> as membranes stretch over clot · deliver by maternal/fetal status",
+         "<strong>Complete previa: cesarean section</strong> · marginal <strong>>1 cm from the os</strong> may allow vaginal birth in select cases · <strong>aggressive transfusion + clotting-factor replacement</strong> pre and post delivery",
+         "Deck gives no specific management beyond the shared pathway (fetal distress drives delivery decisions)",
+         "<strong>Almost always <span class=\"wl\">hysterectomy</span></strong> unless the invasion is very focal"
+        ],
+        [
+         "<strong>Why it bleeds badly / Px</strong>",
+         "Larger area affected in concealed abruption",
+         "<strong>Any cervical change</strong> (dilatation, even thinning) disrupts the implantation · the cervix is <strong>not designed to shed</strong> and has <strong>no myometrium</strong> to clamp the vessels · <strong>hypovolemia/shock, consumptive coagulopathy</strong>, ↑ <strong>hysterectomy</strong>",
+         "A tiny volume is a <strong>large share of the fetal blood volume</strong>",
+         "Myometrium cannot contract over the invaded site"
+        ]
+       ]
+      },
+      {
+       "t": "note",
+       "html": "<p><strong>Risk factors for abruption</strong>: hypertension · trauma · previous abruption · autoimmune condition · <span class=\"wl\">PPROM</span> · smoking/cocaine · intrauterine infection.</p>"
+      },
+      {
+       "t": "note",
+       "html": "<p><strong>Complications of previa</strong>: maternal hemorrhagic shock · <span class=\"wl\">DIC</span> · preterm birth · cesarean delivery · maternal transfusion. <strong>Not fetal hemorrhage</strong> (the blood is maternal) and <strong>not pre-eclampsia</strong>.</p>"
+      },
+      {
+       "t": "note",
+       "html": "<p><strong>How hemorrhage becomes coagulopathy</strong>: the <strong>high-volume flow to the placental-uterine interface</strong> and the <strong>inability to acutely clot over large exposed vessels</strong> means <strong>platelets and clotting factors are quickly consumed</strong> - a <strong>consumptive coagulopathy</strong>, which is why fibrinogen is on the stat bloodwork.</p>"
+      }
+     ]
     },
     {
      "id": "repro-w6-02",
      "num": "02",
      "name": "Approach to the Small Fetus",
-     "hasNote": false
+     "hasNote": true,
+     "title": "Approach to the small fetus",
+     "framing": "<p>Three labels that sound alike and mean different things: <strong>SGA is a percentile, LBW is a weight, IUGR is a pathological process</strong>, and the first two say nothing about the third. The job is to find the fetus that is IUGR <strong>as early as possible</strong>, name the cause, then let <strong>the Doppler and the gestational age decide delivery</strong>.</p>",
+     "keypoints": "<p>⭐ <strong>SGA is a percentile (<10th), LBW is a weight (<2500 g), IUGR is a process, and an IUGR fetus can be above the 10th percentile.</strong> <strong>SFH >2-3 cm less than weeks</strong> screens; <strong>ultrasound EFW confirms</strong>. <strong>A trisomy is the intrinsic cause</strong>; smoking, hypertension and multiples restrict <strong>nutrient delivery</strong>. Placental insufficiency below the 3rd percentile shows <strong>absent EDF and ↓ amniotic fluid</strong>, not polyhydramnios. <strong>Delivery, not time, is the only way to feed the fetus better.</strong></p>",
+     "blocks": [
+      {
+       "t": "figure",
+       "src": "assets/figures/8558a906835c.jpg",
+       "alt": "placental insufficiency doppler ultrasound.png",
+       "w": 900,
+       "h": 864,
+       "cap": "Umbilical artery Doppler waveforms in placental insufficiency"
+      },
+      {
+       "t": "pathway",
+       "mermaid": "flowchart TD\n    A[\"Risk factor, or SFH >2-3 cm less than weeks (after 20 wk)\"] --> B[\"Ultrasound: EFW by Hadlock (HC, AC, BPD, FL)\"]\n    B --> C{\"EFW <10th percentile?\"}\n    C -->|No| D[\"Can still be IUGR relative to own potential<br/>Repeat growth scans\"]\n    C -->|Yes| E[\"Find the cause: eFTS / NIPT / amniocentesis<br/>Toxoplasmosis / CMV screen\"]\n    E --> F[\"Fetal well-being: UA Doppler, AFV, NST\"]\n    F --> G{\"Gestational age?\"}\n    G -->|\">37 wk\"| H[\"DELIVER - limited benefit to staying in utero\"]\n    G -->|\"32-37 wk\"| I[\"Deliver if oligohydramnios or persistently abnormal Dopplers<br/>(even RI >95th percentile alone)\"]\n    G -->|\"<32 wk\"| J[\"MONITOR unless fetal distress:<br/>abnormal NST, absent or reversed EDF\"]"
+      },
+      {
+       "t": "table",
+       "lead": "<p><strong>Workup skeleton</strong></p><p>- <strong>Hx</strong>: maternal medical (<strong>hypertension</strong>, CKD, <strong>lupus</strong> / autoimmune, <strong>smoking</strong> / substance use) · obstetrical (<strong>a previous IUGR baby</strong>) · a risk factor buys extra growth scans at <strong>26-28 wk and 34-36 wk</strong></p><p>- <strong>PEx</strong>: <strong><span class=\"wl\">SFH</span></strong> from 20 wk, cm = weeks · <strong>>2-3 cm behind = suspect</strong> · ⚠ SFH only suggests; <strong>ultrasound is the only confirmation</strong></p><p>- <strong>Ix</strong>: EFW percentile (<strong><10th SGA, <3rd adverse-outcome risk</strong>) → cause (eFTS / NIPT / amniocentesis; toxoplasmosis / CMV) → <strong>UA Doppler, AFV, NST</strong></p><p>- <strong>Tx</strong>: reverse the reversible (smoking, hypertension) to limit worsening · ⚠ <strong>no catch-up growth in utero; delivery is the only true way to improve nutrient delivery</strong> · if premature: <strong>steroids for lung maturation, transfer to NICU-level care</strong></p><p>- <strong>Follow-up</strong>: frequency set by severity and by NST / Doppler findings</p>",
+       "cols": [
+        "",
+        "<strong><span class=\"wl\">SGA</span></strong>",
+        "<strong><span class=\"wl\">IUGR</span></strong>",
+        "<strong><span class=\"wl\">LBW</span> / VLBW / ELBW</strong>",
+        "<strong><span class=\"wl\">LGA</span></strong>"
+       ],
+       "rows": [
+        [
+         "<strong>Defined by</strong>",
+         "EFW <strong><10th percentile</strong> for gestational age",
+         "<strong>A pathological process</strong> impairing growth potential (↓ growth rate)",
+         "<strong>Absolute birth weight: <2500 g / <1500 g / <1000 g</strong>",
+         "EFW <strong>>90th percentile</strong> for gestational age"
+        ],
+        [
+         "<strong>Depends on GA?</strong>",
+         "Yes: the actual weight for the label varies with GA",
+         "No cut-off at all: <strong>can still sit above the 10th percentile</strong> and be IUGR",
+         "<strong>No: independent of gestational age</strong>",
+         "Yes"
+        ],
+        [
+         "<strong>Implies</strong>",
+         "Usually <strong>constitutionally small</strong> (normal intrinsic factors)",
+         "Something is wrong: maternal, fetal or placental",
+         "Risk of neonatal complications (a paediatric / NICU cut-off)",
+         "May be normal for parental size"
+        ],
+        [
+         "<strong>Adverse-outcome flag</strong>",
+         "<strong><3rd percentile</strong>",
+         "Any",
+         "Lower is worse",
+         "n/a"
+        ]
+       ]
+      },
+      {
+       "t": "table",
+       "cols": [
+        "",
+        "<strong>Maternal</strong>",
+        "<strong>Fetal (intrinsic)</strong>",
+        "<strong>Placental</strong>"
+       ],
+       "rows": [
+        [
+         "<strong>Examples</strong>",
+         "Hypertension, CKD, lupus / autoimmune, smoking / substance use, <strong>previous IUGR baby</strong>",
+         "<strong>Trisomy 21 / 18 / 13</strong>, single-gene disorders, translocations, <strong>intrauterine infection</strong>, multiple gestation",
+         "<strong>Abruption</strong>, <strong>placental insufficiency</strong>"
+        ],
+        [
+         "<strong>Mechanism</strong>",
+         "Often known at conception; damages the placental microvasculature",
+         "<strong>Abnormal genetic material impairs cell replication</strong>; infection damages fetal tissue",
+         "<strong>Microvascular</strong> (small clots: lupus, smoking) or <strong>disrupted implantation</strong> (abruption); overlaps with maternal and fetal"
+        ],
+        [
+         "<strong>What it warrants</strong>",
+         "More frequent growth ultrasounds (26-28, 34-36 wk)",
+         "Genetic testing, infection screen",
+         "Doppler surveillance"
+        ]
+       ]
+      },
+      {
+       "t": "table",
+       "cols": [
+        "<strong>UA Doppler waveform</strong>",
+        "<strong>Placental microvasculature</strong>",
+        "<strong>What you see</strong>"
+       ],
+       "rows": [
+        [
+         "Normal",
+         "Intact",
+         "Continuous forward flow through the whole cycle"
+        ],
+        [
+         "↓ EDF, <strong>↑ resistive or pulsatility index</strong>",
+         "Early damage",
+         "Baseline EDF drops toward the zero line"
+        ],
+        [
+         "<strong>Absent EDF</strong>",
+         "<strong>~50% damaged</strong>",
+         "Flow pauses at end-diastole"
+        ],
+        [
+         "<strong>Reversed EDF</strong>",
+         "<strong>~70% damaged</strong>",
+         "Flow runs backward at end-diastole"
+        ]
+       ]
+      },
+      {
+       "t": "note",
+       "html": "<p><strong>Delivery by gestational age:</strong> <strong>>37 wk: deliver</strong>, even with no other risks · <strong>32-37 wk: deliver if oligohydramnios or persistently abnormal Dopplers</strong>, even just RI >95th percentile · <strong><32 wk: monitor unless fetal distress</strong> (abnormal NST, absent or reversed EDF). Mode of delivery follows the usual obstetric indicators, but <strong>oligohydramnios or abnormal Dopplers raise the <span class=\"wl\">C-section</span> risk</strong>.</p>"
+      }
+     ]
     },
     {
      "id": "repro-w6-03",
      "num": "03",
      "name": "Approach to Preterm Labour",
-     "hasNote": false
+     "hasNote": true,
+     "title": "Approach to preterm labour",
+     "framing": "<p><strong>Everything turns on where she sits on one line: threatened preterm labour → preterm labour → preterm birth, with membranes intact or ruptured.</strong> Each step adds the intervention that buys the next one time: <strong>hydrate, then tocolyse to buy 48 hours, spend them on steroids and transfer</strong>, and when birth is imminent <strong>switch to magnesium and penicillin</strong>.</p>",
+     "keypoints": "<p>⚠ <strong>Antibiotics in PPROM INCREASE latency</strong> (the inherited note had it backwards). <strong>Steroids are the one intervention given at every stage</strong>; <strong>tocolysis needs contractions</strong>, <strong>magnesium needs an imminent birth</strong>, <strong>penicillin needs a delivery</strong>. <strong>Cerclage is for cervical insufficiency before 24 weeks, never for ruptured membranes.</strong> Dehydration and <strong>UTI mimic TPTL</strong>: hydrate and dip the urine before reaching for a tocolytic.</p>",
+     "blocks": [
+      {
+       "t": "pathway",
+       "mermaid": "flowchart TD\n    A[\"Contractions before 37 weeks<br/>(threatened preterm labour)\"] --> B{\"Cervical dilatation on exam?\"}\n    B -->|No| C[\"TPTL - hydrate, treat UTI<br/>may resolve without delivery\"]\n    B -->|Yes| D[\"Preterm labour - tocolysis<br/>+ antenatal corticosteroids if < 34 wk<br/>± transfer to tertiary centre\"]\n    A --> E{\"Gush of fluid?<br/>pooling / nitrazine / ferning / low AFI\"}\n    E -->|Yes| F[\"PPROM - antibiotics for latency<br/>complete steroid course<br/>watch for chorioamnionitis\"]\n    D --> G{\"Birth imminent?\"}\n    F --> G\n    G -->|\"Yes, < 34 wk\"| H[\"MgSO4 IV bolus + infusion (neuroprotection)<br/>+ IV penicillin if GBS positive or unknown\"]"
+      },
+      {
+       "t": "table",
+       "lead": "<p><strong>Workup skeleton</strong></p><p>- <strong>Hx</strong>: gestational age · <strong>previous spontaneous preterm birth</strong> · cervical surgery (<strong>cone > LEEP</strong>) · smoking/substances · contraction onset, frequency, duration · <strong>bleeding, leaking fluid, infectious symptoms</strong> · prenatal care · progesterone prophylaxis</p><p>- <strong>PEx</strong>: <strong>Leopold's</strong> for presentation · <strong>cervical exam</strong> (dilatation, consistency) · fetal heart rate · speculum for <strong>pooling</strong> if fluid suspected</p><p>- <strong>Ix</strong>: <strong>nitrazine + ferning</strong>, ultrasound for <strong>low amniotic fluid</strong> · urinalysis (<strong>UTI mimics TPTL</strong>) · GBS swab if not done · ⚠ <strong>amniocentesis for bacteria is NOT a validated test for rupture of membranes</strong></p><p>- <strong>Tx</strong>: the grid below, in the order the stage demands</p><p>- <strong>Follow-up</strong>: admit for monitoring · ⭐ <strong>PPROM < 32 weeks with no intervention: 50% deliver within 48 h, 75% within 7 days</strong></p>",
+       "cols": [
+        "",
+        "<strong>Tocolysis / hydration</strong>",
+        "<strong>Antenatal corticosteroids</strong>",
+        "<strong>Magnesium sulfate</strong>",
+        "<strong>Antibiotics for latency</strong>",
+        "<strong>GBS prophylaxis</strong>"
+       ],
+       "rows": [
+        [
+         "<strong>Who</strong>",
+         "Contracting, membranes intact; <strong>hydrate first</strong> (dehydration → uterine irritability); drugs if no response",
+         "Expected preterm birth <strong>before 34 weeks</strong>",
+         "<strong>Birth imminent and < 34 weeks</strong> (e.g., 6 cm dilated)",
+         "<strong>PPROM</strong>, no labour, no chorioamnionitis",
+         "Delivering <strong>preterm with GBS positive or unknown status</strong>"
+        ],
+        [
+         "<strong>What</strong>",
+         "<span class=\"wl\">Indomethacin</span>, <span class=\"wl\">nifedipine</span>, <span class=\"wl\">terbutaline</span>",
+         "<strong><span class=\"wl\">Betamethasone</span> 12 mg IM x 2, 24 h apart</strong>",
+         "<strong>IV bolus then continuous infusion</strong> to the mother",
+         "Antibiotic course (<strong>Mercer protocol</strong>: 2 days IV, 5 days oral)",
+         "<strong><span class=\"wl\">Penicillin</span> IV, first line if no allergy</strong>"
+        ],
+        [
+         "<strong>Why</strong>",
+         "<strong>Delays birth by about 48 hours</strong>: enough for <strong>transfer to a tertiary centre and/or steroids</strong>; not a cure",
+         "<strong>Type-2 pneumocytes → surfactant → ↓ RDS</strong>; also <strong>↓ IVH, ↓ NEC, ↓ perinatal mortality</strong>",
+         "<strong>↓ neonatal cerebral palsy</strong>; MOA unclear (stabilizes cerebral circulation, blocks excitatory injury, antioxidant, anti-inflammatory)",
+         "<strong>↑ latency from PPROM to delivery</strong>; prolongation improves neonatal outcomes",
+         "↓ <strong>GBS sepsis</strong> in the neonate"
+        ],
+        [
+         "<strong>Not when</strong>",
+         "<strong>Not contracting</strong> (PPROM without labour); no benefit past the 48 h window",
+         "-",
+         "<strong>Stable, no imminent birth</strong>: short acting, so wasted early",
+         "Active labour or chorioamnionitis: deliver",
+         "Term with negative swab"
+        ]
+       ]
+      },
+      {
+       "t": "table",
+       "cols": [
+        "Term",
+        "Definition (all <strong>before 37 weeks</strong>)",
+        "Course"
+       ],
+       "rows": [
+        [
+         "<span class=\"wl\">Threatened preterm labour</span>",
+         "<strong>Signs or symptoms of labour</strong>, cervical change not required",
+         "May resolve without delivery or progress"
+        ],
+        [
+         "<span class=\"wl\">Preterm labour</span>",
+         "<strong>Regular contractions leading to cervical dilatation</strong>",
+         "May still resolve, or lead to preterm birth"
+        ],
+        [
+         "<span class=\"wl\">Preterm birth</span>",
+         "Delivery, spontaneous or iatrogenic",
+         "Morbidity is <strong>gestational-age dependent</strong>"
+        ],
+        [
+         "<span class=\"wl\">PPROM</span>",
+         "<strong>Membrane rupture before 37 weeks</strong>, before labour",
+         "↑ <strong>preterm birth, chorioamnionitis, abruption, cord prolapse</strong>"
+        ]
+       ]
+      },
+      {
+       "t": "note",
+       "html": "<p><strong>Etiology of preterm labour:</strong> premature maternal or fetal <strong>HPA-axis activation</strong> · <strong>inflammation and infection</strong> · <strong>decidual hemorrhage</strong> · <strong>pathologic uterine distension</strong> · <strong>idiopathic (common)</strong>. <strong>PPROM</strong> adds mechanical stress and bleeding weakening the membranes.</p>"
+      },
+      {
+       "t": "note",
+       "html": "<p><strong>Risk factors:</strong> <strong>previous spontaneous preterm birth</strong> · <strong>multifetal gestation</strong> · <strong>cervical surgery (cone > LEEP)</strong> · <strong>short cervix</strong> · <strong>cervicitis</strong> (gonorrhea, chlamydia, BV, trichomonas, ureaplasma, mycoplasma) · non-Hispanic black race (?socioeconomic confounders) · age extremes · ART · Mullerian anomalies, fibroids · chronic disease · Ehlers-Danlos · smoking/substances · no prenatal care.</p>"
+      },
+      {
+       "t": "note",
+       "html": "<p><strong>Consequences of prematurity:</strong> RDS, apnea, bronchopulmonary dysplasia · <strong>IVH</strong> · glucose abnormalities · <strong>NEC</strong> · retinopathy · sepsis · prolonged NICU stay.</p>"
+      }
+     ]
     },
     {
      "id": "repro-w6-04",
      "num": "04",
      "name": "Process of Labour and Birth",
-     "hasNote": false
+     "hasNote": true,
+     "title": "Process of labour and birth",
+     "framing": "<p>Labour is <strong>regular uterine contractions causing progressive cervical dilation</strong>, and each stage asks the same two questions: <strong>what event ends it, and what am I measuring to know it is progressing</strong>. The 1st stage is measured on the cervix, the 2nd on the fetus, the 3rd on the placenta, the 4th on the mother.</p>",
+     "keypoints": "<p>⭐ <strong>true labour = regular contractions causing progressive cervical dilation; Braxton Hicks change nothing at the cervix.</strong> Station is measured from the <strong>ischial spines</strong>, dilation is complete at <strong>10 cm</strong>. ⚠ The <strong>earliest sign of placental separation is the firm, globular uterus</strong>, not the gush of blood. ⚠ In the 4th stage the danger is <strong>PPH on top of a 500 mL autotransfusion</strong>, so a cardiac patient needs watching for the ↑ cardiac work.</p>",
+     "blocks": [
+      {
+       "t": "figure",
+       "src": "assets/figures/817581129eb0.jpg",
+       "alt": "Friedman curve.png",
+       "w": 831,
+       "h": 812,
+       "cap": "The stages of labour on the Friedman curve"
+      },
+      {
+       "t": "table",
+       "cols": [
+        "",
+        "<strong>1st stage</strong>",
+        "<strong>2nd stage</strong>",
+        "<strong>3rd stage</strong>",
+        "<strong>4th stage</strong>"
+       ],
+       "rows": [
+        [
+         "<strong>Definition</strong>",
+         "<strong>onset of labour → full dilatation</strong> · latent <strong>0-4 cm</strong>, active <strong>4-10 cm</strong>",
+         "<strong>full dilatation → delivery of the fetus</strong> (\"pushing\")",
+         "<strong>delivery of fetus → expulsion of placenta</strong>",
+         "<strong>first hour after birth</strong>"
+        ],
+        [
+         "<strong>Friedman timing</strong>",
+         "primip <strong>6-18 h</strong>, active phase <strong>1.2 cm/h</strong> · multip <strong>2-10 h</strong>, active <strong>1.5 cm/h</strong> · guideline, not rule",
+         "primip <strong>30 min-3 h</strong> · multip <strong>5-30 min</strong>",
+         "<strong>2-30 min</strong>",
+         "1 h"
+        ],
+        [
+         "<strong>Progress measured by</strong>",
+         "<strong>cervical change q2-3 h</strong> (sooner for symptoms or FHR): dilation 0-10 cm, effacement 0-100%, station · more exams = ↑ <span class=\"wl\">chorioamnionitis</span>",
+         "<strong>station</strong>: <strong>0 = ischial spines</strong>, then <strong>+1 to +5 cm (or thirds)</strong> · the cardinal movements · <strong>trial of labour is the only true test of pelvic adequacy</strong>",
+         "<strong>signs of separation</strong>: uterus <strong>firm and globular (earliest)</strong> · gush of blood · uterus <strong>rises</strong> (placenta in the lower segment) · <strong>cord lengthens</strong>",
+         "maternal vitals"
+        ],
+        [
+         "<strong>Fetal monitoring</strong>",
+         "<span class=\"wl\">FHR</span> intermittent <strong>q15 min</strong> (low risk) or continuous (high risk) · contractions by <strong>palpation q30 min</strong> early, tocometer if high risk or slow, IUPC",
+         "FHR intermittent <strong>q5 min</strong> or continuous",
+         "-",
+         "accommodation to air · breastfeeding"
+        ],
+        [
+         "<strong>Management</strong>",
+         "pain from <strong>T10-T12</strong> · <strong>epidural (most common)</strong>, spinal, Lamaze, nitrous oxide, PCA",
+         "pain from <strong>S2-S4</strong> · <strong>pudendal block</strong> (local) · best pelvis <strong>gynecoid and android</strong>; <strong>platypelloid and anthropoid</strong> (narrow or flat) inhibit the cardinal movements",
+         "<strong>active management (WHO/SOGC)</strong>: <strong>uterotonic (Syntocinon or ergot) + gentle cord traction + fundal massage</strong> · involution is oxytocin-mediated · inspect and repair lacerations",
+         "<strong>autotransfusion up to 500 mL → ↑ cardiac work</strong> · watch for <span class=\"wl\">PPH</span>"
+        ]
+       ]
+      },
+      {
+       "t": "table",
+       "cols": [
+        "<strong>FHR</strong>",
+        "<strong>Intermittent</strong>",
+        "<strong>Continuous</strong>"
+       ],
+       "rows": [
+        [
+         "<strong>Who</strong>",
+         "<strong>low risk</strong>",
+         "<strong><span class=\"wl\">pre-eclampsia</span>, bleeding, atypical or abnormal FHR, induction or augmentation with Syntocinon, VBAC</strong>"
+        ],
+        [
+         "<strong>How</strong>",
+         "external monitor",
+         "external, or <strong><span class=\"wl\">fetal scalp electrode</span></strong> (internal)"
+        ],
+        [
+         "<strong>Read as</strong>",
+         "-",
+         "<strong>normal / atypical / abnormal</strong> (SOGC #197) · normal: continue · atypical: resuscitate and find the cause · abnormal: resuscitate and <strong>prepare for delivery</strong>"
+        ]
+       ]
+      },
+      {
+       "t": "note",
+       "html": "<p><strong>Decelerations</strong> (shape against the contraction): <strong><span class=\"wl\">early</span></strong> = mirror of the contraction, <strong>head compression</strong> · <strong><span class=\"wl\">variable</span></strong> = sharp V, no fixed relation, <strong>cord compression</strong> · <strong><span class=\"wl\">late</span></strong> = starts after the peak, recovers after the end, <strong>↓ uteroplacental flow</strong>.</p>"
+      },
+      {
+       "t": "table",
+       "lead": "<p><strong>Intrauterine resuscitation</strong> (atypical or abnormal tracing): <strong>scalp clip</strong> (is it fetal?) · <strong>vaginal exam</strong> (rule out <strong>cord prolapse</strong>; station, position, dilation, effacement) · <strong>left lateral</strong> (or right if already left) · <strong>oxytocin OFF</strong> · <strong>O2 by mask</strong> · <strong>500 mL bolus</strong> (NS or RL) · then decide the <strong>mode of delivery</strong> if it continues.</p>",
+       "cols": [
+        "<strong>Vaginal exam term</strong>",
+        "<strong>Means</strong>",
+        "<strong>Discriminator</strong>"
+       ],
+       "rows": [
+        [
+         "<strong>Lie</strong>",
+         "long axis of fetus vs mother",
+         "<strong>longitudinal 99%</strong> · transverse or oblique 1%"
+        ],
+        [
+         "<strong>Presentation</strong>",
+         "part foremost in the canal",
+         "<strong>vertex 95%</strong>, <strong>breech 4%</strong> · <strong>frank</strong> (70%, knees extended, vaginal OK) vs complete vs <strong>footling (not vaginal)</strong>"
+        ],
+        [
+         "<strong>Position</strong>",
+         "occiput, sacrum or chin vs R/L and A/P of the canal",
+         "<strong>LOA most common</strong> · <strong>OA presents the biparietal diameter (9.5 cm)</strong>, OP presents the widest part and pushing is long"
+        ],
+        [
+         "<strong>Station</strong>",
+         "lowest part vs ischial spines",
+         "<strong>0 = spines</strong>; do not push before 0"
+        ]
+       ]
+      },
+      {
+       "t": "note",
+       "html": "<p>Lie and presentation are confirmed by <strong>vaginal exam, <span class=\"wl\">Leopold maneuvers</span> (fundus → fetal back → part at the inlet → attitude) and/or ultrasound</strong>.</p>"
+      },
+      {
+       "t": "table",
+       "lead": "<p><strong>Cardinal movements</strong> (<em>Every Darn Fetus Is Extremely Eager to Exit</em>): engagement → descent → flexion → internal rotation → extension → external rotation (restitution) → expulsion (<strong>anterior shoulder under the pubis first</strong>, then posterior).</p>",
+       "cols": [
+        "<strong>Tear</strong>",
+        "<strong>Extends to</strong>"
+       ],
+       "rows": [
+        [
+         "<strong>1st degree</strong>",
+         "<strong>vaginal mucosa</strong> only"
+        ],
+        [
+         "<strong>2nd degree</strong>",
+         "+ perineal muscles, <strong>sphincter intact</strong>"
+        ],
+        [
+         "<strong>3rd degree</strong>",
+         "<strong>anal sphincter complex</strong>: 3a <strong><50%</strong> of EAS · 3b <strong>>50%</strong> of EAS · 3c <strong>IAS</strong> torn"
+        ],
+        [
+         "<strong>4th degree</strong>",
+         "+ <strong>rectal mucosa / anal epithelium</strong>"
+        ]
+       ]
+      },
+      {
+       "t": "note",
+       "html": "<p><strong>Contraindications to labour:</strong> <span class=\"wl\">placenta previa</span> · <span class=\"wl\">vasa previa</span> · cord presentation · abnormal lie · <strong>prior classical C/S</strong> or significant uterine surgery · active <span class=\"wl\">genital herpes</span>. <strong>Initiation:</strong> oxytocin receptors switch on at term · progesterone falls relative to estrogen · fetal HPA axis · prostaglandin F · withdrawal of inhibitors (progesterone, relaxin, prostacyclin, PTH, nitric oxide). <strong>Pre-labour:</strong> <span class=\"wl\">Braxton Hicks</span> from ~28 wk, <strong>painless, no cervical change</strong> · effacement · engagement <strong>~2 wk before labour in a primip</strong>.</p>"
+      }
+     ]
     },
     {
      "id": "repro-w6-05",
      "num": "05",
      "name": "Abnormal Labour",
-     "hasNote": false
+     "hasNote": true,
+     "title": "Abnormal labour and birth",
+     "framing": "<p><strong>Every route in this lecture gets a baby out when labour will not do it alone, and each one has a gate.</strong> The <strong>Bishop score</strong> gates induction, a <strong>fully dilated cervix with an engaged vertex</strong> gates an instrument, a <strong>low segment scar</strong> gates TOLAC, and in a PPH <strong>a firm or an atonic uterus</strong> decides the next step.</p>",
+     "keypoints": "<p>⭐ <strong>Uterine atony is the primary cause of PPH, and the rate is rising</strong> - so a firm uterus sends you looking for trauma instead. <strong>Abnormal FHR is the #1 reason for an operative vaginal delivery and the first sign of a uterine rupture.</strong> ⚠ <strong>Vacuum cannot rotate; forceps can.</strong> A <strong>previous C/S for dystocia</strong> lowers VBAC success; a <strong>non-recurrent indication (breech)</strong> raises it. ⚠ <strong>Carboprost in asthma, ergonovine in hypertension.</strong></p>",
+     "blocks": [
+      {
+       "t": "pathway",
+       "mermaid": "flowchart TD\n    A[\"Bleeding after birth<br/>>500 mL SVD · >1000 mL C/S<br/>or ANY loss with cardiovascular instability\"] --> B[\"Maternal ABC · resuscitate · GET HELP\"]\n    B --> C[\"Bimanual exam + fundal massage<br/>empty the bladder (consider indwelling Foley)\"]\n    C --> D{\"Is the uterus firm?\"}\n    D -->|\"Firm\"| E[\"Inspect for vaginal / cervical trauma\"]\n    D -->|\"Atonic\"| F[\"Uterotonic agents\"]\n    E --> G[\"Tranexamic acid\"]\n    F --> G\n    G --> H{\"Still bleeding?\"}\n    H -->|Yes| I[\"Consider DIC · tamponade (packing, Bakri balloon)<br/>embolization · compression sutures · artery ligation · hysterectomy<br/>GET MORE HELP\"]"
+      },
+      {
+       "t": "table",
+       "lead": "<p><strong>Workup skeleton (PPH)</strong></p><p>- <strong>Hx</strong> - risk factors sorted by the 4 T's <strong>before delivery</strong>: <strong>60% of PPH have an identifiable risk factor</strong> · anemia in pregnancy, treated early</p><p>- <strong>PEx</strong> - stage by vitals: <strong>Stage 2 = postural hypotension (SBP 80-100), HR >110</strong> · <strong>Stage 3 = SBP <80, HR >120</strong> · <strong>uterine tone on bimanual</strong></p><p>- <strong>Ix</strong> - ⚠ blood loss should ideally be <strong>measured</strong> (by weight the rate is closer to 10%) · consider DIC if bleeding persists</p><p>- <strong>Tx</strong> - <strong>prophylactic uterotonic in the 3rd stage</strong> (oxytocin 3 IU IV or 10 IU IM · carbetocin 100 µg), then the tree above</p><p>- <strong>Follow-up</strong> - iron deficiency anemia · ⚠ <strong>Sheehan's syndrome</strong> (pituitary infarction, poor lactation)</p>",
+       "cols": [
+        "",
+        "Dystocia → augmentation",
+        "Induction (IOL)",
+        "Operative vaginal delivery",
+        "Cesarean section",
+        "TOLAC"
+       ],
+       "rows": [
+        [
+         "<strong>What it is</strong>",
+         "<strong>Abnormally slow progress</strong>: failure to progress (dilatation) or failure to descend · not <span class=\"wl\">shoulder dystocia</span>, which is an emergency",
+         "Cervical ripening, then ARM ± IV <span class=\"wl\">oxytocin</span>",
+         "Forceps or vacuum to <strong>expedite the 2nd stage</strong>",
+         "<strong>Pfannenstiel (low transverse)</strong> is standard · midline for a crash, scar, obesity, bleeding disorder",
+         "Labour after a C/S; success = VBAC, <strong>60-80%</strong>"
+        ],
+        [
+         "<strong>Indications</strong>",
+         "Fix the modifiable P: <strong>power</strong> (ARM, oxytocin, coaching, analgesia) · passenger (ECV, rotate to OA) · psyche (continuous support) · <strong>passage cannot be altered</strong>",
+         "Any ↑ maternal or fetal risk: post dates · preeclampsia · DM · PROM · FGR · twins · fetal demise · low risk at <strong>39 wk (ARRIVE)</strong>",
+         "<strong>Atypical / abnormal FHR (#1)</strong> · OT / OP · must avoid Valsalva · exhaustion · prolonged 2nd stage",
+         "<strong>Dystocia · abnormal FHR · previous C/S · malpresentation = 70%</strong>",
+         "<strong>1-2 prior low segment C/S</strong> · <strong>>18 mo</strong> since · patient consents"
+        ],
+        [
+         "<strong>Gate</strong>",
+         "Titrate oxytocin to contractions + cervical change · cannot track them → <strong>IUPC</strong>",
+         "<strong>Bishop <6 = unfavourable → ripen first</strong> (prostaglandin or Foley) · ~2 cm to allow ARM",
+         "Full dilation · engaged vertex · ruptured membranes · no CPD",
+         "/",
+         "<strong>Urgent laparotomy within 30 min</strong> · OR + anesthesia available"
+        ],
+        [
+         "<strong>Contraindications</strong>",
+         "/",
+         "Previa, vasa previa, cord presentation · transverse lie · <strong>prior classical C/S</strong> · active herpes · invasive cervical cancer",
+         "<strong>Unengaged head</strong> · incomplete dilation · non-vertex, face, brow · CPD · fetal coagulopathy / demineralization · relative: <strong>>45° rotation (vacuum only)</strong>",
+         "/",
+         "<strong>Classical or inverted T scar</strong> · hysterotomy / myomectomy entering the cavity · previous rupture"
+        ],
+        [
+         "<strong>Risks</strong>",
+         "Will not fit → C/S for <strong>CPD</strong>",
+         "Oxytocin → <strong>continuous fetal monitoring</strong>",
+         "Vacuum: <strong>cephalohematoma, subgaleal hemorrhage</strong> · forceps: <strong>more maternal lacerations, facial nerve palsy</strong>",
+         "Endometritis 4-5% (35-40% without abx) · <strong>VTE 4x</strong> · previa 2-3x · <strong>accreta 5x</strong>",
+         "<strong>Scar separation 0.5%</strong> · <strong>true rupture 0.1%</strong>, first sign <strong>abnormal FHR</strong>"
+        ]
+       ]
+      },
+      {
+       "t": "table",
+       "cols": [
+        "Instrument",
+        "Does",
+        "Stop if"
+       ],
+       "rows": [
+        [
+         "<strong>Vacuum</strong>",
+         "Traction only - <strong>not for rotation</strong>, can correct deflexion",
+         "<strong>3 contractions · 3 pop-offs</strong> · >20 min and delivery not imminent"
+        ],
+        [
+         "<strong>Forceps</strong>",
+         "<strong>Traction, rotation, flexion, extension</strong>",
+         "Cannot apply correctly · no descent with traction · 20 min and not imminent"
+        ]
+       ]
+      },
+      {
+       "t": "table",
+       "cols": [
+        "4 T's",
+        "What bleeds",
+        "Risk factors that point to it"
+       ],
+       "rows": [
+        [
+         "<strong>Tone</strong>",
+         "<strong><span class=\"wl\">Atony</span>, the primary cause</strong>",
+         "Overdistention (polyhydramnios, multiples, macrosomia) · muscle exhaustion (prolonged labour, high parity, prolonged oxytocin, general anesthesia) · chorioamnionitis · fibroids, previa"
+        ],
+        [
+         "<strong>Tissue</strong>",
+         "Retained products",
+         "Membranes · succenturiate lobe · morbidly adherent placenta · clots"
+        ],
+        [
+         "<strong>Trauma</strong>",
+         "Lacerations, hematoma, rupture, inversion",
+         "Precipitous or operative delivery · previous uterine surgery · <strong>inversion: excessive cord traction</strong>"
+        ],
+        [
+         "<strong>Thrombin</strong>",
+         "Coagulopathy",
+         "vWD, hemophilia A · DIC · HELLP · abruption · amniotic fluid embolism · therapeutic anticoagulation"
+        ]
+       ]
+      },
+      {
+       "t": "table",
+       "cols": [
+        "Drug",
+        "Role",
+        "Dose",
+        "Watch for"
+       ],
+       "rows": [
+        [
+         "<strong>Oxytocin</strong>",
+         "Prophylaxis <strong>and</strong> 1st-line treatment",
+         "3 IU IV rapid · 10 IU IM · 20-40 IU/L infusion",
+         ">3 IU IV: ST depression, ↑ HR, ↓ BP · water retention"
+        ],
+        [
+         "<strong>Carbetocin</strong>",
+         "Prophylaxis",
+         "100 µg slow IV or IM",
+         "Side effects like 5 IU oxytocin"
+        ],
+        [
+         "<strong>Ergonovine</strong>",
+         "2nd line",
+         "250 µg IM",
+         "<strong>Hypertension</strong> · HIV drugs, macrolides"
+        ],
+        [
+         "<strong>Carboprost (PGF2α)</strong>",
+         "2nd line",
+         "250 µg IM or IMM, q15 min, max 5",
+         "<strong>Bronchospasm in asthma</strong> · diarrhea"
+        ],
+        [
+         "<strong><span class=\"wl\">Misoprostol</span></strong>",
+         "Adjunct",
+         "200-400 µg SL or PO",
+         "Fever, shivering"
+        ],
+        [
+         "<strong><span class=\"wl\">TXA</span></strong>",
+         "Adjunct, <strong>all active PPH</strong>",
+         "1 g IV over 30-60 s",
+         "Antifibrinolytic · no VTE seen in trials"
+        ]
+       ]
+      },
+      {
+       "t": "note",
+       "html": "<p><strong>PPH:</strong> >500 mL SVD · >1000 mL C/S · or any loss with cardiovascular instability · <strong>early <24 h</strong>, late 24 h-12 wk · Canada 5.6 per 100 deliveries · a top 5 cause of maternal death.</p>"
+      },
+      {
+       "t": "note",
+       "html": "<p><strong>Uterine rupture presents as:</strong> <strong>abnormal FHR (first sign)</strong> · cessation of contractions · <strong>loss of presenting part</strong> · abdominal pain · vaginal bleeding · hematuria · maternal instability · fetal parts palpable.</p>"
+      },
+      {
+       "t": "note",
+       "html": "<p><strong>Newborn scalp:</strong> <strong>subgaleal hemorrhage spreads</strong> · <strong>cephalohematoma is cut off</strong> · caput succedaneum is a poorly defined serosanguinous subcutaneous collection.</p>"
+      }
+     ]
     },
     {
      "id": "repro-w6-06",
      "num": "06",
      "name": "Hemorrhagic Shock",
-     "hasNote": false
+     "hasNote": true,
+     "title": "Hemorrhagic shock",
+     "framing": "<p><strong>Shock is cellular hypoxia, and hemorrhagic shock is the hypovolemic kind: lost blood → ↓ preload → ↓ cardiac output.</strong> The whole lecture turns on one thing: <strong>grade the loss from the vitals, then resuscitate before the vitals agree with you</strong>, because the obstetric patient is young, healthy and volume-expanded, so <strong>she compensates until she suddenly does not</strong>.</p>",
+     "keypoints": "<p>⭐ <strong>Blood pressure is normal through class II (up to 30% loss, ~1500 mL); it falls only in class III</strong>, so a normal BP does not exclude shock and tachycardia (> 100, class II) is the first vital to move. ⚠ <strong>Do not overlook the young healthy patient: she may surprise you with how much she has lost while still looking well.</strong> Bleeding is treated by <strong>stopping the bleeding</strong>; fluids and blood buy time, and each unit given feeds the coagulopathy arm of the triad.</p>",
+     "blocks": [
+      {
+       "t": "table",
+       "lead": "<p><strong>Workup skeleton</strong></p><p>- <strong>Hx / recognise</strong>: the 8 features of shock: <strong>hypotension · tachycardia · oliguria · abnormal mental status · tachypnea · cool, clammy, cyanotic skin · metabolic acidosis · hyperlactatemia</strong></p><p>- <strong>First moves</strong>: <strong><span class=\"wl\">ABCs</span> and call for HELP</strong> · vitals (HR, BP, RR, O<sub>2</sub> sat) with <strong><span class=\"wl\">ABG</span> / <span class=\"wl\">VBG</span></strong> · <strong>large-bore IV x 2</strong>, <span class=\"wl\">crystalloids</span> / <span class=\"wl\">colloids</span> · O<sub>2</sub> · <strong><span class=\"wl\">Foley</span> to urometer</strong> (urine output is a vital sign here)</p><p>- <strong>Ix</strong>: <span class=\"wl\">CBC</span> · <strong><span class=\"wl\">G+S</span></strong> · <strong>PTT/INR</strong> · fibrinogen · <span class=\"wl\">Cr</span></p><p>- <strong>Tx</strong>: blood products (pRBC, platelets, cryo, <span class=\"wl\">FFP</span>) → <strong>? massive transfusion protocol</strong> · <strong>identify and address the cause, stop the bleeding</strong> · ? ICU (<span class=\"wl\">inotropes</span>, central lines)</p><p>- <strong>Throughout</strong>: prevent the <strong>lethal triad</strong> (below)</p>",
+       "cols": [
+        "",
+        "<strong>Class I</strong>",
+        "<strong>Class II</strong>",
+        "<strong>Class III</strong>",
+        "<strong>Class IV</strong>"
+       ],
+       "rows": [
+        [
+         "<strong>Blood loss (mL)</strong>",
+         "up to 750",
+         "750-1500",
+         "1500-2000",
+         "> 2000"
+        ],
+        [
+         "<strong>Blood loss (% volume)</strong>",
+         "up to 15%",
+         "<strong>15-30%</strong>",
+         "<strong>30-40%</strong>",
+         "<strong>> 40%</strong>"
+        ],
+        [
+         "<strong>Pulse (/min)</strong>",
+         "< 100",
+         "<strong>100-120</strong>",
+         "120-140",
+         "> 140"
+        ],
+        [
+         "<strong>Blood pressure</strong>",
+         "normal",
+         "<strong>normal</strong>",
+         "<strong>decreased</strong>",
+         "decreased"
+        ],
+        [
+         "<strong>Pulse pressure</strong>",
+         "normal or ↑",
+         "<strong>decreased</strong>",
+         "decreased",
+         "decreased"
+        ],
+        [
+         "<strong>Respiratory rate (/min)</strong>",
+         "14-20",
+         "20-30",
+         "30-40",
+         "> 35"
+        ],
+        [
+         "<strong>Urine output (mL/h)</strong>",
+         "> 30",
+         "20-30",
+         "<strong>5-15</strong>",
+         "<strong>negligible</strong>"
+        ],
+        [
+         "<strong>CNS / mental status</strong>",
+         "slightly anxious",
+         "mildly anxious",
+         "<strong>anxious, confused</strong>",
+         "<strong>confused, lethargic</strong>"
+        ]
+       ]
+      },
+      {
+       "t": "table",
+       "cols": [
+        "Lethal triad",
+        "Why it kills clotting",
+        "Prevention"
+       ],
+       "rows": [
+        [
+         "<strong><span class=\"wl\">Acidosis</span></strong>",
+         "Impairs the clotting complexes <strong>that involve <span class=\"wl\">Ca<sup>2+</sup></span></strong>; at <strong>pH 7.0 rFVIIa activity falls 90%</strong>",
+         "<strong>Maintain tissue perfusion</strong>: O<sub>2</sub>, IV fluids, RBC transfusion"
+        ],
+        [
+         "<strong><span class=\"wl\">Hypothermia</span></strong>",
+         "A significant drop, <strong>below 35°C</strong>, also impairs clotting",
+         "<strong>Warmed IV fluids</strong> · Bair Hugger · Level I warmer"
+        ],
+        [
+         "<strong>Coagulopathy</strong>",
+         "<strong>Dilutional</strong>: IV fluid plus transfused pRBC dilute her own clotting factors; <strong>worsens progressively at 10, 20, 30 units</strong>",
+         "<strong>Limit blood loss</strong>: every unit avoided is coagulopathy avoided"
+        ]
+       ]
+      },
+      {
+       "t": "note",
+       "html": "<p><strong>Why OBGYN is different:</strong> the population is <strong>young and healthy</strong>, and the <strong>post-partum woman has a pregnancy-expanded blood volume</strong> built for the blood loss of delivery, so she <strong>compensates well despite a large loss</strong>.</p>"
+      }
+     ]
     },
     {
      "id": "repro-w6-07",
      "num": "07",
      "name": "Lactation",
-     "hasNote": false
+     "hasNote": true,
+     "title": "Lactation",
+     "framing": "<p>Lactation needs three things: <strong><span class=\"wl\">prolactin</span> to make milk, <span class=\"wl\">oxytocin</span> to eject it, and removal of milk by infant or pump, which must begin by day 3</strong>. Nearly every breastfeeding problem is a failure of one of the three, so ask <strong>which one broke</strong>.</p>",
+     "keypoints": "<p>⭐ <strong>By day 3 control switches from endocrine to autocrine: milk removal, not hormone, now drives supply</strong>, which is why removal must start by day 3 and why poor extraction lowers production. <strong>Low supply is the most common reason to stop breastfeeding.</strong> Mastitis is treated by <strong>continuing to nurse</strong>, not by stopping; an abscess needs <strong>drainage</strong>. <strong>Breast size doesn't matter.</strong> Alcohol is not a contraindication; smoking and street drugs are to be avoided.</p>",
+     "blocks": [
+      {
+       "t": "table",
+       "cols": [
+        "",
+        "<strong>Prolactin</strong>",
+        "<strong>Oxytocin</strong>"
+       ],
+       "rows": [
+        [
+         "<strong>Source</strong>",
+         "<span class=\"wl\">anterior pituitary</span>",
+         "<span class=\"wl\">posterior pituitary</span>"
+        ],
+        [
+         "<strong>Job</strong>",
+         "<strong>Lactogenesis</strong> (synthesis)",
+         "<strong>Milk let-down</strong> (myoepithelial contraction)"
+        ],
+        [
+         "<strong>Switched on by</strong>",
+         "Placenta delivered → <strong>↓ progesterone</strong> · suckling → <strong>↓ dopamine</strong>",
+         "Suckling, nipple stimulation · even the <strong>sound of the cry</strong>"
+        ],
+        [
+         "<strong>Blocked by</strong>",
+         "<strong>Dopamine</strong> · <span class=\"wl\">cabergoline</span> (dopaminergic)",
+         "-"
+        ]
+       ]
+      },
+      {
+       "t": "table",
+       "cols": [
+        "",
+        "<strong>Low supply: inadequate production</strong>",
+        "<strong>Low supply: poor extraction</strong>",
+        "<strong>Mastitis</strong>",
+        "<strong>Lactational abscess</strong>"
+       ],
+       "rows": [
+        [
+         "<strong>Causes</strong>",
+         "• Insufficient breast development in pregnancy · prior surgery/radiation<br>• Insulin resistance, ↑ androgens, <span class=\"wl\">PCOS</span>, <span class=\"wl\">prolactinoma</span><br>• <strong>Retained placenta</strong> · <strong><span class=\"wl\">Sheehan</span></strong><br>• Decongestants, <strong>estrogen</strong>",
+         "• <strong>Poor latch</strong> · infrequent feeding<br>• <span class=\"wl\">cleft palate</span>, sucking/swallowing disorders, neuromotor delay<br>• <strong>Preterm</strong> · NICU · <strong>separation of mother and infant</strong>",
+         "• Prior mastitis · blocked ducts<br>• <strong>Nipple cracking</strong> · breast pump<br>• <strong>Nipple cream (esp. antifungal)</strong>",
+         "• Mastitis that progressed<br>• <strong>Rare unless lactating</strong>"
+        ],
+        [
+         "<strong>Recognise</strong>",
+         "Nursing history · <strong>↓ infant urine and stool</strong> · <strong>excess infant weight loss</strong>",
+         "Same, plus <strong>the latch</strong>",
+         "Breast infection · <span class=\"wl\">Staph aureus</span> most common organism",
+         "An abscess in the breast"
+        ],
+        [
+         "<strong>Tx</strong>",
+         "Supplement · pump · drugs · <strong>lactation consultant</strong>",
+         "<strong>Fix the latch</strong> · pump · supplement",
+         "<strong>Keep nursing</strong> + manual pressure + <strong><span class=\"wl\">cloxacillin</span> 500 mg PO QID x 7-10 d</strong>",
+         "<strong>Incise and drain / needle aspirate</strong> + analgesia, bra, emptying, antibiotics"
+        ]
+       ]
+      },
+      {
+       "t": "table",
+       "cols": [
+        "Milk",
+        "Timing",
+        "What matters"
+       ],
+       "rows": [
+        [
+         "<strong>Colostrum</strong>",
+         "<strong>Exclusively for 2-4 days</strong>",
+         "<strong>Antibodies, cells, vitamins A, D, E, K</strong> · passive immunity"
+        ],
+        [
+         "Transitional",
+         "Mix, <strong>lasts about 2 weeks</strong>",
+         "Colostrum + mature milk"
+        ],
+        [
+         "Mature",
+         "Exclusive to <strong>6 months</strong>, then complementary foods, BF to <strong>2 years+</strong>",
+         "Content varies by woman, stage and time of day"
+        ]
+       ]
+      },
+      {
+       "t": "note",
+       "html": "<p><strong>Contraindications:</strong> HIV in developed countries (WHO: OK if both on ART) · <strong>active psychosis</strong> · <strong>active TB</strong> · <strong>herpetic breast lesions</strong> · antineoplastic drugs · <strong>infant galactosemia</strong> · PKU with high infant phenylalanine · patient refuses.</p>"
+      },
+      {
+       "t": "note",
+       "html": "<p><strong>Contraception:</strong> ⚠ <strong>avoid estrogen-containing products - ↓ quality and quantity of milk.</strong> Safe: hormonal or copper IUD · <strong>progesterone-only pill</strong> · barrier · Depo-Provera.</p>"
+      },
+      {
+       "t": "note",
+       "html": "<p><strong>Formula supplementation:</strong> patient choice · inadequate supply with poor growth / <span class=\"wl\">failure to thrive</span> · infant dehydration, hypoglycemia, weight loss or poor gain.</p>"
+      },
+      {
+       "t": "note",
+       "html": "<p><strong>Stopping:</strong> <strong><span class=\"wl\">cabergoline</span> 1 mg once</strong> · ⚠ <strong>abrupt weaning not recommended</strong> - rapid ↓ prolactin may ↑ depressive symptoms; gradual, child-led after 6 months is easiest · supportive bra, ice, analgesics, cabbage leaves.</p>"
+      },
+      {
+       "t": "note",
+       "html": "<p><strong>Numbers:</strong> storage <strong>laws of 6</strong> - room 6 h · fridge 6 d · freezer 6 mo · medications: milk concentration <strong>< 10% of maternal weight-adjusted dose</strong> · start <strong>within 1 hour of birth</strong>, skin to skin, feed on infant cues.</p>"
+      }
+     ]
     },
     {
      "id": "repro-w6-08",
      "num": "08",
      "name": "Postpartum Care",
-     "hasNote": false
+     "hasNote": true,
+     "title": "Postpartum care",
+     "framing": "<p>The puerperium is <strong>a return to baseline on a fixed timetable</strong>, so the complication is whatever breaks the timetable: <strong>blues past 2 weeks</strong>, <strong>bright red bleeding returning after 24 h</strong>, <strong>fever on 2 of the first 10 days</strong>.</p>",
+     "keypoints": "<p>⭐ <strong>Blues that last more than 2 weeks, or are severe within the first 2 weeks, are postpartum depression.</strong> ⚠ <strong>EPDS item 10 scored 1-3 at any total is a self-harm risk</strong> needing immediate assessment. The puerperal-infection clock <strong>excludes the first 24 h</strong>, and <strong>delayed PPH starts after 24 h</strong>. <strong>Refer ALL antepartum and postpartum patients to pelvic floor physiotherapy.</strong></p>",
+     "blocks": [
+      {
+       "t": "pathway",
+       "mermaid": "flowchart TD\n    A[\"Postpartum patient<br/>PHQ-2 on the antenatal record\"] --> B{\"PHQ-2 total ≥ 3?\"}\n    B -->|No| C[\"Routine postnatal care\"]\n    B -->|Yes| D[\"EPDS or PHQ-9<br/>or further mental health follow-up\"]\n    D --> E{\"EPDS item 10 scored 1-3?\"}\n    E -->|Yes| F[\"RISK OF SELF-HARM<br/>immediate mental health assessment + intervention\"]\n    E -->|No| G{\"EPDS total?\"}\n    G -->|\"> 12\"| H[\"Comprehensive bio-psychosocial<br/>diagnostic assessment for depression\"]\n    G -->|\"> 9, not > 12\"| I[\"Monitor, support, offer education\"]"
+      },
+      {
+       "t": "table",
+       "lead": "<p><strong>Workup skeleton</strong> (the postnatal visit)</p><p>- <strong>Hx</strong>: review of birth (OASIS, CS) · bladder · bowel · sexual function · lochia / menses · perineum / incision · <strong>emotional wellbeing + EPDS</strong> · feeding · smoking, alcohol, substances</p><p>- <strong>PEx</strong>: weight vs pre-pregnancy · BP · affect · thyroid · breasts · abdomen · perineum · pelvic</p><p>- <strong>Ix</strong>: <strong>rubella immune? TdaP up to date?</strong> · influenza · <strong>last Pap</strong></p><p>- <strong>Tx / counsel</strong>: contraception · pelvic floor exercises · future pregnancies, and <strong>if CS, mode of birth + spacing</strong></p><p>- ⚠ <strong>Lactational amenorrhea is NOT contraception</strong>: ovulation can occur without menstruation</p>",
+       "cols": [
+        "",
+        "<strong>Postpartum blues</strong>",
+        "<strong><span class=\"wl\">Postpartum depression</span></strong>",
+        "<strong><span class=\"wl\">Postpartum psychosis</span></strong>"
+       ],
+       "rows": [
+        [
+         "<strong>Frequency</strong>",
+         "<strong>up to 85%</strong>",
+         "<strong>10-20%</strong>",
+         "<strong>1-4 / 1000</strong>"
+        ],
+        [
+         "<strong>Timing</strong>",
+         "onset day 3-10 · peak days 2-4 · <strong>self-limited, ~2 weeks</strong>",
+         "major depression <strong>within 6 months</strong> · <strong>suspect if blues > 2 weeks, or severe in the first 2</strong>",
+         "/"
+        ],
+        [
+         "<strong>Features</strong>",
+         "weepiness · insomnia · poor concentration · anxiety · irritability · lability",
+         "M-<span class=\"wl\">SIGECAPS</span> · <strong>severe = disrupted attachment, poor bonding, suicidal or homicidal ideation</strong>",
+         "<strong>cannot discern real from unreal</strong> · often with other mood disorders"
+        ],
+        [
+         "<strong>Risk factors</strong>",
+         "life change + hormones",
+         "<strong>previous depression (30% recurrence)</strong> · postnatal stress (NICU, stillbirth) · poor support · age < 25 · single · FHx · IPV · unintended pregnancy",
+         "younger age · <strong>primiparity</strong> · FHx psychiatric illness · <strong>previous bipolar or schizoaffective</strong>"
+        ],
+        [
+         "<strong>Screen</strong>",
+         "clinical",
+         "<strong>PHQ-2 ≥ 3 → EPDS or PHQ-9</strong>",
+         "/"
+        ],
+        [
+         "<strong>Tx</strong>",
+         "<strong>none, or supportive</strong>",
+         "antidepressants · psychiatric assessment · support groups",
+         "/"
+        ]
+       ]
+      },
+      {
+       "t": "table",
+       "cols": [
+        "By",
+        "Back to baseline"
+       ],
+       "rows": [
+        [
+         "<strong>48 h</strong>",
+         "cardiac output (↑SV from venous return) · leukocytosis within the first days"
+        ],
+        [
+         "<strong>Day 2-5</strong>",
+         "diuresis begins (2-3 kg)"
+        ],
+        [
+         "<strong>1 week</strong>",
+         "<strong>blood volume</strong> · <strong>cervical canal reforms</strong> (50% of HSIL regress)"
+        ],
+        [
+         "<strong>2 weeks</strong>",
+         "cardiovascular changes"
+        ],
+        [
+         "<strong>2-8 weeks</strong>",
+         "ureters and renal pelvis"
+        ],
+        [
+         "<strong>3 weeks</strong>",
+         "<strong>endometrium regenerated</strong>"
+        ],
+        [
+         "<strong>4 weeks</strong>",
+         "<strong>uterine corpus at non-pregnant size</strong>"
+        ],
+        [
+         "<strong>6 weeks</strong>",
+         "<strong>placental site involuted</strong> · contraception starts · pelvic floor physio can start"
+        ],
+        [
+         "<strong>6-8 weeks</strong>",
+         "ovulation + menses, <strong>if NOT breastfeeding</strong>"
+        ],
+        [
+         "<strong>56 days</strong>",
+         "lochia may last this long (rubra → serosa → alba)"
+        ],
+        [
+         "<strong>3 months</strong>",
+         "normal micturition"
+        ],
+        [
+         "<strong>6 months</strong>",
+         "most at pre-pregnancy weight"
+        ]
+       ]
+      },
+      {
+       "t": "table",
+       "cols": [
+        "",
+        "<strong>Delayed <span class=\"wl\">PPH</span></strong>",
+        "<strong>Puerperal infection</strong>",
+        "<strong><span class=\"wl\">VTE</span></strong>"
+       ],
+       "rows": [
+        [
+         "<strong>Definition</strong>",
+         "↑ bleeding <strong>> 24 h</strong> postpartum",
+         "<strong>temp > 38.0°C on any 2 of the first 10 days, excluding the first 24 h</strong> (oral, at least QID)",
+         "0.5-3 / 1000 pregnancies · <strong>greatest risk postpartum</strong>"
+        ],
+        [
+         "<strong>Clue</strong>",
+         "<strong>return of bright red bleeding</strong> ± fever, chills, tender uterus",
+         "<strong>most common PP complication</strong> · <span class=\"wl\">endometritis</span>: C/S 30% non-elective, 7% elective, 3% vaginal",
+         "DVT · PE · septic pelvic thrombophlebitis"
+        ],
+        [
+         "<strong>Tx</strong>",
+         "antibiotics · <strong>US to rule out RPOC</strong> · uterotonic if tissue vs D&amp;C",
+         "<span class=\"wl\">amox-clav</span> 875 mg po BID x 7-10 d · <strong>septic: clindamycin + gentamicin IV</strong>",
+         "<strong><span class=\"wl\">LMWH</span></strong>"
+        ],
+        [
+         "<strong>Deaths</strong>",
+         "/",
+         "4% of maternal deaths worldwide",
+         "9% of maternal deaths"
+        ]
+       ]
+      },
+      {
+       "t": "note",
+       "html": "<p><strong>Discharge < 48 h:</strong> assess the 4 B's, bleeding · bowel · bladder · baby care. <strong>Contraindications:</strong> preeclampsia · PPH · fever · unstable medical condition.</p>"
+      },
+      {
+       "t": "note",
+       "html": "<p><strong>Contraception:</strong> <strong>no estrogen-containing method before 21 days</strong> (VTE) · debated effect on breastmilk · barriers, CHC, POP, depot Provera, hormonal and copper IUDs all usable.</p>"
+      },
+      {
+       "t": "note",
+       "html": "<p><strong>Perineum and bowel:</strong> clean, dry, sitz baths, pericare bottle · fibre, fluids, laxatives · <strong>no PR medications after a 3rd or 4th degree tear</strong>.</p>"
+      }
+     ]
     },
     {
      "id": "repro-w6-09",
      "num": "09",
      "name": "Approach to Neonatal Care",
-     "hasNote": false
+     "hasNote": true,
+     "title": "Approach to Neonatal Care",
+     "framing": "<p>Every newborn is examined within 24 h and kept <strong>pink, warm and sweet</strong>; the extra care turns on <strong>which reserve this baby lacks</strong>: heat (no shivering), glucose (glycogen lasts <strong>8-10 h</strong>, gluconeogenesis not normal until <strong>2-4 days</strong>), or bilirubin clearance.</p>",
+     "keypoints": "<p>⭐ <strong>Symptomatic hypoglycemia is a medical emergency: IV dextrose, not a feed</strong> (a jittery IDM who cannot latch, glucose 2.3). The GA curves run <strong>higher the more mature the baby</strong>, so the same TSB can need treatment at 35 weeks and not at 40. ⚠ <strong>Sepsis runs through all three</strong>: hypoglycemia can be a sign of it, it causes hyperbilirubinemia, and temperature instability is a jaundice risk factor, so consider it in <strong>any sick baby</strong>.</p>",
+     "blocks": [
+      {
+       "t": "pathway",
+       "mermaid": "flowchart TD\n    A[\"At-risk infant<br/>IDM · LGA > 90th · SGA < 10th · preterm < 37 wk\"] --> B[\"Check glucose 2 h after the first feed\"]\n    B --> C{\"Glucose ≥ 2.6 mmol/L?\"}\n    C -->|Yes| D[\"2.6, no more sticks\"]\n    C -->|No| E{\"Symptomatic?<br/>jittery · irritable · lethargic · poor feeding\"}\n    E -->|No| F[\"Early, frequent feeding<br/>and recheck\"]\n    E -->|\"Yes: medical emergency\"| G[\"IV DEXTROSE bolus + infusion<br/>not a feed alone · think sepsis\"]"
+      },
+      {
+       "t": "table",
+       "lead": "<p><strong>Workup skeleton (jaundice)</strong></p><p>- <strong>Hx</strong>: feeding and activity · septic risk factors · birth trauma / hypoxia · FHx (G6PD)</p><p>- <strong>PEx</strong>: <strong>blanch the nose</strong> · progresses <strong>head to toe</strong> · ⚠ <strong>colour is not predictive of the bilirubin level</strong> · weight change</p><p>- <strong>Ix</strong>: <strong>total and direct bilirubin</strong> · <strong>DAT</strong> · Hb · maternal and baby blood groups and antibodies</p><p>- <strong>Tx</strong>: plot TSB on the GA-specific curve · phototherapy · treat the cause · IVIG · exchange transfusion</p>",
+       "cols": [
+        "",
+        "<strong>Hypothermia</strong>",
+        "<strong>Hypoglycemia</strong>",
+        "<strong>Hyperbilirubinemia</strong>"
+       ],
+       "rows": [
+        [
+         "<strong>Why newborns</strong>",
+         "Warm womb → naked, wet, <strong>large surface area</strong> · variable fat · <strong>cannot shiver</strong>",
+         "Fetus wholly on maternal glucose · glycogen for <strong>8-10 h</strong> · <strong>gluconeogenesis normal only at 2-4 days</strong>",
+         "All babies rise in the first days · most common cause = <strong>exaggerated physiologic / breastfeeding jaundice</strong>"
+        ],
+        [
+         "<strong>At risk</strong>",
+         "Preterm · < 1500 g",
+         "<u>Inadequate substrate</u>: IUGR, maternal HTN, multiples, prematurity<br><u>Excess use</u>: <strong>LGA, IDM</strong>, hypothermia, sepsis, asphyxia",
+         "Isoimmune hemolysis · G6PD · asphyxia · resp distress · bruising / cephalohematoma · sepsis · acidosis · preterm · sibling needed phototherapy · East Asian"
+        ],
+        [
+         "<strong>Presentation</strong>",
+         "Cold stress",
+         "<strong>Jittery, irritable</strong>, lethargic, poor feeding",
+         "Yellow, head → toe"
+        ],
+        [
+         "<strong>Screen / Dx</strong>",
+         "-",
+         "Screen at-risk only: <strong>2 h after first feed</strong> · <strong>\"2.6, no more sticks\"</strong>",
+         "<strong>Universal at 24-48 h</strong>, transcutaneous or blood · plot on normative curve"
+        ],
+        [
+         "<strong>Tx</strong>",
+         "Dry · wrap · hats · ↑ room temp · <strong>incubator (< 1500 g)</strong> · radiant warmer · humidity",
+         "Early frequent feeds · <strong>IV dextrose if symptomatic</strong> · glucagon",
+         "<strong>Phototherapy</strong> (blue, <strong>460-490 nm</strong>) · treat cause · IVIG · exchange transfusion"
+        ],
+        [
+         "<strong>Harm</strong>",
+         "Feeds hypoglycemia (excess use)",
+         "<strong>Neuronal injury</strong>",
+         "<strong>Acute bilirubin encephalopathy</strong> → <strong>kernicterus</strong> (basal ganglia, brainstem nuclei)"
+        ]
+       ]
+      },
+      {
+       "t": "table",
+       "cols": [
+        "Apgar (1 and 5 min)",
+        "0",
+        "1",
+        "2"
+       ],
+       "rows": [
+        [
+         "<strong>A</strong>ppearance",
+         "cyanotic",
+         "centrally pink",
+         "completely pink"
+        ],
+        [
+         "<strong>P</strong>ulse",
+         "0",
+         "<strong>< 100</strong>",
+         "<strong>> 100</strong>"
+        ],
+        [
+         "<strong>G</strong>rimace",
+         "none",
+         "some response",
+         "good response"
+        ],
+        [
+         "<strong>A</strong>ctivity (tone)",
+         "flaccid",
+         "<strong>extension</strong>",
+         "<strong>flexion</strong>"
+        ],
+        [
+         "<strong>R</strong>espiration",
+         "none",
+         "irregular",
+         "regular"
+        ]
+       ]
+      },
+      {
+       "t": "note",
+       "html": "<p><strong>Bilirubin red flags:</strong> <strong>jaundice in the first 24 h is pathologic</strong> · cord bilirubin > 68 μmol/L · rise > 85 μmol/L/day · total > 340 μmol/L · <strong>direct > 30 μmol/L or > 20% of total</strong> · jaundice > 2 wk in a term infant · unwell child.</p>"
+      },
+      {
+       "t": "note",
+       "html": "<p><strong>Neurotoxicity risk factors (act at a lower TSB):</strong> < 38 wk · albumin < 30 · suspected hemolysis · suspected sepsis · hemodynamic or respiratory instability. <strong>Rules of 30</strong> (≥ 35 wk): phototherapy when within 30 μmol/L of the threshold in a baby with these risk factors; stop when > 30 below (≥ 38 wk) or > 60 below (35-37 wk).</p>"
+      },
+      {
+       "t": "note",
+       "html": "<p><strong>Phototherapy works three ways:</strong> <strong>Z → E isomerization</strong> (to bile) · <strong>cyclization to lumirubin</strong> (bile, urine) · oxidation (urine).</p>"
+      },
+      {
+       "t": "note",
+       "html": "<p><strong>Encephalopathy sequence:</strong> lethargy, hypotonia, poor suck → <strong>hypertonia with opisthotonos and retrocollis</strong>, high-pitched cry, fever → seizures, coma.</p>"
+      },
+      {
+       "t": "note",
+       "html": "<p><strong>Global:</strong> 5.4 million under-5 deaths a year, <strong>44% neonatal</strong> (2,532,000) · biggest neonatal slices: <strong>preterm complications 15%</strong>, intrapartum events 11%, sepsis 7% · Helping Babies Survive (AAP, WHO, USAID).</p>"
+      }
+     ]
     }
    ]
   }
