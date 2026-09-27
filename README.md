@@ -96,6 +96,7 @@ tools/build_index.py  every course's landing page
 tools/build_hub.py    the front door
 tools/build_anki.py   a block's deck out of Anki, plus the manifest its tab reads
 tools/question_figures.py  question pictures out of the JSON and into assets/figures/
+tools/vault_backup.py      the portal back into the medwiki vault: charts and question notes
 tools/                PoM 2's extractors (an Obsidian vault in)
 tools/fom/            FoM's extractors (the question-bank PDFs in)
 tools/pom1/           PoM 1's extractors (the bank PDFs, the workbook, the study notes)
@@ -160,6 +161,9 @@ python tools/review_lectures.py --derive # every question -> the lecture it test
 python tools/build_pages.py             # every course's block pages + question bank
 python tools/build_index.py             # every course's landing page
 python tools/build_hub.py               # the hub and its totals
+
+python tools/vault_backup.py charts      # FoM/PoM 1 curated notes -> vault charts (new ones only)
+python tools/vault_backup.py questions   # every bank the vault lacks -> 00 - Practice Questions
 ```
 
 Run the last three after editing any CSS or JS as well, because they stamp each
