@@ -2196,7 +2196,11 @@
       var set = incoming[slug];
       if (!SLUG_OK.test(slug) || !set || typeof set !== "object") return;
 
-      if (slug === BLOCK.slug) {
+      /* every block this page holds in memory is restored into memory. The
+         pooled page is BLOCK.slug "term", which no record carries, and routing
+         its blocks through storage instead let the save() below overwrite
+         them with the empty copy still in memory. */
+      if (BLOCKS.some(function (b) { return b.slug === slug; })) {
         Object.keys(set).forEach(function (qid) {
           var r = sanitize(qid, set[qid]);
           if (r && newer(progress[qid], r)) { progress[qid] = r; here++; }
