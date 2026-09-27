@@ -50,9 +50,11 @@
       },
       {
        "t": "figure",
-       "src": "assets/figures/b6af8b28d0a6.png",
+       "src": "assets/figures/ee253a095909.png",
        "alt": "Cut-away of the heart showing the four chambers and valves",
-       "cap": "The four chambers and their valves: right side (blue) receives venous return, left side (red) ejects to the aorta."
+       "cap": "The four chambers and their valves: right side (blue) receives venous return, left side (red) ejects to the aorta.",
+       "w": 762,
+       "h": 601
       },
       {
        "t": "list",
