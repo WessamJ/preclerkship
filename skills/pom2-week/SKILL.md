@@ -303,6 +303,34 @@ lecture that teaches it - do not move the link to fit the heading. The reproduct
 nine groups filed under the wrong week for exactly this reason, and the portal now renders the
 lecture's week rather than the filing week, so a correct link quietly corrects a wrong heading.
 
+### A case with no question posed asks for its reveal
+
+**Every case in a slide deck or a module is banked, including the ones that pose no question.**
+The usual shape is a `Case Presentation` slide, then the gross, histology or imaging pictures,
+then the diagnosis named in a caption, a heading or an answer slide. The deck is asking *what is
+this?* without printing the words, and that ask is the question to bank:
+
+- **Stem**: `Which of the following is the most likely diagnosis?`, or the reveal's own kind where
+  the deck reveals a next step or a management choice instead. The case is the case slide plus
+  what the pictures show on their face.
+- ⭐ **The reveal stays out of the case.** No caption words, and nothing from a later slide that
+  names the answer. A shot of the primary tumour is a reveal too, however clinical it looks.
+- **Options are a differential**: the diagnosis plus three others **the same deck teaches** that
+  the case has to be told apart from, such as the same lineage with a different behaviour, or the
+  same gross look from a different lineage. Plain diagnosis names, not statements, and no
+  behaviour tails. A tail like *"- benign germ cell tumour"* on one option hands over the answer.
+- **The answer** cites the reveal slide, then says from the deck why each other diagnosis fails.
+- A teaching slide after the reveal (behaviour, markers, treatment) may become **a follow-up
+  question after the diagnosis question, never instead of it**.
+- Mark the stem `*(stem assembled from slides N-M, leaving out the caption that names the
+  diagnosis; the deck poses no question)*`, and carry the same slide range into `lectureMeta`.
+
+*Worked example, 2026-09-28: the six `Case Presentation` slides in the Approach to and
+Pathology of a Pelvic Mass deck (`Armstrong_OvarianNeoplasms_slides.pdf`) are `new-repro-Q89-96`
+in `New Questions - Reproduction.md`. The first pass asked "which statement is correct?" and
+"what should the pathologist report?", and one case gave away its gastric primary. All of them
+now ask for the diagnosis, with a differential as the options.*
+
 ### Every option has to look like the answer
 
 **The medicine is the only thing allowed to pick the key out of the set.** Anything else that
