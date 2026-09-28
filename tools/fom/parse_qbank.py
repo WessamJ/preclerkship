@@ -81,7 +81,7 @@ SECTIONS = [
     (u"Readiness Assessment",                      "ra",       u"Readiness assessment"),
     (u"Self-Assessment",                           "sa",       u"Self-assessment"),
     (u"Questions from the Meds2024 Question Bank", "meds2024", u"Meds 2024 bank"),
-    (u"New Questions",                             "new",      u"New questions"),
+    (u"New Questions",                             "new",      u"Meds 2025"),
 ]
 SEC_BY_HEAD = dict((h, k) for h, k, _l in SECTIONS)
 SEC_LABEL = dict((k, l) for _h, k, l in SECTIONS)

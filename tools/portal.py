@@ -54,7 +54,7 @@ COURSES = [
                       u"week. Its questions went to the teaching faculty and the "
                       u"instructors' edits are folded in, except for a tail of each week "
                       u"that time ran out on."},
-            {"key": "new", "name": u"New questions",
+            {"key": "new", "name": u"Meds 2025",
              "blurb": u"Written fresh by the Meds 2025 volunteers in December 2021. The "
                       u"bank states on its own second page that these were not verified "
                       u"by faculty, so treat a disagreement as a question worth chasing "
@@ -102,7 +102,7 @@ COURSES = [
                       u"volunteers. About half the cardiology questions and a handful of "
                       u"the respirology ones were reviewed by faculty; the rest were not, "
                       u"and the bank says so on its own second page."},
-            {"key": "new", "name": u"New questions",
+            {"key": "new", "name": u"Meds 2025",
              "blurb": u"Written fresh by the Meds 2025 volunteers through the spring of "
                       u"2022 to fill the gaps. Not verified by faculty, so treat a "
                       u"disagreement as a question worth chasing rather than a correction "
