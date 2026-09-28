@@ -2172,6 +2172,12 @@ mark.hit{
 
 .qsel[hidden]{display:none;}
 
+/* The search facet borrows the notes tab's box and is sized to sit level with
+   the dropdowns beside it; a query is usually where narrowing starts, so it
+   gets the first slot and a little more room than a facet with a caret. */
+.qsearch{flex:1.4 1 200px;}
+.qsearch .notesearch input{background:var(--bg);font-size:.86rem;line-height:1.3;}
+
 /* Each facet is a button over a panel of checkboxes, not a <select>: weeks 1
    AND 2 is a real request and a select can only answer one of them. A native
    <select multiple> can, but it is a permanently-open scrolling list box that

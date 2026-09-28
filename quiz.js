@@ -74,14 +74,16 @@
      ask, and a single-valued filter cannot answer it. Empty-means-all is what
      keeps the "All weeks" row a clear button rather than a fifth checkbox
      that has to be kept mutually exclusive with the other four. */
-  var filters = { status: [], block: [], family: [], week: [], tag: [] };
+  /* search is the one facet whose value is typed rather than picked, so it is
+     a string, and the empty string is its "all" */
+  var filters = { status: [], block: [], family: [], week: [], tag: [], search: "" };
 
   function isOn(name, k) { return filters[name].indexOf(k) !== -1; }
 
   function anyFilter() {
     return filters.status.length > 0 || filters.block.length > 0 ||
            filters.family.length > 0 || filters.week.length > 0 ||
-           filters.tag.length > 0;
+           filters.tag.length > 0 || searchOn();
   }
 
   /* View and Mode are two axes, deliberately independent. VIEW is how the
@@ -850,9 +852,181 @@
     return filters.status.some(function (k) { return statusIs(q, k); });
   }
 
+  /* ---------- search ---------- */
+
+  /* The sixth facet. Its value is a typed query, and every word of it has to
+     appear somewhere in the question - preamble, stem, options, review line -
+     in any order. That differs from the notes tab, which wants the phrase
+     whole: a lecture note reads as prose, where a stem is a long clinical
+     vignette and "warfarin bleeding" is the question people mean even when
+     the two words sit a sentence apart.
+
+     The answer and its explanation are never read. A search for "metformin"
+     that surfaced every question whose ANSWER is metformin would hand out the
+     key before the question was attempted. */
+  function searchText(q) {
+    var parts = [q.stem];
+    /* a preamble is usually {title, html}; two in the banks are bare strings */
+    if (q.preamble && typeof q.preamble === "object") parts.push(q.preamble.title, q.preamble.html);
+    else parts.push(q.preamble);
+    (q.options || []).forEach(function (o) { parts.push(o.html); });
+    /* a pairing's choices are its options, they just live in pairs.items */
+    if (q.pairs && q.pairs.items) {
+      q.pairs.items.forEach(function (it) { parts.push(it.left, it.right); });
+    }
+    /* the review line as the reader sees it: the week, the lecture the set
+       named, and any lecture review_lectures.py resolved the question to */
+    parts.push(q.weekLabel, q.lecture);
+    (q.review || []).forEach(function (r) { parts.push(r.t); });
+    return parts.join(" ")
+      /* block-level tags end a word and inline ones do not, so two paragraphs
+         stay two words and a bolded half of one word stays one */
+      .replace(/<\/?(?:p|div|li|ol|ul|br|tr|td|th|h[1-6]|blockquote|table)\b[^>]*>/gi, " ")
+      .replace(/<[^>]+>/g, "")
+      .replace(/&nbsp;/gi, " ")
+      .replace(/&amp;/gi, "&")
+      .replace(/&lt;/gi, "<")
+      .replace(/&gt;/gi, ">")
+      .replace(/&quot;/gi, "\"")
+      .replace(/&#39;/g, "'")
+      .toLowerCase();
+  }
+
+  /* Below two characters a word is not a search term yet, it is a keystroke:
+     one letter would narrow a bank of hundreds to whichever happen to lack it,
+     and the stream would lurch on every first key pressed. The floor is per
+     word, so "warfarin a" is still the warfarin search while the next word is
+     being typed. */
+  var SEARCH_MIN = 2;
+
+  function searchWords(query) {
+    return (query || "").toLowerCase().split(/\s+/).filter(function (w) {
+      return w.length >= SEARCH_MIN;
+    });
+  }
+
+  function searchHit(hay, words) {
+    return words.every(function (w) { return hay.indexOf(w) !== -1; });
+  }
+
+  /* The pure form: one question, one query, no state. It is what the test
+     script exercises. */
+  function searchMatches(q, query) {
+    return searchHit(searchText(q), searchWords(query));
+  }
+
+  /* The haystack is stripped once per question rather than on every keystroke
+     - the facet counts and the stream each ask about every question per pass */
+  var SEARCH_HAY = Object.create(null);
+
+  /* the word list is split once per query, not once per question per pass */
+  var SEARCH_WORDS = { query: null, words: [] };
+
+  function currentWords() {
+    if (SEARCH_WORDS.query !== filters.search) {
+      SEARCH_WORDS = { query: filters.search, words: searchWords(filters.search) };
+    }
+    return SEARCH_WORDS.words;
+  }
+
+  function searchOn() { return currentWords().length > 0; }
+
+  function searchOk(q) {
+    var words = currentWords();
+    if (!words.length) return true;
+    var hay = SEARCH_HAY[q.qid];
+    if (hay === undefined) hay = SEARCH_HAY[q.qid] = searchText(q);
+    return searchHit(hay, words);
+  }
+
+  function setSearch(v) {
+    var next = v || "";
+    if (next === filters.search) return;
+    filters.search = next;
+    syncSearchBox();
+    afterFilterChange();
+  }
+
+  /* the box, the chip and the Clear-all button can each change the query, so
+     the input is made to agree with the facet rather than the other way round */
+  function syncSearchBox() {
+    var box = byId("bank-q"), clear = byId("bank-q-clear");
+    if (box && box.value !== filters.search) box.value = filters.search;
+    if (clear) clear.hidden = !searchOn();
+  }
+
+  /* ---------- search highlights ---------- */
+
+  /* The notes tab's walker, taught several words. Marks go into the parts of
+     the question the search read - preamble, stem, options - and never into
+     the answer, which it did not. Text nodes are walked rather than innerHTML
+     rewritten, because a stem is real markup and a term straddling a tag
+     would corrupt it. */
+  var SEARCH_MARK_MIN = 3;        // a word shorter than this filters but is not painted
+  var SEARCH_MARK_BUDGET = 800;   // and never more than this many marks in one pass
+  var SEARCH_MARKED = [];
+
+  function unmarkSearch() {
+    SEARCH_MARKED.forEach(function (art) {
+      [].forEach.call(art.querySelectorAll("mark.hit"), function (m) {
+        m.parentNode.replaceChild(document.createTextNode(m.textContent), m);
+      });
+      art.normalize();
+    });
+    SEARCH_MARKED = [];
+  }
+
+  function markWords(root, words, budget) {
+    if (!document.createTreeWalker) return 0;
+    var walk = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, null, false);
+    var targets = [], n;
+    while ((n = walk.nextNode())) {
+      var low = (n.nodeValue || "").toLowerCase();
+      if (words.some(function (w) { return low.indexOf(w) !== -1; })) targets.push(n);
+    }
+    var made = 0;
+    targets.forEach(function (node) {
+      if (made >= budget) return;
+      var raw = node.nodeValue, lowv = raw.toLowerCase();
+      var frag = document.createDocumentFragment(), i = 0;
+      while (made < budget) {
+        var best = -1, len = 0;
+        words.forEach(function (w) {
+          var j = lowv.indexOf(w, i);
+          if (j !== -1 && (best === -1 || j < best)) { best = j; len = w.length; }
+        });
+        if (best === -1) break;
+        if (best > i) frag.appendChild(document.createTextNode(raw.slice(i, best)));
+        frag.appendChild(el("mark", "hit", raw.slice(best, best + len)));
+        i = best + len;
+        made++;
+      }
+      if (i < raw.length) frag.appendChild(document.createTextNode(raw.slice(i)));
+      node.parentNode.replaceChild(frag, node);
+    });
+    return made;
+  }
+
+  function paintSearchMarks(live) {
+    unmarkSearch();
+    var words = currentWords().filter(function (w) { return w.length >= SEARCH_MARK_MIN; });
+    if (!words.length) return;
+    var budget = SEARCH_MARK_BUDGET;
+    QUESTIONS.forEach(function (q) {
+      if (budget <= 0 || !live[q.qid]) return;
+      var art = byId("q-" + q.qid);
+      if (!art) return;
+      var made = 0;
+      [].forEach.call(art.querySelectorAll(".preamble, .stem, .opts .t"), function (part) {
+        made += markWords(part, words, budget - made);
+      });
+      if (made) { SEARCH_MARKED.push(art); budget -= made; }
+    });
+  }
+
   function matches(qid) {
     var q = QMAP[qid];
-    return blockOk(q) && famOk(q) && weekOk(q) && tagOk(q) && statusOk(q);
+    return blockOk(q) && famOk(q) && weekOk(q) && tagOk(q) && statusOk(q) && searchOk(q);
   }
 
   // qids currently passing the filters that actually have something to clear
@@ -921,7 +1095,7 @@
     });
 
     var narrowed = filters.status.length > 0 || filters.week.length > 0 ||
-                   filters.tag.length > 0 || filters.block.length > 0;
+                   filters.tag.length > 0 || filters.block.length > 0 || searchOn();
     [].forEach.call(document.querySelectorAll(".family"), function (f) {
       if (filters.family.length && !isOn("family", f.dataset.family)) { f.hidden = true; return; }
       /* a coverage gap is worth showing where the stream is grouped by set,
@@ -936,6 +1110,7 @@
     [].forEach.call(document.querySelectorAll(".blockgroup"), function (g) {
       g.hidden = !g.querySelector(".family:not([hidden])");
     });
+    paintSearchMarks(live);
     /* the empty state belongs to the filters, not to the page you are on */
     byId("empty").hidden = ids.length > 0;
     indexVisible();
@@ -996,6 +1171,8 @@
     filters.week = [];
     filters.tag = [];
     filters.status = [];
+    filters.search = "";
+    syncSearchBox();
   }
 
   /* ---------- order ---------- */
@@ -1583,11 +1760,19 @@
   }
 
   function onKey(e) {
-    if (e.ctrlKey || e.metaKey || e.altKey || e.shiftKey) return;
+    if (e.ctrlKey || e.metaKey || e.altKey) return;
     if (byId("panel-questions").hidden) return;
     var t = e.target;
     if (t && (t.isContentEditable ||
               /^(input|textarea|select)$/i.test(t.tagName || ""))) return;
+    /* the find-a-thing key on GitHub and most documentation sites; checked
+       before the shift guard because on many European layouts "/" IS shifted */
+    if (e.key === "/" && byId("bank-q")) {
+      e.preventDefault();
+      byId("bank-q").focus();
+      return;
+    }
+    if (e.shiftKey) return;
     if (e.key === "j") { e.preventDefault(); step(1); }
     else if (e.key === "k") { e.preventDefault(); step(-1); }
     else if (e.key === "b" && ANCHOR) {
@@ -1700,6 +1885,9 @@
     QUESTIONS.forEach(function (q) {
       var b = blockOk(q), f = famOk(q), w = weekOk(q), t = tagOk(q);
       var sOk = statusOk(q), wk, st;
+      /* the search narrows every count the same way the other facets do,
+         and it has no dropdown of its own to count for */
+      if (!searchOk(q)) return;
       if (f && w && t && sOk) {
         blk[q.block] = (blk[q.block] || 0) + 1;
         blkAll++;
@@ -1770,6 +1958,12 @@
     chips("week", function (k) { return WEEK_LABEL[k] || ("Week " + k); });
     chips("tag", function (k) { return TAG_LABEL[k] || k; });
     chips("status", function (k) { return STATUS_LABEL[k] || k; });
+    if (searchOn()) {
+      live.push({
+        label: "\u201c" + filters.search.replace(/^\s+|\s+$/g, "") + "\u201d",
+        clear: function () { filters.search = ""; syncSearchBox(); }
+      });
+    }
 
     box.hidden = live.length === 0;
     box.textContent = "";
@@ -2021,6 +2215,43 @@
     buildMulti("f-status", "status", "statuses", STATUS_DEFS.map(function (d) {
       return { k: d.k, label: d.k === "all" ? "Any status" : d.label };
     }));
+
+    /* The search box. Guarded, because a page cached from before it shipped
+       has no box and must keep working. Debounced like the notes tab's: every
+       keystroke re-filters the stream and re-walks the text of what is left. */
+    var qbox = byId("bank-q"), QT = null;
+    if (qbox) {
+      qbox.addEventListener("input", function () {
+        if (QT) window.clearTimeout(QT);
+        QT = window.setTimeout(function () { QT = null; setSearch(qbox.value); }, 150);
+      });
+      qbox.addEventListener("keydown", function (e) {
+        if (e.key === "Escape" || e.keyCode === 27) {
+          if (QT) { window.clearTimeout(QT); QT = null; }
+          setSearch("");
+          return;
+        }
+        if (e.key === "Enter" || e.keyCode === 13) {
+          /* Enter would submit if this box were ever wrapped in a form, and
+             the debounce may not have run yet on a fast typist's last key */
+          e.preventDefault();
+          if (QT) { window.clearTimeout(QT); QT = null; }
+          setSearch(qbox.value);
+        }
+      });
+      var qclear = byId("bank-q-clear");
+      if (qclear) {
+        qclear.addEventListener("click", function () {
+          setSearch("");
+          qbox.focus();
+        });
+      }
+      /* Whatever is already in the box counts: a query typed while the bank
+         was still loading, or one a browser put back on reload. Adopted here
+         and applied by start()'s own applyFilters, since the stream does not
+         exist yet at this point. */
+      if (qbox.value) { filters.search = qbox.value; syncSearchBox(); }
+    }
 
     /* "wrong only" means every wrong answer in the block, so it clears what
        else is narrowing the stream rather than handing back an empty list.
@@ -2365,6 +2596,7 @@
   var booted = false;
 
   window.POM2_QUIZ = {
+    searchMatches: searchMatches,
     boot: function () {
       if (booted) return;
       booted = true;
