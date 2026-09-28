@@ -708,6 +708,22 @@
     paint();
   }
 
+  /* ---------- a link straight to one note ---------- */
+
+  /* b1.html#n-b1-w1-02 lands on that lecture. Read once the stream is built
+     and again on every hashchange, because a same-document hash change never
+     reloads the page and boot runs only once. A hash naming a note the roster
+     lacks does nothing, which is better than a scroll to nowhere. */
+  function wantedNote() {
+    var h = window.location.hash || "";
+    return h.indexOf("#n-") === 0 ? h.slice(3) : null;
+  }
+
+  function goToWanted() {
+    var id = wantedNote();
+    if (id && byId("n-" + id)) goTo(id);
+  }
+
   function start(data) {
     WEEKS = (data && data.weeks) || [];
     assignKeys();
@@ -722,6 +738,8 @@
     initSpy();
     shared().drawPathways(byId("note-stream"));
     initTop();
+    goToWanted();
+    window.addEventListener("hashchange", goToWanted);
   }
 
   window.POM2_NOTES = {

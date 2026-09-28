@@ -498,6 +498,9 @@
 
   function wanted() {
     var h = (window.location.hash || "").replace("#", "");
+    /* #n-<lecture id> names one note, the way the bank's note dialog links
+       back here. The tab is implied by the note. */
+    if (h.indexOf("n-") === 0) return "notes";
     return TABS[h] ? h : fallback();
   }
 
