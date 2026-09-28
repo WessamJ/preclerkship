@@ -467,6 +467,55 @@
     return LABEL;
   }
 
+  /* A review entry names a week and a lecture number but not a block. Weeks
+     are numbered once across a course and the bank already carries each
+     block's span, so the block follows from the week. That is also what joins
+     a question filed under one block to a lecture taught in another - the
+     Infection & Immunity questions on vaccines review a week 4 lecture, and
+     week 4 is Principles & Development. */
+  function blockForWeek(w) {
+    var n = parseInt(w, 10);
+    if (isNaN(n)) return null;
+    for (var i = 0; i < BLOCKS.length; i++) {
+      /* "1–4" with an en dash as the builder writes it, or "9" for a block
+         one week long; a plain hyphen is accepted so a hand-edited config
+         cannot silently break the join */
+      var span = String(BLOCKS[i].weeks || "").split(/[–—-]/);
+      var lo = parseInt(span[0], 10), hi = parseInt(span[span.length - 1], 10);
+      if (isNaN(hi)) hi = lo;
+      if (!isNaN(lo) && n >= lo && n <= hi) return BLOCKS[i].slug;
+    }
+    return null;
+  }
+
+  /* The id the notes file gives the lecture: <block>-w<week>-<number>. An
+     in-class session carries no number and resolves to nothing; the line
+     still names it, it just cannot be opened. */
+  function noteIdFor(r) {
+    if (!r || !/^\d+$/.test(String(r.n || ""))) return null;
+    var slug = blockForWeek(r.w);
+    return slug ? slug + "-w" + r.w + "-" + r.n : null;
+  }
+
+  /* The review line's shape: one run per week, each run the lectures that
+     share it, so "Week 13 · 05 - X, 06 - Y" reads as one place. The text and
+     the buttons are both built from this, so they cannot disagree. */
+  function reviewParts(q) {
+    var runs = [], last = null;
+    (q.review || []).forEach(function (r) {
+      var id = noteIdFor(r);
+      var item = { n: r.n, t: r.t, name: (r.n ? r.n + " - " : "") + r.t,
+                   id: id, slug: id ? blockForWeek(r.w) : null };
+      if (r.w !== last) {
+        runs.push({ w: r.w, items: [item] });
+        last = r.w;
+      } else {
+        runs[runs.length - 1].items.push(item);
+      }
+    });
+    return runs;
+  }
+
   /* The lectures tools/review_lectures.py resolved this question to, rendered
      as the place to go rather than as the place it was filed. Where those
      disagree the LECTURE's week wins: a question filed under week 5 whose
@@ -476,17 +525,10 @@
      The week is printed once per run of lectures that share it, so the common
      case - one lecture, or two from the same week - reads as one location. */
   function reviewPath(q) {
-    var out = [], last = null;
-    (q.review || []).forEach(function (r) {
-      var name = (r.n ? r.n + " - " : "") + r.t;
-      if (r.w !== last) {
-        out.push("Week " + r.w + " \u00b7 " + name);
-        last = r.w;
-      } else {
-        out[out.length - 1] += ", " + name;
-      }
-    });
-    return out.join("  +  ");
+    return reviewParts(q).map(function (run) {
+      return "Week " + run.w + " \u00b7 " +
+        run.items.map(function (it) { return it.name; }).join(", ");
+    }).join("  +  ");
   }
 
   function whereFrom(q) {
@@ -2584,6 +2626,10 @@
 
   window.POM2_QUIZ = {
     searchMatches: searchMatches,
+    blockForWeek: blockForWeek,
+    noteIdFor: noteIdFor,
+    reviewParts: reviewParts,
+    reviewPath: reviewPath,
     boot: function () {
       if (booted) return;
       booted = true;
