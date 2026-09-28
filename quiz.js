@@ -497,9 +497,16 @@
     return slug ? slug + "-w" + r.w + "-" + r.n : null;
   }
 
-  /* The review line's shape: one run per week, each run the lectures that
-     share it, so "Week 13 · 05 - X, 06 - Y" reads as one place. The text and
-     the buttons are both built from this, so they cannot disagree. */
+  /* The lectures tools/review_lectures.py resolved this question to, as the
+     place to go rather than the place it was filed. Where those disagree the
+     LECTURE's week wins: a question filed under week 5 whose material is
+     taught in week 4 should send you to week 4, and several hundred of them
+     do exactly that.
+
+     The shape is one run per week, each run the lectures that share it, so
+     the common case - one lecture, or two from the same week - reads as one
+     location: "Week 13 · 05 - X, 06 - Y". The text and the buttons are
+     both built from this, so they cannot disagree. */
   function reviewParts(q) {
     var runs = [], last = null;
     (q.review || []).forEach(function (r) {
@@ -529,7 +536,7 @@
         parts.join(" ").toLowerCase().indexOf(lec.toLowerCase()) === -1) {
       parts.push(lec);
     }
-    return parts.join(" · ");
+    return parts.join(" \u00b7 ");
   }
 
   /* Each lecture on the line opens its note, so the line is built from the
@@ -549,7 +556,7 @@
     var b = el("button", "sw-lec", it.name);
     b.type = "button";
     b.title = "Open this lecture's note";
-    b.addEventListener("click", function () { openNote(it, w); });
+    b.addEventListener("click", function () { openNote(it, w, b); });
     return b;
   }
 
@@ -560,10 +567,10 @@
       sw.textContent = whereFrom(q);
       return sw;
     }
-    if (TERM) sw.appendChild(document.createTextNode((BLOCK_NAME[q.block] || q.block) + " · "));
+    if (TERM) sw.appendChild(document.createTextNode((BLOCK_NAME[q.block] || q.block) + " \u00b7 "));
     runs.forEach(function (run, i) {
       if (i) sw.appendChild(document.createTextNode("  +  "));
-      sw.appendChild(document.createTextNode("Week " + run.w + " · "));
+      sw.appendChild(document.createTextNode("Week " + run.w + " \u00b7 "));
       run.items.forEach(function (it, j) {
         if (j) sw.appendChild(document.createTextNode(", "));
         sw.appendChild(it.id ? lectureLink(it, run.w) : document.createTextNode(it.name));
@@ -581,6 +588,10 @@
   var DLG = null;
   var NOTES = Object.create(null);   // block slug -> promise of {lecture id -> lecture}
   var OPENING = 0;                   // which click the load in flight belongs to
+  /* the button that opened the dialog, kept so focus can be handed back
+     explicitly: the native restore only works if the button held focus, and
+     Safari never focuses a button on click */
+  var OPENER = null;
 
   function ensureDialog() {
     if (DLG) return DLG;
@@ -595,7 +606,7 @@
     text.appendChild(h);
     text.appendChild(el("a", "notedlg-full", "Open on the block page"));
     head.appendChild(text);
-    var x = el("button", "notedlg-close", "×");
+    var x = el("button", "notedlg-close", "\u00d7");
     x.type = "button";
     x.title = "Close (Esc)";
     x.setAttribute("aria-label", "Close");
@@ -610,6 +621,8 @@
     d.addEventListener("close", function () {
       document.body.classList.remove("has-dialog");
       d.querySelector(".notedlg-body").innerHTML = "";
+      if (OPENER && OPENER.focus) OPENER.focus();
+      OPENER = null;
     });
     document.body.appendChild(d);
     DLG = d;
@@ -651,17 +664,18 @@
     body.appendChild(p);
   }
 
-  function openNote(it, w) {
+  function openNote(it, w, from) {
     var d = ensureDialog();
     var where = d.querySelector(".notedlg-where"), title = byId("notedlg-title"),
         full = d.querySelector(".notedlg-full"), body = d.querySelector(".notedlg-body");
     var token = ++OPENING;
+    OPENER = from || null;
 
-    where.textContent = (BLOCK_NAME[it.slug] || it.slug) + " · Week " + w;
+    where.textContent = (BLOCK_NAME[it.slug] || it.slug) + " \u00b7 Week " + w;
     title.textContent = it.name;
     full.href = noteUrl(it);
     body.innerHTML = "";
-    body.appendChild(el("p", "notedlg-state", "Loading…"));
+    body.appendChild(el("p", "notedlg-state", "Loading\u2026"));
     document.body.classList.add("has-dialog");
     if (!d.open) d.showModal();
     body.scrollTop = 0;
@@ -677,7 +691,7 @@
         fillState(body, "No note yet for this lecture.", it);
         return;
       }
-      title.textContent = (target.num ? target.num + " · " : "") + shared.coveredTitle(target);
+      title.textContent = (target.num ? target.num + " \u00b7 " : "") + shared.coveredTitle(target);
       body.innerHTML = "";
       body.appendChild(shared.build(target, { block: BLOCK_NAME[it.slug] || it.slug, onPrint: null }));
       shared.drawPathways(body);
