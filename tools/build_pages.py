@@ -293,6 +293,13 @@ QPANEL = u"""<div class="q-shell q-flow" id="panel-questions" role="tabpanel" ar
 <div class="qbar" id="qbar">
 
 <div class="qbar-filters">
+<div class="qsel qsearch" id="f-search-wrap">
+<span id="f-search-lab"><label for="bank-q">Search</label></span>
+<div class="notesearch">
+<input type="search" id="bank-q" placeholder="Search every question" autocomplete="off" spellcheck="false" title="Every word must appear somewhere in the question. Press / to jump here, Escape to clear.">
+<button class="ns-clear" id="bank-q-clear" type="button" title="Clear the search" aria-label="Clear the search" hidden>&times;</button>
+</div>
+</div>
 <div class="qsel" hidden id="f-block-wrap">
 <span id="f-block-lab">Block</span>
 <div class="msel">
