@@ -2493,6 +2493,94 @@
      ]
     },
     {
+     "id": "repro-w4-17",
+     "num": "17",
+     "name": "Early Pregnancy Counselling",
+     "hasNote": true,
+     "title": "Early pregnancy counselling",
+     "framing": "<p>Most of what a pregnant patient asks about is <strong>safer than she fears</strong>. The counselling job is to say what is actually safe, name the <strong>few things that do carry risk</strong>, and in each case explain why.</p>",
+     "keypoints": "<p>⭐ <strong>Toxoplasmosis risk comes from undercooked meat far more than from cats</strong>, and it presents as <strong>chorioretinitis, hydrocephalus and intracranial calcifications</strong>. The lecture sets two numbers: <strong>18-23 wGA</strong> for travel and <strong>300 mg</strong> of caffeine a day. <strong>Zero alcohol is the advice, but low-level exposure is not likely to harm the baby</strong>, so a patient who drank before she knew she was pregnant can be reassured. ⚠ The one drug caveat the lecture names is that <strong>SSRIs may slightly ↑ PPH</strong>. They do not cause birth defects.</p>",
+     "blocks": [
+      {
+       "t": "table",
+       "cols": [
+        "Topic",
+        "<strong>Safe / recommended</strong>",
+        "<strong>Avoid / limit</strong>",
+        "Why / how to counsel"
+       ],
+       "rows": [
+        [
+         "<strong>Alcohol</strong>",
+         "—",
+         "<strong>Zero alcohol is safest</strong> (the general consensus)",
+         "Low levels are <strong>not likely to be harmful</strong>; use is common worldwide and <strong>usually does not lead to <span class=\"wl\">fetal alcohol syndrome</span></strong>"
+        ],
+        [
+         "<strong>Tobacco, cannabis, drugs</strong>",
+         "Offer <strong>cessation counselling</strong>",
+         "<strong>Tobacco and <span class=\"wl\">cannabis</span> smoking</strong>",
+         "<strong>SOGC: ask all pregnant women periodically</strong> about alcohol, tobacco, prescription and illicit drugs · smoking is linked to adverse pregnancy and childhood outcomes"
+        ],
+        [
+         "<strong>Medications</strong>",
+         "Antihistamines · antiemetics · puffers · antidepressants · many common antibiotics",
+         "—",
+         "<strong><span class=\"wl\">SSRIs</span>: no link to birth defects, preterm birth, preeclampsia or stillbirth</strong> · may slightly ↑ <strong><span class=\"wl\">PPH</span></strong>"
+        ],
+        [
+         "<strong>Weight gain</strong>",
+         "<strong>Lower BMI → gain more</strong>; higher BMI → gain less",
+         "—",
+         "Many factors drive it, and it <strong>may be a sensitive topic</strong>, so discuss it respectfully"
+        ],
+        [
+         "<strong>Exercise</strong>",
+         "<strong>Aerobic + strength conditioning, regularly</strong>, <strong>whatever her previous activity level</strong> (uncomplicated pregnancy)",
+         "—",
+         "<strong>PARmed-X for Pregnancy</strong> is the screening tool"
+        ],
+        [
+         "<strong>Travel</strong>",
+         "<strong>18-23 wGA is the safest window</strong> · some vaccines and antimalarials are safe",
+         "—",
+         "<strong>Most travel insurance does not cover the baby</strong> · refer most questions to <strong>travel medicine</strong>"
+        ],
+        [
+         "<strong>Work</strong>",
+         "Most jobs",
+         "Harmful jobs are <strong>rare</strong>",
+         "Minimise the risk with <strong>HR / occupational health</strong> and the <strong>CDC</strong>"
+        ],
+        [
+         "<strong>Food</strong>",
+         "Raw eggs, deli meats, soft cheeses, sushi (<strong>risk extremely low</strong>) · most fish, eaten regularly",
+         "<strong>Raw / rare / undercooked meat</strong> · <strong>top-predator fish</strong> (only rarely)",
+         "Meat → <strong><span class=\"wl\">toxoplasmosis</span></strong>, a much higher risk than from cats · predator fish carry <strong>high mercury</strong>"
+        ],
+        [
+         "<strong>Supplements, caffeine</strong>",
+         "<strong>Folic acid</strong> · caffeine <strong>≤ 2 cups of coffee (300 mg) a day</strong>",
+         "—",
+         "<strong><span class=\"wl\">Folic acid</span></strong> prevents <strong><span class=\"wl\">neural tube defects</span> and preterm birth</strong>"
+        ]
+       ]
+      },
+      {
+       "t": "note",
+       "html": "<p><strong>Congenital toxoplasmosis, classic triad:</strong> <strong>chorioretinitis</strong> · <strong><span class=\"wl\">hydrocephalus</span></strong> · <strong>intracranial calcifications</strong>.</p>"
+      },
+      {
+       "t": "note",
+       "html": "<p><strong>Nausea and vomiting of pregnancy:</strong> very common · <strong>onset as early as 4 wk, peaks at 9 wk, resolves around the end of the 1st trimester</strong> · non-pharmacologic: <strong>ginger</strong>, <strong>acupressure</strong> · pharmacologic: <strong><span class=\"wl\">doxylamine-pyridoxine</span></strong>, <strong><span class=\"wl\">dimenhydrinate</span></strong>.</p>"
+      },
+      {
+       "t": "note",
+       "html": "<p><strong>Prenatal care providers:</strong> <strong>midwives, family physicians and obstetricians</strong> (see <span class=\"wl\">08 - OB Care Providers</span>).</p>"
+      }
+     ]
+    },
+    {
      "id": "repro-w4-in-class-amenorrhea",
      "num": "—",
      "name": "In-Class - Amenorrhea",
