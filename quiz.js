@@ -2039,8 +2039,6 @@
     byId("sc-first").textContent = attempted ? Math.round(ok / attempted * 100) + "%" : "–";
     byId("sc-wrong").textContent = wrong;
     byId("sc-star").textContent = starred;
-    byId("review-wrong").disabled = wrong === 0;
-    byId("review-n").textContent = wrong;
     paintBar();
   }
 
@@ -2252,17 +2250,6 @@
          exist yet at this point. */
       if (qbox.value) { filters.search = qbox.value; syncSearchBox(); }
     }
-
-    /* "wrong only" means every wrong answer in the block, so it clears what
-       else is narrowing the stream rather than handing back an empty list.
-       It is a review action, so it drops you out of a sat block. */
-    byId("review-wrong").addEventListener("click", function () {
-      clearFilters();
-      writeHash();
-      filters.status = ["wrong"];
-      if (MODE === "test") { setMode("tutor"); return; }
-      afterFilterChange();
-    });
 
     [].forEach.call(document.querySelectorAll("#view-seg button"), function (b) {
       b.addEventListener("click", function () { setView(b.dataset.view); });

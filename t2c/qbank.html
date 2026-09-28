@@ -14,7 +14,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../base.css?v=7f3d47b4">
-<link rel="stylesheet" href="../portal.css?v=cf315a53">
+<link rel="stylesheet" href="../portal.css?v=dedbb638">
 <style>
 :root{--q-accent:#3f4a5a;--q-accent-soft:#e8e9eb;--q-accent-ink:#343d4a;}
 </style>
@@ -54,13 +54,6 @@
 <div class="qbar" id="qbar">
 
 <div class="qbar-filters">
-<div class="qsel qsearch" id="f-search-wrap">
-<span id="f-search-lab"><label for="bank-q">Search</label></span>
-<div class="notesearch">
-<input type="search" id="bank-q" placeholder="Search every question" autocomplete="off" spellcheck="false" title="Every word must appear somewhere in the question. Press / to jump here, Escape to clear.">
-<button class="ns-clear" id="bank-q-clear" type="button" title="Clear the search" aria-label="Clear the search" hidden>&times;</button>
-</div>
-</div>
 <div class="qsel" hidden id="f-block-wrap">
 <span id="f-block-lab">Block</span>
 <div class="msel">
@@ -96,7 +89,13 @@
 <div class="msel-pop" id="f-status-pop" role="group" aria-labelledby="f-status-lab" hidden></div>
 </div>
 </div>
-<button class="review-cta" id="review-wrong" type="button" disabled>Review wrong only <span class="n" id="review-n">0</span></button>
+<div class="qsel qsearch" id="f-search-wrap">
+<span id="f-search-lab"><label for="bank-q">Search</label></span>
+<div class="notesearch">
+<input type="search" id="bank-q" placeholder="Search every question" autocomplete="off" spellcheck="false" title="Every word must appear somewhere in the question. Press / to jump here, Escape to clear.">
+<button class="ns-clear" id="bank-q-clear" type="button" title="Clear the search" aria-label="Clear the search" hidden>&times;</button>
+</div>
+</div>
 </div>
 
 <div class="qbar-modes">
@@ -169,7 +168,7 @@ of date file cannot wipe newer answers.</p>
 <script>
 window.QUIZ_BLOCK = {"slug": "term", "name": "the whole term", "course": "T2C", "store": "nsq.t2c.v1.", "families": [{"key": "hipponotes", "name": "HippoNotes", "blurb": "The T2C question bank at the back of the Meds 2025 HippoNotes (Academic Resources Team, May 2023), filed under the rotation each question was written for. Peer-written, so the key is worth checking rather than trusting."}], "eyebrow": "Every block · Weeks 1–13 · 214 questions", "blocks": [{"slug": "peds", "n": 1, "name": "Pediatrics", "weeks": "1–2", "qv": "8c778941"}, {"slug": "surg", "n": 2, "name": "Surgery", "weeks": "3–4", "qv": "db6cbf13"}, {"slug": "psych", "n": 3, "name": "Psychiatry, Palliative & Geriatrics", "weeks": "5–6", "qv": "7745b624"}, {"slug": "em", "n": 4, "name": "Emergency Medicine", "weeks": "7", "qv": "5cfe7ef9"}, {"slug": "fmob", "n": 5, "name": "Family Medicine & Obstetrics", "weeks": "8–9", "qv": "2408528a"}, {"slug": "dermim", "n": 6, "name": "Dermatology & Internal Medicine", "weeks": "10–13", "qv": "e79ffe65"}]};
 </script>
-<script src="../quiz.js?v=30643fe4"></script>
+<script src="../quiz.js?v=636c328f"></script>
 <script src="../portal.js?v=bd2d65db"></script>
 
 <footer>
