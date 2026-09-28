@@ -251,8 +251,13 @@ FONTS = ('<link rel="preconnect" href="https://fonts.googleapis.com">\n'
 NOCACHE = ('<meta http-equiv="Cache-Control" content="no-cache, must-revalidate">\n'
            '<meta http-equiv="Pragma" content="no-cache">')
 
-# the portal ships without analytics; drop your own snippet in here if you want it
-CF = ""
+# Cloudflare Web Analytics: counts visits without cookies, so it needs no consent
+# banner. The token is from the dashboard's Web Analytics > schulichmed.github.io
+# snippet; it is public (it ships in every page) and not a secret. Leave it empty
+# and the pages go out with no analytics at all.
+CF_TOKEN = "d66f0003318d42f1bd62e0a2c3e216af"
+CF = (f"<script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' "
+      f"data-cf-beacon='{{\"token\": \"{CF_TOKEN}\"}}'></script>") if CF_TOKEN else ""
 
 
 # Where "All courses" points. Absolute, not relative: the portal is served from
