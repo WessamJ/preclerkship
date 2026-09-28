@@ -583,8 +583,14 @@ def build_qbank(course):
     for slug, n, name, weeks in course["blocks"]:
         qp = os.path.join(d, "data", "questions", "%s.json" % slug)
         total += len(json.load(io.open(qp, encoding="utf-8")))
-        blocks.append({"slug": slug, "n": n, "name": name, "weeks": weeks,
-                       "qv": portal.digest(qp)})
+        block = {"slug": slug, "n": n, "name": name, "weeks": weeks,
+                 "qv": portal.digest(qp)}
+        # The bank's note dialog fetches this block's notes on demand and needs
+        # the same cache-busting hash the block page carries for them.
+        npath = os.path.join(d, "data", "notes", "%s.json" % slug)
+        if os.path.exists(npath):
+            block["nv"] = portal.digest(npath)
+        blocks.append(block)
     cfg = {
         "slug": "term", "name": u"the whole term", "course": course["short"],
         "store": course["store"], "families": course["families"],
