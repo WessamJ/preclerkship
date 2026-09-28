@@ -710,10 +710,12 @@
 
   /* ---------- a link straight to one note ---------- */
 
-  /* b1.html#n-b1-w1-02 lands on that lecture. Read once the stream is built
-     and again on every hashchange, because a same-document hash change never
-     reloads the page and boot runs only once. A hash naming a note the roster
-     lacks does nothing, which is better than a scroll to nowhere. */
+  /* b1.html#n-b1-w1-02 lands on that lecture. Read once the stream is built,
+     again once the pathways have drawn because drawing swaps text for taller
+     diagrams and moves everything below them, and again on every hashchange,
+     because a same-document hash change never reloads the page and boot runs
+     only once. A hash naming a note the roster lacks does nothing, which is
+     better than a scroll to nowhere. */
   function wantedNote() {
     var h = window.location.hash || "";
     return h.indexOf("#n-") === 0 ? h.slice(3) : null;
@@ -721,7 +723,12 @@
 
   function goToWanted() {
     var id = wantedNote();
-    if (id && byId("n-" + id)) goTo(id);
+    var art = id ? byId("n-" + id) : null;
+    if (!art) return;
+    /* 16 is the offset goTo aims for; already there means the earlier scroll
+       landed, and scrolling again would only restart it */
+    if (Math.abs(art.getBoundingClientRect().top - 16) < 2) return;
+    goTo(id);
   }
 
   function start(data) {
@@ -736,9 +743,9 @@
     paintCoverage();
     applyFilter();
     initSpy();
-    shared().drawPathways(byId("note-stream"));
     initTop();
     goToWanted();
+    shared().drawPathways(byId("note-stream")).then(goToWanted);
     window.addEventListener("hashchange", goToWanted);
   }
 

@@ -451,18 +451,22 @@
     return MERMAID;
   }
 
+  /* Returns a promise that settles once every diagram is drawn or has fallen
+     back to text. Drawing swaps source text for a taller SVG, which moves
+     everything below it, so a caller that scrolled to a note must re-aim
+     afterwards. */
   function drawPathways(root) {
-    if (!root) return;
+    if (!root) return Promise.resolve();
     var nodes = [].slice.call(root.querySelectorAll(".pathway"));
-    if (!nodes.length) return;
+    if (!nodes.length) return Promise.resolve();
 
-    loadMermaid().then(function (mermaid) {
+    return loadMermaid().then(function (mermaid) {
       if (!mermaid) return;       // loaded but exposed nothing; the source stays on screen
       function done() { revealOpen(root); }
       try {
         var run = mermaid.run({ nodes: nodes });
-        if (run && run.then) run.then(done, done);
-        else done();
+        if (run && run.then) return run.then(done, done);
+        done();
       } catch (e) {
         // a diagram that will not parse should cost the page nothing; the
         // source text stays on screen and the rest of the note is unaffected
