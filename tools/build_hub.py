@@ -89,88 +89,53 @@ pre-clerkship.
 <div class="prose">
 
 <details class="fold">
-<summary>Where the practice questions come from</summary>
+<summary>What is the Schulich Pre-Clerkship Portal?</summary>
 <div class="body">
 
 <p>
-No AI-generated trivia questions. Every question traces back to a source in our
-curriculum, keeps the set it arrived in, and can be filtered by that set on the block
-page it sits on. The two built courses draw on different banks, so they are listed apart.
+Picture this: it is the first week of a new term. You sit down to get organized and somehow
+end up with 20 tabs open: upper-year notes, Christina&rsquo;s Anki deck, three Q-banks, old
+lecture slides, a group-chat message calling something &ldquo;high-yield,&rdquo; and a Drive
+folder you do not remember getting access to.
 </p>
 
 <p>
-<strong>Foundations of Medicine.</strong> All of it is the FoM question bank the Schulich
-classes pass down, transcribed out of the PDFs rather than rewritten.
+Then you find out the block changed. The notes no longer match the modules, some Anki cards
+are old, and the Q-bank is asking about material you are not even covering anymore.
+</p>
+
+<p>
+<strong>Cue the Schulich Pre-Clerkship Portal.</strong>
+</p>
+
+<p>
+It is a centralized, dynamic, up-to-date resource for all Schulich medical students in
+pre-clerkship.
+</p>
+
+<p>
+It includes:
 </p>
 
 <ul>
-<li><strong>Module questions.</strong> The knowledge checks inside each week&rsquo;s Elentra asynchronous learning modules.</li>
-<li><strong>Readiness assessments</strong> and <strong>self-assessments.</strong> The week&rsquo;s RA and SA as they were sat and released. Several early weeks never had one; those say so rather than going quietly missing.</li>
-<li><strong>Meds 2024 bank.</strong> The student-written, <strong>instructor-approved</strong> bank the Class of 2024 Academic Directors built in December 2020. Their questions went to the teaching faculty and the instructors&rsquo; edits are folded in, except for a tail of each week that time ran out on.</li>
-<li><strong>New questions.</strong> Written by the Meds 2025 volunteers in December 2021 to fill the gaps. The bank says on its own second page that these were <strong>not verified by faculty</strong>.</li>
-<li><strong>Pre-Clerkship Workbook.</strong> The 2023 edition handed down through the Schulich classes of 2015 to 2025: its Foundations, Hematology and Infection &amp; Immunity chapters. Peer-written across a decade, and the only set here not organised by week.</li>
+<li><strong>Notes:</strong> Summary notes, charts, flowcharts, illustrations, and Schulich Reviews, organized by block, week, and lecture.</li>
+<li><strong>Anki:</strong> An updated version of Christina&rsquo;s Anki deck, organized by block, week, and lecture.</li>
+<li><strong>Question bank:</strong> A Q-bank that students can filter by block, week, or source, then use to make their own custom practice tests. Every question is directly from our curriculum, including module questions and weekly quizzes, or from previous student Q-banks, including Hippo Council, Schulich Reviews, and the Pre-Clerkship Workbook. New questions come from DSSGs, in-class sessions, and modules, not low-yield AI-generated trivia.</li>
 </ul>
 
 <p>
-<strong>Principles of Medicine 2.</strong>
+The best part is that it is open-source. Anyone can pick up where we left off, improve it,
+and keep it current. Through collaborations with the <strong>Open-Source Medicine Club</strong> + <strong>AI in
+Medicine</strong>, incoming students can learn to use our AI automation pipeline to maintain and
+quality-control the Portal, helping it stay dynamic and sustainable beyond any one person&rsquo;s
+term.
 </p>
-
-<ul>
-<li><strong>Course modules.</strong> Elentra knowledge checks, the concept checks in the lecture slides, and the weekly quizzes.</li>
-<li><strong>Pre-Clerkship Workbook.</strong> The 2023 student bank handed down through the Schulich classes of 2015&ndash;2025. Peer-written, so its errors are flagged on the question.</li>
-<li><strong>Meds 2029.</strong> Questions written from the patient cases in the modules, the DSSGs and the in-class sessions.</li>
-<li><strong>Schulich Reviews.</strong> Both the practice questions and the summary content. TBD.</li>
-</ul>
-
-<p>
-Where a bank handed between years has a gap or an error, it is flagged on the face of the
-question rather than quietly patched, so you can see what you are trusting before you
-trust it.
-</p>
-
-<p>
-What they are written to, from the syllabus:
-</p>
-
-<blockquote>
-<p>
-Most of the questions will involve clinical scenarios which will assess clinical decision
-making around: <strong>localization, differential diagnosis, ordering appropriate
-investigations, or management</strong> of the patient. The questions will not be simple
-recall questions, and the student will need to apply foundational knowledge to clinical
-scenarios.
-</p>
-</blockquote>
-
-<p>
-And on integrating across blocks:
-</p>
-
-<blockquote>
-<p>
-As outlined in the syllabus, approximately <strong>20% of Progress Test #2</strong> will
-consist of <strong>integration questions</strong>. These may require you to draw on
-foundational knowledge from <strong>FOM, P1, and the first half of P2</strong> to reason
-through a <strong>new MCC-style clinical presentation</strong>. The purpose is not to
-re-examine previous blocks, but to assess your ability to <strong>apply previously learned
-knowledge in a new clinical context</strong>.
-</p>
-<p>
-When preparing, think broadly about <strong>clinical presentations</strong> rather than
-focusing only on the body system currently being taught. You should be able to
-<strong>integrate knowledge across systems</strong> and consider appropriate
-<strong>differential diagnoses</strong>. Examples include <strong>abdominal pain</strong>,
-<strong>shortness of breath</strong>, <strong>cardiac rhythm disturbances</strong>,
-<strong>anemia</strong>, <strong>pulmonary embolism</strong>, and <strong>deep vein
-thrombosis</strong>.
-</p>
-</blockquote>
 
 </div>
 </details>
 
 <details class="fold">
-<summary>Open source: customize or improve</summary>
+<summary>Open source: contribute or customize</summary>
 <div class="body">
 
 <p>
@@ -179,14 +144,26 @@ The portal is open source at
 </p>
 
 <p>
-The beauty of open-source is anyone can access the work, improve it or customize it to their
-needs. It&rsquo;s crowdsourced expertise that creates user-vetted products.
+The beauty of open-source is anyone can access the work, contribute to it or customize it to
+their needs. It&rsquo;s crowdsourced expertise that creates user-vetted products.
 </p>
 
 <p>
-<strong>To customize it.</strong> Anything here can change, from the courses it covers and
-the questions in them to the wording, the layout and the tooling around it. Paste this into
-Claude Code:
+<strong>To contribute.</strong> Suggest a feature, fix an answer you think is wrong, or send
+in questions of your own, and it goes into the portal for everyone. You need a GitHub
+account; Claude Code can do the rest. Paste this into it:
+</p>
+
+<p class="prompt">Clone https://github.com/schulichmed/preclerkship and read the README so you understand how the portal is built. I want to contribute: [what you are adding, for example: the questions from the week 8 MSK module, a correction to an answer, or a feature]. Match the format the existing files use, rebuild the pages with the scripts in tools/, then create a branch, commit, and open a pull request against schulichmedfriend/preclerkship explaining what changed and why.</p>
+
+<p>
+Corrections and questions are the two most useful things to send.
+</p>
+
+<p>
+<strong>To customize.</strong> Make your own copy and change anything in it, from the courses
+it covers and the questions in them to the wording, the layout and the tooling around it.
+Paste this into Claude Code:
 </p>
 
 <p class="prompt">Clone https://github.com/schulichmed/preclerkship and read the README so you understand how the portal is built. I want to make it mine: [what you want changed, for example: cut it down to the blocks I am on, import my own lecture notes and questions, restyle the pages, or build an Anki deck from only the questions I got wrong]. Work out which files that touches, make the change, and rebuild the pages with the scripts in tools/.</p>
@@ -196,18 +173,6 @@ You can also just take the material out. The questions and the notes are both pl
 each course&rsquo;s <code>data/</code>, so you can extract either one into whatever you already
 study from. Keep in mind they are being updated week by week, so what you pull is a snapshot
 of that week.
-</p>
-
-<p>
-<strong>To improve it.</strong> Suggest a feature, fix an answer you think is wrong, or send
-in questions of your own. You need a GitHub account; Claude Code can do the rest. Paste
-this into it:
-</p>
-
-<p class="prompt">Clone https://github.com/schulichmed/preclerkship and read the README so you understand how the portal is built. I want to contribute: [what you are adding, for example: the questions from the week 8 MSK module, a correction to an answer, or a feature]. Match the format the existing files use, rebuild the pages with the scripts in tools/, then create a branch, commit, and open a pull request against schulichmedfriend/preclerkship explaining what changed and why.</p>
-
-<p>
-Corrections and questions are the two most useful things to send.
 </p>
 
 <p>
@@ -245,7 +210,7 @@ Christina&rsquo;s Anki, Hippo Council Qbank.
 
 <p>
 Want to be added to the credits? Contribute or make some edits via a GitHub PR:
-instructions are under <strong>Open source: customize or improve</strong> above.
+instructions are under <strong>Open source: contribute or customize</strong> above.
 </p>
 
 </div>
