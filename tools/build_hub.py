@@ -205,7 +205,7 @@ Tamjeed Nawaz, Yasmine Madan.
 
 <p>
 <strong>Upper-year resource credits.</strong> Nicole&rsquo;s Notes, Maggie&rsquo;s Notes,
-Christina&rsquo;s Anki, Hippo Council Qbank.
+Christina&rsquo;s Anki, Hippo Council Qbank, Schulich Reviews.
 </p>
 
 <p>
