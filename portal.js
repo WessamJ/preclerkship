@@ -488,6 +488,103 @@
     drawPathways: drawPathways
   };
 
+  /* ---------- search: one rule and one highlighter for both tabs ---------- */
+
+  /* The notes tab and the bank each carry a search box, and for a while they
+     disagreed: the bank wanted every word of the query somewhere in the
+     question, in any order, and the notes tab wanted the phrase whole. The
+     bank's rule is the one people mean, on a note as much as on a stem:
+     "insulin glucagon" is the note that covers both, wherever the two words
+     sit in it. So the rule lives here, in the file both pages load, and each
+     tab keeps only what is its own: which text it reads, and how it paints.
+
+     Below two characters a word is not a search term yet, it is a keystroke:
+     one letter would narrow a bank of hundreds to whichever happen to lack
+     it, and the stream would lurch on every first key pressed. The floor is
+     per word, so "warfarin a" is still the warfarin search while the next
+     word is being typed, and a query with no word past the floor does not
+     narrow at all. */
+  var SEARCH_MIN = 2;
+
+  function searchWords(query) {
+    return (query || "").toLowerCase().split(/\s+/).filter(function (w) {
+      return w.length >= SEARCH_MIN;
+    });
+  }
+
+  /* the haystack is the caller's, already lowercased; an empty word list is
+     the "all" of this facet and matches everything */
+  function searchHit(hay, words) {
+    return words.every(function (w) { return hay.indexOf(w) !== -1; });
+  }
+
+  /* Highlighting walks text nodes instead of rewriting innerHTML: a note and
+     a stem are real markup, and a string replace across them would corrupt a
+     tag the moment a search term straddled one. Each text node is cut at the
+     earliest of any word, so several words paint in one pass and two words
+     that overlap ("thyroid" inside "thyroiditis") never nest a mark.
+
+     The budget is the caller's, because the cost of highlighting is the
+     number of hits, not the number of notes: one common word across a block
+     of 43 notes is thousands of marks, and painting them all locks the page
+     for seconds. Whatever the budget does not reach stays as it was written.
+
+     skip is a selector for text that must not be touched. The notes tab
+     passes ".pathway", since mermaid parses that element's own text and a
+     mark inside it is a syntax error rather than a highlight. */
+  function markWords(root, words, budget, skip) {
+    if (!document.createTreeWalker || !words.length || !(budget > 0)) return 0;
+    var walk = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, null, false);
+    var targets = [], n;
+    while ((n = walk.nextNode())) {
+      var low = (n.nodeValue || "").toLowerCase();
+      if (!words.some(function (w) { return low.indexOf(w) !== -1; })) continue;
+      var host = n.parentNode;
+      if (skip && host && host.closest && host.closest(skip)) continue;
+      targets.push(n);
+    }
+    var made = 0;
+    targets.forEach(function (node) {
+      if (made >= budget) return;
+      var raw = node.nodeValue, lowv = raw.toLowerCase();
+      var frag = document.createDocumentFragment(), i = 0;
+      while (made < budget) {
+        var best = -1, len = 0;
+        words.forEach(function (w) {
+          var j = lowv.indexOf(w, i);
+          if (j !== -1 && (best === -1 || j < best)) { best = j; len = w.length; }
+        });
+        if (best === -1) break;
+        if (best > i) frag.appendChild(document.createTextNode(raw.slice(i, best)));
+        frag.appendChild(el("mark", "hit", raw.slice(best, best + len)));
+        i = best + len;
+        made++;
+      }
+      if (i < raw.length) frag.appendChild(document.createTextNode(raw.slice(i)));
+      node.parentNode.replaceChild(frag, node);
+    });
+    return made;
+  }
+
+  /* every highlight comes off each element handed in, and the split halves of
+     its text nodes are put back together, so the next search sees whole words
+     rather than the pieces this one left behind */
+  function unmarkWords(arts) {
+    (arts || []).forEach(function (art) {
+      [].forEach.call(art.querySelectorAll("mark.hit"), function (m) {
+        m.parentNode.replaceChild(document.createTextNode(m.textContent), m);
+      });
+      art.normalize();
+    });
+  }
+
+  window.PORTAL_SEARCH = {
+    words: searchWords,
+    hit: searchHit,
+    mark: markWords,
+    unmark: unmarkWords
+  };
+
   /* Notes come first when there are any - they are what you read before you
      test yourself. A block with none of them written yet would otherwise open
      on a page of nothing but gaps, so it falls through to the questions. */
