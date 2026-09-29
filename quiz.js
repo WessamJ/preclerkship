@@ -1310,10 +1310,12 @@
 
   /* The sixth facet. Its value is a typed query, and every word of it has to
      appear somewhere in the question - preamble, stem, options, review line -
-     in any order. That differs from the notes tab, which wants the phrase
-     whole: a lecture note reads as prose, where a stem is a long clinical
-     vignette and "warfarin bleeding" is the question people mean even when
-     the two words sit a sentence apart.
+     in any order: a stem is a long clinical vignette, and "warfarin bleeding"
+     is the question people mean even when the two words sit a sentence apart.
+     The notes tab searches by the same rule. The rule and the highlighter
+     live in portal.js, on window.PORTAL_SEARCH, and this file keeps only what
+     is the bank's own: which text a question is searched by, and where the
+     marks may go.
 
      The answer and its explanation are never read. A search for "metformin"
      that surfaced every question whose ANSWER is metformin would hand out the
@@ -1335,21 +1337,16 @@
     return plainText(parts.join(" ")).toLowerCase();
   }
 
-  /* Below two characters a word is not a search term yet, it is a keystroke:
-     one letter would narrow a bank of hundreds to whichever happen to lack it,
-     and the stream would lurch on every first key pressed. The floor is per
-     word, so "warfarin a" is still the warfarin search while the next word is
-     being typed. */
-  var SEARCH_MIN = 2;
+  /* Looked up when called rather than at load, because portal.js is the
+     later script tag on the page. */
+  function search() { return window.PORTAL_SEARCH; }
 
   function searchWords(query) {
-    return (query || "").toLowerCase().split(/\s+/).filter(function (w) {
-      return w.length >= SEARCH_MIN;
-    });
+    return search() ? search().words(query) : [];
   }
 
   function searchHit(hay, words) {
-    return words.every(function (w) { return hay.indexOf(w) !== -1; });
+    return search() ? search().hit(hay, words) : true;
   }
 
   /* The pure form: one question, one query, no state. It is what the test
@@ -1400,68 +1397,31 @@
 
   /* ---------- search highlights ---------- */
 
-  /* The notes tab's walker, taught several words. Marks go into the parts of
-     the question the search read - preamble, stem, options - and never into
-     the answer, which it did not. Text nodes are walked rather than innerHTML
-     rewritten, because a stem is real markup and a term straddling a tag
-     would corrupt it. */
-  var SEARCH_MARK_MIN = 3;        // a word shorter than this filters but is not painted
-  var SEARCH_MARK_BUDGET = 800;   // and never more than this many marks in one pass
+  /* portal.js's walker paints the marks, by its painting rule: the floor a
+     word must reach to be painted and the budget one pass stops at are its.
+     Marks go into the parts of the question the search read - preamble,
+     stem, options - and never into the answer, which it did not. */
   var SEARCH_MARKED = [];
 
   function unmarkSearch() {
-    SEARCH_MARKED.forEach(function (art) {
-      [].forEach.call(art.querySelectorAll("mark.hit"), function (m) {
-        m.parentNode.replaceChild(document.createTextNode(m.textContent), m);
-      });
-      art.normalize();
-    });
+    if (search()) search().unmark(SEARCH_MARKED);
     SEARCH_MARKED = [];
   }
 
-  function markWords(root, words, budget) {
-    if (!document.createTreeWalker) return 0;
-    var walk = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, null, false);
-    var targets = [], n;
-    while ((n = walk.nextNode())) {
-      var low = (n.nodeValue || "").toLowerCase();
-      if (words.some(function (w) { return low.indexOf(w) !== -1; })) targets.push(n);
-    }
-    var made = 0;
-    targets.forEach(function (node) {
-      if (made >= budget) return;
-      var raw = node.nodeValue, lowv = raw.toLowerCase();
-      var frag = document.createDocumentFragment(), i = 0;
-      while (made < budget) {
-        var best = -1, len = 0;
-        words.forEach(function (w) {
-          var j = lowv.indexOf(w, i);
-          if (j !== -1 && (best === -1 || j < best)) { best = j; len = w.length; }
-        });
-        if (best === -1) break;
-        if (best > i) frag.appendChild(document.createTextNode(raw.slice(i, best)));
-        frag.appendChild(el("mark", "hit", raw.slice(best, best + len)));
-        i = best + len;
-        made++;
-      }
-      if (i < raw.length) frag.appendChild(document.createTextNode(raw.slice(i)));
-      node.parentNode.replaceChild(frag, node);
-    });
-    return made;
-  }
-
   function paintSearchMarks(live) {
+    var s = search();
     unmarkSearch();
-    var words = currentWords().filter(function (w) { return w.length >= SEARCH_MARK_MIN; });
+    if (!s) return;
+    var words = s.paintWords(currentWords());
     if (!words.length) return;
-    var budget = SEARCH_MARK_BUDGET;
+    var budget = s.MARK_BUDGET;
     QUESTIONS.forEach(function (q) {
       if (budget <= 0 || !live[q.qid]) return;
       var art = byId("q-" + q.qid);
       if (!art) return;
       var made = 0;
       [].forEach.call(art.querySelectorAll(".preamble, .stem, .opts .t"), function (part) {
-        made += markWords(part, words, budget - made);
+        made += s.mark(part, words, budget - made);
       });
       if (made) { SEARCH_MARKED.push(art); budget -= made; }
     });
@@ -2204,18 +2164,14 @@
 
   function onKey(e) {
     if (document.querySelector("dialog[open]")) return;   // a dialog has the keyboard
+    /* "/" jumps to the search box; portal.js holds the guards, and it is
+       asked first because it takes shift where the letters below do not */
+    if (search() && search().jumpKey(e, byId("bank-q"), "panel-questions")) return;
     if (e.ctrlKey || e.metaKey || e.altKey) return;
     if (byId("panel-questions").hidden) return;
     var t = e.target;
     if (t && (t.isContentEditable ||
               /^(input|textarea|select)$/i.test(t.tagName || ""))) return;
-    /* the find-a-thing key on GitHub and most documentation sites; checked
-       before the shift guard because on many European layouts "/" IS shifted */
-    if (e.key === "/" && byId("bank-q")) {
-      e.preventDefault();
-      byId("bank-q").focus();
-      return;
-    }
     if (e.shiftKey) return;
     if (e.key === "j") { e.preventDefault(); step(1); }
     else if (e.key === "k") { e.preventDefault(); step(-1); }

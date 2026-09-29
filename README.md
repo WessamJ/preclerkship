@@ -17,7 +17,9 @@ after getting one wrong is on the card rather than in a filter.
 
 The notes tab carries a **search** above the week chips. It reads the whole
 note, not just the lecture title, narrows the stream and the lecture index
-together, and highlights what it found.
+together, and highlights what it found. Every word of the query must appear
+somewhere in the note, in any order, which is the bank's rule too: the two
+searches share one rule and one highlighter, kept in `portal.js`.
 
 **A block is a filter value, not a page.** That is the whole reason the bank is
 one page: the things people want near an exam - every question they have got
@@ -80,7 +82,7 @@ an Obsidian vault laid out a particular way.
 index.html         the hub, one card per course
 base.css           design tokens, the reset, the page frame   ) the engine,
 portal.css         everything the portal draws                ) shared by
-portal.js          tab switching, the note renderer, helpers  ) every
+portal.js          tab strip, the note renderer, the search   ) every
 notes.js           the notes tab, including the PDF printing  ) course
 quiz.js            the question runner and the progress store )
 
