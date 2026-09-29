@@ -702,6 +702,254 @@
     });
   }
 
+  /* ---------- the report dialog ---------- */
+
+  /* Corrections are the most useful thing a reader can send. The button
+     opens the report dialog; Send posts to the relay in tools/report-worker/
+     when the page knows its URL, and otherwise opens an email with the same
+     fields, so the button is useful before the relay exists. Reports are
+     public issues, and the dialog says so. */
+  var REPORT_URL = BLOCK.report || "";
+  var CONTACT = BLOCK.contact || "schulichmedfriends@gmail.com";
+  var REASONS = [
+    ["wrong-key", "The answer key is wrong"],
+    ["explanation", "The explanation is wrong or missing"],
+    ["typo", "A typo or formatting problem"],
+    ["misfiled", "It belongs to a different week or lecture"],
+    ["other", "Something else"]
+  ];
+  var NOTE_MAX = 2000, NOTE_MIN = 3;
+  var RDLG = null, ROPENER = null, RQ = null;
+
+  function reportFields(qid, reason, note) {
+    var q = QMAP[qid];
+    return {
+      site: "preclerkship", course: BLOCK.dir || "", block: q.block || BLOCK.slug,
+      qid: q.qid, num: String(q.num), family: q.family || "", reason: reason,
+      note: note, page: window.location.href.split("#")[0], hp: ""
+    };
+  }
+
+  /* the same fields, one per line, in an email to the portal's address: what
+     the button does before the relay exists and what it offers if the relay
+     fails, so a report is never stranded in the dialog */
+  function reportMailto(qid, reason, note) {
+    var f = reportFields(qid, reason, note);
+    var lines = ["course: " + f.course, "block: " + f.block, "qid: " + f.qid,
+                 "reason: " + f.reason, "page: " + f.page, "", note];
+    return "mailto:" + CONTACT + "?subject=" + encodeURIComponent("Report: " + f.qid) +
+           "&body=" + encodeURIComponent(lines.join("\n"));
+  }
+
+  function reportButton(q) {
+    if (!DIALOG_OK) {
+      var a = el("a", "report-q", "Report this question");
+      a.href = reportMailto(q.qid, "other", "");
+      return a;
+    }
+    var b = el("button", "report-q", "Report this question");
+    b.type = "button";
+    b.addEventListener("click", function () { openReport(q.qid, b); });
+    return b;
+  }
+
+  /* Built once, on first use, like the note dialog. The body is the form;
+     the result view is its own box, shown in the form's place once the relay
+     has answered, so a failed send leaves the form and the note untouched. */
+  function ensureReport() {
+    if (RDLG) return RDLG;
+    var d = el("dialog", "reportdlg");
+    d.setAttribute("aria-labelledby", "reportdlg-title");
+
+    var head = el("div", "reportdlg-head");
+    var text = el("div", "reportdlg-text");
+    text.appendChild(el("p", "eyebrow reportdlg-where"));
+    var h = el("h2", null, "Report this question");
+    h.id = "reportdlg-title";
+    text.appendChild(h);
+    head.appendChild(text);
+    var x = el("button", "reportdlg-close", "×");
+    x.type = "button";
+    x.title = "Close (Esc)";
+    x.setAttribute("aria-label", "Close");
+    x.addEventListener("click", function () { d.close(); });
+    head.appendChild(x);
+    d.appendChild(head);
+
+    var body = el("div", "reportdlg-body");
+    body.appendChild(el("p", "reportdlg-stem"));
+    var l1 = el("label", null, "What is wrong?");
+    l1.htmlFor = "report-reason";
+    body.appendChild(l1);
+    var sel = el("select", "report-reason");
+    sel.id = "report-reason";
+    REASONS.forEach(function (r) {
+      var o = el("option", null, r[1]);
+      o.value = r[0];
+      sel.appendChild(o);
+    });
+    body.appendChild(sel);
+    var l2 = el("label", null, "Tell us what is wrong");
+    l2.htmlFor = "report-note";
+    body.appendChild(l2);
+    var ta = el("textarea", "report-note");
+    ta.id = "report-note";
+    ta.required = true;
+    ta.maxLength = NOTE_MAX;
+    ta.rows = 5;
+    ta.addEventListener("input", noteChanged);
+    body.appendChild(ta);
+    body.appendChild(el("p", "report-count"));
+    body.appendChild(el("p", "small report-public",
+      "Reports are posted publicly on GitHub. Do not include anything personal."));
+    /* a field no person sees or fills; the relay refuses a report that has it */
+    var hp = el("input", "report-hp");
+    hp.type = "text";
+    hp.name = "hp";
+    hp.tabIndex = -1;
+    hp.autocomplete = "off";
+    hp.setAttribute("aria-hidden", "true");
+    body.appendChild(hp);
+    var err = el("p", "report-error");
+    err.hidden = true;
+    body.appendChild(err);
+    var act = el("div", "reportdlg-actions");
+    var cancel = el("button", "btn ghost report-cancel", "Cancel");
+    cancel.type = "button";
+    cancel.addEventListener("click", function () { d.close(); });
+    act.appendChild(cancel);
+    var send;
+    if (REPORT_URL) {
+      send = el("button", "btn report-send", "Send");
+      send.type = "button";
+      send.addEventListener("click", sendReport);
+    } else {
+      send = el("a", "btn report-send", "Send");
+      /* the link keeps its address so it stays a link to assistive tech,
+         and is held shut until the note is long enough to be worth sending */
+      send.addEventListener("click", function (e) {
+        if (send.getAttribute("aria-disabled") === "true") e.preventDefault();
+      });
+    }
+    act.appendChild(send);
+    body.appendChild(act);
+    d.appendChild(body);
+
+    var res = el("div", "reportdlg-body report-result");
+    res.hidden = true;
+    var rp = el("p", null, "Thanks. Your report is here: ");
+    var ra = el("a", "report-link");
+    ra.target = "_blank";
+    ra.rel = "noopener";
+    rp.appendChild(ra);
+    res.appendChild(rp);
+    var ract = el("div", "reportdlg-actions");
+    var close = el("button", "btn report-close", "Close");
+    close.type = "button";
+    close.addEventListener("click", function () { d.close(); });
+    ract.appendChild(close);
+    res.appendChild(ract);
+    d.appendChild(res);
+
+    d.addEventListener("click", function (e) { if (e.target === d) d.close(); });
+    d.addEventListener("close", function () {
+      document.body.classList.remove("has-dialog");
+      if (ROPENER && ROPENER.focus) ROPENER.focus();
+      ROPENER = null;
+    });
+    document.body.appendChild(d);
+    RDLG = d;
+    return d;
+  }
+
+  /* the count, the Send control and, with no relay, the email it opens all
+     follow the note as it is typed */
+  function noteChanged() {
+    var d = RDLG;
+    if (!d || !RQ) return;
+    var note = d.querySelector(".report-note").value;
+    var ok = note.trim().length >= NOTE_MIN;
+    d.querySelector(".report-count").textContent = note.length + " / " + NOTE_MAX;
+    var send = d.querySelector(".report-send");
+    if (send.tagName === "A") {
+      send.href = reportMailto(RQ, d.querySelector(".report-reason").value, note.trim());
+      if (ok) send.removeAttribute("aria-disabled");
+      else send.setAttribute("aria-disabled", "true");
+    } else {
+      send.disabled = !ok;
+    }
+  }
+
+  function openReport(qid, opener) {
+    var q = QMAP[qid];
+    if (!q) return;
+    var d = ensureReport();
+    RQ = qid;
+    ROPENER = opener || null;
+    d.querySelector(".reportdlg-where").textContent =
+      (BLOCK.course ? BLOCK.course + " · " : "") +
+      (BLOCK_NAME[q.block] || BLOCK.name) + " · " + qid;
+    var stem = plainText(q.stem || "").replace(/\s+/g, " ").trim();
+    d.querySelector(".reportdlg-stem").textContent =
+      stem.length > 140 ? stem.slice(0, 140).replace(/\s+\S*$/, "") + "…" : stem;
+    var sel = d.querySelector(".report-reason");
+    sel.value = REASONS[0][0];
+    sel.addEventListener("change", noteChanged);
+    d.querySelector(".report-note").value = "";
+    d.querySelector(".report-hp").value = "";
+    d.querySelector(".report-error").hidden = true;
+    var send = d.querySelector(".report-send");
+    if (send.tagName !== "A") { send.disabled = false; send.textContent = "Send"; }
+    d.querySelector(".report-result").hidden = true;
+    d.querySelector(".reportdlg-body:not(.report-result)").hidden = false;
+    noteChanged();
+    document.body.classList.add("has-dialog");
+    if (!d.open) d.showModal();
+    d.querySelector(".report-note").focus();
+  }
+
+  function sendReport() {
+    var d = RDLG;
+    if (!d || !RQ) return;
+    var reason = d.querySelector(".report-reason").value;
+    var note = d.querySelector(".report-note").value.trim();
+    if (note.length < NOTE_MIN) return;
+    var send = d.querySelector(".report-send"), err = d.querySelector(".report-error");
+    var fields = reportFields(RQ, reason, note);
+    fields.hp = d.querySelector(".report-hp").value;
+    send.disabled = true;
+    send.textContent = "Sending";
+    err.hidden = true;
+    fetch(REPORT_URL, {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify(fields)
+    })
+      .then(function (r) { return r.ok ? r.json() : Promise.reject(new Error("HTTP " + r.status)); })
+      .then(function (j) {
+        if (!j || !j.url) throw new Error("no url");
+        var a = d.querySelector(".report-link");
+        a.href = j.url;
+        a.textContent = j.url;
+        d.querySelector(".reportdlg-body:not(.report-result)").hidden = true;
+        d.querySelector(".report-result").hidden = false;
+        d.querySelector(".report-close").focus();
+      })
+      .then(null, function () {
+        /* the form stays, note and all: the email route carries the same
+           fields, so nothing typed is lost to a relay that is down */
+        send.disabled = false;
+        send.textContent = "Send";
+        err.innerHTML = "";
+        err.appendChild(document.createTextNode("It could not be sent. "));
+        var a = el("a", null, "Email it instead");
+        a.href = reportMailto(RQ, reason, note);
+        err.appendChild(a);
+        err.appendChild(document.createTextNode("."));
+        err.hidden = false;
+      });
+  }
+
   function buildQuestion(q) {
     var art = el("article", "q");
     art.id = "q-" + q.qid;
@@ -877,6 +1125,7 @@
     rst.hidden = true;
     rst.addEventListener("click", function () { forget(q.qid); });
     foot.appendChild(rst);
+    foot.appendChild(reportButton(q));
     art.appendChild(foot);
     return art;
   }
@@ -1055,6 +1304,20 @@
      The answer and its explanation are never read. A search for "metformin"
      that surfaced every question whose ANSWER is metformin would hand out the
      key before the question was attempted. */
+  /* markup to words: block-level tags end a word and inline ones do not, so
+     two paragraphs stay two words and a bolded half of one word stays one */
+  function plainText(html) {
+    return (html || "")
+      .replace(/<\/?(?:p|div|li|ol|ul|br|tr|td|th|h[1-6]|blockquote|table)\b[^>]*>/gi, " ")
+      .replace(/<[^>]+>/g, "")
+      .replace(/&nbsp;/gi, " ")
+      .replace(/&amp;/gi, "&")
+      .replace(/&lt;/gi, "<")
+      .replace(/&gt;/gi, ">")
+      .replace(/&quot;/gi, "\"")
+      .replace(/&#39;/g, "'");
+  }
+
   function searchText(q) {
     var parts = [q.stem];
     /* a preamble is usually {title, html}; two in the banks are bare strings */
@@ -1069,18 +1332,7 @@
        named, and any lecture review_lectures.py resolved the question to */
     parts.push(q.weekLabel, q.lecture);
     (q.review || []).forEach(function (r) { parts.push(r.t); });
-    return parts.join(" ")
-      /* block-level tags end a word and inline ones do not, so two paragraphs
-         stay two words and a bolded half of one word stays one */
-      .replace(/<\/?(?:p|div|li|ol|ul|br|tr|td|th|h[1-6]|blockquote|table)\b[^>]*>/gi, " ")
-      .replace(/<[^>]+>/g, "")
-      .replace(/&nbsp;/gi, " ")
-      .replace(/&amp;/gi, "&")
-      .replace(/&lt;/gi, "<")
-      .replace(/&gt;/gi, ">")
-      .replace(/&quot;/gi, "\"")
-      .replace(/&#39;/g, "'")
-      .toLowerCase();
+    return plainText(parts.join(" ")).toLowerCase();
   }
 
   /* Below two characters a word is not a search term yet, it is a keystroke:
@@ -1951,7 +2203,7 @@
   }
 
   function onKey(e) {
-    if (DLG && DLG.open) return;   // the dialog has the keyboard
+    if (document.querySelector("dialog[open]")) return;   // a dialog has the keyboard
     if (e.ctrlKey || e.metaKey || e.altKey) return;
     if (byId("panel-questions").hidden) return;
     var t = e.target;
@@ -2779,6 +3031,7 @@
     blockForWeek: blockForWeek,
     noteIdFor: noteIdFor,
     reviewParts: reviewParts,
+    reportMailto: reportMailto,
     boot: function () {
       if (booted) return;
       booted = true;

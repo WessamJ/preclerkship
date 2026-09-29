@@ -596,6 +596,7 @@ def build_qbank(course):
         "store": course["store"], "families": course["families"],
         "eyebrow": u"Every block \u00b7 Weeks %s \u00b7 %d questions" % (span(course), total),
         "blocks": blocks,
+        "dir": d, "contact": portal.CONTACT, "report": portal.REPORT_URL,
     }
     label, fill = FAVICON[d]
     html = QBANK_PAGE.format(
@@ -624,6 +625,7 @@ def main():
                 "families": course["families"],
                 "qv": portal.digest(os.path.join(d, "data", "questions", "%s.json" % slug)),
                 "nv": portal.digest(os.path.join(d, "data", "notes", "%s.json" % slug)),
+                "dir": d, "contact": portal.CONTACT, "report": portal.REPORT_URL,
             }
             label, fill = FAVICON[d]
             html = PAGE.format(

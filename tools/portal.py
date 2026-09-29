@@ -272,6 +272,9 @@ def uplink(depth=None):
 
 
 CONTACT = "schulichmedfriends@gmail.com"
+# Where the bank's Report button posts. Empty until the relay in
+# tools/report-worker/ is deployed; empty, the button emails CONTACT instead.
+REPORT_URL = ""
 
 
 def footer():
