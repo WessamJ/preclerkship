@@ -75,6 +75,7 @@
   var MERMAID_SRC = "https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.9.1/mermaid.min.js";
   var HEAD_WRAP = 24;             // a table heading longer than this wraps
   var MERMAID = null;             // the one load of the diagram library
+  var THEMED = null;              // the theme mermaid was last configured for
 
 
   function esc(t) {
@@ -468,8 +469,6 @@
   /* Mermaid is configured for one theme at a time, and it is told again only
      when the page's theme has changed since: the tokens are read at that
      moment, so a diagram is always drawn in the theme the page is in. */
-  var THEMED = null;              // the theme mermaid was last configured for
-
   function configure(mermaid) {
     var theme = currentTheme();
     if (theme === THEMED) return theme;
@@ -503,7 +502,7 @@
      have fallen back to text. Each node is marked with the theme it was drawn
      in, which is what redrawPathways reads; and if the theme moved on while
      the drawing was under way, the drawing is done again. */
-  function run(mermaid, nodes, root) {
+  function drawNodes(mermaid, nodes, root) {
     var theme = configure(mermaid);
     nodes.forEach(function (n) { n.setAttribute("data-drawn", theme); });
     function done() {
@@ -531,7 +530,7 @@
 
     return loadMermaid().then(function (mermaid) {
       if (!mermaid) return;       // loaded but exposed nothing; the source stays on screen
-      return run(mermaid, nodes, root);
+      return drawNodes(mermaid, nodes, root);
     }, function () {
       nodes.forEach(function (n) {
         n.textContent = "";
@@ -555,14 +554,16 @@
         return n.getAttribute("data-drawn") !== theme && !!n.querySelector("svg");
       });
       if (!nodes.length) return;
-      /* configured before any drawing is taken down, so a theme mermaid will
-         not take leaves the diagrams as they are rather than as source text */
+      /* drawNodes configures too, and has to, for the first draw of a page;
+         this call is the same one made early, before any drawing is taken
+         down, so a theme mermaid will not take leaves the diagrams as they
+         are rather than as source text. It costs nothing the second time. */
       try { configure(mermaid); } catch (e) { return; }
       nodes.forEach(function (n) {
         n.textContent = n.getAttribute("data-src");
         n.removeAttribute("data-processed");    // mermaid skips a node it has done
       });
-      return run(mermaid, nodes, document);
+      return drawNodes(mermaid, nodes, document);
     }, function () {});
   }
 

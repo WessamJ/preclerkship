@@ -136,8 +136,7 @@
     /* Two triggers for one redraw: portal.js redraws on its own whenever
        data-theme changes, and this call is the same redraw asked for
        explicitly, because the print has to wait on its promise. */
-    var redrawn = shared().redrawPathways ? shared().redrawPathways() : Promise.resolve();
-    redrawn.then(function () { window.print(); });
+    redrawPathways().then(function () { window.print(); });
   }
 
   function printNote(art) {
@@ -167,6 +166,7 @@
   function shared() { return window.PORTAL_NOTES; }
   function written(lec) { return shared().written(lec); }
   function pdfButton(label, title, onClick) { return shared().pdfButton(label, title, onClick); }
+  function redrawPathways() { var s = shared(); return s.redrawPathways ? s.redrawPathways() : Promise.resolve(); }
 
   /* ---------- one note may carry several lectures ---------- */
 

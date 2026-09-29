@@ -69,8 +69,11 @@
     :root[data-theme="dark"] .msel-pop{box-shadow:0 12px 28px rgba(0,0,0,.5);}
     :root[data-theme="dark"] .block-card .bmeta,
     :root[data-theme="dark"] .qbank-card .bmeta{color:color-mix(in srgb,var(--hue) 55%,#ffffff);}
-    :root[data-theme="dark"] .block-card{border-top-color:color-mix(in srgb,var(--hue) 75%,#ffffff);}
-    :root[data-theme="dark"] .block-card:hover{border-color:color-mix(in srgb,var(--hue) 75%,#ffffff);}
+    :root[data-theme="dark"] .block-card{
+        --hue-ink:color-mix(in srgb,var(--hue) 75%,#ffffff);
+        border-top-color:var(--hue-ink);
+    }
+    :root[data-theme="dark"] .block-card:hover{border-color:var(--hue-ink);}
     :root[data-theme="dark"] .block-card.is-empty:hover{border-color:var(--border);}
     /* A search hit. The block's accent is a dark colour, so its wash at the
        light theme's strength barely lifts off the card: the wash is stronger
