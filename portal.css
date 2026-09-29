@@ -1241,6 +1241,9 @@ mark.hit{
 .notedlg{
     width:min(860px,calc(100vw - 32px));
     max-height:calc(100vh - 48px);
+    /* the universal reset in base.css zeroes the margin the browser centres a
+       modal dialog with, so it is asked for again here */
+    margin:auto;
     padding:0;
     border:1px solid var(--border);
     border-radius:10px;
@@ -1297,6 +1300,8 @@ body.has-dialog{overflow:hidden;}
     min-height:0;
 }
 .notedlg-body .note{border:0;padding:0;margin:0;box-shadow:none;}
+/* the dialog's own head already gives the lecture's number and title */
+.notedlg-body .note-head{display:none;}
 .notedlg-state{color:var(--muted);margin:0;}
 
 .callout{
