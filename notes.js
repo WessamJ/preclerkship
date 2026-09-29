@@ -99,16 +99,27 @@
     nodes.forEach(function (n) { n.classList.add("print-me"); marked.push(n); });
     document.body.dataset.printing = "notes";
 
+    /* Print is light: the stylesheets drop the dark tokens under print on
+       their own, but a pathway is an SVG with the dark colours drawn into it,
+       so a dark page goes light for the duration, its diagrams are drawn
+       again, and the print waits for them. Ctrl+P skips this and prints the
+       diagrams as drawn; there is no way to wait on a redraw from there. */
+    var root = document.documentElement;
+    var wasDark = root.getAttribute("data-theme") === "dark";
+    if (wasDark) root.setAttribute("data-theme", "light");
+
     function clear() {
       marked.forEach(function (n) { n.classList.remove("print-me"); });
       delete document.body.dataset.printing;
+      if (wasDark) root.setAttribute("data-theme", "dark");
       window.removeEventListener("afterprint", clear);
     }
     window.addEventListener("afterprint", clear);
     // afterprint does not fire everywhere, so do not rely on it alone
     setTimeout(clear, 60000);
 
-    window.print();
+    var redrawn = shared().redrawPathways ? shared().redrawPathways() : Promise.resolve();
+    redrawn.then(function () { window.print(); });
   }
 
   function printNote(art) {
