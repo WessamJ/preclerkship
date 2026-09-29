@@ -243,6 +243,60 @@ FONTS = ('<link rel="preconnect" href="https://fonts.googleapis.com">\n'
          '<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;'
          '9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">')
 
+# The theme. data-theme on the root is always "light" or "dark", and it is set
+# here, in the head, before the stylesheets apply, so a dark page never paints
+# light first. The reader's choice is kept in localStorage; with nothing stored
+# the page follows the OS setting and keeps following it until the reader picks.
+# With scripting off there is no attribute and the page is light. The toggle's
+# handler lives in the same snippet because the hub loads no script file and
+# the portal is not growing a fourth one for a button. ES5, like the rest; the
+# click is caught on the document because the button is not built yet when
+# this runs, and DOMContentLoaded labels it once it is.
+THEME_SCRIPT = """<script>
+(function(){
+  var root=document.documentElement,KEY="pc-theme",stored=null,mq=null;
+  try{stored=localStorage.getItem(KEY);}catch(e){}
+  if(stored!=="dark"&&stored!=="light")stored=null;
+  if(window.matchMedia)mq=window.matchMedia("(prefers-color-scheme: dark)");
+  function os(){return mq&&mq.matches?"dark":"light";}
+  function apply(t){
+    root.setAttribute("data-theme",t);
+    var b=document.getElementById("theme-btn");
+    if(!b)return;
+    b.setAttribute("aria-pressed",t==="dark"?"true":"false");
+    b.setAttribute("aria-label","Switch to "+(t==="dark"?"light":"dark")+" mode");
+    b.title=b.getAttribute("aria-label");
+  }
+  function follow(){if(!stored)apply(os());}
+  apply(stored||os());
+  if(mq&&mq.addEventListener)mq.addEventListener("change",follow);
+  else if(mq&&mq.addListener)mq.addListener(follow);
+  document.addEventListener("DOMContentLoaded",function(){apply(root.getAttribute("data-theme"));});
+  document.addEventListener("click",function(e){
+    var b=e.target&&e.target.closest?e.target.closest("#theme-btn"):null;
+    if(!b)return;
+    stored=root.getAttribute("data-theme")==="dark"?"light":"dark";
+    try{localStorage.setItem(KEY,stored);}catch(e2){}
+    apply(stored);
+  });
+})();
+</script>"""
+
+# The toggle. A moon while the page is light and a sun while it is dark, each
+# an inline path rather than an image file, so the hub's one HTML file stays
+# self-contained; the stylesheet shows one or the other by data-theme, and
+# hides the button altogether when scripting is off and it could do nothing.
+THEME_BTN = (
+    '<button class="theme-btn" id="theme-btn" type="button" aria-pressed="false" '
+    'aria-label="Switch to dark mode" title="Switch to dark mode">'
+    '<svg class="moon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">'
+    '<path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>'
+    '<svg class="sun" viewBox="0 0 24 24" aria-hidden="true" focusable="false">'
+    '<circle cx="12" cy="12" r="4"/>'
+    '<path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2'
+    'M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>'
+    '</button>')
+
 # The CSS, JS and JSON are all content-hashed, so the browser may cache them
 # forever. The pages that name those hashes must NOT be cached that way, or a
 # rebuild is invisible until someone thinks to hard-refresh - which is exactly

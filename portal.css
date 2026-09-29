@@ -13,6 +13,87 @@
     --q-warn:#7d5305;
     --q-warn-soft:#f8f0de;
     --on-q-accent:#ffffff;
+    /* the letter on a marked option and the clock when time is short: text on
+       a verdict colour, which is white while the verdicts are dark */
+    --on-q-mark:#ffffff;
+    /* The accent where it is set as text on the page itself: an eyebrow, a
+       question number, a hover. In the light theme that is the accent as is;
+       in the dark theme the accent is too dark for text and the ink, which is
+       already lightened to read on the soft wash, stands in for it. Buttons
+       keep the accent itself behind white text in both. */
+    --q-accent-text:var(--q-accent);
+}
+
+/* The dark theme's share of the tokens: the verdicts, the star and the warning
+   go light on dark washes, and each pair keeps at least 7:1 (measured 7.9, 7.0,
+   7.8 and 8.4). The accent trio is another matter. Every block page sets
+   --q-accent, --q-accent-soft and --q-accent-ink inline on its own :root, and
+   those pages are not edited by hand, so the soft and the ink are derived here
+   from the accent instead: this selector outranks the inline :root, and
+   color-mix() turns any accent into a dark wash and a lightened ink that reads
+   on it (the ink lands at 7.4:1 or better on the wash and 10:1 or better on the
+   bg for every accent in the portal). The accent itself cannot be lightened in
+   place, since a custom property may not be defined from its own value, which
+   is what --q-accent-text is for.
+
+   Wrapped in "not print" so a PDF gets the light values above; see base.css. */
+@media not print{
+    :root[data-theme="dark"]{
+        --q-ok:#a6efc0;
+        --q-ok-soft:#21402f;
+        --q-bad:#ffbdb2;
+        --q-bad-soft:#4c2622;
+        --q-star:#f8d78a;
+        --q-star-soft:#443714;
+        --q-warn:#fbdc9f;
+        --q-warn-soft:#453a1c;
+        --on-q-mark:#151012;
+        /* buttons keep white text on the accent in the dark theme too */
+        --on-q-accent:#ffffff;
+        --q-accent-soft:color-mix(in srgb,var(--q-accent) 32%,var(--card-bg));
+        --q-accent-ink:color-mix(in srgb,var(--q-accent) 32%,#ffffff);
+        --q-accent-text:var(--q-accent-ink);
+    }
+}
+
+/* What the dark theme has to say about particular components, kept together
+   here rather than scattered beside each one. The shadows go deeper because a
+   shadow on a dark page is barely there at the light strength; the dialog's
+   backdrop likewise. The course cards set --hue inline, one per course or
+   block, and those are the light theme's accents: as text on the dark bg they
+   would fall below 3:1, so the eyebrow reads through the same lightening the
+   ink gets, and the card's top rule gets a little of it. */
+@media not print{
+    :root[data-theme="dark"] .notedlg{box-shadow:0 24px 60px rgba(0,0,0,.6);}
+    :root[data-theme="dark"] .notedlg::backdrop{background:rgba(0,0,0,.62);}
+    :root[data-theme="dark"] .msel-pop{box-shadow:0 12px 28px rgba(0,0,0,.5);}
+    :root[data-theme="dark"] .block-card .bmeta,
+    :root[data-theme="dark"] .qbank-card .bmeta{color:color-mix(in srgb,var(--hue) 32%,#ffffff);}
+    /* The multi tag and the callouts outline themselves in the block's accent
+       or in --border; the accent is a dark colour, so the tag's rule takes the
+       ink and the callout's left bar takes the muted grey at full strength. */
+    :root[data-theme="dark"] .tag.multi{border-color:var(--q-accent-ink);}
+    :root[data-theme="dark"] .block-card{
+        --hue-ink:color-mix(in srgb,var(--hue) 45%,#ffffff);
+        border-top-color:var(--hue-ink);
+    }
+    :root[data-theme="dark"] .block-card:hover{border-color:var(--hue-ink);}
+    :root[data-theme="dark"] .block-card.is-empty:hover{border-color:var(--border);}
+    /* A search hit. The block's accent is a dark colour, so its wash at the
+       light theme's strength barely lifts off the card: the wash is stronger
+       here (text on it stays above 8.6:1 for every accent in the portal) and
+       the underline is the lightened ink, two pixels of it. The hit you are on
+       is the ink itself with the bg's colour as its text (10:1 or better),
+       which is the brightest thing in the note. */
+    :root[data-theme="dark"] mark.hit{
+        background:color-mix(in srgb,var(--q-accent) 60%,var(--card-bg));
+        box-shadow:inset 0 -2px 0 var(--q-accent-ink);
+    }
+    :root[data-theme="dark"] mark.hit.on{
+        background:var(--q-accent-ink);
+        color:var(--on-q-mark);
+        box-shadow:none;
+    }
 }
 
 /* A block page opens on roughly 600px of chrome - switcher, masthead, tabs,
@@ -98,7 +179,7 @@
 .blocknav a.qbank{
     margin-left:6px;
     font-weight:600;
-    color:var(--q-accent);
+    color:var(--q-accent-text);
 }
 
 .blocknav a.qbank::before{
@@ -135,7 +216,7 @@
     font-weight:600;
     letter-spacing:.08em;
     text-transform:uppercase;
-    color:var(--q-accent);
+    color:var(--q-accent-text);
     margin-bottom:6px;
 }
 
@@ -311,7 +392,9 @@ body[data-tab="questions"] .q-masthead .lead{display:none;}
     font-weight:500;
     padding:1px 8px;
     border-radius:999px;
-    background:rgba(255,255,255,.22);
+    /* a wash of the button's own text colour, so it sits on the accent in
+       either theme */
+    background:color-mix(in srgb,var(--on-q-accent) 22%,transparent);
 }
 
 .deck-how{
@@ -584,8 +667,13 @@ mark.hit{
 .chip.starish[aria-pressed="true"]{background:var(--q-star-soft);border-color:var(--q-star);color:var(--q-star);}
 
 /* the family rows have always greyed out at zero; the chips never did, so
-   "Wrong 0" was a live button to an empty page */
-.chip:disabled{color:#c3b7b9;border-color:#f4ebec;cursor:default;}
+   "Wrong 0" was a live button to an empty page. Faded towards the card
+   rather than towards white, so the fade holds in the dark theme too. */
+.chip:disabled{
+    color:color-mix(in srgb,var(--muted) 55%,var(--card-bg));
+    border-color:color-mix(in srgb,var(--border) 60%,var(--card-bg));
+    cursor:default;
+}
 .chip:disabled .n{opacity:.6;}
 
 /* the lecture index
@@ -765,7 +853,7 @@ mark.hit{
 }
 
 .danger:hover:not(:disabled){color:var(--q-bad);border-color:var(--q-bad);}
-.backup-btn:hover{color:var(--q-accent);border-color:var(--q-accent);}
+.backup-btn:hover{color:var(--q-accent-text);border-color:var(--q-accent);}
 .danger:disabled{opacity:.5;cursor:default;}
 
 .danger.armed{
@@ -809,7 +897,7 @@ mark.hit{
     font-weight:600;
     letter-spacing:.09em;
     text-transform:uppercase;
-    color:var(--q-accent);
+    color:var(--q-accent-text);
     margin-bottom:5px;
 }
 
@@ -847,7 +935,7 @@ mark.hit{
     font-weight:600;
     letter-spacing:.08em;
     text-transform:uppercase;
-    color:var(--q-accent);
+    color:var(--q-accent-text);
     margin-bottom:8px;
 }
 
@@ -1001,7 +1089,7 @@ mark.hit{
     font-family:var(--serif);
     font-size:.95rem;
     font-weight:600;
-    color:var(--q-accent);
+    color:var(--q-accent-text);
 }
 
 .tag{
@@ -1120,15 +1208,15 @@ mark.hit{
 .opt[data-pick="on"] .L{background:var(--q-accent);color:var(--on-q-accent);}
 
 .opt[data-mark="hit"]{border-color:var(--q-ok);background:var(--q-ok-soft);}
-.opt[data-mark="hit"] .L{background:var(--q-ok);color:#fff;}
+.opt[data-mark="hit"] .L{background:var(--q-ok);color:var(--on-q-mark);}
 .opt[data-mark="hit"] .verdict{color:var(--q-ok);}
 
 .opt[data-mark="miss"]{border-color:var(--q-bad);background:var(--q-bad-soft);}
-.opt[data-mark="miss"] .L{background:var(--q-bad);color:#fff;}
+.opt[data-mark="miss"] .L{background:var(--q-bad);color:var(--on-q-mark);}
 .opt[data-mark="miss"] .verdict{color:var(--q-bad);}
 
 .opt[data-mark="key"]{border-color:var(--q-ok);}
-.opt[data-mark="key"] .L{background:var(--q-ok);color:#fff;}
+.opt[data-mark="key"] .L{background:var(--q-ok);color:var(--on-q-mark);}
 .opt[data-mark="key"] .verdict{color:var(--q-ok);}
 
 .actions{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:16px;}
@@ -1231,7 +1319,7 @@ mark.hit{
     text-underline-offset:2px;
 }
 .ans-src .sw-lec:hover,.ans-src .sw-lec:focus-visible{
-    color:var(--q-accent);
+    color:var(--q-accent-text);
     text-decoration-style:solid;
 }
 
@@ -1276,7 +1364,7 @@ body.has-dialog{overflow:hidden;}
     font-weight:600;
     letter-spacing:.08em;
     text-transform:uppercase;
-    color:var(--q-accent);
+    color:var(--q-accent-text);
     margin:0;
 }
 .notedlg-full{font-size:.8rem;color:var(--muted);}
@@ -1292,7 +1380,7 @@ body.has-dialog{overflow:hidden;}
     line-height:1;
     cursor:pointer;
 }
-.notedlg-close:hover,.notedlg-close:focus-visible{color:var(--q-accent);border-color:var(--q-accent);}
+.notedlg-close:hover,.notedlg-close:focus-visible{color:var(--q-accent-text);border-color:var(--q-accent);}
 
 .notedlg-body{
     overflow-y:auto;
@@ -1865,7 +1953,7 @@ body.has-dialog{overflow:hidden;}
 }
 
 .pwblock:hover .pw-open{opacity:1;}
-.pw-open:hover{color:var(--q-accent);border-color:var(--q-accent);}
+.pw-open:hover{color:var(--q-accent-text);border-color:var(--q-accent);}
 
 .pathway{
     margin:0;
@@ -1935,7 +2023,7 @@ body.has-dialog{overflow:hidden;}
 }
 
 .figblock:hover .fig-open{opacity:1;}
-.fig-open:hover{color:var(--q-accent);border-color:var(--q-accent);}
+.fig-open:hover{color:var(--q-accent-text);border-color:var(--q-accent);}
 
 .workup{
     font-size:.88rem;
@@ -1996,7 +2084,7 @@ body.has-dialog{overflow:hidden;}
     transition:color .15s,border-color .15s;
 }
 
-.pdf-btn:hover{color:var(--q-accent);border-color:var(--q-accent);}
+.pdf-btn:hover{color:var(--q-accent-text);border-color:var(--q-accent);}
 
 .note-head .spacer{flex:1;}
 
@@ -2017,7 +2105,7 @@ body.has-dialog{overflow:hidden;}
     transition:color .15s,border-color .15s;
 }
 
-.print-cta:hover:not(:disabled){color:var(--q-accent);border-color:var(--q-accent);}
+.print-cta:hover:not(:disabled){color:var(--q-accent-text);border-color:var(--q-accent);}
 .print-cta:disabled{opacity:.5;cursor:default;}
 
 /* how progress is kept - folded away under the filter bar, because it only
@@ -2224,7 +2312,7 @@ body.has-dialog{overflow:hidden;}
     transition:border-color .15s,color .15s;
 }
 
-.pb-step:hover:not(:disabled){color:var(--q-accent);border-color:var(--q-accent);}
+.pb-step:hover:not(:disabled){color:var(--q-accent-text);border-color:var(--q-accent);}
 .pb-step:disabled{opacity:.4;cursor:default;}
 
 /* the way back to the top, on both tabs. Wider than the arrows because it
@@ -2644,7 +2732,7 @@ select.ps:disabled{cursor:default;opacity:1;}
     border-radius:5px;
 }
 
-.tb-clock[data-low="1"]{color:var(--on-q-accent);background:var(--q-warn);}
+.tb-clock[data-low="1"]{color:var(--on-q-mark);background:var(--q-warn);}
 
 .tb-size{display:flex;align-items:center;gap:8px;}
 .tb-size label{font-size:.83rem;font-weight:600;white-space:nowrap;}

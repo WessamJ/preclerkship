@@ -10,11 +10,40 @@
 
 <meta http-equiv="Cache-Control" content="no-cache, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
+<script>
+(function(){
+  var root=document.documentElement,KEY="pc-theme",stored=null,mq=null;
+  try{stored=localStorage.getItem(KEY);}catch(e){}
+  if(stored!=="dark"&&stored!=="light")stored=null;
+  if(window.matchMedia)mq=window.matchMedia("(prefers-color-scheme: dark)");
+  function os(){return mq&&mq.matches?"dark":"light";}
+  function apply(t){
+    root.setAttribute("data-theme",t);
+    var b=document.getElementById("theme-btn");
+    if(!b)return;
+    b.setAttribute("aria-pressed",t==="dark"?"true":"false");
+    b.setAttribute("aria-label","Switch to "+(t==="dark"?"light":"dark")+" mode");
+    b.title=b.getAttribute("aria-label");
+  }
+  function follow(){if(!stored)apply(os());}
+  apply(stored||os());
+  if(mq&&mq.addEventListener)mq.addEventListener("change",follow);
+  else if(mq&&mq.addListener)mq.addListener(follow);
+  document.addEventListener("DOMContentLoaded",function(){apply(root.getAttribute("data-theme"));});
+  document.addEventListener("click",function(e){
+    var b=e.target&&e.target.closest?e.target.closest("#theme-btn"):null;
+    if(!b)return;
+    stored=root.getAttribute("data-theme")==="dark"?"light":"dark";
+    try{localStorage.setItem(KEY,stored);}catch(e2){}
+    apply(stored);
+  });
+})();
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../base.css?v=7f3d47b4">
-<link rel="stylesheet" href="../portal.css?v=7c231390">
+<link rel="stylesheet" href="../base.css?v=4dbe1e59">
+<link rel="stylesheet" href="../portal.css?v=9da60a8f">
 <style>
 :root{--q-accent:#6b5a2f;--q-accent-soft:#edebe6;--q-accent-ink:#584a27;}
 </style>
@@ -32,6 +61,7 @@
 <a href="gi.html">4 &middot; Gastroenterology</a>
 <a href="gu.html">5 &middot; Nephrology & Urology</a>
 <a href="qbank.html" class="qbank here">Question bank</a>
+<button class="theme-btn" id="theme-btn" type="button" aria-pressed="false" aria-label="Switch to dark mode" title="Switch to dark mode"><svg class="moon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg><svg class="sun" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button>
 </nav>
 
 <header class="q-masthead">
@@ -168,7 +198,7 @@ of date file cannot wipe newer answers.</p>
 window.QUIZ_BLOCK = {"slug": "term", "name": "the whole term", "course": "PoM 1", "store": "nsq.pom1.v1.", "families": [{"key": "module", "name": "Module questions", "blurb": "The knowledge checks inside the week's Elentra asynchronous learning modules, transcribed into the Meds 2025 block banks."}, {"key": "weekly", "name": "Weekly quizzes", "blurb": "The week's quiz as it was sat, kept whole as its own set so a week can be drilled the way it was written."}, {"key": "meds2024", "name": "Meds 2024 bank", "blurb": "The student-written bank the Class of 2024 Academic Directors built in May 2021, re-filed week by week by the Meds 2025 volunteers. About half the cardiology questions and a handful of the respirology ones were reviewed by faculty; the rest were not, and the bank says so on its own second page."}, {"key": "new", "name": "Meds 2025", "blurb": "Written fresh by the Meds 2025 volunteers through the spring of 2022 to fill the gaps. Not verified by faculty, so treat a disagreement as a question worth chasing rather than a correction to accept."}, {"key": "workbook", "name": "Pre-Clerkship Workbook", "blurb": "The 2023 edition of the workbook handed down through the Schulich classes of 2015 to 2025: its Cardiology, Respiration & Airways, Ear Nose & Throat, Gastroenterology and Genitourinary chapters. The workbook files by organ system rather than by week, so the block is its own and the week here is inferred; where nothing in a question placed it, it says so on its face."}, {"key": "reviews", "name": "Schulich Reviews", "blurb": "The Schulich Reviews sessions, run by upper years before each exam. Their own practice questions, keyed by the deck, plus questions written from their high-yield slides. Where a review disagrees with this year's lecture, the lecture wins and the question says so."}], "eyebrow": "Every block · Weeks 1–17 · 2302 questions", "blocks": [{"slug": "cardio", "n": 1, "name": "Cardiology", "weeks": "1–5", "qv": "18b597ec", "nv": "0636de3b"}, {"slug": "resp", "n": 2, "name": "Respirology", "weeks": "6–8", "qv": "3f615cb8", "nv": "0121d8a0"}, {"slug": "ent", "n": 3, "name": "Ear, Nose & Throat", "weeks": "9", "qv": "5648bbcb", "nv": "f3966963"}, {"slug": "gi", "n": 4, "name": "Gastroenterology", "weeks": "10–13", "qv": "9a1248f7", "nv": "b4372884"}, {"slug": "gu", "n": 5, "name": "Nephrology & Urology", "weeks": "14–17", "qv": "43ff8d6b", "nv": "2ba2689a"}], "dir": "pom1", "contact": "schulichmedfriends@gmail.com", "report": "https://preclerkship-report.schulichmed.workers.dev/"};
 </script>
 <script src="../quiz.js?v=67d69ec2"></script>
-<script src="../portal.js?v=a717e402"></script>
+<script src="../portal.js?v=d91b3172"></script>
 
 <footer>
 For questions, email <a href="mailto:schulichmedfriends@gmail.com">schulichmedfriends@gmail.com</a>

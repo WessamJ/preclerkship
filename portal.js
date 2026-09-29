@@ -75,6 +75,7 @@
   var MERMAID_SRC = "https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.9.1/mermaid.min.js";
   var HEAD_WRAP = 24;             // a table heading longer than this wraps
   var MERMAID = null;             // the one load of the diagram library
+  var THEMED = null;              // the theme mermaid was last configured for
 
 
   function esc(t) {
@@ -139,6 +140,10 @@
       var p = el("div", "pathway");
       // mermaid parses the element's own text, so this must not be innerHTML
       p.textContent = b.mermaid;
+      /* drawing replaces that text with the SVG, and the theme's colours are
+         baked into the SVG, so the source is kept for drawing again after a
+         theme change; see redrawPathways */
+      p.setAttribute("data-src", b.mermaid);
       box.appendChild(p);
 
       /* the button sits outside .pathway: mermaid reads that element's text and
@@ -299,24 +304,26 @@
       "<link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>",
       "<link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/css2?",
       "family=Fraunces:opsz,wght@9..144,600&family=Inter:wght@400;600&display=swap\">",
+      /* the page's own tokens, so the tab is in the theme the diagram was
+         drawn in; the print rule is light, as it is on the page */
       "<style>",
       "*{margin:0;padding:0;box-sizing:border-box}",
-      "body{background:#faf7f7;color:#27060f;",
+      "body{background:", token("--bg", "#faf7f7"), ";color:", token("--text", "#27060f"), ";",
       "font:16px/1.7 Inter,-apple-system,BlinkMacSystemFont,sans-serif;",
       /* the diagram fills the width and scrolls, which is how a flowchart is
          read anyway and keeps the labels as large as they can be - but not
          past a comfortable measure on a very wide screen */
       "max-width:1500px;margin:auto;padding:22px clamp(16px,4vw,40px) 40px}",
       "p.eyebrow{font-size:.72rem;font-weight:600;letter-spacing:.08em;",
-      "text-transform:uppercase;color:#8a7a7d;margin-bottom:6px}",
+      "text-transform:uppercase;color:", token("--muted", "#8a7a7d"), ";margin-bottom:6px}",
       "h1{font-family:Fraunces,Georgia,serif;font-size:clamp(1.3rem,3vw,1.9rem);",
       "font-weight:600;line-height:1.2;text-wrap:balance;margin-bottom:18px}",
       /* the whole point: the diagram gets the window, not a 900px column */
-      "figure{background:#fff;border:1px solid #ecdfe1;border-radius:8px;",
-      "padding:clamp(14px,3vw,30px);overflow-x:auto}",
+      "figure{background:", token("--card-bg", "#fff"), ";border:1px solid ", token("--border", "#ecdfe1"), ";",
+      "border-radius:8px;padding:clamp(14px,3vw,30px);overflow-x:auto}",
       "svg{width:100%;height:auto;display:block}",
-      "footer{margin-top:16px;font-size:.8rem;color:#8a7a7d}",
-      "@media print{body{padding:0;background:#fff}",
+      "footer{margin-top:16px;font-size:.8rem;color:", token("--muted", "#8a7a7d"), "}",
+      "@media print{body{padding:0;background:#fff;color:#27060f}",
       "figure{border:0;padding:0}footer{display:none}}",
       "</style></head><body>",
       "<p class=\"eyebrow\">", esc(block), "</p>",
@@ -407,23 +414,73 @@
     });
   }
 
+  /* The theme the page is in right now: the head script sets data-theme
+     before anything paints, and a page without it is light. */
+  function currentTheme() {
+    return document.documentElement.getAttribute("data-theme") === "dark" ? "dark" : "light";
+  }
+
+  /* A token's value as the browser would paint it. getComputedStyle hands a
+     custom property back as written, and in the dark theme the accent's soft
+     wash and ink are written as color-mix(), which mermaid cannot read: it
+     wants a colour it can parse. Painting the value onto a probe and reading
+     the colour back resolves it, to rgb() or, in a newer browser, to
+     color(srgb ...), which mermaid cannot read either and is turned into
+     rgb() here. Anything else falls back rather than reaching mermaid. */
+  function token(name, fallback) {
+    var got = getComputedStyle(document.documentElement).getPropertyValue(name).trim();
+    if (!got) return fallback;
+    if (got.indexOf("(") < 0) return got;
+    var probe = document.createElement("span");
+    probe.style.color = got;
+    document.documentElement.appendChild(probe);
+    var seen = getComputedStyle(probe).color;
+    document.documentElement.removeChild(probe);
+    if (seen.indexOf("rgb") === 0) return seen;
+    var m = /^color\(srgb ([\d.]+) ([\d.]+) ([\d.]+)/.exec(seen);
+    if (!m) return fallback;
+    function ch(x) { return Math.round(parseFloat(x) * 255); }
+    return "rgb(" + ch(m[1]) + ", " + ch(m[2]) + ", " + ch(m[3]) + ")";
+  }
+
   function themeVars() {
-    var cs = getComputedStyle(document.documentElement);
-    function v(name, fallback) {
-      var got = cs.getPropertyValue(name).trim();
-      return got || fallback;
-    }
     return {
-      background: v("--card-bg", "#ffffff"),
-      primaryColor: v("--q-accent-soft", "#eeeeee"),
-      primaryTextColor: v("--text", "#27060f"),
-      primaryBorderColor: v("--q-accent", "#84223b"),
-      lineColor: v("--muted", "#8a7a7d"),
-      secondaryColor: v("--bg", "#faf7f7"),
-      tertiaryColor: v("--bg", "#faf7f7"),
-      fontFamily: v("--sans", "Inter, sans-serif"),
+      darkMode: currentTheme() === "dark",
+      background: token("--card-bg", "#ffffff"),
+      primaryColor: token("--q-accent-soft", "#eeeeee"),
+      primaryTextColor: token("--text", "#27060f"),
+      /* the accent as text, which is the lightened one in the dark theme: the
+         raw accent is dark on a near-black fill and the outline all but goes */
+      primaryBorderColor: token("--q-accent-text", "#84223b"),
+      lineColor: token("--muted", "#8a7a7d"),
+      secondaryColor: token("--bg", "#faf7f7"),
+      tertiaryColor: token("--bg", "#faf7f7"),
+      /* named rather than left to mermaid, which lightens them from the
+         colours above and lands on white edge labels in the dark theme */
+      edgeLabelBackground: token("--bg", "#faf7f7"),
+      clusterBkg: token("--bg", "#faf7f7"),
+      clusterBorder: token("--border", "#ecdfe1"),
+      titleColor: token("--text", "#27060f"),
+      fontFamily: token("--sans", "Inter, sans-serif"),
       fontSize: "13px"
     };
+  }
+
+  /* Mermaid is configured for one theme at a time, and it is told again only
+     when the page's theme has changed since: the tokens are read at that
+     moment, so a diagram is always drawn in the theme the page is in. */
+  function configure(mermaid) {
+    var theme = currentTheme();
+    if (theme === THEMED) return theme;
+    mermaid.initialize({
+      startOnLoad: false,
+      securityLevel: "strict",
+      theme: "base",
+      themeVariables: themeVars(),
+      flowchart: { htmlLabels: true, useMaxWidth: true }
+    });
+    THEMED = theme;
+    return theme;
   }
 
   /* The library is fetched once per page, the first time any note on it
@@ -434,21 +491,32 @@
       var s = document.createElement("script");
       s.src = MERMAID_SRC;
       s.async = true;
-      s.onload = function () {
-        if (!window.mermaid) { resolve(null); return; }
-        window.mermaid.initialize({
-          startOnLoad: false,
-          securityLevel: "strict",
-          theme: "base",
-          themeVariables: themeVars(),
-          flowchart: { htmlLabels: true, useMaxWidth: true }
-        });
-        resolve(window.mermaid);
-      };
+      s.onload = function () { resolve(window.mermaid || null); };
       s.onerror = function () { reject(new Error("mermaid did not load")); };
       document.head.appendChild(s);
     });
     return MERMAID;
+  }
+
+  /* Draws these nodes in the page's theme and settles once they are drawn or
+     have fallen back to text. Each node is marked with the theme it was drawn
+     in, which is what redrawPathways reads; and if the theme moved on while
+     the drawing was under way, the drawing is done again. */
+  function drawNodes(mermaid, nodes, root) {
+    var theme = configure(mermaid);
+    nodes.forEach(function (n) { n.setAttribute("data-drawn", theme); });
+    function done() {
+      revealOpen(root);
+      if (currentTheme() !== theme) return redrawPathways();
+    }
+    try {
+      var drawing = mermaid.run({ nodes: nodes });
+      if (drawing && drawing.then) return drawing.then(done, done);
+    } catch (e) {
+      // a diagram that will not parse should cost the page nothing; the
+      // source text stays on screen and the rest of the note is unaffected
+    }
+    return done();
   }
 
   /* Returns a promise that settles once every diagram is drawn or has fallen
@@ -462,16 +530,7 @@
 
     return loadMermaid().then(function (mermaid) {
       if (!mermaid) return;       // loaded but exposed nothing; the source stays on screen
-      function done() { revealOpen(root); }
-      try {
-        var run = mermaid.run({ nodes: nodes });
-        if (run && run.then) return run.then(done, done);
-        done();
-      } catch (e) {
-        // a diagram that will not parse should cost the page nothing; the
-        // source text stays on screen and the rest of the note is unaffected
-        done();
-      }
+      return drawNodes(mermaid, nodes, root);
     }, function () {
       nodes.forEach(function (n) {
         n.textContent = "";
@@ -480,12 +539,48 @@
     });
   }
 
+  /* Mermaid bakes the theme's colours into each SVG it draws, so a diagram
+     drawn light stays light after the toggle. Drawing again is cheap: the
+     library is already here, the source is kept on the element, and only the
+     diagrams drawn in another theme are asked for, wherever they are on the
+     page, the stream or the note dialog. Settles once they are redrawn, and
+     at once when there is nothing to redraw. */
+  function redrawPathways() {
+    if (!MERMAID) return Promise.resolve();
+    return MERMAID.then(function (mermaid) {
+      if (!mermaid) return;
+      var theme = currentTheme();
+      var nodes = [].filter.call(document.querySelectorAll(".pathway[data-src]"), function (n) {
+        return n.getAttribute("data-drawn") !== theme && !!n.querySelector("svg");
+      });
+      if (!nodes.length) return;
+      /* drawNodes configures too, and has to, for the first draw of a page;
+         this call is the same one made early, before any drawing is taken
+         down, so a theme mermaid will not take leaves the diagrams as they
+         are rather than as source text. It costs nothing the second time. */
+      try { configure(mermaid); } catch (e) { return; }
+      nodes.forEach(function (n) {
+        n.textContent = n.getAttribute("data-src");
+        n.removeAttribute("data-processed");    // mermaid skips a node it has done
+      });
+      return drawNodes(mermaid, nodes, document);
+    }, function () {});
+  }
+
+  /* The head script flips data-theme on the root; nothing else on the page
+     needs telling, only the diagrams. */
+  if (window.MutationObserver) {
+    new MutationObserver(function () { redrawPathways(); })
+      .observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
+  }
+
   window.PORTAL_NOTES = {
     written: written,
     coveredTitle: coveredTitle,
     pdfButton: pdfButton,
     build: buildNote,
-    drawPathways: drawPathways
+    drawPathways: drawPathways,
+    redrawPathways: redrawPathways
   };
 
   /* ---------- search: one rule and one highlighter for both tabs ---------- */

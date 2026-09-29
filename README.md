@@ -28,8 +28,9 @@ page whose scope is one block. Each block page's third tab is a link into the
 bank, pre-filtered to that block, and the address carries the filter
 (`qbank.html#block=msk`) so it can be sent to someone.
 
-No build step, no framework, no server. HTML, three JS files, two stylesheets and
-a folder of JSON per course. Serve the folder and it works.
+No build step, no framework, no server. HTML, three JS files (and the small
+inline script every page carries in its head to set the theme), two stylesheets
+and a folder of JSON per course. Serve the folder and it works.
 
 By the **Open-Source Medicine Club** and the **AI in Medicine Club**.
 
@@ -91,7 +92,7 @@ pom1/              the same
 pom2/              the same
 t2c/               the same
 
-tools/portal.py       the course roster: blocks, families, accents, store keys
+tools/portal.py       the course roster: blocks, families, accents, store keys; the theme snippet and toggle
 tools/roman_items.py  a repair pass: item lists read as options, put back in the stem
 tools/build_pages.py  every course's block pages AND its question bank
 tools/build_index.py  every course's landing page

@@ -15,6 +15,31 @@
     --sans:"Inter",-apple-system,BlinkMacSystemFont,sans-serif;
 }
 
+/* The dark theme. The inline script in every page's head sets data-theme on
+   the root before the stylesheets apply, from the reader's stored choice or,
+   failing that, the OS setting; with scripting off there is no attribute and
+   the page stays light. The values keep the light palette's warmth: a rose
+   black rather than a neutral one, so the two themes read as one portal.
+   Measured against the bg: text 18.2:1, muted 10.9:1, accent 9.5:1; the card sits
+   8 L* above the bg and the border is 2.3:1 on the card, so a card reads as a
+   shape at a glance.
+
+   Wrapped in "not print" rather than reverted under print, so the light values
+   above are what a PDF gets and there is only one copy of them. color-scheme
+   tells the browser the form controls and scrollbars should follow. */
+@media not print{
+    :root[data-theme="dark"]{
+        --bg:#151012;
+        --card-bg:#282024;
+        --text:#fefafb;
+        --muted:#d0c1c4;
+        --border:#66555c;
+        --accent:#f0a2b5;
+        --accent-soft:#4d2733;
+        color-scheme:dark;
+    }
+}
+
 *{
     margin:0;
     padding:0;
@@ -61,8 +86,66 @@ a{
     color:var(--text);
 }
 
+/* the uplink and the theme toggle on one line, on the course pages */
+.topline{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:12px;
+    margin-bottom:26px;
+}
+
+.topline .uplink{margin-bottom:0;}
+
+/* The theme toggle. One small round button on every page, set like the other
+   quiet controls: a border, no fill, the muted colour until hovered. It shows
+   the moon while the page is light and the sun while it is dark, and it is
+   not shown at all until the head script has set data-theme, because with
+   scripting off it could do nothing. */
+.theme-btn{
+    display:none;
+    align-items:center;
+    justify-content:center;
+    flex:none;
+    width:30px;
+    height:30px;
+    padding:0;
+    color:var(--muted);
+    background:var(--card-bg);
+    border:1px solid var(--border);
+    border-radius:999px;
+    cursor:pointer;
+    transition:color .15s,border-color .15s;
+}
+
+:root[data-theme] .theme-btn{display:inline-flex;}
+.theme-btn:hover{color:var(--text);border-color:var(--muted);}
+
+.theme-btn svg{
+    width:16px;
+    height:16px;
+    fill:none;
+    stroke:currentColor;
+    stroke-width:2;
+    stroke-linecap:round;
+    stroke-linejoin:round;
+}
+
+:root:not([data-theme="dark"]) .theme-btn .sun{display:none;}
+:root[data-theme="dark"] .theme-btn .moon{display:none;}
+
+/* on the hub, top right of the hero; on a block page, the right end of the
+   block nav */
+.page-hero .theme-btn{position:absolute;top:4px;right:0;}
+.blocknav .theme-btn{margin-left:auto;}
+
+@media print{
+    .theme-btn{display:none !important;}
+}
+
 /* the landing page masthead */
 .page-hero{
+    position:relative;
     margin-bottom:56px;
 }
 

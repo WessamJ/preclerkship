@@ -62,6 +62,7 @@ TEMPLATE = u"""<!DOCTYPE html>
 {favicon}
 
 {nocache}
+{theme}
 {fonts}
 <link rel="stylesheet" href="{base_css}">
 <link rel="stylesheet" href="{portal_css}">
@@ -75,6 +76,7 @@ TEMPLATE = u"""<!DOCTYPE html>
 <div class="pom2-page">
 
 <div class="page-hero">
+{toggle}
 <h1>Schulich Pre-clerkship.</h1>
 <p>
 A centralized, dynamic, up-to-date resource for all Schulich med students in
@@ -234,7 +236,8 @@ def main():
         favicon=portal.favicon("PC", "1f4e5f"), fonts=portal.FONTS, nocache=portal.NOCACHE,
         base_css="base.css?v=" + portal.digest("base.css"),
         portal_css="portal.css?v=" + portal.digest("portal.css"),
-        cf=portal.CF, cards=cards(), footer=portal.footer())
+        cf=portal.CF, cards=cards(), footer=portal.footer(),
+        theme=portal.THEME_SCRIPT, toggle=portal.THEME_BTN)
     io.open("index.html", "w", encoding="utf-8", newline="\n").write(html)
     print("index.html: %d courses, %d built, %d questions, %d/%d lecture notes"
           % (len(portal.COURSES),

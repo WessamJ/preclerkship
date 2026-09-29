@@ -91,6 +91,7 @@ TEMPLATE = u"""<!DOCTYPE html>
 {favicon}
 
 {nocache}
+{theme}
 {fonts}
 <link rel="stylesheet" href="{base_css}">
 <link rel="stylesheet" href="{portal_css}">
@@ -103,7 +104,10 @@ TEMPLATE = u"""<!DOCTYPE html>
 
 <div class="pom2-page">
 
+<div class="topline">
 {uplink}
+{toggle}
+</div>
 
 <div class="page-hero">
 <h1>{short}.</h1>
@@ -135,7 +139,8 @@ def main():
             base_css=portal.asset("base.css"), portal_css=portal.asset("portal.css"),
             accent=course["accent"], cf=portal.CF, uplink=portal.uplink(1),
             hero=hero, cards=cards(course) or "",
-            prose=prose, footer=portal.footer())
+            prose=prose, footer=portal.footer(),
+            theme=portal.THEME_SCRIPT, toggle=portal.THEME_BTN)
         io.open(os.path.join(course["slug"], "index.html"), "w",
                 encoding="utf-8", newline="\n").write(html)
         q, w, l = portal.counts(course)
