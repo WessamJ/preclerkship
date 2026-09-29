@@ -1359,20 +1359,8 @@ body.has-dialog{overflow:hidden;}
 
 .qfoot .attempts{margin-right:auto;}
 
-.reset-q{
-    font:inherit;
-    font-size:.72rem;
-    color:var(--muted);
-    background:none;
-    border:none;
-    border-bottom:1px dashed var(--muted);
-    cursor:pointer;
-    padding:0;
-}
-
-.reset-q:hover{color:var(--q-bad);border-color:var(--q-bad);}
-
-.report-q{
+/* the Report control is a link where dialogs are missing, hence the underline reset */
+.reset-q,.report-q{
     font:inherit;
     font-size:.72rem;
     color:var(--muted);
@@ -1383,6 +1371,8 @@ body.has-dialog{overflow:hidden;}
     padding:0;
     text-decoration:none;
 }
+
+.reset-q:hover{color:var(--q-bad);border-color:var(--q-bad);}
 .report-q:hover{color:var(--q-accent);border-color:var(--q-accent);}
 
 /* The report dialog: the note dialog's frame at a form's width. Its

@@ -719,7 +719,7 @@
     ["other", "Something else"]
   ];
   var NOTE_MAX = 2000, NOTE_MIN = 3;
-  var RDLG = null, ROPENER = null, RQ = null;
+  var RDLG = null, ROPENER = null, RQID = null;
 
   function reportFields(qid, reason, note) {
     var q = QMAP[qid];
@@ -768,7 +768,7 @@
     h.id = "reportdlg-title";
     text.appendChild(h);
     head.appendChild(text);
-    var x = el("button", "reportdlg-close", "×");
+    var x = el("button", "reportdlg-close", "\u00d7");
     x.type = "button";
     x.title = "Close (Esc)";
     x.setAttribute("aria-label", "Close");
@@ -788,6 +788,7 @@
       o.value = r[0];
       sel.appendChild(o);
     });
+    sel.addEventListener("change", noteChanged);
     body.appendChild(sel);
     var l2 = el("label", null, "Tell us what is wrong");
     l2.htmlFor = "report-note";
@@ -866,13 +867,13 @@
      follow the note as it is typed */
   function noteChanged() {
     var d = RDLG;
-    if (!d || !RQ) return;
+    if (!d || !RQID) return;
     var note = d.querySelector(".report-note").value;
     var ok = note.trim().length >= NOTE_MIN;
     d.querySelector(".report-count").textContent = note.length + " / " + NOTE_MAX;
     var send = d.querySelector(".report-send");
     if (send.tagName === "A") {
-      send.href = reportMailto(RQ, d.querySelector(".report-reason").value, note.trim());
+      send.href = reportMailto(RQID, d.querySelector(".report-reason").value, note.trim());
       if (ok) send.removeAttribute("aria-disabled");
       else send.setAttribute("aria-disabled", "true");
     } else {
@@ -884,17 +885,16 @@
     var q = QMAP[qid];
     if (!q) return;
     var d = ensureReport();
-    RQ = qid;
+    RQID = qid;
     ROPENER = opener || null;
     d.querySelector(".reportdlg-where").textContent =
-      (BLOCK.course ? BLOCK.course + " · " : "") +
-      (BLOCK_NAME[q.block] || BLOCK.name) + " · " + qid;
+      (BLOCK.course ? BLOCK.course + " \u00b7 " : "") +
+      (BLOCK_NAME[q.block] || BLOCK.name) + " \u00b7 " + qid;
     var stem = plainText(q.stem || "").replace(/\s+/g, " ").trim();
     d.querySelector(".reportdlg-stem").textContent =
-      stem.length > 140 ? stem.slice(0, 140).replace(/\s+\S*$/, "") + "…" : stem;
+      stem.length > 140 ? stem.slice(0, 140).replace(/\s+\S*$/, "") + "\u2026" : stem;
     var sel = d.querySelector(".report-reason");
     sel.value = REASONS[0][0];
-    sel.addEventListener("change", noteChanged);
     d.querySelector(".report-note").value = "";
     d.querySelector(".report-hp").value = "";
     d.querySelector(".report-error").hidden = true;
@@ -910,12 +910,12 @@
 
   function sendReport() {
     var d = RDLG;
-    if (!d || !RQ) return;
+    if (!d || !RQID) return;
     var reason = d.querySelector(".report-reason").value;
     var note = d.querySelector(".report-note").value.trim();
     if (note.length < NOTE_MIN) return;
     var send = d.querySelector(".report-send"), err = d.querySelector(".report-error");
-    var fields = reportFields(RQ, reason, note);
+    var fields = reportFields(RQID, reason, note);
     fields.hp = d.querySelector(".report-hp").value;
     send.disabled = true;
     send.textContent = "Sending";
@@ -943,7 +943,7 @@
         err.innerHTML = "";
         err.appendChild(document.createTextNode("It could not be sent. "));
         var a = el("a", null, "Email it instead");
-        a.href = reportMailto(RQ, reason, note);
+        a.href = reportMailto(RQID, reason, note);
         err.appendChild(a);
         err.appendChild(document.createTextNode("."));
         err.hidden = false;
@@ -1294,16 +1294,6 @@
 
   /* ---------- search ---------- */
 
-  /* The sixth facet. Its value is a typed query, and every word of it has to
-     appear somewhere in the question - preamble, stem, options, review line -
-     in any order. That differs from the notes tab, which wants the phrase
-     whole: a lecture note reads as prose, where a stem is a long clinical
-     vignette and "warfarin bleeding" is the question people mean even when
-     the two words sit a sentence apart.
-
-     The answer and its explanation are never read. A search for "metformin"
-     that surfaced every question whose ANSWER is metformin would hand out the
-     key before the question was attempted. */
   /* markup to words: block-level tags end a word and inline ones do not, so
      two paragraphs stay two words and a bolded half of one word stays one */
   function plainText(html) {
@@ -1318,6 +1308,16 @@
       .replace(/&#39;/g, "'");
   }
 
+  /* The sixth facet. Its value is a typed query, and every word of it has to
+     appear somewhere in the question - preamble, stem, options, review line -
+     in any order. That differs from the notes tab, which wants the phrase
+     whole: a lecture note reads as prose, where a stem is a long clinical
+     vignette and "warfarin bleeding" is the question people mean even when
+     the two words sit a sentence apart.
+
+     The answer and its explanation are never read. A search for "metformin"
+     that surfaced every question whose ANSWER is metformin would hand out the
+     key before the question was attempted. */
   function searchText(q) {
     var parts = [q.stem];
     /* a preamble is usually {title, html}; two in the banks are bare strings */
