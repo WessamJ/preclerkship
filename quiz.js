@@ -467,40 +467,68 @@
     return LABEL;
   }
 
-  /* The lectures tools/review_lectures.py resolved this question to, rendered
-     as the place to go rather than as the place it was filed. Where those
-     disagree the LECTURE's week wins: a question filed under week 5 whose
-     material is taught in week 4 should send you to week 4, and several
-     hundred of them do exactly that.
-
-     The week is printed once per run of lectures that share it, so the common
-     case - one lecture, or two from the same week - reads as one location. */
-  function reviewPath(q) {
-    var out = [], last = null;
-    (q.review || []).forEach(function (r) {
-      var name = (r.n ? r.n + " - " : "") + r.t;
-      if (r.w !== last) {
-        out.push("Week " + r.w + " \u00b7 " + name);
-        last = r.w;
-      } else {
-        out[out.length - 1] += ", " + name;
-      }
-    });
-    return out.join("  +  ");
+  /* A review entry names a week and a lecture number but not a block. Weeks
+     are numbered once across a course and the bank already carries each
+     block's span, so the block follows from the week. That is also what joins
+     a question filed under one block to a lecture taught in another - the
+     Infection & Immunity questions on vaccines review a week 4 lecture, and
+     week 4 is Principles & Development. */
+  function blockForWeek(w) {
+    var n = parseInt(w, 10);
+    if (isNaN(n)) return null;
+    for (var i = 0; i < BLOCKS.length; i++) {
+      /* "1–4" with an en dash as the builder writes it, or "9" for a block
+         one week long; a plain hyphen is accepted so a hand-edited config
+         cannot silently break the join */
+      var span = String(BLOCKS[i].weeks || "").split(/[–—-]/);
+      var lo = parseInt(span[0], 10), hi = parseInt(span[span.length - 1], 10);
+      if (isNaN(hi)) hi = lo;
+      if (!isNaN(lo) && n >= lo && n <= hi) return BLOCKS[i].slug;
+    }
+    return null;
   }
 
+  /* The id the notes file gives the lecture: <block>-w<week>-<number>. An
+     in-class session carries no number and resolves to nothing; the line
+     still names it, it just cannot be opened. */
+  function noteIdFor(r) {
+    if (!r || !/^\d+$/.test(String(r.n || ""))) return null;
+    var slug = blockForWeek(r.w);
+    return slug ? slug + "-w" + r.w + "-" + r.n : null;
+  }
+
+  /* The lectures tools/review_lectures.py resolved this question to, as the
+     place to go rather than the place it was filed. Where those disagree the
+     LECTURE's week wins: a question filed under week 5 whose material is
+     taught in week 4 should send you to week 4, and several hundred of them
+     do exactly that.
+
+     The shape is one run per week, each run the lectures that share it, so
+     the common case - one lecture, or two from the same week - reads as one
+     location: "Week 13 · 05 - X, 06 - Y". The text and the buttons are
+     both built from this, so they cannot disagree. */
+  function reviewParts(q) {
+    var runs = [], last = null;
+    (q.review || []).forEach(function (r) {
+      var id = noteIdFor(r);
+      var item = { n: r.n, t: r.t, name: (r.n ? r.n + " - " : "") + r.t,
+                   id: id, slug: id ? blockForWeek(r.w) : null };
+      if (r.w !== last) {
+        runs.push({ w: r.w, items: [item] });
+        last = r.w;
+      } else {
+        runs[runs.length - 1].items.push(item);
+      }
+    });
+    return runs;
+  }
+
+  /* Nothing resolved: the week is all there is, and saying so plainly beats
+     naming a lecture the data does not actually know. Used only when the
+     question has no review entries; those are drawn by buildWhere. */
   function whereFrom(q) {
     var parts = [];
     if (TERM) parts.push(BLOCK_NAME[q.block] || q.block);
-
-    var path = reviewPath(q);
-    if (path) {
-      parts.push(path);
-      return parts.join(" \u00b7 ");
-    }
-
-    /* Nothing resolved: the week is all there is, and saying so plainly beats
-       naming a lecture the data does not actually know. */
     parts.push(q.weekLabel ||
       (q.week === null ? "Off-curriculum" : "Week " + q.week));
     var lec = q.lecture;
@@ -509,6 +537,169 @@
       parts.push(lec);
     }
     return parts.join(" \u00b7 ");
+  }
+
+  /* Each lecture on the line opens its note, so the line is built from the
+     same runs the text was, with a button where a lecture resolved and plain
+     text where it did not. A browser with no <dialog> gets a link to the
+     note on its block page instead: the same note, one page over. */
+  var DIALOG_OK = !!window.HTMLDialogElement;
+
+  function noteUrl(it) { return it.slug + ".html#n-" + it.id; }
+
+  function lectureLink(it, w) {
+    if (!DIALOG_OK) {
+      var a = el("a", "sw-lec", it.name);
+      a.href = noteUrl(it);
+      return a;
+    }
+    var b = el("button", "sw-lec", it.name);
+    b.type = "button";
+    b.title = "Open this lecture's note";
+    b.addEventListener("click", function () { openNote(it, w, b); });
+    return b;
+  }
+
+  function buildWhere(q) {
+    var sw = el("span", "sw");
+    var runs = reviewParts(q);
+    if (!runs.length) {
+      sw.textContent = whereFrom(q);
+      return sw;
+    }
+    if (TERM) sw.appendChild(document.createTextNode((BLOCK_NAME[q.block] || q.block) + " \u00b7 "));
+    runs.forEach(function (run, i) {
+      if (i) sw.appendChild(document.createTextNode("  +  "));
+      sw.appendChild(document.createTextNode("Week " + run.w + " \u00b7 "));
+      run.items.forEach(function (it, j) {
+        if (j) sw.appendChild(document.createTextNode(", "));
+        sw.appendChild(it.id ? lectureLink(it, run.w) : document.createTextNode(it.name));
+      });
+    });
+    return sw;
+  }
+
+  /* ---------- the note dialog ---------- */
+
+  /* One lecture's note, read without leaving the question. The dialog is
+     built by script on first use rather than by the page template, so a page
+     cached from before it shipped gets it too, and a browser that lacks
+     <dialog> never builds it - its review lines are links instead. */
+  var DLG = null;
+  var NOTES = Object.create(null);   // block slug -> promise of {lecture id -> lecture}
+  var OPENING = 0;                   // which click the load in flight belongs to
+  /* the button that opened the dialog, kept so focus can be handed back
+     explicitly: the native restore only works if the button held focus, and
+     Safari never focuses a button on click */
+  var OPENER = null;
+
+  function ensureDialog() {
+    if (DLG) return DLG;
+    var d = el("dialog", "notedlg");
+    d.setAttribute("aria-labelledby", "notedlg-title");
+
+    var head = el("div", "notedlg-head");
+    var text = el("div", "notedlg-text");
+    text.appendChild(el("p", "eyebrow notedlg-where"));
+    var h = el("h2");
+    h.id = "notedlg-title";
+    text.appendChild(h);
+    text.appendChild(el("a", "notedlg-full", "Open on the block page"));
+    head.appendChild(text);
+    var x = el("button", "notedlg-close", "\u00d7");
+    x.type = "button";
+    x.title = "Close (Esc)";
+    x.setAttribute("aria-label", "Close");
+    x.addEventListener("click", function () { d.close(); });
+    head.appendChild(x);
+    d.appendChild(head);
+    d.appendChild(el("div", "notedlg-body"));
+
+    /* the backdrop is the dialog's own box outside its children, so a click
+       whose target is the dialog itself is a click on the backdrop */
+    d.addEventListener("click", function (e) { if (e.target === d) d.close(); });
+    d.addEventListener("close", function () {
+      document.body.classList.remove("has-dialog");
+      d.querySelector(".notedlg-body").innerHTML = "";
+      if (OPENER && OPENER.focus) OPENER.focus();
+      OPENER = null;
+    });
+    document.body.appendChild(d);
+    DLG = d;
+    return d;
+  }
+
+  /* One request per block per page, kept for the session. A failed load is
+     forgotten, so the next click tries again rather than repeating the error. */
+  function fetchNotes(slug) {
+    if (NOTES[slug]) return NOTES[slug];
+    var b = null;
+    BLOCKS.forEach(function (x) { if (x.slug === slug) b = x; });
+    var p = fetch("data/notes/" + slug + ".json" + (b && b.nv ? "?v=" + b.nv : ""))
+      .then(function (r) {
+        if (!r.ok) throw new Error("HTTP " + r.status);
+        return r.json();
+      })
+      .then(function (data) {
+        var map = Object.create(null);
+        ((data && data.weeks) || []).forEach(function (w) {
+          (w.lectures || []).forEach(function (l) {
+            // a roster can repeat an id; the first one is the one the block page shows too
+            if (l.id && !map[l.id]) map[l.id] = l;
+          });
+        });
+        return map;
+      });
+    p.then(null, function () { delete NOTES[slug]; });
+    NOTES[slug] = p;
+    return p;
+  }
+
+  function fillState(body, text, it) {
+    body.innerHTML = "";
+    var p = el("p", "notedlg-state", text + " ");
+    var a = el("a", null, "Open the block page");
+    a.href = noteUrl(it);
+    p.appendChild(a);
+    body.appendChild(p);
+  }
+
+  function openNote(it, w, from) {
+    var d = ensureDialog();
+    var where = d.querySelector(".notedlg-where"), title = byId("notedlg-title"),
+        full = d.querySelector(".notedlg-full"), body = d.querySelector(".notedlg-body");
+    var token = ++OPENING;
+    OPENER = from || null;
+
+    where.textContent = (BLOCK_NAME[it.slug] || it.slug) + " \u00b7 Week " + w;
+    title.textContent = it.name;
+    full.href = noteUrl(it);
+    body.innerHTML = "";
+    body.appendChild(el("p", "notedlg-state", "Loading\u2026"));
+    document.body.classList.add("has-dialog");
+    if (!d.open) d.showModal();
+    body.scrollTop = 0;
+
+    fetchNotes(it.slug).then(function (map) {
+      if (token !== OPENING) return;      // a later click owns the dialog now
+      var lec = map[it.id];
+      if (!lec) { fillState(body, "This lecture is not in the block's roster.", it); return; }
+      /* written up under a neighbour's heading: show that note, under its title */
+      var target = lec.coveredBy ? map[lec.coveredBy.key] : lec;
+      var shared = window.PORTAL_NOTES;
+      if (!shared || !target || target.hasNote !== true) {
+        fillState(body, "No note yet for this lecture.", it);
+        return;
+      }
+      title.textContent = (target.num ? target.num + " \u00b7 " : "") + shared.coveredTitle(target);
+      body.innerHTML = "";
+      body.appendChild(shared.build(target, { block: BLOCK_NAME[it.slug] || it.slug, onPrint: null }));
+      shared.drawPathways(body);
+      body.scrollTop = 0;
+    }, function () {
+      if (token !== OPENING) return;
+      fillState(body, "The note could not be loaded.", it);
+    });
   }
 
   function buildQuestion(q) {
@@ -673,7 +864,7 @@
        was wrong, and before answering it is a hint. */
     var src = el("p", "ans-src");
     src.appendChild(el("span", "sl", "Review"));
-    src.appendChild(el("span", "sw", whereFrom(q)));
+    src.appendChild(buildWhere(q));
     ans.appendChild(src);
 
     art.appendChild(ans);
@@ -1760,6 +1951,7 @@
   }
 
   function onKey(e) {
+    if (DLG && DLG.open) return;   // the dialog has the keyboard
     if (e.ctrlKey || e.metaKey || e.altKey) return;
     if (byId("panel-questions").hidden) return;
     var t = e.target;
@@ -2584,6 +2776,9 @@
 
   window.POM2_QUIZ = {
     searchMatches: searchMatches,
+    blockForWeek: blockForWeek,
+    noteIdFor: noteIdFor,
+    reviewParts: reviewParts,
     boot: function () {
       if (booted) return;
       booted = true;

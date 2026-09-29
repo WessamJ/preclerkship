@@ -80,7 +80,7 @@ an Obsidian vault laid out a particular way.
 index.html         the hub, one card per course
 base.css           design tokens, the reset, the page frame   ) the engine,
 portal.css         everything the portal draws                ) shared by
-portal.js          tab switching, shared helpers              ) every
+portal.js          tab switching, the note renderer, helpers  ) every
 notes.js           the notes tab, including the PDF printing  ) course
 quiz.js            the question runner and the progress store )
 
