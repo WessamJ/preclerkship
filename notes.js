@@ -36,15 +36,7 @@
 
   var query = "";                 // the search box, lowercased and trimmed
   var WORDS = [];                 // the query split by the rule in portal.js
-  /* Highlighting is the expensive half of a search, and its cost is the number
-     of HITS, not the number of notes. One letter typed into a 43-note block
-     matches about 27,000 times, and painting that many <mark>s locks the page
-     up for seconds. So a word earns highlighting by being long enough to mean
-     something, and even then the pass stops at a budget. Filtering is never
-     capped - the stream and the index always tell the truth, whether or not
-     the words inside them get painted. */
-  var MARK_MIN = 3;               // a word shorter than this filters but is not painted
-  var MARK_BUDGET = 800;          // and never paint more than this in one pass
+  // the painting rule, its floor and its budget, is portal.js's as well
   var HITS = [];                  // every <mark> on the page, in reading order
   var AT_HIT = -1;                // which one the reader is standing on
   var HAY = Object.create(null);  // lecture id -> everything in it, lowercased
@@ -138,12 +130,12 @@
      later script tag on the page. */
   function shared() { return window.PORTAL_NOTES; }
   function written(lec) { return shared().written(lec); }
+  function pdfButton(label, title, onClick) { return shared().pdfButton(label, title, onClick); }
 
   /* The search rule and the highlighter are portal.js's too, shared with the
      bank so the two boxes mean the same thing by a query. Checked rather than
      assumed: a page without them keeps its stream and index, unnarrowed. */
   function search() { return window.PORTAL_SEARCH; }
-  function pdfButton(label, title, onClick) { return shared().pdfButton(label, title, onClick); }
 
   /* ---------- one note may carry several lectures ---------- */
 
@@ -333,7 +325,8 @@
   /* every word of the query, in any order, somewhere in the note: the bank's
      rule, and now this tab's */
   function hit(id) {
-    return !WORDS.length || search().hit(HAY[id] || "", WORDS);
+    var s = search();
+    return !WORDS.length || !!(s && s.hit(HAY[id] || "", WORDS));
   }
 
   function unmark() {
@@ -341,17 +334,12 @@
     MARKED = [];
   }
 
-  /* the words worth painting; a two-letter word narrows the stream but would
-     light up every "of" and "in" on the page */
-  function paintWords() {
-    return WORDS.filter(function (w) { return w.length >= MARK_MIN; });
-  }
-
   /* .pathway is skipped because mermaid parses that element's own text, and a
      <mark> inside it is a syntax error rather than a highlight. */
-  function markHits(art, budget) {
-    if (!search()) return 0;
-    var made = search().mark(art, paintWords(), budget, ".pathway");
+  function markHits(art, words, budget) {
+    var s = search();
+    if (!s) return 0;
+    var made = s.mark(art, words, budget, ".pathway");
     if (made) MARKED.push(art);
     return made;
   }
@@ -386,7 +374,8 @@
   /* The budget stops painting part-way through a very common word, so the
      count has to say it is a floor rather than a total. */
   function capped() {
-    return HITS.length >= MARK_BUDGET;
+    var s = search();
+    return !!s && HITS.length >= s.MARK_BUDGET;
   }
 
   function goHit(step) {
@@ -454,13 +443,15 @@
        and a note that is about to be hidden is left clean rather than carrying
        marks nobody can see */
     unmark();
-    var budget = paintWords().length ? MARK_BUDGET : 0;
+    var s = search();
+    var paint = s ? s.paintWords(WORDS) : [];
+    var budget = paint.length ? s.MARK_BUDGET : 0;
     lectures().forEach(function (lec) {
       var art = byId("n-" + lec.key);
       if (!art) return;
       var ok = matches(lec);
       art.hidden = !ok;
-      if (ok && budget > 0) budget -= markHits(art, budget);
+      if (ok && budget > 0) budget -= markHits(art, paint, budget);
       if (ok) shown++;
     });
 

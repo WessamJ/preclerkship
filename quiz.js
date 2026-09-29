@@ -1145,14 +1145,10 @@
 
   /* ---------- search highlights ---------- */
 
-  /* portal.js's walker paints the marks. They go into the parts of the
-     question the search read - preamble, stem, options - and never into the
-     answer, which it did not. A word shorter than three characters filters
-     but is not painted, and one pass never paints past the budget: the cost
-     of highlighting is the number of hits, and a short common word across a
-     bank is thousands of them. */
-  var SEARCH_MARK_MIN = 3;        // a word shorter than this filters but is not painted
-  var SEARCH_MARK_BUDGET = 800;   // and never more than this many marks in one pass
+  /* portal.js's walker paints the marks, by its painting rule: the floor a
+     word must reach to be painted and the budget one pass stops at are its.
+     Marks go into the parts of the question the search read - preamble,
+     stem, options - and never into the answer, which it did not. */
   var SEARCH_MARKED = [];
 
   function unmarkSearch() {
@@ -1160,22 +1156,20 @@
     SEARCH_MARKED = [];
   }
 
-  function markWords(root, words, budget) {
-    return search() ? search().mark(root, words, budget) : 0;
-  }
-
   function paintSearchMarks(live) {
+    var s = search();
     unmarkSearch();
-    var words = currentWords().filter(function (w) { return w.length >= SEARCH_MARK_MIN; });
+    if (!s) return;
+    var words = s.paintWords(currentWords());
     if (!words.length) return;
-    var budget = SEARCH_MARK_BUDGET;
+    var budget = s.MARK_BUDGET;
     QUESTIONS.forEach(function (q) {
       if (budget <= 0 || !live[q.qid]) return;
       var art = byId("q-" + q.qid);
       if (!art) return;
       var made = 0;
       [].forEach.call(art.querySelectorAll(".preamble, .stem, .opts .t"), function (part) {
-        made += markWords(part, words, budget - made);
+        made += s.mark(part, words, budget - made);
       });
       if (made) { SEARCH_MARKED.push(art); budget -= made; }
     });

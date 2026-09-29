@@ -518,16 +518,29 @@
     return words.every(function (w) { return hay.indexOf(w) !== -1; });
   }
 
+  /* Highlighting is the expensive half of a search, and its cost is the
+     number of hits, not the number of notes. One letter typed into a 43-note
+     block matches about 27,000 times, and painting that many marks locks the
+     page up for seconds. So a word earns highlighting by being long enough
+     to mean something, and even then a pass stops at a budget. Filtering is
+     never capped: the stream and the index always tell the truth, whether or
+     not the words inside them get painted. */
+  var MARK_MIN = 3;               // a word shorter than this filters but is not painted
+  var MARK_BUDGET = 800;          // and never more than this many marks in one pass
+
+  /* the words worth painting; a two-letter word narrows the stream but would
+     light up every "of" and "in" on the page */
+  function paintWords(words) {
+    return (words || []).filter(function (w) { return w.length >= MARK_MIN; });
+  }
+
   /* Highlighting walks text nodes instead of rewriting innerHTML: a note and
      a stem are real markup, and a string replace across them would corrupt a
      tag the moment a search term straddled one. Each text node is cut at the
      earliest of any word, so several words paint in one pass and two words
-     that overlap ("thyroid" inside "thyroiditis") never nest a mark.
-
-     The budget is the caller's, because the cost of highlighting is the
-     number of hits, not the number of notes: one common word across a block
-     of 43 notes is thousands of marks, and painting them all locks the page
-     for seconds. Whatever the budget does not reach stays as it was written.
+     that overlap ("thyroid" inside "thyroiditis") never nest a mark. The
+     budget is handed in by the caller, who may spend it across several
+     roots; whatever it does not reach stays as it was written.
 
      skip is a selector for text that must not be touched. The notes tab
      passes ".pathway", since mermaid parses that element's own text and a
@@ -581,6 +594,9 @@
   window.PORTAL_SEARCH = {
     words: searchWords,
     hit: searchHit,
+    MARK_MIN: MARK_MIN,
+    MARK_BUDGET: MARK_BUDGET,
+    paintWords: paintWords,
     mark: markWords,
     unmark: unmarkWords
   };
