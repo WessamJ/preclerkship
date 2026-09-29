@@ -1336,6 +1336,10 @@ body.has-dialog{overflow:hidden;}
     border-color:var(--q-warn);
 }
 .callout.k-warning .ct,.callout.k-bug .ct,.callout.k-red .ct{color:var(--q-warn);}
+/* a reader's report, merged from the pull request the Report button opens:
+   warning-coloured, but without the head tag a source error carries */
+.callout.k-report{color:var(--q-warn);background:var(--q-warn-soft);border-color:var(--q-warn);}
+.callout.k-report .ct{color:var(--q-warn);}
 
 .qfoot{
     display:flex;
@@ -1355,7 +1359,8 @@ body.has-dialog{overflow:hidden;}
 
 .qfoot .attempts{margin-right:auto;}
 
-.reset-q{
+/* the Report control is a link where dialogs are missing, hence the underline reset */
+.reset-q,.report-q{
     font:inherit;
     font-size:.72rem;
     color:var(--muted);
@@ -1364,9 +1369,95 @@ body.has-dialog{overflow:hidden;}
     border-bottom:1px dashed var(--muted);
     cursor:pointer;
     padding:0;
+    text-decoration:none;
 }
 
 .reset-q:hover{color:var(--q-bad);border-color:var(--q-bad);}
+.report-q:hover{color:var(--q-accent);border-color:var(--q-accent);}
+
+/* The report dialog: the note dialog's frame at a form's width. Its
+   declarations are its own rather than shared, so the two can drift apart
+   without touching each other. */
+.reportdlg{
+    width:min(560px,calc(100vw - 32px));
+    max-height:calc(100vh - 48px);
+    margin:auto;
+    padding:0;
+    border:1px solid var(--border);
+    border-radius:10px;
+    background:var(--card-bg);
+    color:var(--text);
+    box-shadow:0 24px 60px rgba(0,0,0,.28);
+}
+.reportdlg[open]{display:flex;flex-direction:column;}
+.reportdlg::backdrop{background:rgba(20,10,12,.45);}
+.reportdlg-head{
+    display:flex;
+    align-items:flex-start;
+    gap:14px;
+    padding:16px 20px 12px;
+    border-bottom:1px solid var(--border);
+    flex:none;
+}
+.reportdlg-text{flex:1;min-width:0;}
+.reportdlg-head h2{
+    font-family:var(--serif);
+    font-size:1.15rem;
+    line-height:1.25;
+    margin:2px 0 0;
+}
+.reportdlg-where{
+    font-size:.75rem;
+    font-weight:600;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    color:var(--q-accent);
+    margin:0;
+    overflow-wrap:anywhere;
+}
+.reportdlg-close{
+    flex:none;
+    width:32px;
+    height:32px;
+    border:1px solid var(--border);
+    border-radius:50%;
+    background:var(--card-bg);
+    color:var(--muted);
+    font-size:1.2rem;
+    line-height:1;
+    cursor:pointer;
+}
+.reportdlg-close:hover,.reportdlg-close:focus-visible{color:var(--q-accent);border-color:var(--q-accent);}
+.reportdlg-body{
+    overflow-y:auto;
+    min-height:0;
+    padding:16px 20px 20px;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+.reportdlg-body[hidden]{display:none;}
+.reportdlg-stem{color:var(--muted);font-size:.86rem;margin:0;}
+.reportdlg label{font-size:.8rem;font-weight:600;margin-bottom:-4px;}
+.reportdlg select,.reportdlg textarea{
+    font:inherit;
+    font-size:.9rem;
+    color:var(--text);
+    background:var(--bg);
+    border:1px solid var(--border);
+    border-radius:6px;
+    padding:8px 10px;
+    width:100%;
+}
+.reportdlg textarea{min-height:120px;resize:vertical;}
+.report-count{font-size:.72rem;color:var(--muted);margin:0;text-align:right;}
+.report-public{font-size:.78rem;color:var(--muted);margin:0;}
+.report-hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0;}
+.reportdlg-actions{display:flex;justify-content:flex-end;gap:10px;margin-top:6px;}
+.report-send{text-decoration:none;}
+.report-send[disabled],.report-send[aria-disabled="true"]{opacity:.45;pointer-events:none;}
+.report-error{color:var(--q-bad);font-size:.84rem;margin:0;}
+.report-result p{margin:0;overflow-wrap:anywhere;}
 
 .empty{padding:60px 20px;text-align:center;color:var(--muted);font-size:.9rem;}
 
@@ -2494,6 +2585,7 @@ select.ps:disabled{cursor:default;opacity:1;}
     .pair-head{display:none;}
     /* on a phone the dialog is the screen */
     .notedlg{width:100vw;max-width:100vw;height:100vh;max-height:100vh;margin:0;border:0;border-radius:0;}
+    .reportdlg{width:100vw;max-width:100vw;height:100vh;max-height:100vh;margin:0;border:0;border-radius:0;}
 }
 
 /* ---- the sat block ---- */

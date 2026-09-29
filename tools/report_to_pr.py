@@ -1,0 +1,135 @@
+# -*- coding: utf-8 -*-
+"""Turn a reader's report issue into a pull request that flags the question.
+
+Purpose: the Report button on a bank question opens a GitHub issue (through
+         tools/report-worker/) with a fenced block naming the question. This
+         script, run by .github/workflows/report-to-pr.yml, finds the
+         question, appends a "report" flag carrying the reader's note,
+         rebuilds the pages so the bank fetches the new JSON, and opens the
+         pull request for the maintainer to review.
+Author:  Wessam Al Jawhri
+Date:    2026-09-28
+Input:   ISSUE_NUMBER and ISSUE_BODY in the environment, GH_TOKEN for gh
+Output:  a branch report/<issue>, a pull request, a comment on the issue
+
+Run from the repo root. Safe to run twice for one issue: the second run finds
+the branch and stops. An issue without the block is not an error; a maintainer
+may label a hand-written issue "report" and nothing should break.
+"""
+
+import html, io, json, os, re, subprocess, sys
+
+COURSES = ("fom", "pom1", "pom2", "t2c")
+REASON_LABEL = {
+    "wrong-key": "The answer key is wrong",
+    "explanation": "The explanation is wrong or missing",
+    "typo": "A typo or formatting problem",
+    "misfiled": "It belongs to a different week or lecture",
+    "other": "Something else",
+}
+# the first fenced report block only: the worker breaks any fence a reader
+# typed, so a second block can only come from a hand-edited issue, and even
+# then it is not the one read
+BLOCK_RE = re.compile(r"```report\s*\n(.*?)\n```\s*\n?(.*)", re.S)
+
+
+def parse_report(body):
+    """The first fenced report block and the note under it, or None."""
+    m = BLOCK_RE.search(body or "")
+    if not m:
+        return None
+    fields = {}
+    for line in m.group(1).splitlines():
+        k, _, v = line.partition(":")
+        fields[k.strip()] = v.strip()
+    if fields.get("course") not in COURSES:
+        return None
+    if not re.match(r"^[a-z0-9]{1,12}$", fields.get("block", "")):
+        return None
+    if not re.match(r"^[A-Za-z0-9-]{3,80}$", fields.get("qid", "")):
+        return None
+    if fields.get("reason") not in REASON_LABEL:
+        return None
+    rest = m.group(2)
+    # the note is what follows the heading, up to the sign-off line if any
+    note = rest.split("### What is wrong", 1)[-1]
+    note = note.split("\n_Sent from the Report button", 1)[0].strip()
+    # the worker put a zero-width space between any backticks; take it out
+    fields["note"] = note.replace(u"\u200b", "")
+    return fields
+
+
+def flag_for(reason, note):
+    """The flag the question gains: the reason's label, then the note as
+    escaped paragraphs, so nothing a reader typed is ever markup."""
+    paras = [p.strip() for p in re.split(r"\n\s*\n", note.strip()) if p.strip()]
+    first = "<p><strong>%s.</strong> %s</p>" % (REASON_LABEL[reason], html.escape(paras[0]) if paras else "")
+    rest = "".join("<p>%s</p>" % html.escape(p) for p in paras[1:])
+    return {"type": "report", "title": "Reader report", "html": first + rest}
+
+
+def patch_file(path, qid, flag):
+    """Append the flag to the one question; False if the qid is not there."""
+    with io.open(path, encoding="utf-8") as f:
+        rows = json.load(f)
+    hit = [q for q in rows if q.get("qid") == qid]
+    if not hit:
+        return False
+    hit[0].setdefault("flags", []).append(flag)
+    # exactly the serialisation the files already use, or the diff is the file
+    with io.open(path, "w", encoding="utf-8", newline="\n") as f:
+        f.write(json.dumps(rows, ensure_ascii=False))
+    return True
+
+
+def sh(*args, **kw):
+    return subprocess.run(args, check=True, text=True, capture_output=True, **kw).stdout.strip()
+
+
+def main():
+    n = os.environ.get("ISSUE_NUMBER", "").strip()
+    body = os.environ.get("ISSUE_BODY", "")
+    if not n:
+        print("no ISSUE_NUMBER; nothing to do")
+        return 0
+    r = parse_report(body)
+    if not r:
+        print("issue #%s carries no report block; nothing to do" % n)
+        return 0
+    branch = "report/%s" % n
+    if subprocess.run(["git", "ls-remote", "--exit-code", "--heads", "origin", branch],
+                      capture_output=True).returncode == 0:
+        print("branch %s exists; already handled" % branch)
+        return 0
+    path = os.path.join(r["course"], "data", "questions", "%s.json" % r["block"])
+    if not os.path.exists(path) or not patch_file(path, r["qid"], flag_for(r["reason"], r["note"])):
+        sh("gh", "issue", "comment", n, "--body",
+           "I could not find question `%s` in `%s`, so no pull request was opened." % (r["qid"], path))
+        return 0
+    sh("python3", "tools/build_pages.py")
+    sh("git", "config", "user.name", "github-actions[bot]")
+    sh("git", "config", "user.email", "41898282+github-actions[bot]@users.noreply.github.com")
+    sh("git", "checkout", "-b", branch)
+    sh("git", "add", "-A")
+    title = "Flag %s from reader report #%s" % (r["qid"], n)
+    sh("git", "commit", "-m", title, "-m",
+       "A reader reported this question from the bank. This adds their note to the "
+       "question as a flag so the maintainer can review it, change the flag's type, "
+       "correct the question, or close the report.")
+    sh("git", "push", "origin", branch)
+    pr_body = "Closes #%s.\n\n**%s.**\n\n%s\n\nEdit the flag in `%s`, change its `type` to `warning` to add the head tag, or fix the question itself before merging." % (
+        n, REASON_LABEL[r["reason"]], r["note"], path)
+    # the label may not exist yet, and a failed create after the push would
+    # leave the issue with a branch and no pull request forever; --force
+    # creates it or updates it and never fails on exists
+    sh("gh", "label", "create", "report", "--color", "e4a11b", "--description",
+       "A reader's report from the bank's Report button", "--force")
+    url = sh("gh", "pr", "create", "--base", "main", "--head", branch, "--title", title,
+             "--body", pr_body, "--label", "report")
+    sh("gh", "issue", "comment", n, "--body", "Opened %s to flag the question. Thank you." % url)
+    print(url)
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())
