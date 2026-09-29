@@ -399,6 +399,7 @@ PAGE = u"""<!DOCTYPE html>
 {favicon}
 
 {nocache}
+{theme}
 {fonts}
 <link rel="stylesheet" href="{base_css}">
 <link rel="stylesheet" href="{portal_css}">
@@ -413,6 +414,7 @@ PAGE = u"""<!DOCTYPE html>
 
 <nav class="blocknav">
 {blocknav}
+{toggle}
 </nav>
 
 <header class="q-masthead">
@@ -508,6 +510,7 @@ QBANK_PAGE = u"""<!DOCTYPE html>
 {favicon}
 
 {nocache}
+{theme}
 {fonts}
 <link rel="stylesheet" href="{base_css}">
 <link rel="stylesheet" href="{portal_css}">
@@ -522,6 +525,7 @@ QBANK_PAGE = u"""<!DOCTYPE html>
 
 <nav class="blocknav">
 {blocknav}
+{toggle}
 </nav>
 
 <header class="q-masthead">
@@ -604,6 +608,7 @@ def build_qbank(course):
         course=course["short"], lead=lead, desc=desc, accent=term_accent(course),
         fonts=portal.FONTS, nocache=portal.NOCACHE, cf=portal.CF,
         footer=portal.footer(), favicon=portal.favicon(label, fill),
+        theme=portal.THEME_SCRIPT, toggle=portal.THEME_BTN,
         blocknav=blocknav(course, "qbank"),
         qpanel=QPANEL.format(howto=HOWTO, questions=total, hidden=""),
         block_json=json.dumps(cfg, ensure_ascii=False))
@@ -632,6 +637,7 @@ def main():
                 portal_js=portal.asset("portal.js"),
                 name=name, course=course["short"], weeks=weeks, lead=lead, desc=desc, accent=accent,
                 fonts=portal.FONTS, nocache=portal.NOCACHE, cf=portal.CF, footer=portal.footer(), howto=HOWTO, favicon=portal.favicon(label, fill),
+                theme=portal.THEME_SCRIPT, toggle=portal.THEME_BTN,
                 blocknav=blocknav(course, slug), questions=q, slug=slug,
                 anki=anki_panel(course, slug, weeks), ankitc=anki_tc(course, slug),
                 written=written, lectures=lectures,
