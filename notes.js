@@ -108,16 +108,34 @@
     var wasDark = root.getAttribute("data-theme") === "dark";
     if (wasDark) root.setAttribute("data-theme", "light");
 
+    /* Two things can end a print, afterprint and the timer below, and the
+       timer is the one that fires late: once afterprint has put the page
+       back, the reader may have switched theme, and a second restore would
+       undo that. So the restore runs once, the timer is cancelled when
+       afterprint gets there first, and what it restores is the reader's
+       choice as it stands now, the theme from before the print only when
+       nothing is stored. */
+    var timer = null, done = false;
     function clear() {
+      if (done) return;
+      done = true;
+      clearTimeout(timer);
       marked.forEach(function (n) { n.classList.remove("print-me"); });
       delete document.body.dataset.printing;
-      if (wasDark) root.setAttribute("data-theme", "dark");
+      if (wasDark) {
+        var chosen = null;
+        try { chosen = localStorage.getItem("pc-theme"); } catch (e) {}
+        root.setAttribute("data-theme", chosen === "light" || chosen === "dark" ? chosen : "dark");
+      }
       window.removeEventListener("afterprint", clear);
     }
     window.addEventListener("afterprint", clear);
     // afterprint does not fire everywhere, so do not rely on it alone
-    setTimeout(clear, 60000);
+    timer = setTimeout(clear, 60000);
 
+    /* Two triggers for one redraw: portal.js redraws on its own whenever
+       data-theme changes, and this call is the same redraw asked for
+       explicitly, because the print has to wait on its promise. */
     var redrawn = shared().redrawPathways ? shared().redrawPathways() : Promise.resolve();
     redrawn.then(function () { window.print(); });
   }

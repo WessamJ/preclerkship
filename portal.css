@@ -48,6 +48,8 @@
         --q-warn:#ecc57e;
         --q-warn-soft:#352c19;
         --on-q-mark:#161113;
+        /* buttons keep white text on the accent in the dark theme too */
+        --on-q-accent:#ffffff;
         --q-accent-soft:color-mix(in srgb,var(--q-accent) 26%,var(--card-bg));
         --q-accent-ink:color-mix(in srgb,var(--q-accent) 55%,#ffffff);
         --q-accent-text:var(--q-accent-ink);
@@ -70,6 +72,21 @@
     :root[data-theme="dark"] .block-card{border-top-color:color-mix(in srgb,var(--hue) 75%,#ffffff);}
     :root[data-theme="dark"] .block-card:hover{border-color:color-mix(in srgb,var(--hue) 75%,#ffffff);}
     :root[data-theme="dark"] .block-card.is-empty:hover{border-color:var(--border);}
+    /* A search hit. The block's accent is a dark colour, so its wash at the
+       light theme's strength barely lifts off the card: the wash is stronger
+       here (text on it stays above 7.8:1 for every accent in the portal) and
+       the underline is the lightened ink, two pixels of it. The hit you are on
+       is the ink itself with the bg's colour as its text (6.1:1 or better),
+       which is the brightest thing in the note. */
+    :root[data-theme="dark"] mark.hit{
+        background:color-mix(in srgb,var(--q-accent) 60%,var(--card-bg));
+        box-shadow:inset 0 -2px 0 var(--q-accent-ink);
+    }
+    :root[data-theme="dark"] mark.hit.on{
+        background:var(--q-accent-ink);
+        color:var(--on-q-mark);
+        box-shadow:none;
+    }
 }
 
 /* A block page opens on roughly 600px of chrome - switcher, masthead, tabs,

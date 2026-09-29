@@ -448,7 +448,9 @@
       background: token("--card-bg", "#ffffff"),
       primaryColor: token("--q-accent-soft", "#eeeeee"),
       primaryTextColor: token("--text", "#27060f"),
-      primaryBorderColor: token("--q-accent", "#84223b"),
+      /* the accent as text, which is the lightened one in the dark theme: the
+         raw accent is dark on a near-black fill and the outline all but goes */
+      primaryBorderColor: token("--q-accent-text", "#84223b"),
       lineColor: token("--muted", "#8a7a7d"),
       secondaryColor: token("--bg", "#faf7f7"),
       tertiaryColor: token("--bg", "#faf7f7"),
