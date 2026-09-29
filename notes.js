@@ -35,15 +35,8 @@
   var PENDING = null;             // a clicked note whose scroll is still running
 
   var query = "";                 // the search box, lowercased and trimmed
-  /* Highlighting is the expensive half of a search, and its cost is the number
-     of HITS, not the number of notes. One letter typed into a 43-note block
-     matches about 27,000 times, and painting that many <mark>s locks the page
-     up for seconds. So a query earns highlighting by being long enough to mean
-     something, and even then it stops at a budget. Filtering is never capped -
-     the stream and the index always tell the truth, whether or not the words
-     inside them get painted. */
-  var MARK_MIN = 3;               // shorter than this, filter but do not paint
-  var MARK_BUDGET = 800;          // and never paint more than this in one pass
+  var WORDS = [];                 // the query split by the rule in portal.js
+  // the painting rule, its floor and its budget, is portal.js's as well
   var HITS = [];                  // every <mark> on the page, in reading order
   var AT_HIT = -1;                // which one the reader is standing on
   var HAY = Object.create(null);  // lecture id -> everything in it, lowercased
@@ -167,6 +160,11 @@
   function written(lec) { return shared().written(lec); }
   function pdfButton(label, title, onClick) { return shared().pdfButton(label, title, onClick); }
   function redrawPathways() { var s = shared(); return s.redrawPathways ? s.redrawPathways() : Promise.resolve(); }
+
+  /* The search rule and the highlighter are portal.js's too, shared with the
+     bank so the two boxes mean the same thing by a query. Checked rather than
+     assumed: a page without them keeps its stream and index, unnarrowed. */
+  function search() { return window.PORTAL_SEARCH; }
 
   /* ---------- one note may carry several lectures ---------- */
 
@@ -353,55 +351,24 @@
     });
   }
 
+  /* every word of the query, in any order, somewhere in the note: the bank's
+     rule, and now this tab's */
   function hit(id) {
-    return !query || (HAY[id] || "").indexOf(query) !== -1;
+    var s = search();
+    return !WORDS.length || !!(s && s.hit(HAY[id] || "", WORDS));
   }
 
   function unmark() {
-    MARKED.forEach(function (art) {
-      [].forEach.call(art.querySelectorAll("mark.hit"), function (m) {
-        m.parentNode.replaceChild(document.createTextNode(m.textContent), m);
-      });
-      // the split halves of every text node put back together, so the next
-      // search sees whole words rather than the pieces this one left behind
-      art.normalize();
-    });
+    if (search()) search().unmark(MARKED);
     MARKED = [];
   }
 
-  /* Highlighting walks text nodes instead of rewriting innerHTML: these notes
-     are real markup, and a string replace across them would corrupt a tag the
-     moment a search term straddled one.
-
-     .pathway is skipped because mermaid parses that element's own text, and a
+  /* .pathway is skipped because mermaid parses that element's own text, and a
      <mark> inside it is a syntax error rather than a highlight. */
-  function markHits(art, budget) {
-    if (!document.createTreeWalker) return 0;
-    var walk = document.createTreeWalker(art, NodeFilter.SHOW_TEXT, null, false);
-    var targets = [], n;
-    while ((n = walk.nextNode())) {
-      if (!n.nodeValue || n.nodeValue.toLowerCase().indexOf(query) === -1) continue;
-      var host = n.parentNode;
-      if (host && host.closest && host.closest(".pathway")) continue;
-      targets.push(n);
-    }
-    if (!targets.length) return 0;
-
-    var made = 0;
-    targets.forEach(function (node) {
-      if (made >= budget) return;
-      var raw = node.nodeValue, low = raw.toLowerCase();
-      var frag = document.createDocumentFragment(), i = 0, j;
-      while (made < budget && (j = low.indexOf(query, i)) !== -1) {
-        if (j > i) frag.appendChild(document.createTextNode(raw.slice(i, j)));
-        frag.appendChild(el("mark", "hit", raw.slice(j, j + query.length)));
-        i = j + query.length;
-        made++;
-      }
-      // whatever the budget did not reach stays as it was written
-      if (i < raw.length) frag.appendChild(document.createTextNode(raw.slice(i)));
-      node.parentNode.replaceChild(frag, node);
-    });
+  function markHits(art, words, budget) {
+    var s = search();
+    if (!s) return 0;
+    var made = s.mark(art, words, budget, ".pathway");
     if (made) MARKED.push(art);
     return made;
   }
@@ -436,7 +403,8 @@
   /* The budget stops painting part-way through a very common word, so the
      count has to say it is a floor rather than a total. */
   function capped() {
-    return HITS.length >= MARK_BUDGET;
+    var s = search();
+    return !!s && HITS.length >= s.MARK_BUDGET;
   }
 
   function goHit(step) {
@@ -468,6 +436,7 @@
     var next = (v || "").replace(/^\s+|\s+$/g, "").toLowerCase();
     if (next === query) return;
     query = next;
+    WORDS = search() ? search().words(query) : [];
     var clear = byId("note-q-clear");
     if (clear) clear.hidden = !query;
     applyFilter();
@@ -503,13 +472,15 @@
        and a note that is about to be hidden is left clean rather than carrying
        marks nobody can see */
     unmark();
-    var budget = query.length >= MARK_MIN ? MARK_BUDGET : 0;
+    var s = search();
+    var paint = s ? s.paintWords(WORDS) : [];
+    var budget = paint.length ? s.MARK_BUDGET : 0;
     lectures().forEach(function (lec) {
       var art = byId("n-" + lec.key);
       if (!art) return;
       var ok = matches(lec);
       art.hidden = !ok;
-      if (ok && budget > 0) budget -= markHits(art, budget);
+      if (ok && budget > 0) budget -= markHits(art, paint, budget);
       if (ok) shown++;
     });
 
@@ -566,7 +537,8 @@
   function paintHits(shown) {
     var line = byId("note-q-count");
     if (!line) return;
-    line.hidden = !query;
+    // a query with no word past the floor narrows nothing, so it has no count
+    line.hidden = !WORDS.length;
     line.textContent = shown === 1 ? "1 lecture matches"
                                    : shown + " lectures match";
   }
@@ -662,10 +634,15 @@
     if (prev) prev.addEventListener("click", function () { goHit(-1); });
     if (next) next.addEventListener("click", function () { goHit(1); });
 
-    /* F3 and ctrl/cmd-G are the find-again keys every browser already uses,
-       and here they should walk THIS search rather than open the browser's,
-       which cannot see inside a filtered-out note. */
     document.addEventListener("keydown", function (e) {
+      /* "/" jumps to the box, as it does in the bank; portal.js holds the
+         guards, among them that the notes tab is the one showing */
+      var s = search();
+      if (s && s.jumpKey(e, box, "panel-notes")) return;
+
+      /* F3 and ctrl/cmd-G are the find-again keys every browser already uses,
+         and here they should walk THIS search rather than open the browser's,
+         which cannot see inside a filtered-out note. */
       if (!query || !HITS.length) return;
       var again = (e.key === "F3" || e.keyCode === 114) ||
                   ((e.ctrlKey || e.metaKey) && (e.key === "g" || e.key === "G"));
