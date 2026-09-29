@@ -1,0 +1,873 @@
+{
+ "hippo-t2c-em-Q1": {
+  "html": "<p><em>From 06 - Hemorrhagic Shock (PoM 2 Repro, Week 6).</em> Shock is tissue hypoperfusion, not a blood pressure number: this man has tachycardia, cool extremities, cap refill 4 s and oliguria (no void in 12 h), and the lecture's class table keeps BP <strong>normal through class II</strong> losses, so A fails. The deficit is ECF volume from GI losses, so replace it with an isotonic crystalloid that stays in the ECF.</p><ul><li><strong>E</strong>: Ringer's lactate stays in the ECF (<em>13 - IV Fluids</em>, PoM 1 GU) - the right volume expander.</li><li><strong>B</strong>: D5W is free water, distributing 2/3 into the ICF, so it barely expands plasma.</li><li><strong>C</strong>: 0.5 mL/kg/h is the oliguria threshold / minimum resuscitation target rather than a 'normal' output (see flag).</li><li><strong>D</strong>: sat is 99% on room air; oxygen is not the critical intervention here.</li></ul>",
+  "flags": [
+   {
+    "type": "warning",
+    "title": "Option C is arguably true",
+    "html": "<p>Many references quote 0.5 mL/kg/h as the lower limit of adequate adult urine output, so C can be read as a true statement. It is best read as the oliguria cut-off rather than a normal value, which is presumably why the key prefers E; the vault notes do not give this number.</p>"
+   }
+  ]
+ },
+ "hippo-t2c-em-Q10": "<p><em>From 06 - Hemorrhagic Shock (PoM 2 Repro, Week 6).</em> The lethal triad is <strong>acidosis, hypothermia and coagulopathy</strong>, and each distractor is a named countermeasure to one arm of it:</p><ul><li><strong>A</strong> warmed products via a rapid transfuser (Level I warmer) - prevents hypothermia.</li><li><strong>B, D</strong> platelets and plasma - offset the <em>dilutional</em> coagulopathy that worsens progressively at 10, 20, 30 units of pRBC.</li><li><strong>E</strong> serial blood gases - track the acidosis that cripples Ca-dependent clotting complexes (rFVIIa activity falls 90% at pH 7.0).</li><li><strong>C</strong> intubation may well be needed in a massive variceal bleed for airway protection, but that is an airway indication, not a measure against the triad - hence the answer.</li></ul>",
+ "hippo-t2c-em-Q11": "<p><em>From 10 - Introduction to Sepsis (FoM Block 4, Week 14).</em> Sepsis-3 defines sepsis as <strong>organ dysfunction from a dysregulated response to infection</strong>, and the lecture lists the bedside signs: confusion (brain), tachypnea (lung), hypotension and tachycardia. A febrile patient with abdominal pain has a presumed infection, and she already shows altered mentation, RR 24 and SBP 84 - all three qSOFA items - so A is right.</p><ul><li><strong>B</strong>: a normal WBC does not exclude sepsis; the definition rests on organ dysfunction, not leukocytosis.</li><li><strong>C, E</strong>: recognition is clinical and must not wait - every hour of antibiotic delay after hypotension adds about 8% mortality.</li><li><strong>D</strong>: MAP is about 70 here, but a MAP above 65 does not exclude sepsis; MAP 65 is the septic-shock vasopressor target, not a sepsis criterion.</li></ul>",
+ "hippo-t2c-em-Q12": "<p><em>From 10 - Introduction to Sepsis (FoM Block 4, Week 14).</em> The lecture defines sepsis (Sepsis-3) as <strong>life-threatening organ dysfunction</strong> from a dysregulated host response. This patient has a likely strep pharyngitis and every SIRS item (HR 122, RR 23, T 39.1, WBC 18), but no organ dysfunction: GCS normal, cap refill 2 s, BP 125/82, pH and lactate normal. Her tachycardia and fever are an appropriate, adaptive response to a local infection, so C is right.</p><ul><li><strong>A</strong>: SIRS criteria were dropped from the sepsis definition because they flag exactly this kind of healthy inflammatory response.</li><li><strong>B</strong>: SBP is not the discriminator; organ dysfunction is.</li><li><strong>D</strong>: a formal SOFA score is not needed at the bedside - the lecture notes it is mostly a trial tool - and the clinical picture already shows no failing organ.</li><li><strong>E</strong>: a bacterial infection alone is not sepsis.</li></ul>",
+ "hippo-t2c-em-Q13": "<p><em>From 10 - Introduction to Sepsis (FoM Block 4, Week 14).</em> The lecture defines septic shock as <strong>hypotension that does not respond to fluids</strong> (arteriolar vasodilation plus capillary leak), which is why vasopressors are added. After a full 30 mL/kg crystalloid bolus he is still 82/40 with lactate 3.5, so B is right; the Sepsis-3 definition adds the persistent lactate above 2.</p><ul><li><strong>A</strong>: an elevated lactate alone is hypoperfusion, not septic shock; it is the pairing with fluid-refractory hypotension that defines it.</li><li><strong>C</strong>: hypothermia and leukopenia are markers of severe sepsis - the lecture lists hypothermia or fever - and they worsen the prognosis.</li><li><strong>D</strong>: cultures are not required to diagnose or treat; antibiotics must not wait on them.</li><li><strong>E</strong>: 30 mL/kg is the standard adequate initial bolus.</li></ul>",
+ "hippo-t2c-em-Q14": {
+  "html": "<p><em>From the VTE section of 05 - Approach to Thrombocytopenia (FoM Block 3, Week 10).</em> This is <strong>obstructive shock</strong>: hypotension, tachycardia, cool extremities and a <strong>distended JVP with clear, equal lungs</strong>. Active cancer scores on the Wells PE rule and lupus carries antiphospholipid antibodies, which the lecture ranks among the strongest thrombophilias (about 80x risk), so PE (E) is most likely.</p><ul><li><strong>A</strong>: CHF would give crackles, not clear lung fields.</li><li><strong>B</strong>: no cough or fever and clear lungs.</li><li><strong>C</strong>: lupus and cancer both cause effusions (<em>03 - Pericardial Disease</em>, PoM 1), but POCUS shows no effusion, which excludes tamponade.</li><li><strong>D</strong>: tension pneumothorax gives absent breath sounds on one side; hers are equal and clear.</li></ul>"
+ },
+ "hippo-t2c-em-Q15": {
+  "html": "<p><em>From 03 - Pericardial Disease (PoM 1 Cardiology, Week 2).</em> The lecture lists <strong>radiation-induced</strong> injury among the traumatic/iatrogenic causes of pericarditis and effusion (and chest irradiation causes about 20% of constriction), so A is true.</p><ul><li><strong>B</strong>: pericardiocentesis is a needle into the pericardial space next to beating myocardium and coronaries; it carries real risk of laceration, arrhythmia and pneumothorax.</li><li><strong>C</strong>: the reverse - the lecture's key point is that <strong>rate, not volume</strong>, decides tamponade: slow accumulation is tolerated up to 2 L, fast accumulation causes symptoms at 200-300 mL.</li><li><strong>D</strong>: the lecture attributes electrical alternans to the heart <em>swinging</em> in the fluid, beat to beat (see flag).</li><li><strong>E</strong>: it is done under echo (ultrasound) guidance at the bedside, not fluoroscopy.</li></ul>",
+  "flags": [
+   {
+    "type": "warning",
+    "title": "Option D is close to true",
+    "html": "<p>03 - Pericardial Disease explains electrical alternans as the heart swinging in the effusion, and some texts describe that motion as rotation of the heart. D is presumably wrong by its wording rather than its idea; do not over-learn the distinction.</p>"
+   }
+  ]
+ },
+ "hippo-t2c-em-Q16": {
+  "html": "<p><em>From the VTE section of 05 - Approach to Thrombocytopenia (FoM Block 3, Week 10).</em> In the lecture's PE column, CXR and ECG are there to <strong>find other causes</strong> (pneumonia, pneumothorax, MI) - they do not make the diagnosis, because in PE the chest x-ray is usually normal (D).</p><ul><li><strong>A</strong>: D-dimer is only for the <em>unlikely</em> group (Wells 4 or less); a negative excludes, a positive means nothing, so with high pretest probability go straight to CTPA.</li><li><strong>B</strong>: a normal saturation does not exclude PE.</li><li><strong>C</strong>: the commonest ECG finding is sinus tachycardia; S1Q3T3 is classic but uncommon.</li><li><strong>E</strong>: the Wells PE items are cancer, surgery/bedrest, previous VTE, hemoptysis, HR over 100, PE most likely and DVT signs - the pill is not one.</li></ul>",
+  "flags": [
+   {
+    "type": "warning",
+    "title": "Partly beyond the vault notes",
+    "html": "<p>The Wells items and the D-dimer rule come from the lecture; the ECG and saturation claims (B, C) are from general principles. Verify them before relying on them.</p>"
+   }
+  ]
+ },
+ "hippo-t2c-em-Q17": {
+  "html": "<p><em>From 04 - Myocardial Infarction and 05 - Complications of Acute MI (PoM 1 Cardiology, Week 3).</em> Hypotension, hypoperfusion and diffuse bilateral crackles is <strong>cardiogenic shock with pulmonary edema</strong> (Killip class IV). The immediate threat is breathing: saturation 85% on a non-rebreather with RR 32 and accessory muscle use is failing oxygenation, and the lecture's pulmonary edema management includes BiPAP - with intubation for the patient too unstable for it. ABCs come first, so D.</p><ul><li><strong>A</strong>: a fluid bolus worsens pulmonary edema.</li><li><strong>B</strong>: no fever or cough - no reason to lead with antibiotics.</li><li><strong>C</strong>: pressors are likely needed, but only after the airway and breathing are secured.</li><li><strong>E</strong>: furosemide treats the edema but will drop an already low BP and does not fix the hypoxia now.</li></ul>"
+ },
+ "hippo-t2c-em-Q18": "<p><em>From 10 - Introduction to Sepsis (FoM Block 4, Week 14).</em> Fever, malodorous lochia and lower abdominal pain five days after delivery is <strong>postpartum endometritis</strong> (the endometritis reference note: the most common postpartum infection), and HR 132, BP 92/48 and RR 22 make it sepsis with hypotension. With monitor and IVs in place, the next step is <strong>volume resuscitation</strong> (B), with broad-spectrum antibiotics alongside - the lecture's single most life-saving move, though not offered here.</p><ul><li><strong>A</strong>: saturation is 98% on room air.</li><li><strong>C, E</strong>: packing and D&amp;C address hemorrhage or retained products; three pads a day is not a postpartum hemorrhage.</li><li><strong>D</strong>: imaging for a source comes after resuscitation has started.</li></ul>",
+ "hippo-t2c-em-Q19": "<p><em>From the VTE section of 05 - Approach to Thrombocytopenia (FoM Block 3, Week 10).</em> Unilateral leg swelling, active cancer, dyspnea, tachycardia and hypotension with a normal CXR and no effusion is <strong>massive PE</strong> - obstructive shock. The lecture keeps thrombolysis for a small group: <strong>patients who may die in the next 24-48 h</strong>, accepting the much higher bleeding risk. A hypotensive PE is that patient, so A.</p><ul><li><strong>B</strong>: Wells is well over 4 (cancer, DVT signs, HR over 100, PE most likely), so D-dimer has no role - go to imaging.</li><li><strong>C</strong>: no infection.</li><li><strong>D</strong>: fluids cannot push past a mechanical obstruction; the clot must be treated.</li><li><strong>E</strong>: needle decompression treats tension pneumothorax, which the normal CXR excludes.</li></ul>",
+ "hippo-t2c-em-Q2": "<p><em>From 06 - Hemorrhagic Shock (PoM 2 Repro, Week 6).</em> The lecture lists the eight features of shock: hypotension, tachycardia, oliguria, abnormal mental status, tachypnea, cool clammy cyanotic skin, metabolic acidosis and <strong>hyperlactatemia</strong>. A lactate of 1.1 sits inside the normal range, so it is the one finding that does not point to hypoperfusion (C).</p><ul><li><strong>A</strong> mottled skin - the cool, cyanotic skin of poor perfusion.</li><li><strong>B</strong> altered mental status - brain hypoperfusion (anxious to confused through the classes).</li><li><strong>D, E</strong> tachypnea and tachycardia - both on the list, and tachycardia is the first vital to move.</li></ul><p>A normal lactate does not exclude early shock; it simply is not evidence for it.</p>",
+ "hippo-t2c-em-Q20": "<p><em>From 06 - Hemorrhagic Shock (PoM 2 Repro, Week 6).</em> After high-speed trauma, HR 132 and BP 72/40 is the lecture's class III-IV picture - tachycardia first, then falling BP once more than 30% of volume is lost - and <strong>hemorrhage</strong> is by far the commonest cause of shock in trauma (B).</p><ul><li><strong>A</strong>: neurogenic shock from cord injury removes sympathetic tone, giving hypotension with <em>bradycardia</em> or a normal HR, not 132.</li><li><strong>C, D</strong>: tamponade and tension pneumothorax are real obstructive causes in trauma, but they need specific signs (distended neck veins, absent breath sounds, effusion) and are less common; assume bleeding until proven otherwise.</li><li><strong>E</strong>: spinal shock is a temporary loss of cord reflexes below an injury - a neurological state, not a type of circulatory shock.</li></ul>",
+ "hippo-t2c-em-Q21": {
+  "html": "<p>Compressions do not restart the heart; they generate enough forward flow to keep the <strong>brain and heart perfused</strong> until a definitive therapy (defibrillation, reversal of the cause) can work. Survival that matters is survival with intact neurological function, so C.</p><ul><li><strong>A</strong>: ROSC is the goal of the whole resuscitation - shocks, drugs, treating Hs and Ts - not of CPR alone.</li><li><strong>B</strong>: venous return during recoil is a mechanism of CPR, not its purpose.</li><li><strong>D</strong>: finding the cause is a parallel task for the team.</li><li><strong>E</strong>: it is active treatment, not a holding pattern.</li></ul>",
+  "flags": [
+   {
+    "type": "warning",
+    "title": "Not covered by the vault notes",
+    "html": "<p>No lecture note covers this; the reasoning is from general principles. Verify it before relying on it.</p>"
+   }
+  ]
+ },
+ "hippo-t2c-em-Q22": {
+  "html": "<p><strong>False.</strong> Survival to hospital discharge after out-of-hospital cardiac arrest is roughly <strong>1 in 10</strong> in Canada and the US - about half of the 20% the statement claims. Survival is far higher for a witnessed arrest in a shockable rhythm with bystander CPR and early AED use, which is exactly why the chain of survival stresses early recognition, early CPR and early defibrillation.</p>",
+  "flags": [
+   {
+    "type": "warning",
+    "title": "No key in the source",
+    "html": "<p>HippoNotes gives this true/false item with no answer at all, so the truth value above is reasoned, not transcribed from the bank.</p>"
+   },
+   {
+    "type": "warning",
+    "title": "Not covered by the vault notes",
+    "html": "<p>No lecture note covers this; the reasoning is from general principles. Verify it before relying on it.</p>"
+   }
+  ]
+ },
+ "hippo-t2c-em-Q23": {
+  "html": "<p>Adult BLS compressions have a fixed set of quality markers: rate <strong>100-120/min</strong>, depth <strong>at least 2 inches (5-6 cm)</strong>, <strong>full chest recoil</strong> between compressions, <strong>minimal interruptions</strong>, and a compression-to-ventilation ratio of <strong>30:2</strong> without an advanced airway. 15:1 matches no adult protocol (15:2 is two-rescuer paediatric CPR), so D is the exception.</p><ul><li><strong>A</strong>: 110-120 sits inside the 100-120 window, so it is acceptable (see flag).</li><li><strong>B, C, E</strong>: recoil, few pauses and 2-inch depth are all core components.</li></ul>",
+  "flags": [
+   {
+    "type": "warning",
+    "title": "Not covered by the vault notes",
+    "html": "<p>No lecture note covers this; the reasoning is from general principles. Verify it before relying on it.</p>"
+   },
+   {
+    "type": "warning",
+    "title": "Option A is worded oddly",
+    "html": "<p>The guideline rate is 100-120/min; the bank's 110-120 is a narrower range inside it, so read A as correct rather than as a second exception.</p>"
+   }
+  ]
+ },
+ "hippo-t2c-em-Q24": {
+  "html": "<p><em>From 06 - Antiarrhythmic Therapies (PoM 1 Cardiology, Week 5), its cardiac arrest algorithm.</em> The algorithm's core loop is continuous CPR with a shock for VF/pulseless VT, and the two interventions with the strongest link to neurologically intact survival are the earliest ones: <strong>early CPR and early defibrillation</strong> (B). Survival falls with every minute of delay to the first shock.</p><ul><li><strong>A, E</strong>: targeted temperature management is post-arrest care after ROSC - useful, but not the key determinant.</li><li><strong>C</strong>: cardioversion is a synchronized shock for a rhythm <em>with</em> a pulse; it has no role in arrest.</li><li><strong>D</strong>: epinephrine every 3-5 min is in the algorithm but improves ROSC more than neurologically good survival.</li></ul>",
+  "flags": [
+   {
+    "type": "warning",
+    "title": "Partly beyond the vault notes",
+    "html": "<p>The algorithm is in the lecture; the claims about which steps drive neurological outcome (and TTM, epinephrine evidence) are from general principles. Verify them before relying on them.</p>"
+   }
+  ]
+ },
+ "hippo-t2c-em-Q25": {
+  "html": "<p>The adult out-of-hospital chain of survival runs: <strong>recognition and activation of the emergency response</strong> (call 911 / for help) &rarr; high-quality CPR &rarr; defibrillation &rarr; advanced resuscitation &rarr; post-arrest care &rarr; recovery. Calling for help is first because every later link (AED, EMS, advanced care) depends on it arriving, so D.</p><ul><li><strong>A, E</strong>: the second and third links.</li><li><strong>B, C</strong>: the later, hospital- or EMS-level links.</li></ul>",
+  "flags": [
+   {
+    "type": "warning",
+    "title": "Not covered by the vault notes",
+    "html": "<p>No lecture note covers this; the reasoning is from general principles. Verify it before relying on it.</p>"
+   }
+  ]
+ },
+ "hippo-t2c-em-Q26": {
+  "html": "<p><em>From 06 - Antiarrhythmic Therapies (PoM 1 Cardiology, Week 5), its cardiac arrest algorithm.</em> VT becomes a <strong>cardiac arrest rhythm</strong> the moment the pulse is lost: pulseless VT is shocked immediately, like VF, whereas VT with a pulse is managed as a tachycardia (synchronized cardioversion if unstable, drugs if stable). E describes the full arrest picture - pulseless, unresponsive and not breathing normally - which is how BLS recognises arrest.</p><ul><li><strong>A, B</strong>: a pulse is present, so this is not an arrest and not an indication for defibrillation.</li><li><strong>C, D</strong>: both describe pulselessness, which is itself the shock indication; E is keyed as the most complete statement (see flag).</li></ul>",
+  "flags": [
+   {
+    "type": "warning",
+    "title": "Extraction damage and overlapping options",
+    "html": "<p>Option C reads 'Pulseness' - almost certainly 'Pulselessness' with letters lost in extraction. Read that way, C, D and E all describe pulseless VT, which is shockable in each case; the key picks the fullest description.</p>"
+   }
+  ]
+ },
+ "hippo-t2c-em-Q27": "<p><em>From 06 - Antiarrhythmic Therapies (PoM 1 Cardiology, Week 5), its cardiac arrest algorithm.</em> This asks for the <strong>false</strong> statement. <strong>Cardioversion is synchronized</strong> to the QRS so the shock avoids the vulnerable T wave, whereas defibrillation delivers current at a random moment (the electrical cardioversion reference note), so A is false.</p><ul><li><strong>B</strong>: true - defibrillation is unsynchronized, for VF/pulseless VT where there is no organised QRS to sync to.</li><li><strong>C</strong>: true - an unsynchronized shock in an organised rhythm can land on the T wave and induce VF; stable AF gets drugs (stable &rarr; drugs).</li><li><strong>D</strong>: true - defibrillation uses high energy (for example 200 J biphasic).</li><li><strong>E</strong>: true - the lecture's tachycardia algorithm sends unstable tachyarrhythmias with a pulse to synchronized cardioversion.</li></ul>",
+ "hippo-t2c-em-Q28": {
+  "html": "<p>The BLS algorithm opens with <strong>scene safety</strong>: a rescuer who becomes a second casualty (surf, traffic, electricity) helps no one, so C comes before touching the patient.</p><ul><li><strong>B</strong>: checking responsiveness is the second step, once the scene is safe.</li><li><strong>A</strong>: the pulse check comes after shouting for help, and is limited to no more than 10 seconds together with a breathing check.</li><li><strong>D</strong>: an AED is fetched (ideally by someone else) after activating the emergency response.</li><li><strong>E</strong>: CPR starts once the patient is confirmed unresponsive, not breathing normally and pulseless.</li></ul>",
+  "flags": [
+   {
+    "type": "warning",
+    "title": "Not covered by the vault notes",
+    "html": "<p>No lecture note covers this; the reasoning is from general principles. Verify it before relying on it.</p>"
+   }
+  ]
+ },
+ "hippo-t2c-em-Q29": {
+  "html": "<p>In crisis resource management the leader stands back from hands-on tasks to keep the overview: they <strong>assign roles and tasks</strong> (E), prioritise, and keep the team working to one shared plan.</p><ul><li><strong>A</strong>: the leader has final say but invites input; making every decision alone breeds fixation errors.</li><li><strong>B, C</strong>: 'independently' is the flaw - searching for the cause and working toward ROSC are team efforts the leader coordinates, not solo tasks.</li><li><strong>D</strong>: the opposite - the leader should voice their mental model out loud so the team can follow and challenge it.</li></ul>",
+  "flags": [
+   {
+    "type": "warning",
+    "title": "Not covered by the vault notes",
+    "html": "<p>No lecture note covers this; the reasoning is from general principles. Verify it before relying on it.</p>"
+   }
+  ]
+ },
+ "hippo-t2c-em-Q30": {
+  "html": "<p>Crisis resource management is a bundle of team behaviours - know the environment, call for help early, avoid fixation, share the mental model, distribute workload - but the two that hold the rest together are <strong>effective leadership</strong> (someone owns the plan and assigns roles) and <strong>closed-loop communication</strong> (an order is directed at a named person, repeated back and confirmed done). So A.</p><ul><li><strong>B, C, D, E</strong>: each names genuine CRM principles, but they are supporting elements that depend on leadership and closed-loop communication to work; the key treats A as the pair that matters most.</li></ul>",
+  "flags": [
+   {
+    "type": "warning",
+    "title": "Not covered by the vault notes",
+    "html": "<p>No lecture note covers this; the reasoning is from general principles. Verify it before relying on it.</p>"
+   }
+  ]
+ },
+ "hippo-t2c-em-Q31": {
+  "html": "<p><em>From 06 - Antiarrhythmic Therapies (PoM 1 Cardiology, Week 5), its cardiac arrest algorithm.</em> The algorithm splits on rhythm: VF or pulseless VT is shocked, anything <em>not shockable</em> (asystole, PEA) goes straight back to CPR, with epinephrine every 3-5 min. The key implies the strip showed a <strong>non-shockable</strong> rhythm, so the next step is high-quality compressions, and with no advanced airway the ratio is <strong>30:2</strong> (D).</p><ul><li><strong>B</strong>: shocking asystole or PEA does nothing - compare Q32, the same stem with a shockable strip.</li><li><strong>A, C</strong>: IV access and drugs are added once compressions are running, never in place of them.</li><li><strong>E</strong>: continuous compressions with a breath every 6 seconds is for a patient <em>with</em> an advanced airway.</li></ul>",
+  "flags": [
+   {
+    "type": "warning",
+    "title": "The rhythm strip is missing",
+    "html": "<p>The stem refers to a monitor strip that did not survive extraction from HippoNotes, so the rhythm cannot be checked here. The key only makes sense if it was non-shockable (asystole or PEA). Treat the explanation as conditional on that.</p>"
+   }
+  ]
+ },
+ "hippo-t2c-em-Q32": {
+  "html": "<p><em>From 06 - Antiarrhythmic Therapies (PoM 1 Cardiology, Week 5), its cardiac arrest algorithm.</em> This is the same scenario as Q31 with a different strip: the key implies a <strong>shockable rhythm</strong> (VF or pulseless VT), and the algorithm's rule for those is a <strong>shock as soon as the defibrillator is on</strong>, then straight back to CPR for 2 minutes (B). Every minute of delay to the first shock lowers survival.</p><ul><li><strong>D</strong>: 30:2 CPR continues around the shock but must not delay it once the monitor shows VF/pVT.</li><li><strong>A, C</strong>: IV access and epinephrine/amiodarone come after the first shocks.</li><li><strong>E</strong>: a breath every 6 seconds is for a patient with an advanced airway, which he does not have.</li></ul>",
+  "flags": [
+   {
+    "type": "warning",
+    "title": "The rhythm strip is missing",
+    "html": "<p>The stem refers to a monitor strip that did not survive extraction from HippoNotes, so the rhythm cannot be checked here. The key only makes sense if it was VF or pulseless VT. Treat the explanation as conditional on that.</p>"
+   }
+  ]
+ },
+ "hippo-t2c-em-Q33": {
+  "html": "<p><em>From 04 - Tachycardia: SVT and VT (PoM 1 Cardiology, Week 5).</em> The keyed answer, VT, is a <strong>regular, wide-complex tachycardia</strong> - the lecture's rule is that a wide QRS tachycardia is VT until proven otherwise - with uniform, repeating broad complexes (monomorphic).</p><ul><li><strong>A, C</strong>: VF is chaotic, irregular deflections with no identifiable QRS complexes - coarse or fine by amplitude.</li><li><strong>D</strong>: asystole is a flat line.</li><li><strong>E</strong>: PEA is any organised rhythm without a pulse; it cannot be named from a strip alone, because the diagnosis is the missing pulse.</li></ul>",
+  "flags": [
+   {
+    "type": "warning",
+    "title": "The rhythm strip is missing",
+    "html": "<p>The stem refers to a monitor strip that did not survive extraction from HippoNotes, so the rhythm cannot be checked against the key; the features above are what a VT strip should show. Treat the explanation as conditional on that.</p>"
+   }
+  ]
+ },
+ "hippo-t2c-em-Q34": {
+  "html": "<p><em>From 06 - Antiarrhythmic Therapies (PoM 1 Cardiology, Week 5), its cardiac arrest algorithm.</em> A pulseless, unresponsive patient is in cardiac arrest, and the key implies a <strong>non-shockable</strong> rhythm - since option B (asystole) is not keyed, most likely an organised rhythm without a pulse, i.e. <strong>PEA</strong>. The non-shockable arm of the algorithm is CPR plus <strong>epinephrine as soon as possible, then every 3-5 min</strong>, while searching for reversible causes (Hs and Ts), so E.</p><ul><li><strong>D</strong>: PEA and asystole are not shockable; defibrillation is only for VF/pulseless VT.</li><li><strong>B</strong>: presumably excluded by the strip showing electrical activity.</li><li><strong>A, C</strong>: a pulseless patient is never malingering, and nothing points to opioids; an overdose would still be managed as an arrest.</li></ul>",
+  "flags": [
+   {
+    "type": "warning",
+    "title": "The rhythm strip is missing",
+    "html": "<p>The stem refers to a monitor strip that did not survive extraction from HippoNotes, so the rhythm cannot be checked here. The key fits PEA (organised activity, no pulse) best. Treat the explanation as conditional on that.</p>"
+   }
+  ]
+ },
+ "hippo-t2c-em-Q3": {
+  "html": "<p>The Hinshaw-Cox classification sorts shock by mechanism into four types: <strong>hypovolemic</strong> (low preload - hemorrhage, GI or renal losses), <strong>cardiogenic</strong> (pump failure - MI, arrhythmia, valve), <strong>obstructive</strong> (flow blocked outside the heart muscle - PE, tamponade, tension pneumothorax) and <strong>distributive</strong> (vasodilation - sepsis, anaphylaxis, neurogenic). 'Dissociative' is not a category of shock; the word belongs to psychiatry and anesthesia (ketamine), so A.</p><ul><li><strong>B, C, D, E</strong>: the four genuine categories.</li></ul>",
+  "flags": [
+   {
+    "type": "warning",
+    "title": "Not covered by the vault notes",
+    "html": "<p>No lecture note covers this; the reasoning is from general principles. Verify it before relying on it.</p>"
+   }
+  ]
+ },
+ "hippo-t2c-em-Q35": {
+  "html": "<p>The point being tested is that <strong>no arrest drug has a strong evidence base for survival to discharge</strong>. Drugs in ACLS are there to improve ROSC; the interventions with survival evidence are <strong>high-quality CPR and early defibrillation</strong>.</p><ul><li><strong>A, B</strong>: antiarrhythmics for shock-refractory VF/pVT (amiodarone or lidocaine) improve ROSC and survival to admission, but not survival to discharge or neurological outcome.</li><li><strong>C</strong>: epinephrine reliably raises ROSC (alpha vasoconstriction lifts coronary perfusion pressure), but any survival gain is small and comes without better neurological outcome (see flag).</li><li><strong>D</strong>: fails because none of A-C qualify.</li></ul>",
+  "flags": [
+   {
+    "type": "warning",
+    "title": "Not covered by the vault notes",
+    "html": "<p>No lecture note covers this; the reasoning is from general principles. Verify it before relying on it.</p>"
+   },
+   {
+    "type": "warning",
+    "title": "The key is arguable",
+    "html": "<p>The large placebo-controlled epinephrine trial in OHCA (PARAMEDIC2) found a small improvement in 30-day survival with no improvement in favourable neurological outcome, so C can be defended. E reflects the teaching that no arrest drug improves meaningful (neurologically intact) survival to discharge.</p>"
+   }
+  ]
+ },
+ "hippo-t2c-em-Q36": {
+  "html": "<p><em>From 06 - Antiarrhythmic Therapies (PoM 1 Cardiology, Week 5).</em> The lecture's arrest algorithm gives <strong>epinephrine every 3-5 min</strong> alongside continuous CPR; the adult arrest dose is a fixed <strong>1 mg IV/IO</strong>, in hospital or out of it.</p><ul><li><strong>B</strong>: 0.03 mg is not an arrest dose (it is close to a paediatric-autoinjector range).</li><li><strong>C</strong>: 300 mg IV/IO first dose is <strong>amiodarone</strong> for refractory VF/pVT.</li><li><strong>D</strong>: weight-based dosing is paediatric (0.01 mg/kg), and 1 mg/kg would be a hundred-fold overdose.</li><li><strong>E</strong>: IM epinephrine is for anaphylaxis (<em>06 - Approach to Allergy</em>, FoM), not arrest, where there is no perfusion to absorb it.</li></ul>",
+  "flags": [
+   {
+    "type": "warning",
+    "title": "Not covered by the vault notes",
+    "html": "<p>The lecture note gives the 3-5 minute interval but not the milligram doses of epinephrine or amiodarone; those are from the ACLS algorithm in general. Verify them before relying on them.</p>"
+   }
+  ]
+ },
+ "hippo-t2c-em-Q37": {
+  "html": "<p><em>From 08 - Cardiac Pharmacology (PoM 1 Cardiology, Week 1).</em> Epinephrine is a mixed <strong>alpha and beta agonist</strong>, and the lecture's receptor table says <strong>beta-1 raises HR, contractility and conduction velocity</strong>. So B is the false statement: epinephrine increases contractility, it does not decrease it.</p><ul><li><strong>A</strong>: true - alpha-1 gives vasoconstriction, the effect that matters in arrest (coronary perfusion pressure).</li><li><strong>C</strong>: true - beta-1 and beta-2 agonism.</li><li><strong>D</strong>: true - beta-2 relaxes smooth muscle, giving bronchodilation (why it treats anaphylaxis).</li><li><strong>E</strong>: true - alpha vasoconstriction plus beta-1 inotropy/chronotropy raise BP.</li></ul>"
+ },
+ "hippo-t2c-em-Q38": {
+  "html": "<p><em>From 06 - Antiarrhythmic Therapies (PoM 1 Cardiology, Week 5).</em> Amiodarone is class III: it blocks K+ channels in phase 3, <strong>prolonging the plateau, action potential and refractory period</strong> (hence the long QT), so A is true.</p><ul><li><strong>B</strong>: false - it is not an agonist; the lecture notes it has class I, II, III and IV effects, i.e. beta- and Ca2+-<em>blocking</em> actions.</li><li><strong>C</strong>: in OHCA trials it improved survival to admission, not survival to discharge (see flag).</li><li><strong>D</strong>: false - no neurological outcome benefit has been shown.</li><li><strong>E</strong>: false - the first arrest dose is <strong>300 mg</strong> IV/IO; 150 mg is the second dose (and the stable-VT bolus).</li></ul>",
+  "flags": [
+   {
+    "type": "warning",
+    "title": "Option C is arguably true",
+    "html": "<p>In the large OHCA antiarrhythmic trial (ALPS), amiodarone raised survival to hospital admission compared with placebo, so C is true if 'survival to hospital' means admission. It is false only if read as survival to discharge. The doses in E are not in the vault notes.</p>"
+   }
+  ]
+ },
+ "hippo-t2c-em-Q39": {
+  "html": "<p><em>From 06 - Antiarrhythmic Therapies (PoM 1 Cardiology, Week 5).</em> <strong>True</strong>, in the sense the arrest algorithm uses it. Lidocaine (class IB, rapid-onset Na+ channel block) is <strong>highly specific for ventricular myocytes</strong>, so it only works on ventricular arrhythmias. The lecture puts it alongside amiodarone for <strong>shock-refractory VF/pVT</strong>, and notes that lidocaine given with defibrillation improves the chance the heart restarts after a failed shock.</p><ul><li>The shock does the terminating; lidocaine makes the next shock more likely to succeed and helps prevent recurrence.</li><li>Contrast: lidocaine does <strong>not</strong> slow AF or treat SVT, because it has no nodal action.</li></ul>"
+ },
+ "hippo-t2c-em-Q4": {
+  "html": "<p><em>From 13 - IV Fluids (PoM 1 GU, Week 14).</em> Dextrose is 'taken up into the body quickly, so the net effect is as if you gave free water'. <strong>D5/0.45% NS</strong> is therefore hypertonic in the bag (dextrose plus 77 mmol/L NaCl), but once the glucose is metabolized it is half-normal saline, which the lecture calls hypotonic. So B is true.</p><ul><li><strong>A</strong>: backwards - free water goes 2/3 into the ICF; hypotonic fluid moves water <em>into</em> cells.</li><li><strong>C</strong>: water into brain cells worsens cerebral edema and raises ICP; these patients need isotonic or hypertonic fluid.</li><li><strong>D</strong>: normal plasma osmolality is about 285-295 mOsm/kg, not 380-390.</li><li><strong>E</strong>: 3% saline is for symptomatic hyponatremia; free water deficits (hypernatremia) get D5W.</li></ul>",
+  "flags": [
+   {
+    "type": "warning",
+    "title": "Not covered by the vault notes",
+    "html": "<p>The lecture note does not give the normal plasma osmolality figure used to rule out D; that value is from general principles. Verify it before relying on it.</p>"
+   }
+  ]
+ },
+ "hippo-t2c-em-Q40": {
+  "html": "<p>Once ROSC is achieved, the first job is keeping the patient alive and <strong>finding the cause</strong>: treat hypotension (<strong>SBP at least 90 mmHg</strong>, MAP at least 65) and get a <strong>12-lead ECG</strong> straight away, because STEMI sends the patient for emergent coronary angiography. The option text lost its inequality signs in extraction; read B as 'SBP of at least 90'.</p><ul><li><strong>A</strong>: securing the airway belongs early, but glucose is managed in the later critical-care phase.</li><li><strong>C</strong>: 30&deg;C is below any TTM target (32-36&deg;C).</li><li><strong>D</strong>: EEG monitoring is for the comatose patient in the ICU phase.</li><li><strong>E</strong>: core temperature monitoring belongs to the TTM/ICU phase; the oxygen target is part of the first steps, but the pairing does not.</li></ul>",
+  "flags": [
+   {
+    "type": "warning",
+    "title": "Not covered by the vault notes",
+    "html": "<p>No lecture note covers this; the reasoning is from general principles. Verify it before relying on it.</p>"
+   },
+   {
+    "type": "warning",
+    "title": "Depends on which ACLS algorithm is used",
+    "html": "<p>The key matches the older (2015) post-arrest algorithm, which lists airway, SpO2 of at least 94%, treating SBP below 90 and a 12-lead ECG. The 2020 algorithm puts the ECG and coronary angiography in the 'continued management' phase and targets SpO2 92-98%, so A and E are harder to exclude under it.</p>"
+   }
+  ]
+ },
+ "hippo-t2c-em-Q41": {
+  "html": "<p>Targeted temperature management after ROSC in a comatose patient aims for a <strong>constant temperature somewhere in 32-36&deg;C</strong> for at least 24 hours, then prevention of fever. The protective effect comes from lowering cerebral metabolic demand and reperfusion injury; below about 32&deg;C, arrhythmias, coagulopathy and infection outweigh the benefit.</p><ul><li><strong>A, C</strong>: 30-32&deg;C and 31&deg;C fall below the recommended floor.</li><li><strong>D</strong>: 34&deg;C is in range, which is presumably what the source taught.</li><li><strong>B</strong>: 33&deg;C is also in range (and was one arm of the TTM trial), see flag.</li></ul>",
+  "flags": [
+   {
+    "type": "warning",
+    "title": "Not covered by the vault notes",
+    "html": "<p>No lecture note covers this; the reasoning is from general principles. Verify it before relying on it.</p>"
+   },
+   {
+    "type": "warning",
+    "title": "More than one option fits",
+    "html": "<p>33&deg;C (B) and 34&deg;C (D) both lie inside the 32-36&deg;C target range, and E is defensible if the expected answer is the range itself. The key presumably reflects a specific value from the source lecture.</p>"
+   }
+  ]
+ },
+ "hippo-t2c-em-Q42": {
+  "html": "<p>Trauma care is a continuum that runs well past the trauma bay, so <strong>every group listed has a role</strong>:</p><ul><li><strong>A</strong>: physiatrists (PM&amp;R) lead rehabilitation after TBI, spinal cord injury, amputation and polytrauma.</li><li><strong>B</strong>: primary care physicians do injury prevention (counselling, screening for intimate partner violence and falls risk), provide rural first-contact stabilization, and handle long-term follow-up.</li><li><strong>C</strong>: psychiatrists manage acute stress disorder, PTSD, substance use and self-harm, which both cause and follow injury.</li></ul><p>So D.</p>",
+  "flags": [
+   {
+    "type": "warning",
+    "title": "Not covered by the vault notes",
+    "html": "<p>No lecture note covers this; the reasoning is from general principles. Verify it before relying on it.</p>"
+   }
+  ]
+ },
+ "hippo-t2c-em-Q43": {
+  "html": "<p>Injury (unintentional plus intentional: motor vehicle collisions, poisonings/overdose, falls, suicide, homicide) is the <strong>leading cause of death from age 1 to 44</strong>. Older adults die mostly of cancer and cardiovascular disease, and infants mostly of perinatal and congenital causes, which is why the band starts at 1 and ends at 44.</p><ul><li><strong>A</strong>: overgeneralized - marginalized groups carry a disproportionate injury burden, but injury is not the leading cause of death for all of them at all ages.</li><li><strong>B</strong>: in males aged 45-64, cancer and heart disease overtake injury.</li><li><strong>D</strong>: a distractor with no population statistic behind it.</li></ul>",
+  "flags": [
+   {
+    "type": "warning",
+    "title": "Not covered by the vault notes",
+    "html": "<p>No lecture note covers this; the reasoning is from general principles. Verify it before relying on it.</p>"
+   }
+  ]
+ },
+ "hippo-t2c-em-Q44": {
+  "html": "<p>The trend in trauma is to move <strong>catastrophic hemorrhage control ahead of the airway</strong> (xABCDE / 'C-ABC', MARCH). The reason: exsanguination kills in minutes, and most preventable trauma deaths are from bleeding. A tourniquet or direct pressure takes seconds and must not wait on intubation, and an induction for intubation in an under-resuscitated patient can cause arrest.</p><ul><li><strong>A</strong>: still first in classic ATLS teaching and in non-hemorrhagic patients, but an airway is useless without circulating blood.</li><li><strong>B</strong>: tension pneumothorax is decompressed quickly, but it is a less common killer than hemorrhage.</li><li><strong>D</strong>: neurological status is assessed only after perfusion is restored.</li></ul>",
+  "flags": [
+   {
+    "type": "warning",
+    "title": "Not covered by the vault notes",
+    "html": "<p>No lecture note covers this; the reasoning is from general principles. Verify it before relying on it.</p>"
+   }
+  ]
+ },
+ "hippo-t2c-em-Q45": {
+  "html": "<p><em>From 06 - Hemorrhagic Shock (PoM 2 Repro, Week 6).</em> The lecture's class table keeps <strong>BP normal through class II (up to 1500 mL, 30%)</strong> and only shows a falling BP in <strong>class III (1500-2000 mL, 30-40%)</strong>. 1600 mL is the only option past that threshold.</p><ul><li><strong>A</strong>: 500 mL is class I (up to 750 mL), where vitals are essentially normal.</li><li><strong>B, C</strong>: 800 and 1200 mL are class II. HR rises to 100-120 and pulse pressure narrows, but BP is preserved.</li></ul><p>Hypotension is a late sign, and the young patient compensates longest.</p>"
+ },
+ "hippo-t2c-em-Q46": {
+  "html": "<p>Pelvic hemorrhage comes mainly from the <strong>venous plexus and cancellous bone</strong>, plus some arterial branches of the internal iliac, deep in the pelvis. <strong>A tourniquet cannot compress it</strong>: tourniquets work only on extremity wounds proximal to the bleed, so A is the exception.</p><ul><li><strong>B</strong>: preperitoneal packing tamponades venous and bony bleeding directly.</li><li><strong>C</strong>: external fixation (like a pelvic binder at the bedside) closes the pelvic volume and stabilizes the bone ends, which reduces bleeding.</li><li><strong>D</strong>: angioembolization treats the arterial source (contrast blush on CT).</li></ul><p>The <em>06 - Hemorrhagic Shock</em> principle applies throughout: resuscitation buys time, but stopping the bleeding is the treatment.</p>",
+  "flags": [
+   {
+    "type": "warning",
+    "title": "Not covered by the vault notes",
+    "html": "<p>No lecture note covers this; the reasoning is from general principles. Verify it before relying on it.</p>"
+   }
+  ]
+ },
+ "hippo-t2c-em-Q47": {
+  "html": "<p>A <strong>massive hemothorax</strong> is defined by at least <strong>1500 mL of blood on initial chest tube insertion</strong>, or ongoing output of about 200 mL/h for 2-4 hours. Either means a major vessel or lung-parenchyma bleed that the tube will not control, so the patient needs thoracotomy.</p><ul><li><strong>A, B, C</strong>: 500-1200 mL can come from chest-wall or minor lung bleeding that stops once the lung re-expands and apposes the pleura. Watch the drain rate and the patient's hemodynamics, but these volumes alone do not mandate surgery.</li></ul><p>Physiologically, 1500 mL is 30% of blood volume, the class III threshold where BP falls (<em>06 - Hemorrhagic Shock</em>).</p>",
+  "flags": [
+   {
+    "type": "warning",
+    "title": "Not covered by the vault notes",
+    "html": "<p>The vault's hemothorax reference note is an empty template; the 1500 mL threshold is from general trauma teaching. Verify it before relying on it.</p>"
+   }
+  ]
+ },
+ "hippo-t2c-em-Q48": {
+  "html": "<p><em>From Schulich Reviews - Neuro (PoM 2).</em> The rule is <strong>'GCS 8, intubate'</strong>. At a GCS of 8 or less the patient cannot reliably protect the airway (loss of gag and cough, risk of aspiration). They are also at risk of hypoxia and hypercapnia, which raise ICP in the injured brain. GCS 3-8 is also the review's definition of severe TBI, so the intubation threshold and the severe band coincide.</p><ul><li>Higher cut-offs (9-13) are moderate TBI, managed with close observation rather than routine intubation.</li><li>Lower cut-offs would wait until the airway is already lost.</li></ul>",
+  "flags": [
+   {
+    "type": "warning",
+    "title": "The option text was lost",
+    "html": "<p>The four options did not survive extraction, so it is not confirmed that option B reads '8'. The review note phrases the rule as 'intubate if GCS &lt; 8', while the conventional rule (and this stem, 'at and below') is 8 or less.</p>"
+   }
+  ]
+ },
+ "hippo-t2c-em-Q49": {
+  "html": "<p>Both osmotic agents lower ICP by drawing water out of brain tissue across an intact blood-brain barrier (<em>10 - Neurosurgical Emergencies</em>, PoM 2 Neuro; the <em>Schulich Reviews - Neuro</em> list 23.4% and 3% saline). What separates them is what happens to the circulation:</p><ul><li><strong>C</strong>: hypertonic saline (3%, about 500 mmol/L NaCl per <em>13 - IV Fluids</em>) stays in the ECF and pulls water into it, so it <strong>expands intravascular volume</strong> while it lowers ICP. That makes it the choice in the hypotensive trauma patient.</li><li><strong>A</strong>: mannitol acts by <strong>osmotic diuresis</strong>. It lowers ICP but then contracts the ECF and can drop BP.</li><li><strong>B</strong>: sorbitol is not used for ICP.</li><li><strong>D</strong>: normal saline expands the ECF but has no osmotic gradient, so it does not reduce ICP.</li></ul>"
+ },
+ "hippo-t2c-em-Q5": {
+  "html": "<p><em>From 04 - Myocardial Infarction and 05 - Complications of Acute MI (PoM 1 Cardiology, Week 3).</em> Chest heaviness with a raised JVP, bilateral crackles, edema and SBP 83 is <strong>cardiogenic shock with pulmonary edema</strong> (Killip IV). The ventricle is already overloaded, so an <strong>IV crystalloid bolus (B) would worsen the pulmonary edema</strong> without raising output.</p><ul><li><strong>A</strong>: the lecture lists BiPAP for pulmonary edema, and she is hypoxic on a non-rebreather.</li><li><strong>C</strong>: ASA 162-325 mg is the first step for suspected ACS unless dissection is suspected.</li><li><strong>D</strong>: IV furosemide is the lecture's pulmonary edema treatment; it is used cautiously with this BP, but it is still considered.</li><li><strong>E</strong>: pressors/inotropes support perfusion while she goes for revascularization.</li></ul>"
+ },
+ "hippo-t2c-em-Q50": {
+  "html": "<p>Each bullet either passes through the body, leaving an entry and an exit wound, or stays inside, leaving one wound and one retained projectile. Either way it contributes <strong>two items</strong> to the count, so <strong>wounds + retained projectiles should add up to an even number</strong>. Pairing them lets you reconstruct each <strong>trajectory</strong> and predict which structures lie in its path.</p><ul><li><strong>A, C</strong>: an <em>odd</em> total is the warning sign: a missed wound (axilla, perineum, scalp, back) or a missed projectile, which should prompt a repeat survey or more imaging.</li><li><strong>C, D</strong>: calibre cannot be reliably estimated from wound size or imaging appearance, and it does not change management; trajectory does.</li></ul>",
+  "flags": [
+   {
+    "type": "warning",
+    "title": "Not covered by the vault notes",
+    "html": "<p>No lecture note covers this; the reasoning is from general principles. Verify it before relying on it.</p>"
+   }
+  ]
+ },
+ "hippo-t2c-em-Q51": {
+  "html": "<p>A <strong>proximal tourniquet</strong> stops arterial extremity hemorrhage in seconds, with no special skill and no need to see into the wound. In profound shock, every minute of bleeding feeds the lethal triad (<em>06 - Hemorrhagic Shock</em>, PoM 2 Repro), and 'stop the bleeding' is the treatment.</p><ul><li><strong>A</strong>: closing the skin hides the bleed; blood keeps collecting beneath it (and compartment syndrome can follow).</li><li><strong>B</strong>: blind clamping in a bloody field seldom catches the vessel and injures adjacent nerves and veins. Clamping is done under direct vision in the OR.</li><li><strong>D</strong>: amputation is a late decision for an unsalvageable limb, not initial hemorrhage control.</li></ul>",
+  "flags": [
+   {
+    "type": "warning",
+    "title": "Not covered by the vault notes",
+    "html": "<p>The vault's hemorrhagic shock lecture states the 'stop the bleeding' principle but does not discuss tourniquets or extremity wounds; that part is from general principles. Verify it before relying on it.</p>"
+   }
+  ]
+ },
+ "hippo-t2c-em-Q52": {
+  "html": "<p>FAST stands for <strong>Focused Assessment with Sonography for Trauma</strong>. It is a bedside look for free fluid (presumed blood) in the <strong>pericardium, RUQ (Morison's pouch), LUQ and pelvis</strong>; eFAST adds the chest for pneumothorax and hemothorax.</p><ul><li><strong>B</strong>: 'abdominal' is wrong - the pericardial view is a core part of it.</li><li><strong>C</strong>: FAST is <strong>poor at detecting retroperitoneal</strong> blood (e.g. pelvic fracture, renal or aortic bleeding), so it cannot claim to test that space.</li><li><strong>D</strong>: it is an adjunct to the primary survey when indicated (typically the unstable patient). There is no rule that every trauma patient gets one within 5 minutes.</li></ul>",
+  "flags": [
+   {
+    "type": "warning",
+    "title": "Not covered by the vault notes",
+    "html": "<p>No lecture note covers this; the reasoning is from general principles. Verify it before relying on it.</p>"
+   }
+  ]
+ },
+ "hippo-t2c-em-Q53": {
+  "html": "<p>This is the <strong>Canadian CT Head Rule</strong> for minor head injury (GCS 13-15 with witnessed LOC, amnesia or disorientation). Its high-risk criteria are: <strong>GCS below 15 at 2 hours</strong>, suspected open or depressed skull fracture, <strong>any sign of basal skull fracture</strong>, <strong>vomiting at least twice</strong>, and <strong>age 65 or older</strong>.</p><ul><li><strong>A</strong>: a <em>single</em> episode of vomiting does not meet the threshold of two, so A is the exception.</li><li><strong>B</strong>: read as 'age of at least 65' (the inequality sign was lost in extraction).</li><li><strong>C</strong>: read as 'GCS below 15 at 2 hours'. As printed ('GCS score 15') it would not predict anything, so this too is a lost sign.</li><li><strong>D</strong>: the signs are hemotympanum, raccoon eyes, Battle's sign and CSF oto- or rhinorrhea.</li></ul>",
+  "flags": [
+   {
+    "type": "warning",
+    "title": "Not covered by the vault notes",
+    "html": "<p>No lecture note covers this; the reasoning is from general principles. Verify it before relying on it.</p>"
+   }
+  ]
+ },
+ "hippo-t2c-em-Q54": {
+  "html": "<p>Flow through a cannula rises with the <strong>fourth power of its radius</strong> and falls with its length. A short, very wide <strong>central introducer sheath on a rapid infuser</strong> therefore outflows several peripheral lines. A <strong>dedicated blood-product team</strong> keeps track of products, ratios, warming and calcium instead of leaving them to the resuscitation leader.</p><ul><li><strong>A</strong>: IO access is a bridge; its flow is limited, and multiple IOs do not match a large-bore central line.</li><li><strong>B</strong>: several uncoordinated peripheral lines make it hard to track what was given and to warm it, and each small line flows slowly.</li><li><strong>C</strong>: in severe shock, peripheral veins collapse and a 14 G often cannot be placed, even by experts.</li></ul><p>The <em>06 - Hemorrhagic Shock</em> lecture starts with large-bore IV x2 and escalates to central lines.</p>",
+  "flags": [
+   {
+    "type": "warning",
+    "title": "Not covered by the vault notes",
+    "html": "<p>The vault's hemorrhagic shock lecture mentions large-bore IV x2 and central lines, but not rapid infusers, IO access or blood-product teams; the rest is from general principles. Verify it before relying on it.</p>"
+   }
+  ]
+ },
+ "hippo-t2c-em-Q55": {
+  "html": "<p><em>From 01 - Approach to a Bleeding Patient (FoM Block 3, Week 10).</em> In massive bleeding, the lecture's MTP flow adds <strong>early fibrinogen replacement</strong> (fibrinogen concentrate or cryoprecipitate; 10 units of cryo gives about 4 g) and TXA, guided later by fibrinogen levels. Fibrinogen is the first factor to fall to critical levels in hemorrhage and dilution. The usual trigger is a <strong>fibrinogen below 1.5 g/L</strong> (some protocols use 1.5-2.0, and 2.0 in obstetric hemorrhage).</p><ul><li>A cut-off of 1.0 g/L is the older, now-too-late threshold.</li><li>A cut-off of 2.5 g/L sits within the normal range (about 2-4 g/L) and would over-treat.</li></ul>",
+  "flags": [
+   {
+    "type": "warning",
+    "title": "No key, and the options were garbled",
+    "html": "<p>The source gives no key and the option list survived only as '0 b. 5 c. 0 d. 2.5', presumably 1.0 / 1.5 / 2.0 / 2.5 g/L. The 1.5 g/L threshold is not stated in the vault notes and is from general transfusion guidance. Verify it before relying on it.</p>"
+   }
+  ]
+ },
+ "hippo-t2c-em-Q56": {
+  "html": "<p>Injury is predictable and preventable, and the opportunities to prevent it arise in every specialty, so prevention belongs to <strong>all physicians</strong>. Examples: car seats and safe sleep in paediatrics, falls risk and deprescribing in geriatrics, intimate partner violence screening in obstetrics, and driving fitness with seizures or dementia in neurology and family medicine.</p><ul><li><strong>A</strong>: family physicians do much of the counselling, but they do not own the field.</li><li><strong>B</strong>: trauma surgeons see the result and often advocate, but they meet patients after the injury has happened.</li><li><strong>C</strong>: obstetricians have a real but narrow role (IPV in pregnancy, seatbelt use).</li></ul>",
+  "flags": [
+   {
+    "type": "warning",
+    "title": "Not covered by the vault notes",
+    "html": "<p>No lecture note covers this; the reasoning is from general principles. Verify it before relying on it.</p>"
+   }
+  ]
+ },
+ "hippo-t2c-em-Q57": {
+  "html": "<p>Effective injury prevention rests on the <strong>'3 E's'</strong>: <strong>education</strong>, <strong>engineering</strong> (safer vehicles, roads and products) and <strong>enforcement/legislation</strong>. Community-level programs deliver them. Insurance policy changes compensate people after an injury; they do not change the exposure, so C is the exception.</p><ul><li><strong>A</strong>: seatbelt, helmet, impaired-driving and graduated-licensing laws are among the most effective interventions known.</li><li><strong>B</strong>: community outreach (e.g. violence interruption, school programs) reaches high-risk groups directly.</li><li><strong>D</strong>: patient education (anticipatory guidance) is the physician's main tool, and works best alongside the other two E's.</li></ul>",
+  "flags": [
+   {
+    "type": "warning",
+    "title": "Not covered by the vault notes",
+    "html": "<p>No lecture note covers this; the reasoning is from general principles. Verify it before relying on it.</p>"
+   }
+  ]
+ },
+ "hippo-t2c-em-Q58": {
+  "html": "<p>Acetaminophen is the one level drawn on <strong>every</strong> intentional overdose, whatever the patient says they took. Four reasons: it is <strong>commonly co-ingested and under-reported</strong>; it is <strong>asymptomatic early</strong>; the <strong>hepatotoxicity is delayed</strong> (it is the commonest cause of acute liver failure, per <em>05 - Acute Hepatitis</em>, PoM 1 GI); and an effective antidote, <strong>N-acetylcysteine</strong>, works best if given early. A 4-hour level plotted on the nomogram decides treatment.</p><ul><li><strong>A, C, D</strong>: carbamazepine, quetiapine and digoxin levels are drawn only when that ingestion is suspected, and quetiapine levels are not clinically useful.</li><li><strong>B</strong>: methanol is screened indirectly (osmolal gap, AGMA) and only on suspicion.</li></ul>",
+  "flags": [
+   {
+    "type": "warning",
+    "title": "Not covered by the vault notes",
+    "html": "<p>The vault notes cover acetaminophen only as the commonest cause of acute liver failure; the universal-screening rule, the nomogram and NAC are from general principles. Verify them before relying on them.</p>"
+   }
+  ]
+ },
+ "hippo-t2c-em-Q59": {
+  "html": "<p><em>From 11 - Acid Base Disturbances (PoM 1 GU, Week 14).</em> The anion gap is the <strong>main cation minus the two main measured anions</strong>: <strong>Na+ - (Cl- + HCO3-)</strong>, normally about 12, made up mostly of albumin. Lower the expected gap by about 3 for every 10 g/L that albumin falls below 40.</p><ul><li><strong>A</strong>: doubling Na+ belongs to the osmolality formula, not the gap.</li><li><strong>B</strong>: 2Na + urea (BUN) + glucose is the <strong>calculated serum osmolality</strong>, used for the osmolal gap in toxic alcohol ingestion.</li><li><strong>D</strong>: adding the anions gives a sum, not a gap.</li><li><strong>E</strong>: subtracting Cl- from HCO3- inverts the sign and is meaningless.</li></ul>"
+ },
+ "hippo-t2c-em-Q6": {
+  "html": "<p><em>From 08 - Cardiac Pharmacology (PoM 1 Cardiology, Week 1).</em> Diltiazem is a <strong>non-dihydropyridine CCB</strong>. The lecture says it blocks myocardial as well as smooth-muscle Ca2+ channels, <strong>slowing the SA/AV nodes and reducing contractility</strong>. In overdose that means severe bradycardia (HR 26) and pump failure: a primarily <strong>cardiogenic</strong> shock.</p><ul><li><strong>A</strong>: there is no volume loss (hypovolemic shock is the hemorrhagic or dehydration kind, <em>06 - Hemorrhagic Shock</em>).</li><li><strong>B</strong>: toxic shock syndrome is a toxin-mediated infection, not drug toxicity.</li><li><strong>C</strong>: vasodilation contributes, and dominates in <em>dihydropyridine</em> overdose (amlodipine, with reflex tachycardia), but a heart rate of 26 points to the pump.</li><li><strong>E</strong>: nothing is obstructing flow (no tamponade, PE or tension pneumothorax).</li></ul>"
+ },
+ "hippo-t2c-em-Q60": {
+  "html": "<p><em>From 11 - Acid Base Disturbances (PoM 1 GU, Week 14) and the MUDPILES reference note.</em> An anion gap acidosis needs an <strong>unmeasured acid anion</strong>: MUDPILES = Methanol, Uremia, DKA, Phenformin, <strong>Iron</strong>/isoniazid, Lactate, Ethylene glycol, <strong>Salicylates</strong>. Lithium is not on the list and generates no acid anion; if anything, a high lithium level (an unmeasured <em>cation</em>) lowers the gap.</p><ul><li><strong>B</strong> Methanol: formic acid/formate, the M.</li><li><strong>C</strong> Salicylate: the S; salicylate itself is the unmeasured anion.</li><li><strong>D</strong> DKA: ketoacids, the D.</li><li><strong>E</strong> Iron: the I (lactate from mitochondrial toxicity and shock).</li></ul>",
+  "flags": [
+   {
+    "type": "warning",
+    "title": "Partly beyond the vault notes",
+    "html": "<p>MUDPILES is in the vault; the claim that lithium lowers the anion gap is from general principles. Verify them before relying on them.</p>"
+   }
+  ]
+ },
+ "hippo-t2c-em-Q61": {
+  "html": "<p><em>From 11 - Acid Base Disturbances (PoM 1 GU, Week 14).</em> The lecture's check after a MUDPILES acidosis is the <strong>osmolal gap</strong>: measured serum osmolality minus the calculated one, <strong>2Na + urea + glucose</strong> (urea in Canadian units is the BUN term). A raised gap means an unmeasured osmole, classically a toxic alcohol.</p><ul><li><strong>A, C, E</strong>: Na minus (Cl + HCO3) is the <em>anion</em> gap (C is the real formula; A doubles Na, E flips a sign). It measures unmeasured anions, not osmoles.</li><li><strong>D</strong>: adding the anions to Na has no meaning.</li></ul>",
+  "flags": [
+   {
+    "type": "warning",
+    "title": "B is the calculated osmolality, not the gap",
+    "html": "<p>2Na + BUN + glucose gives the <em>calculated</em> osmolality; the gap is the measured value minus it. B is still the only option that belongs to the osmolar gap, so the key stands, but learn the subtraction.</p>"
+   }
+  ]
+ },
+ "hippo-t2c-em-Q62": {
+  "html": "<p><em>From 11 - Acid Base Disturbances (PoM 1 GU, Week 14).</em> The osmolar gap rises when a small, <strong>osmotically active molecule is present in large molar amounts</strong>: the alcohols. The lecture ties a raised gap to the toxic alcohols (methanol, ethylene glycol); ethanol is the same kind of molecule, is drunk in huge amounts, and is the commonest real-world cause of a very high gap. It is the only alcohol offered.</p><ul><li><strong>A</strong> Acetaminophen, <strong>B</strong> salicylate, <strong>C</strong> metformin: toxic at millimolar or lower concentrations, far too few particles to move osmolality; salicylate and metformin raise the <em>anion</em> gap instead.</li><li><strong>E</strong> Digoxin: lethal at nanomolar levels, no osmotic effect.</li></ul>",
+  "flags": [
+   {
+    "type": "warning",
+    "title": "Partly beyond the vault notes",
+    "html": "<p>The lecture names only the toxic alcohols; ethanol as the commonest cause and the particle-count argument are from general principles. Verify them before relying on them.</p>"
+   }
+  ]
+ },
+ "hippo-t2c-em-Q63": {
+  "html": "<p><em>From 06 - Antiarrhythmic Therapies (PoM 1 Cardiology, Week 5).</em> QRS width reflects the speed of phase 0, which is the <strong>fast Na+ channel</strong>. The lecture's amitriptyline case lists TCA toxicity as Na+ channel blockade (<strong>&uarr; QRS duration</strong>), muscarinic blockade (mydriasis), alpha blockade (hypotension) and GABA antagonism (seizures), and a TCA behaves like a class I antiarrhythmic.</p><ul><li><strong>A</strong> CCB: acts on phase 2 and the AV node, so bradycardia and heart block rather than a wide QRS.</li><li><strong>B</strong> Ethylene glycol: an anion and osmolar gap acidosis, not a conduction poison.</li><li><strong>D</strong> Methadone: prolongs the <em>QT</em> (K+ channel), not the QRS.</li><li><strong>E</strong> Colchicine: GI toxicity and multi-organ failure, no Na+ channel effect.</li></ul>",
+  "flags": [
+   {
+    "type": "warning",
+    "title": "Partly beyond the vault notes",
+    "html": "<p>The TCA mechanism is in the lecture; the methadone, colchicine and ethylene glycol distractor claims are from general principles. Verify them before relying on them.</p>"
+   }
+  ]
+ },
+ "hippo-t2c-em-Q64": {
+  "html": "<p><em>From 09 - Cholinergic Pharmacology (PoM 1 Cardiology, Week 1).</em> The lecture defines a toxidrome as <strong>a constellation of signs and symptoms specific for a particular drug class</strong>: that is, a syndrome caused by a toxin. The word is a contraction of <strong>tox(ic) + (syn)drome</strong>, and the point of recognising one is that the pattern (e.g. hot, dry, red, blind, mad) names the drug class before any level comes back.</p><ul><li><strong>A</strong>: no event is the origin; the term describes patterns, not an incident.</li><li><strong>B</strong>: it is not Latin, and it means a pattern, not an overdose.</li><li><strong>D</strong>: a toxidrome is a clinical pattern across drug classes, not an ECG sign of one drug.</li></ul>"
+ },
+ "hippo-t2c-em-Q65": {
+  "html": "<p><em>From 08 - Cardiac Pharmacology and 09 - Cholinergic Pharmacology (PoM 1 Cardiology, Week 1).</em> Sweat glands are sympathetic but <strong>cholinergic</strong>, so muscarinic blockade stops sweating: the anticholinergic patient is <strong>&ldquo;dry as a bone&rdquo;</strong>. The lecture uses this as the one sign that separates anticholinergic (dry) from sympathomimetic (sweaty) toxicity, so diaphoresis argues against it.</p><ul><li><strong>A</strong> Tachycardia: loss of vagal tone on the SA node.</li><li><strong>C</strong> Altered mental status: &ldquo;mad as a hatter&rdquo;, delirium and agitation.</li><li><strong>D</strong> Flushing: &ldquo;red as a beet&rdquo;, blood shunted to the skin to shed heat without sweat.</li><li><strong>E</strong> Urinary retention: &ldquo;full as a flask&rdquo;, detrusor cannot contract.</li></ul>"
+ },
+ "hippo-t2c-em-Q66": {
+  "html": "<p><em>From 08 - Cardiac Pharmacology and 09 - Cholinergic Pharmacology (PoM 1 Cardiology, Week 1).</em> A toxidrome is named for the <strong>drug class or receptor effect</strong> that produces it (a constellation specific for a drug class). The classic set is sympathomimetic, anticholinergic, cholinergic, opioid and sedative-hypnotic. &ldquo;Serotonin syndrome&rdquo; is the name of a clinical diagnosis (covered in <em>06 - Pharmacology of Antidepressants</em>), and the toxidrome that produces it is called <strong>serotonergic</strong>, which is the distinction the key is drawing.</p><ul><li><strong>A, B</strong>: sympathomimetic (sweaty, dilated, tachycardic) and cholinergic (SLUDGE, miosis) are both toxidromes in the lecture.</li><li><strong>C, E</strong>: opioid and sedative-hypnotic are the two depressant toxidromes.</li></ul>",
+  "flags": [
+   {
+    "type": "warning",
+    "title": "A naming distinction, not a concept",
+    "html": "<p>Many references list the serotonergic toxidrome, and serotonin syndrome is often used for it loosely. The key turns on the name, not on whether serotonin toxicity is a recognisable pattern (it is); do not over-learn it.</p>"
+   }
+  ]
+ },
+ "hippo-t2c-em-Q67": {
+  "html": "<p><em>From 08 - Cardiac Pharmacology (PoM 1 Cardiology, Week 1) and the anticholinergic toxidrome note.</em> Sympathomimetics (cocaine, amphetamines) drive adrenergic receptors while leaving muscarinic function intact. <strong>Urinary retention</strong> (&ldquo;full as a flask&rdquo;) comes from muscarinic blockade of the detrusor, so it points to the <em>anticholinergic</em> toxidrome.</p><ul><li><strong>A</strong> Hyperthermia: muscle activity, agitation and vasoconstriction generate and trap heat.</li><li><strong>B</strong> Diaphoresis: the lecture's discriminator; the sympathomimetic patient is sweaty.</li><li><strong>C</strong> Seizure: CNS stimulation; the lecture's case 58 is a sympathomimetic seizure.</li><li><strong>E</strong> Bowel sounds: preserved (normal or active) because cholinergic gut tone is intact, unlike the absent sounds of the anticholinergic patient.</li></ul>",
+  "flags": [
+   {
+    "type": "warning",
+    "title": "Partly beyond the vault notes",
+    "html": "<p>Urinary retention, sweating and seizure come from the lecture and the anticholinergic toxidrome note; the bowel-sound claim for E is from general principles. Verify them before relying on them.</p>"
+   }
+  ]
+ },
+ "hippo-t2c-em-Q68": {
+  "html": "<p><em>From 08 - Cardiac Pharmacology (PoM 1 Cardiology, Week 1).</em> The lecture's note says it directly: both toxidromes give <strong>dilated pupils, tachycardia, hypertension and CNS changes</strong>, and <strong>sweating separates them</strong>. Mydriasis and altered mental status are the only pair where <em>both</em> signs are shared.</p><ul><li><strong>A</strong>: diaphoresis is sympathomimetic only (the anticholinergic patient is dry).</li><li><strong>C</strong>: urinary retention is anticholinergic only; hyperthermia occurs in both, but the pair fails.</li><li><strong>D, E</strong>: dry skin and dry mucous membranes are anticholinergic only, so each pair has one discriminating sign.</li></ul>"
+ },
+ "hippo-t2c-em-Q69": {
+  "html": "<p>In sympathomimetic toxicity (cocaine, amphetamines), agitation, muscle activity, seizures and vasoconstriction generate heat and stop it escaping. <strong>Hyperthermia</strong> is the sign that kills quickly: core temperatures above about 41&deg;C cause rhabdomyolysis, DIC, multi-organ failure and death within hours, which is why rapid cooling and sedation are the priority.</p><ul><li><strong>A</strong> Tachycardia and <strong>D</strong> hypertension: dangerous (ischemia, dissection, bleed) but usually respond to sedation; temperature is the best predictor of death.</li><li><strong>B</strong> Diaphoresis: helps dissipate heat, it is not itself lethal.</li><li><strong>C</strong> Altered mental status: drives the heat production but is not the direct killer.</li></ul>",
+  "flags": [
+   {
+    "type": "warning",
+    "title": "Not covered by the vault notes",
+    "html": "<p>No lecture note covers this; the reasoning is from general principles. Verify it before relying on it.</p>"
+   }
+  ]
+ },
+ "hippo-t2c-em-Q70": {
+  "html": "<p><strong>Benzodiazepines</strong> treat the cause: they calm the CNS stimulation that drives the agitation, tachycardia, hypertension, heat production and seizures, and they are the anticonvulsant for sympathomimetic seizures.</p><ul><li><strong>B</strong> Beta blockers: traditionally avoided because blocking beta-2 vasodilation leaves alpha vasoconstriction unopposed, which can worsen hypertension and coronary spasm in cocaine toxicity.</li><li><strong>C</strong> Physostigmine: an acetylcholinesterase inhibitor, the antidote for the <em>anticholinergic</em> toxidrome, not the sympathomimetic one.</li><li><strong>D</strong> Acetaminophen: an antipyretic that does nothing for hyperthermia from heat production (the hypothalamic set point is normal).</li><li><strong>E</strong> Propofol: an option for refractory agitation after intubation, not first line.</li></ul>",
+  "flags": [
+   {
+    "type": "warning",
+    "title": "Not covered by the vault notes",
+    "html": "<p>No lecture note covers this; the reasoning is from general principles. Verify it before relying on it.</p>"
+   }
+  ]
+ },
+ "hippo-t2c-em-Q71": {
+  "html": "<p><em>From the opioid intoxication reference note (linked from 06 - Substance Use Disorders, PoM 2 Psych).</em> Opioids act on mu receptors in the brainstem respiratory centre and blunt its response to CO2; <strong>respiratory depression (bradypnea)</strong> is what causes hypoxia, arrest and death, and it is what naloxone is given to reverse.</p><ul><li><strong>A</strong> Decreased LOC: part of the triad, but a drowsy patient who breathes adequately survives; LOC matters through airway and breathing.</li><li><strong>B</strong> Hypoactive bowel sounds: constipation/ileus, a nuisance, not lethal.</li><li><strong>C</strong> Bradycardia: usually mild.</li><li><strong>E</strong> Miosis: the diagnostic clue (pinpoint pupils), harmless in itself.</li></ul>"
+ },
+ "hippo-t2c-em-Q72": {
+  "html": "<p><em>Pathophysiology from 02 - Gas Exchange and Hypoxia (PoM 1 Respirology, Week 7).</em> CO binds hemoglobin ~240&times; more avidly than O2 and shifts the curve left, so tissue O2 delivery falls while PO2 (and the 99% saturation here) looks normal. Treatment is <strong>100% O2</strong> to speed CO displacement. His <strong>syncope</strong> is a sign of neurological involvement, a standard reason to discuss <strong>hyperbaric oxygen</strong>, which aims to reduce delayed neurological sequelae.</p><ul><li><strong>A, B</strong>: no oxygen at all leaves CO on hemoglobin; he feels well now, but a normal exam does not exclude later sequelae.</li><li><strong>C</strong>: correct first step, but stopping there ignores the syncope as a hyperbaric indication.</li></ul>",
+  "flags": [
+   {
+    "type": "warning",
+    "title": "Partly beyond the vault notes",
+    "html": "<p>The CO pathophysiology is in the lecture; the treatment (100% O2, hyperbaric indications such as syncope) is from general principles. Verify them before relying on them.</p>"
+   }
+  ]
+ },
+ "hippo-t2c-em-Q73": {
+  "html": "<p><em>From the acetaminophen overdose and Rumack-Matthew nomogram reference notes.</em> She named only citalopram, but her level shows a <strong>hidden acetaminophen co-ingestion</strong>. The nomogram treatment line is about 150 mg/L (roughly 1000 &mu;mol/L) at 4 h and halves every 4 h, so at 6 h it sits near 700 &mu;mol/L; <strong>750 is above it</strong>. A single acute ingestion with a known time is exactly when the nomogram applies, and a level above the line means <strong>N-acetylcysteine</strong> and admission, even with a normal ALT and INR (phase 1 is often silent).</p><ul><li><strong>A, B</strong>: sending her home misses a treatable, potentially fatal hepatotoxic dose.</li><li><strong>D</strong>: psychiatry is needed after an intentional overdose, but only once she is medically treated.</li></ul>",
+  "flags": [
+   {
+    "type": "warning",
+    "title": "Partly beyond the vault notes",
+    "html": "<p>The nomogram and NAC indication are in the vault; the unit conversion to &mu;mol/L and the 6-hour line value are reasoned, not stated there. Verify them before relying on them.</p>"
+   }
+  ]
+ },
+ "hippo-t2c-em-Q74": {
+  "html": "<p><em>From the acetaminophen overdose and Rumack-Matthew nomogram reference notes.</em> The nomogram only works for a <strong>single acute ingestion at a known time</strong>, and he has been unseen for 24 h. Any detectable acetaminophen (176 &mu;mol/L) with a <strong>raised ALT (270)</strong> fits phase 2 hepatotoxicity (24-72 h: &uarr; ALT/AST, &uarr; INR), and <strong>N-acetylcysteine</strong> still helps late, so treat and admit.</p><ul><li><strong>B</strong>: admission without NAC withholds the one antidote the note stars.</li><li><strong>C</strong>: a possible intentional overdose with liver injury and hypotension cannot go home.</li><li><strong>D</strong>: psychiatry follows medical treatment, it does not replace it.</li></ul>",
+  "flags": [
+   {
+    "type": "warning",
+    "title": "Partly beyond the vault notes",
+    "html": "<p>The phases and NAC are in the vault; treating an unknown-time ingestion on any detectable level plus raised ALT is from general principles. Verify them before relying on them.</p>"
+   }
+  ]
+ },
+ "hippo-t2c-em-Q75": {
+  "html": "<p><em>From the acetaminophen overdose reference note.</em> Acetaminophen is partly metabolised by <strong>hepatic</strong> CYP450 to NAPQI, normally neutralised by glutathione. In overdose glutathione runs out, NAPQI accumulates and causes <strong>hepatic necrosis</strong>; acetaminophen is the main cause of acute liver failure, and N-acetylcysteine works by replenishing glutathione.</p><ul><li><strong>A</strong> Kidney: acute kidney injury does occur (phases 2-3), but it is secondary, not the main organ.</li><li><strong>B</strong> Brain: encephalopathy in phase 3 is <em>hepatic</em> encephalopathy, a consequence of liver failure.</li><li><strong>C, E</strong> Heart, skin: not targets of NAPQI.</li></ul>"
+ },
+ "hippo-t2c-em-Q76": {
+  "html": "<p><em>From the salicylate (asprin overdose) reference note and 11 - Acid Base Disturbances (PoM 1 GU, Week 14).</em> Methyl salicylate (oil of wintergreen) is highly concentrated, so a small child's mouthful can be toxic. His gas is the lecture's salicylate picture: <strong>respiratory alkalosis plus AGMA</strong> (pCO2 20, HCO3 18, AG 20, pH alkalemic), with a level of 3.2 mmol/L and symptoms. The note says <strong>sodium bicarbonate is given regardless of pH</strong> to trap salicylate in alkaline urine, with admission for levels and fluid balance.</p><ul><li><strong>A, B</strong>: a symptomatic child with a toxic level cannot be observed briefly or sent home.</li><li><strong>D</strong>: dialysis is for severe poisoning (altered mental status, acidemia, renal failure, very high level), none of which he has.</li></ul>",
+  "flags": [
+   {
+    "type": "warning",
+    "title": "Partly beyond the vault notes",
+    "html": "<p>Bicarbonate and dialysis for severe poisoning are in the vault; the methyl salicylate point and the specific dialysis criteria are from general principles. Verify them before relying on them.</p>"
+   }
+  ]
+ },
+ "hippo-t2c-em-Q77": {
+  "html": "<p><em>From the salicylate (asprin overdose) reference note and 11 - Acid Base Disturbances (PoM 1 GU, Week 14).</em> The lecture's salicylate patient is <em>alkalemic</em> from the added respiratory alkalosis; this man is <strong>acidemic (pH 7.15)</strong>, confused, and in <strong>renal failure (Cr 377)</strong>, so he cannot excrete the drug. That is severe poisoning, the note's indication for <strong>hemodialysis</strong>, with bicarbonate started while it is arranged. An elderly chronic ASA user with confusion and tachypnea is the classic missed chronic salicylism.</p><ul><li><strong>A</strong>: NAC treats acetaminophen, which is negative.</li><li><strong>B</strong>: bicarbonate alone relies on urinary excretion that his kidneys cannot provide.</li><li><strong>C</strong>: chronic salicylism mimics sepsis, but the level explains the picture; antibiotics miss the cause.</li></ul>",
+  "flags": [
+   {
+    "type": "warning",
+    "title": "Partly beyond the vault notes",
+    "html": "<p>Bicarbonate and dialysis for severe poisoning are in the vault; the specific dialysis triggers (acidemia, altered mental status, renal failure) are from general principles. Verify them before relying on them.</p>"
+   }
+  ]
+ },
+ "hippo-t2c-em-Q78": {
+  "html": "<p><em>From the salicylate (asprin overdose) reference note and 11 - Acid Base Disturbances (PoM 1 GU, Week 14).</em> Salicylates <strong>directly stimulate the respiratory centre</strong>, causing hyperventilation and a primary respiratory alkalosis on top of the AGMA. Tachypnea/hyperpnea is expected, so <strong>bradypnea</strong> does not fit (it would suggest a co-ingested depressant or a pre-arrest patient).</p><ul><li><strong>B</strong> Tinnitus: the classic early sign, listed in the moderate tier.</li><li><strong>C</strong> Vomiting: nausea and vomiting appear even in mild toxicity.</li><li><strong>D</strong> Confusion: moderate to severe toxicity (then delirium, seizures, coma).</li></ul>"
+ },
+ "hippo-t2c-em-Q79": {
+  "html": "<p>Salicylate is a weak acid that carries protons across the inner mitochondrial membrane, dissipating the proton gradient that ATP synthase uses: it <strong>uncouples oxidative phosphorylation</strong>. The electron transport chain keeps running, so O2 is consumed and energy is released as <strong>heat</strong> instead of ATP, which explains the fever, increased CO2 production, anaerobic shift and lactic acidosis.</p><ul><li><strong>A</strong>: salicylate does not consume phosphate.</li><li><strong>C</strong>: complex I blockade is the rotenone/metformin-type mechanism, which stops electron flow rather than uncoupling it.</li><li><strong>D</strong>: oxygen supply is intact; the defect is in using the gradient, not in hypoxia.</li></ul>",
+  "flags": [
+   {
+    "type": "warning",
+    "title": "Not covered by the vault notes",
+    "html": "<p>No lecture note covers this; the reasoning is from general principles. Verify it before relying on it.</p>"
+   }
+  ]
+ },
+ "hippo-t2c-em-Q80": {
+  "html": "<p>A <strong>medical toxicologist is a physician</strong> who has completed formal, accredited postgraduate training in toxicology (in Canada, usually a fellowship after emergency medicine, internal medicine, pediatrics or similar). They provide bedside and poison-centre consultation for poisoned patients.</p><ul><li><strong>A</strong>: interest plus an online course is not a credential; the title implies accredited training.</li><li><strong>B</strong>: nurses and pharmacists staffing poison centres are <em>specialists in poison information</em>, not medical toxicologists.</li><li><strong>C</strong>: a laboratory scientist studying toxins is a toxicologist in the research sense, not a <em>medical</em> one.</li></ul>",
+  "flags": [
+   {
+    "type": "warning",
+    "title": "Not covered by the vault notes",
+    "html": "<p>No lecture note covers this; the reasoning is from general principles. Verify it before relying on it.</p>"
+   }
+  ]
+ },
+ "hippo-t2c-em-Q81": {
+  "html": "<p>Poison centres are public-health services: they <strong>advise, track and educate</strong> about poisonings. They have no role in making drugs, so <strong>pharmaceutical development and production</strong> is the exception.</p><ul><li><strong>B</strong>: calls are logged, which makes poison centres a main source of epidemiologic data on exposure trends.</li><li><strong>C</strong>: they give specialist advice (with a medical toxicologist on call) to clinicians treating poisoned patients.</li><li><strong>D</strong>: public telephone advice is their core service, and it keeps many exposures out of the ED.</li><li><strong>E</strong>: prevention research and public education are part of the mandate.</li></ul>",
+  "flags": [
+   {
+    "type": "warning",
+    "title": "Not covered by the vault notes",
+    "html": "<p>No lecture note covers this; the reasoning is from general principles. Verify it before relying on it.</p>"
+   }
+  ]
+ },
+ "hippo-t2c-em-Q7": {
+  "html": "<p><em>From 04 - Myocardial Infarction (PoM 1 Cardiology, Week 3).</em> This is a probable ACS with <strong>hypotension (84/59)</strong>. The lecture's STEMI table allows nitroglycerin <strong>only if there is no hemodynamic compromise (hypotension or RV infarction)</strong>: nitrates cut preload and would drop his pressure further.</p><ul><li><strong>A</strong> PCI: primary PCI is the reperfusion gold standard, and especially indicated in cardiogenic shock.</li><li><strong>B</strong> Aspirin: ASA 162-325 mg is the first drug in the lecture's algorithm (unless dissection is suspected).</li><li><strong>C</strong> Two large-bore IVs: he is hypotensive and needs access for fluids and drugs.</li><li><strong>D</strong> Oxygen: his saturation is 91%, and the lecture's first step includes oxygen by face mask.</li></ul>",
+  "flags": [
+   {
+    "type": "warning",
+    "title": "Stray text in the key line",
+    "html": "<p>The bank's key line ends in a stray &ldquo;E;&rdquo;, a leftover from the source layout. It does not change the answer.</p>"
+   }
+  ]
+ },
+ "hippo-t2c-em-Q8": {
+  "html": "<p><em>From 01 - Approach to Abdominal Pain &amp; Distension (PoM 1 GI, Week 13) and 13 - IV Fluids (PoM 1 GU, Week 14).</em> This is a bowel obstruction with hypovolemia (HR 118, BP 91/62) from vomiting and third spacing. The lecture's management is <strong>NG suction, IV fluids and electrolyte correction</strong>, and a resuscitation bolus must stay in the vessels. <strong>D5W is free water</strong>: the glucose is metabolised, and two-thirds goes into cells, so it barely expands the intravascular space and lowers sodium. Give an isotonic crystalloid instead.</p><ul><li><strong>B</strong>: an antiemetic for the vomiting is reasonable supportive care.</li><li><strong>C</strong>: analgesia does not mask the diagnosis and is expected.</li><li><strong>D</strong>: NG decompression is core management.</li><li><strong>E</strong>: two large-bore IVs for a tachycardic, borderline hypotensive patient.</li></ul>",
+  "flags": [
+   {
+    "type": "warning",
+    "title": "Option B mislabels the drug",
+    "html": "<p>Gravol is <em>dimenhydrinate</em>, not diphenhydramine (Benadryl). Either way B is an antiemetic/antihistamine and a reasonable part of care, so the error does not change the answer.</p>"
+   }
+  ]
+ },
+ "hippo-t2c-em-Q9": {
+  "html": "<p><em>From 06 - Hemorrhagic Shock (PoM 2 Repro, Week 6).</em> Match his vitals to the class table: HR 119 (100-120), <strong>BP normal</strong> but pulse pressure narrowed (24), RR 24 (20-30), cool with delayed refill. That is <strong>class II, 15-30% loss</strong>. The lecture's key point: BP is normal through class II and falls only in class III.</p><ul><li><strong>A</strong>: MAP (about 92) is normal, but shock is hypoperfusion; normal BP does not exclude it.</li><li><strong>B</strong>: neurogenic shock is warm, with bradycardia and hypotension; he is cold, tachycardic and normotensive.</li><li><strong>C</strong>: urine output needs a Foley and hours to measure; it is a monitoring vital sign, not an initial one.</li><li><strong>D</strong>: up to 15% is class I, with a pulse under 100.</li></ul>"
+ },
+ "hippo-t2c-em-Q94": {
+  "html": "<p><em>From 04 - Introduction to Cardiac Physiology (PoM 1 Cardiology, Week 1).</em> The lecture defines <strong>O2 delivery = cardiac output &times; arterial O2 content</strong>, and cardiac output = stroke volume &times; heart rate. O2 content is itself a <em>sum</em>: bound (SaO2 &times; Hb &times; 1.34, over 95%) + dissolved (PaO2 &times; 0.003, under 5%). E is the full product written out.</p><ul><li><strong>A, B</strong>: add flow to content instead of multiplying, so the units make no sense.</li><li><strong>C</strong>: multiplies bound by dissolved O2; they should be added to give content.</li><li><strong>D</strong>: subtracts dissolved from bound O2; dissolved oxygen adds to delivery.</li></ul>"
+ },
+ "hippo-t2c-surg-Q12": {
+  "html": "<p><em>From the basilar skull fracture reference note.</em> A fracture through the skull base tears the dura and the venous sinuses above the orbits and mastoid, so the signs are <strong>blood or CSF tracking to the surface</strong>: <strong>raccoon eyes</strong> (periorbital ecchymosis), <strong>Battle sign</strong> (mastoid ecchymosis), <strong>CSF rhinorrhea</strong> and <strong>otorrhea</strong> (the halo sign on a paper towel), and hemotympanum.</p><ul><li><strong>D</strong> Excessive lacrimation: tears are produced by the lacrimal gland and are not a sign of dural or bony disruption; clear fluid from the nose, not the eye, is the one to test.</li><li><strong>A, B, C, E</strong>: each is on the note's list.</li></ul>"
+ },
+ "hippo-t2c-surg-Q14": {
+  "html": "<p><em>From the basal cell carcinoma reference note.</em> <strong>Basal cell carcinoma</strong> is the most common skin cancer (and the most common cancer overall), typically a pearly, skin-coloured nodule or plaque on sun-exposed skin of older men. It grows slowly and almost never metastasises, which is why it is common but rarely fatal.</p><ul><li><strong>A</strong> Squamous cell carcinoma: second most common; more likely than BCC to metastasise.</li><li><strong>C</strong> Melanoma: far less common but causes most skin-cancer deaths.</li><li><strong>D</strong> Merkel cell carcinoma: rare, aggressive neuroendocrine tumour.</li></ul>",
+  "flags": [
+   {
+    "type": "warning",
+    "title": "Partly beyond the vault notes",
+    "html": "<p>BCC as the most common skin cancer is in the vault; the ranking of the distractors is from general principles. Verify them before relying on them.</p>"
+   }
+  ]
+ },
+ "hippo-t2c-surg-Q4": {
+  "html": "<p><em>From the SOAP reference note.</em> A SOAP progress note separates what the patient <strong>tells</strong> you from what you <strong>measure</strong>. Objective data can be verified by anyone: <strong>vitals, physical exam findings, labs and imaging</strong> (for AB after ulcer repair: temperature, HR, BP, the abdomen and wound, drain output, hemoglobin).</p><ul><li><strong>Subjective</strong>: his own report (pain, nausea, passing flatus, tolerating diet).</li><li><strong>Assessment</strong>: your interpretation (post-op day X, recovering well).</li><li><strong>Plan</strong>: what happens next (diet, drains, meds, disposition).</li></ul><p>A common error is putting the patient's symptoms under O; if you could not check it yourself, it belongs under S.</p>",
+  "flags": [
+   {
+    "type": "warning",
+    "title": "Partly beyond the vault notes",
+    "html": "<p>The SOAP note in the vault gives only the four headings; what goes under each is from general principles. Verify them before relying on them.</p>"
+   }
+  ]
+ },
+ "hippo-t2c-surg-Q5": {
+  "html": "<p>Disposition matches the level of care to how sick the patient is. After surgery AB is <strong>stable and recovering</strong>, but he has just had a duodenal perforation repaired and still needs inpatient care (analgesia, diet advancement, wound and bleeding checks), which is what the <strong>ward (floor)</strong> provides.</p><ul><li><strong>A</strong> Home: premature immediately after a laparotomy for a perforation; discharge comes when he tolerates diet, has pain controlled on oral medication and is mobile.</li><li><strong>C</strong> ICU: for instability (pressors, ventilation, active bleeding), none of which he has.</li><li><strong>D</strong> OR/IR: for a problem needing intervention (rebleed, leak), and he has none.</li></ul>",
+  "flags": [
+   {
+    "type": "warning",
+    "title": "Not covered by the vault notes",
+    "html": "<p>No lecture note covers this; the reasoning is from general principles. Verify it before relying on it.</p>"
+   }
+  ]
+ },
+ "hippo-t2c-surg-Q6": {
+  "html": "<p><em>From 05 - Principles of Clinical Pharmacology (FoM Block 2, Week 8).</em> A prescription is a written order stating <strong>what drug, what dose, by what route, how often, and for how long</strong>. &ldquo;Pantoprazole 40 mg PO daily&rdquo; gives drug, dose, route and frequency; a complete prescription also adds the <strong>duration or quantity</strong> (e.g. for 8 weeks) and refills.</p><ul><li>From <em>08 - PUD, Dyspepsia, &amp; Acid-Lowering Drugs (PoM 1 GI, Week 10)</em>: PPIs are taken <strong>before breakfast</strong>, since they irreversibly block only the pumps active at the time, a useful instruction to add.</li><li>Avoid ambiguous abbreviations (write &ldquo;daily&rdquo; rather than q.d.).</li></ul>",
+  "flags": [
+   {
+    "type": "warning",
+    "title": "Partly beyond the vault notes",
+    "html": "<p>The prescription components and PPI timing are in the vault; the 40 mg dose and the advice on abbreviations are from general principles. Verify them before relying on them.</p>"
+   }
+  ]
+ },
+ "hippo-t2c-peds-Q1": {
+  "html": "<p>Sort each question by <strong>when</strong> it refers to and <strong>whose</strong> history it is:</p><ul><li><strong>A</strong> (feeding, wet diapers, blood in stool, hard to wake) = <strong>review of systems (ii)</strong>: current symptoms by system.</li><li><strong>B</strong> (childcare, abuse, parental education) = <strong>social history (i)</strong>.</li><li><strong>C</strong> (gestational age, mode of delivery, APGAR, birth weight) = <strong>delivery history (iv)</strong>.</li><li><strong>D</strong> (consanguinity, ethnicity, parents with the same problem) = <strong>family history (iii)</strong>.</li><li><strong>E</strong> (illnesses, surgeries, medications, vaccines since birth) = <strong>postnatal history (vi)</strong>.</li><li><strong>F</strong> (mother's pregnancies, gestational diabetes/hypertension, GBS) = <strong>antenatal history (v)</strong>.</li></ul>",
+  "flags": [
+   {
+    "type": "warning",
+    "title": "Not covered by the vault notes",
+    "html": "<p>No lecture note covers this; the reasoning is from general principles. Verify it before relying on it.</p>"
+   },
+   {
+    "type": "warning",
+    "title": "The key maps two items to family history",
+    "html": "<p>The key gives A as iii, the same as D. D (consanguinity, ethnicity) is plainly family history, and A's questions (feeding, diapers, stool, waking) are current symptoms, so A should read ii (review of systems). The key is almost certainly mistyped; the other five pairings agree with it.</p>"
+   }
+  ]
+ },
+ "hippo-t2c-peds-Q3": {
+  "html": "<p><em>From 08 - Developmental Milestones (FoM Block 1, Week 3).</em> The lecture's red-flag list gives most of these directly:</p><ul><li><strong>A</strong> Not walking = <strong>18 mo (iv)</strong>: most walk independently by 12 mo; the red flag is not walking by 18 mo.</li><li><strong>B</strong> Hands still fisted = <strong>4 mo (i)</strong>: the palmar grasp reflex fades by 3-4 mo.</li><li><strong>C</strong> No babbling = <strong>9 mo (ii)</strong>: babbling a series of sounds (baba, duhduh) is the 9-month language milestone.</li><li><strong>D</strong> No joint attention = <strong>15 mo (iii)</strong>: the lecture's flag is not pointing to objects of interest by 15 mo, which is joint attention.</li></ul>",
+  "flags": [
+   {
+    "type": "warning",
+    "title": "C is inferred from the milestone table",
+    "html": "<p>The lecture lists babbling as a normal 9-month milestone rather than naming it on the red-flag list, so C is inferred from the table. The other three are on the list itself.</p>"
+   }
+  ]
+ },
+ "hippo-t2c-peds-Q7": {
+  "html": "<p><em>From 02 - Choosing Antibiotics Wisely Lecture 1 and 02 - Classification of Different Microbes (FoM Block 4).</em> <em>Mycoplasma</em> is an atypical organism with <strong>no cell wall</strong>, so drugs that attack the cell wall cannot touch it. The lecture's CAP regimen adds <strong>azithromycin</strong> to ceftriaxone for exactly this reason: <strong>macrolides</strong> (azithromycin, clarithromycin) bind the 50S ribosome and cover the atypicals.</p><ul><li><strong>C, D</strong>: the two macrolides.</li><li><strong>A</strong> Amoxicillin and <strong>B</strong> ceftriaxone: beta-lactams, which block cell-wall synthesis; they cover <em>S. pneumoniae</em>, the usual target, but not Mycoplasma.</li></ul>",
+  "flags": [
+   {
+    "type": "warning",
+    "title": "Partly beyond the vault notes",
+    "html": "<p>The macrolide and cell-wall reasoning is in the vault; the pediatric doses in the options are not, so they have not been checked. Verify them before relying on them.</p>"
+   }
+  ]
+ },
+ "hippo-t2c-fmob-Q6": {
+  "html": "<p><em>From 05 - Post-menopausal Woman Presenting with Bleeding (PoM 2 Repro, Week 5).</em> The lecture's rule: <strong>endometrial carcinoma must be excluded in every woman with PMB</strong>, however benign the story. The most <em>common</em> cause is atrophy; the most <em>serious</em> is carcinoma or hyperplasia, so the workup (speculum, TVUS, endometrial biopsy) is aimed at cancer first.</p><ul><li><strong>A</strong> Atrophic vulvovaginitis: the most likely cause, but a diagnosis made only once cancer is excluded.</li><li><strong>B</strong> Foreign body: rare and benign, seen on speculum.</li><li><strong>C</strong> VIN: a premalignant vulvar lesion seen on inspection, not the source of uterine bleeding and not the priority.</li></ul>"
+ },
+ "hippo-t2c-dermim-Q1": "<p><em>From the vault's xerosis note (00 - Symptoms &amp; Features).</em> Dry skin changes colour with the background tone: it reads as <strong>ashen grey</strong> on darker skin and pink-red on lighter skin, so you look for scale, dullness and fine cracking rather than a single colour.</p><ul><li><strong>B</strong>: xerosis is not a white-patch disease; white patches suggest hypopigmentation (e.g., pityriasis alba, vitiligo).</li><li><strong>C</strong>: itch is common but variable - \"always severe\" is wrong.</li><li><strong>D</strong>: barrier dryness occurs in every skin type; the treatment (emollients to restore the barrier) is the same.</li></ul>",
+ "hippo-t2c-dermim-Q2": {
+  "html": "<p>Erythema is dilated, blood-filled dermal vessels seen <em>through</em> the epidermis; the more melanin sits on top, the more the red is masked. On darker skin inflammation therefore reads as <strong>deeper red, violaceous/purple, dusky brown or near-black</strong>, and warmth, swelling and texture become more useful than colour.</p><ul><li><strong>A</strong>: \"always bright red\" is the light-skin template - the reason inflammation is under-called in skin of colour.</li><li><strong>B</strong>: any clinician can recognise it once they know what to look for (and palpate for warmth).</li><li><strong>D</strong>: erythema can occur with or without oedema.</li></ul>",
+  "flags": [
+   {
+    "type": "warning",
+    "title": "Not covered by the vault notes",
+    "html": "<p>No lecture or reference note describes erythema in skin of colour (only xerosis, melanoma and PIH are covered); the reasoning is from general principles. Verify it before relying on it.</p>"
+   }
+  ]
+ },
+ "hippo-t2c-dermim-Q3": "<p><em>From the vault's melanoma note.</em> In skin of colour melanoma appears in <strong>non-sun-exposed sites</strong> - the mouth, soles of the feet and the nail unit - i.e., <strong>acral lentiginous melanoma</strong>, which is not UV-driven. That is why a pigmented lesion on the sole or a new longitudinal nail band must be examined in every patient.</p><ul><li><strong>A</strong>: melanin lowers UV-driven risk but gives no immunity.</li><li><strong>B</strong>: most melanomas in any skin type arise <em>de novo</em>, not from pre-existing moles.</li><li><strong>C</strong>: the opposite - late recognition at hidden sites means diagnosis is often at a thicker, worse-prognosis stage.</li></ul>",
+ "hippo-t2c-dermim-Q4": "<p><em>From the vault's post-inflammatory hyperpigmentation and nodulocystic acne notes.</em> PIH is <strong>more severe in skin of colour</strong> - lesions are darker and last longer - and PIH (with keloid scarring) is a common complication of inflammatory acne, especially in darker skin. The dark marks often bother patients more than the acne itself.</p><ul><li><strong>B</strong>: acne occurs in every skin type.</li><li><strong>C</strong>: scarring is a risk, not a certainty (\"always\" is wrong).</li><li><strong>D</strong>: melanin does not protect against acne, which is driven by sebum, follicular plugging, <em>C. acnes</em> and inflammation.</li></ul>",
+ "hippo-t2c-dermim-Q5": {
+  "html": "<p><em>From the vault's Stevens-Johnson syndrome and morbilliform rash notes.</em> A new <strong>antiepileptic (phenytoin)</strong>, fever and malaise, painful lesions with <strong>skin that sloughs</strong>, and <strong>mucosal involvement</strong> (mouth, lips) is a SCAR. The note defines SJS by extent: <strong>&lt;10% BSA</strong> (TEN &gt;30%). Management: stop the drug, burn unit/ICU, supportive care.</p><ul><li><strong>A</strong> Erythroderma: near-total body redness and scale, not 10% with sloughing and mucositis.</li><li><strong>B</strong> Morbilliform eruption: phenytoin can cause it, but it is non-blistering with no mucosal disease.</li><li><strong>D</strong> Contact dermatitis: itchy, confined to the contact site, no mucosa or systemic illness.</li></ul>",
+  "flags": [
+   {
+    "type": "warning",
+    "title": "Extraction damage",
+    "html": "<p>The stem switches between \"his\" and \"her\" for the same patient, and 10% BSA sits exactly on the SJS/overlap boundary in the vault's definition (&lt;10% SJS, 10-30% overlap). Neither changes the best answer among these options.</p>"
+   }
+  ]
+ },
+ "hippo-t2c-dermim-Q6": "<p><em>From the vault's post-inflammatory hyperpigmentation note.</em> PIH follows inflammation, so the lever is <strong>less inflammation, sooner</strong>: the note says to treat inflammatory acne <strong>more aggressively</strong> (e.g., adapalene, tretinoin) and to insist on sunscreen in patients at higher risk.</p><ul><li><strong>A</strong>: backwards - PIH is more common and more severe in darker skin.</li><li><strong>B</strong>: sun exposure deepens pigmentation; sunscreen is the recommendation.</li><li><strong>D</strong>: without treatment it usually fades over 6-12 months (though not always), and topical retinoids or azelaic acid speed it.</li></ul>",
+ "hippo-t2c-dermim-Q8": {
+  "html": "<p><strong>False.</strong> A viral exanthem and a drug exanthem both typically produce a widespread, symmetric <strong>morbilliform</strong> (maculopapular) eruption; the vault's morbilliform rash note lists measles, roseola and rubella alongside phenytoin and anti-HIV drugs as causes of the same pattern. Because morphology does not discriminate, the distinction rests on the <strong>history</strong>: timing relative to a new drug, prodrome, sick contacts, and features such as an enanthem (e.g., Koplik spots) or eosinophilia.</p>",
+  "flags": [
+   {
+    "type": "warning",
+    "title": "Not covered by the vault notes",
+    "html": "<p>The vault lists viral and drug causes of a morbilliform rash but no note states that they are morphologically indistinguishable; that part is from general principles. Verify it before relying on it.</p>"
+   }
+  ]
+ },
+ "hippo-t2c-dermim-Q10": {
+  "html": "<p>Childhood exanthems are diagnosed <strong>clinically</strong> - the pattern of rash, its spread, the prodrome and any enanthem - and, where confirmation matters (e.g., measles for public health), by <strong>serology or PCR</strong> (the vault's measles note lists IgM serology and PCR). Histology of a viral exanthem is non-specific (a mild perivascular infiltrate), so a biopsy rarely changes management. Biopsy is reserved for the atypical or severe eruption where a SCAR (SJS/TEN) or vasculitis needs to be excluded.</p>",
+  "flags": [
+   {
+    "type": "warning",
+    "title": "Not covered by the vault notes",
+    "html": "<p>No lecture note discusses skin biopsy in childhood exanthems; the reasoning is from general principles. Verify it before relying on it.</p>"
+   }
+  ]
+ },
+ "hippo-t2c-dermim-Q11": {
+  "html": "<p>\"Specific\" exanthems are the named, recognisable ones - measles, rubella, roseola, erythema infectiosum, varicella, hand-foot-and-mouth. Most children seen in clinic instead have a <strong>non-specific viral exanthem</strong>: a transient, blanching maculopapular rash with a mild febrile illness, caused by any of many enteroviruses or respiratory viruses, never identified, and resolving on its own. Vaccination has made several of the classic specific exanthems uncommon, which widens the gap further.</p>",
+  "flags": [
+   {
+    "type": "warning",
+    "title": "Not covered by the vault notes",
+    "html": "<p>The vault lists viral exanthems (exanthem rash note) but no note compares specific with non-specific exanthem frequency; the reasoning is from general principles. Verify it before relying on it.</p>"
+   }
+  ]
+ },
+ "hippo-t2c-dermim-Q12": {
+  "html": "<p><em>From the vault's measles note.</em> The prodrome is the <strong>three Cs</strong> - <strong>cough, coryza (rhinorrhea) and conjunctivitis</strong> - with a high fever. <strong>Koplik spots</strong> follow on the buccal mucosa, then a rash that starts on the face and spreads downward over 2-4 days. It is airborne and highly contagious; treatment is supportive, with vitamin A for severe hospitalised cases.</p>",
+  "flags": [
+   {
+    "type": "warning",
+    "title": "Extraction damage",
+    "html": "<p>The key reads \"Conjunctiva\"; the feature is <strong>conjunctivitis</strong> (inflamed conjunctiva), almost certainly a transcription slip in the source.</p>"
+   }
+  ]
+ },
+ "hippo-t2c-dermim-Q13": "<p><em>From the vault's Koplik spots and measles notes.</em> An <strong>enanthem</strong> is a mucosal eruption (as an exanthem is a skin one). In measles it is <strong>Koplik spots</strong>: clustered, 1-3 mm whitish spots on the buccal mucosa opposite the molars, appearing <strong>2-3 days before the rash</strong> - which makes them the clue that lets you call measles before the exanthem arrives.</p>",
+ "hippo-t2c-dermim-Q15": "<p><em>From the vault's Coxsackie A virus note.</em> Hand, foot and mouth disease has <strong>no specific treatment</strong> and resolves in days to weeks. The danger is the <strong>painful oral enanthem</strong> (tongue, buccal mucosa, sometimes lips and tonsils): children refuse to drink, so the note tells you to warn parents to watch for <strong>dehydration</strong>. Management is therefore hydration plus analgesia (acetaminophen/ibuprofen) so the child can drink.</p>",
+ "hippo-t2c-dermim-Q16": "<p><em>From the vault's Streptococcus pyogenes and penicillin V notes.</em> Scarlet fever is Group A strep with a toxin-mediated <strong>sandpaper</strong> rash and strawberry tongue. It is treated like strep pharyngitis: <strong>penicillin V</strong> (or amoxicillin, which the S. pyogenes note lists) for a <strong>full 10 days</strong>. The full course is what matters, because the reason to treat is to prevent <strong>acute rheumatic fever</strong> (and Sydenham chorea), not only to shorten the illness. Amox-clav is reserved for beta-lactamase-positive co-infection.</p>",
+ "hippo-t2c-dermim-Q19": "<p><em>From the vault's atopy note.</em> The atopic (allergic) march is the natural progression of IgE-mediated disease from infancy: <strong>atopic dermatitis</strong> (birth-1 year) &rarr; food allergy (2-3 years) &rarr; <strong>allergic rhinitis</strong> (4-6 years) &rarr; <strong>asthma</strong> (5-7 years). The three the question wants are eczema, allergic rhinitis and asthma; the key lists them out of order, but eczema comes first, which is why an eczematous infant is counselled about later asthma.</p>",
+ "hippo-t2c-dermim-Q23": {
+  "html": "<p><em>From the vault's atopic dermatitis note.</em> A broken, inflamed skin barrier is readily \"superinfected\", most commonly by <strong><em>Staphylococcus aureus</em></strong> (weeping, crusting, sudden flare). A <strong>dilute bleach bath</strong> (sodium hypochlorite) reduces the staph load on the skin without an antibiotic, which is why it is used for recurrent infected eczema, always followed by a moisturiser to protect the barrier.</p>",
+  "flags": [
+   {
+    "type": "warning",
+    "title": "Not covered by the vault notes",
+    "html": "<p>The vault's atopic dermatitis note covers <em>S. aureus</em> superinfection, but no note mentions bleach baths; that half is from general principles. Verify it before relying on it.</p>"
+   }
+  ]
+ },
+ "hippo-t2c-dermim-Q32": {
+  "html": "<p><em>From the vault's acute liver failure note.</em> The picture - RUQ pain, confusion, ALT/AST in the thousands, INR 6.4, rising bilirubin - is <strong>acute liver failure</strong>, and the most common cause is <strong>acetaminophen overdose</strong>. The note's specific therapy is <strong>N-acetylcysteine</strong>: it replenishes glutathione so the toxic metabolite NAPQI is detoxified. It is given even late after ingestion, and the INR is the fastest marker of improvement or worsening.</p>",
+  "flags": [
+   {
+    "type": "warning",
+    "title": "Extraction damage",
+    "html": "<p>This stem depends on the Mr. Johnson case in the preceding questions (Q29-Q31); the case introduction was glued into the last option of Q29 during extraction, so the question reads out of context on its own.</p>"
+   }
+  ]
+ },
+ "hippo-t2c-psych-Q1": "<p><em>From 02 - Tasks of a Physician 1 - Patient-Centered Approach (FoM Block 1).</em> The biopsychosocial formulation is organised by the <strong>4 Ps</strong>, each crossed with the biological, psychological and social columns:</p><ul><li><strong>Predisposing</strong> (A): what put the person at risk.</li><li><strong>Precipitating</strong>: the trigger for the current episode.</li><li><strong>Perpetuating</strong> (C): what keeps it going.</li><li><strong>Protective</strong> (D): strengths that reduce severity.</li></ul><p><strong>Premeditation</strong> (B) is a forensic/intent term, not a P; it is the distractor for the missing <em>precipitating</em>.</p>",
+ "hippo-t2c-psych-Q2": "<p><strong>False.</strong> <em>From 01 - Diagnosis in Psychiatry (PoM 2).</em> Psychiatry has no identifiable lesion - <strong>no physical signs, blood tests, biopsies or imaging</strong> that make the diagnosis. Diagnosis is made from <strong>clusters of symptoms and signs</strong> judged against DSM criteria, and the DSM exists to make those judgments more <strong>valid and reliable</strong> precisely because they are not self-evident. Symptoms lie on a continuum, must cause significant distress or impairment to count, and clinicians can reasonably disagree - the opposite of algorithmic, all-or-none, undisputed diagnoses.</p>",
+ "hippo-t2c-psych-Q3": "<p><strong>True.</strong> <em>From the vault's MSE note (ABC STAMP LICKER).</em> <strong>Mood</strong> is the patient's <em>subjective</em> report of their emotional state <strong>over time</strong> (\"on a 1-10 scale, where is your mood?\"), usually recorded in their own words. <strong>Affect</strong> is what the <em>examiner observes</em> <strong>in the moment</strong> - range, reactivity, lability, and whether it is <strong>congruent</strong> with the stated mood. The stem's phrase \"perception of the world\" is loose (mood is their inner emotional state), but the subjective-versus-observed split it tests is exactly right.</p>",
+ "hippo-t2c-psych-Q4": "<p><em>From the vault's MSE note (ABC STAMP LICKER).</em> Thought <em>process</em> describes <strong>how thoughts connect</strong> - can you follow the train of thought? The note's categories are <strong>tangential</strong> (moves off topic and never returns), <strong>circumstantial</strong> (over-detailed but gets there), flight of ideas, and <strong>loosening of associations</strong> (thoughts not connected); a normal process is <strong>logical/goal-directed</strong>. So A, B, C and E are all process descriptors.</p><p><strong>Accelerated</strong> (D) describes <em>rate</em>, which the MSE records under <strong>speech</strong> (rapid, pressured).</p>",
+ "hippo-t2c-psych-Q5": "<p><em>From 05 - Cognitive Disorders in the Elderly (PoM 2) and 05 - Depressive Disorders.</em> Before calling it primary depression you exclude <em>depressive disorder due to another medical condition</em> and get a baseline for treatment:</p><ul><li><strong>A TSH</strong>: hypothyroidism mimics depression (on the lecture's reversible-cause list).</li><li><strong>D B12</strong>: deficiency causes low mood and cognitive slowing (same list).</li><li><strong>B creatinine/GFR</strong>: renal function (the lecture's urea and electrolytes) screens uremia and guides antidepressant or lithium dosing.</li><li><strong>C HIV/syphilis</strong>: not routine; order them when the history points there (risk factors, neurological signs, atypical presentation).</li></ul>",
+ "hippo-t2c-psych-Q6": {
+  "html": "<p>Obstructive (blocking) interview techniques shut the patient down or distort what they say:</p><ul><li><strong>B Compound questions</strong>: several questions at once, so you cannot tell which one the answer is to.</li><li><strong>C \"Why\" questions</strong>: sound accusatory and push the patient to justify rather than describe.</li><li><strong>D Disapproval</strong>: judgment makes the patient withhold, especially about substances, sex or self-harm.</li></ul><p><strong>Postponement</strong> (A) is the exception: deliberately deferring a topic (\"let's come back to that\") to keep the interview on track. Used transparently it steers the interview rather than obstructs it.</p>",
+  "flags": [
+   {
+    "type": "warning",
+    "title": "Not covered by the vault notes",
+    "html": "<p>No lecture note lists obstructive or facilitative interview techniques (02 - The Psychiatric Interview covers the funnel strategy only); the reasoning is from general principles. Verify it before relying on it.</p>"
+   }
+  ]
+ },
+ "hippo-t2c-psych-Q7": {
+  "html": "<p>ADHD is defined by two symptom domains, as <em>07 - Approach to ADHD</em> and the FoM <em>05 - ADHD Primer</em> state: <strong>inattention</strong> and <strong>hyperactivity-impulsivity</strong> (6+ symptoms for 6+ months, several before age 12, in 2+ settings). The MOAT options that fit map onto those domains:</p><ul><li><strong>A Movement excess</strong>: hyperactivity (fidgeting, cannot stay seated).</li><li><strong>C Attention problems</strong>: inattention.</li><li><strong>D Talking impulsively</strong>: impulsivity (blurting out, interrupting).</li></ul><p><strong>Over exaggerated</strong> (B) is not an ADHD feature at all - it is the made-up option.</p>",
+  "flags": [
+   {
+    "type": "warning",
+    "title": "Not covered by the vault notes",
+    "html": "<p>The ADHD domains are in the vault (07 - Approach to ADHD, FoM 05 - ADHD Primer), but the MOAT mnemonic itself is not; which word the O stands for could not be checked. Verify it before relying on it.</p>"
+   }
+  ]
+ },
+ "hippo-t2c-psych-Q8": "<p><em>From the vault's generalized anxiety disorder note (linked from 01 - Anxiety Disorders).</em> DSM-5 Criterion C needs <strong>3 of 6</strong> symptoms tied to the worry: <strong>restlessness</strong>/on edge, fatigue, poor concentration, <strong>irritability</strong> (A), <strong>muscle tension</strong> (D) and <strong>sleep disturbance</strong> (C).</p><p><strong>Sweating</strong> (B) is an autonomic symptom: it is on the 13-item <strong>panic attack</strong> list in the same lecture, not the GAD list. GAD is chronic worry with tension; panic is abrupt surges of autonomic arousal.</p>",
+ "hippo-t2c-psych-Q9": {
+  "html": "<p><em>From Summary Notes - Psych (PoM 2), NMS vs serotonin syndrome table.</em></p><ul><li><strong>B onset</strong>, a real difference: SS within <strong>&lt;12 h</strong> of a serotonergic change; NMS over <strong>1-3 days</strong> (up to a week) after a dopamine blocker.</li><li><strong>C reflexes</strong>, a real difference: SS gives <strong>hyperreflexia and clonus</strong>; NMS gives <strong>hyporeflexia</strong> with lead-pipe rigidity.</li><li><strong>A temperature</strong>, not a difference: the table lists <strong>hyperthermia</strong> under both.</li><li><strong>D mental status</strong>: the table's nearest row is agitation (possible in SS, absent in NMS), which is presumably the key's basis.</li></ul>",
+  "flags": [
+   {
+    "type": "warning",
+    "title": "Option D is contestable",
+    "html": "<p>The vault supports D only through its agitation row (Summary Notes - Psych; the NMS reference note does not list mental status at all). Standard teaching is that <strong>both</strong> syndromes cause altered mental status: NMS causes confusion or stupor as part of its classic tetrad; SS causes agitation or delirium. On that reading D is not a difference and the key would be B, C only. The key is left as written. Check the source before relying on D.</p>"
+   }
+  ]
+ },
+ "hippo-t2c-psych-Q10": "<p><em>From the vault's Wernicke's encephalopathy note.</em> Thiamine (B1) depletion gives the classic <strong>triad</strong>: <strong>ophthalmoplegia</strong> (B, often with nystagmus), <strong>ataxia</strong> (D) and <strong>confusion</strong>, which is the mental status change (A). Only about 10% of patients have all three, so one or two features in a malnourished or alcohol-using patient are enough to give thiamine.</p><p><strong>Vomiting</strong> (C) is not in the triad. It is a <em>cause</em> of depletion (e.g., hyperemesis, post-bariatric surgery), which is why it turns up as a distractor.</p>",
+ "hippo-t2c-psych-Q21": {
+  "html": "<p><em>From the vault's 4AT note, with the item scores given in the bank's own key to the next question.</em> The 4AT has four items, and three are abnormal for Tony:</p><ul><li><strong>Alertness</strong>, abnormal: drowsy since the fall (scores 4).</li><li><strong>AMT4</strong> (age, DOB, place, year), abnormal: <strong>1 mistake</strong>, the year (scores 1).</li><li><strong>Attention</strong> (months backward), normal: 9 correct is &ge;7 (scores 0).</li><li><strong>Acute change/fluctuating course</strong>, abnormal: new confusion after the fall (scores 4).</li></ul><p>The total of 9 is &ge;4, which means possible delirium.</p>",
+  "flags": [
+   {
+    "type": "warning",
+    "title": "Extraction damage",
+    "html": "<p>This question's own key reads only \"See below\"; the domain breakdown landed in the key of the next question (Q22) during extraction, and the Tony vignette was glued into the last option of Q19. The per-item point values (4/1/0/4) are not in the vault's 4AT note, which gives only the score thresholds.</p>"
+   }
+  ]
+ },
+ "hippo-t2c-psych-Q23": {
+  "html": "<p><em>From 06 - Multiple Myeloma (FoM Block 3, approach to a mediastinal mass) and the vault's SVC syndrome note.</em> A lung cancer with metastases plus acute <strong>dyspnea, cough, facial oedema</strong> and <strong>distended thoracic veins</strong> is obstruction of the superior vena cava: tumour compresses the thin-walled SVC, venous return from the head, neck and arms backs up, and collateral chest veins open. The note adds facial plethora, headache and stridor, and a positive <strong>Pemberton sign</strong>. It is a palliative-radiotherapy indication, and CT is the imaging of choice.</p>",
+  "flags": [
+   {
+    "type": "warning",
+    "title": "Extraction damage",
+    "html": "<p>The Sasha vignette this question depends on (lung cancer, facial oedema, thoracic vein distension) was glued onto the end of the previous question's (Q22) stem during extraction, so this stem reads without its case.</p>"
+   }
+  ]
+ }
+}
