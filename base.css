@@ -20,20 +20,22 @@
    failing that, the OS setting; with scripting off there is no attribute and
    the page stays light. The values keep the light palette's warmth: a rose
    black rather than a neutral one, so the two themes read as one portal.
-   Measured against the bg: text 15.8:1, muted 7.0:1, accent 7.7:1.
+   Measured against the bg: text 18.2:1, muted 10.9:1, accent 9.5:1; the card sits
+   8 L* above the bg and the border is 2.3:1 on the card, so a card reads as a
+   shape at a glance.
 
    Wrapped in "not print" rather than reverted under print, so the light values
    above are what a PDF gets and there is only one copy of them. color-scheme
    tells the browser the form controls and scrollbars should follow. */
 @media not print{
     :root[data-theme="dark"]{
-        --bg:#161113;
-        --card-bg:#201a1c;
-        --text:#f2eaeb;
-        --muted:#a99b9e;
-        --border:#3b3034;
-        --accent:#e18ea3;
-        --accent-soft:#3e2029;
+        --bg:#151012;
+        --card-bg:#282024;
+        --text:#fefafb;
+        --muted:#d0c1c4;
+        --border:#66555c;
+        --accent:#f0a2b5;
+        --accent-soft:#4d2733;
         color-scheme:dark;
     }
 }

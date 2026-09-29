@@ -31,7 +31,7 @@
    those pages are not edited by hand, so the soft and the ink are derived here
    from the accent instead: this selector outranks the inline :root, and
    color-mix() turns any accent into a dark wash and a lightened ink that reads
-   on it (the ink lands between 5:1 and 5.7:1 on the wash and above 6:1 on the
+   on it (the ink lands at 7.4:1 or better on the wash and 10:1 or better on the
    bg for every accent in the portal). The accent itself cannot be lightened in
    place, since a custom property may not be defined from its own value, which
    is what --q-accent-text is for.
@@ -39,19 +39,19 @@
    Wrapped in "not print" so a PDF gets the light values above; see base.css. */
 @media not print{
     :root[data-theme="dark"]{
-        --q-ok:#7fd3a0;
-        --q-ok-soft:#16301f;
-        --q-bad:#f5978a;
-        --q-bad-soft:#3d1d19;
-        --q-star:#e7bd67;
-        --q-star-soft:#372c14;
-        --q-warn:#ecc57e;
-        --q-warn-soft:#352c19;
-        --on-q-mark:#161113;
+        --q-ok:#a6efc0;
+        --q-ok-soft:#21402f;
+        --q-bad:#ffbdb2;
+        --q-bad-soft:#4c2622;
+        --q-star:#f8d78a;
+        --q-star-soft:#443714;
+        --q-warn:#fbdc9f;
+        --q-warn-soft:#453a1c;
+        --on-q-mark:#151012;
         /* buttons keep white text on the accent in the dark theme too */
         --on-q-accent:#ffffff;
-        --q-accent-soft:color-mix(in srgb,var(--q-accent) 26%,var(--card-bg));
-        --q-accent-ink:color-mix(in srgb,var(--q-accent) 55%,#ffffff);
+        --q-accent-soft:color-mix(in srgb,var(--q-accent) 32%,var(--card-bg));
+        --q-accent-ink:color-mix(in srgb,var(--q-accent) 32%,#ffffff);
         --q-accent-text:var(--q-accent-ink);
     }
 }
@@ -68,18 +68,22 @@
     :root[data-theme="dark"] .notedlg::backdrop{background:rgba(0,0,0,.62);}
     :root[data-theme="dark"] .msel-pop{box-shadow:0 12px 28px rgba(0,0,0,.5);}
     :root[data-theme="dark"] .block-card .bmeta,
-    :root[data-theme="dark"] .qbank-card .bmeta{color:color-mix(in srgb,var(--hue) 55%,#ffffff);}
+    :root[data-theme="dark"] .qbank-card .bmeta{color:color-mix(in srgb,var(--hue) 32%,#ffffff);}
+    /* The multi tag and the callouts outline themselves in the block's accent
+       or in --border; the accent is a dark colour, so the tag's rule takes the
+       ink and the callout's left bar takes the muted grey at full strength. */
+    :root[data-theme="dark"] .tag.multi{border-color:var(--q-accent-ink);}
     :root[data-theme="dark"] .block-card{
-        --hue-ink:color-mix(in srgb,var(--hue) 75%,#ffffff);
+        --hue-ink:color-mix(in srgb,var(--hue) 45%,#ffffff);
         border-top-color:var(--hue-ink);
     }
     :root[data-theme="dark"] .block-card:hover{border-color:var(--hue-ink);}
     :root[data-theme="dark"] .block-card.is-empty:hover{border-color:var(--border);}
     /* A search hit. The block's accent is a dark colour, so its wash at the
        light theme's strength barely lifts off the card: the wash is stronger
-       here (text on it stays above 7.8:1 for every accent in the portal) and
+       here (text on it stays above 8.6:1 for every accent in the portal) and
        the underline is the lightened ink, two pixels of it. The hit you are on
-       is the ink itself with the bg's colour as its text (6.1:1 or better),
+       is the ink itself with the bg's colour as its text (10:1 or better),
        which is the brightest thing in the note. */
     :root[data-theme="dark"] mark.hit{
         background:color-mix(in srgb,var(--q-accent) 60%,var(--card-bg));
