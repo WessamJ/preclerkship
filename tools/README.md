@@ -39,6 +39,17 @@ wrong in two places:
 | [`diagrams.py`](diagrams.py) | rasterises artwork the PDF *draws* rather than embeds, so a labelled figure arrives as a figure instead of its labels arriving as loose paragraphs. A cluster has to be made of curve and line segments to qualify - a dashed box round a callout is rectangles only, and its text is already being read as text |
 | [`coverage.py`](coverage.py) | titles a note with every lecture it covers, so a chart that runs two lectures together names both instead of leaving one showing as a gap |
 
+**Reader reports.** Every question in the bank has a Report button, and two
+pieces here carry a report from that button to a pull request:
+
+| Piece | What it does |
+|---|---|
+| [`report-worker/`](report-worker/) | the relay, a Cloudflare Worker that checks the report, rate-limits it and opens a GitHub issue labelled `report` with a fenced block naming the question |
+| [`report_to_pr.py`](report_to_pr.py) | the Action's script: reads that block, appends a `report` flag to the question's JSON, rebuilds the pages and opens the pull request |
+
+The one-time setup, a token and a deploy, is in
+[`report-worker/README.md`](report-worker/README.md).
+
 **Why the tables are read off the ruling lines.** Both extractors used to infer
 a table from its typography and both got it wrong: PoM 1 had no table
 recovery at all and emitted every cell as its own paragraph, and FoM's x-anchor
