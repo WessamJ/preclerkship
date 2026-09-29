@@ -13,6 +13,45 @@
     --q-warn:#7d5305;
     --q-warn-soft:#f8f0de;
     --on-q-accent:#ffffff;
+    /* the letter on a marked option and the clock when time is short: text on
+       a verdict colour, which is white while the verdicts are dark */
+    --on-q-mark:#ffffff;
+    /* The accent where it is set as text on the page itself: an eyebrow, a
+       question number, a hover. In the light theme that is the accent as is;
+       in the dark theme the accent is too dark for text and the ink, which is
+       already lightened to read on the soft wash, stands in for it. Buttons
+       keep the accent itself behind white text in both. */
+    --q-accent-text:var(--q-accent);
+}
+
+/* The dark theme's share of the tokens: the verdicts, the star and the warning
+   go light on dark washes, and each pair keeps at least 7:1 (measured 7.9, 7.0,
+   7.8 and 8.4). The accent trio is another matter. Every block page sets
+   --q-accent, --q-accent-soft and --q-accent-ink inline on its own :root, and
+   those pages are not edited by hand, so the soft and the ink are derived here
+   from the accent instead: this selector outranks the inline :root, and
+   color-mix() turns any accent into a dark wash and a lightened ink that reads
+   on it (the ink lands between 5:1 and 5.7:1 on the wash and above 6:1 on the
+   bg for every accent in the portal). The accent itself cannot be lightened in
+   place, since a custom property may not be defined from its own value, which
+   is what --q-accent-text is for.
+
+   Wrapped in "not print" so a PDF gets the light values above; see base.css. */
+@media not print{
+    :root[data-theme="dark"]{
+        --q-ok:#7fd3a0;
+        --q-ok-soft:#16301f;
+        --q-bad:#f5978a;
+        --q-bad-soft:#3d1d19;
+        --q-star:#e7bd67;
+        --q-star-soft:#372c14;
+        --q-warn:#ecc57e;
+        --q-warn-soft:#352c19;
+        --on-q-mark:#161113;
+        --q-accent-soft:color-mix(in srgb,var(--q-accent) 26%,var(--card-bg));
+        --q-accent-ink:color-mix(in srgb,var(--q-accent) 55%,#ffffff);
+        --q-accent-text:var(--q-accent-ink);
+    }
 }
 
 /* A block page opens on roughly 600px of chrome - switcher, masthead, tabs,
@@ -98,7 +137,7 @@
 .blocknav a.qbank{
     margin-left:6px;
     font-weight:600;
-    color:var(--q-accent);
+    color:var(--q-accent-text);
 }
 
 .blocknav a.qbank::before{
@@ -135,7 +174,7 @@
     font-weight:600;
     letter-spacing:.08em;
     text-transform:uppercase;
-    color:var(--q-accent);
+    color:var(--q-accent-text);
     margin-bottom:6px;
 }
 
@@ -765,7 +804,7 @@ mark.hit{
 }
 
 .danger:hover:not(:disabled){color:var(--q-bad);border-color:var(--q-bad);}
-.backup-btn:hover{color:var(--q-accent);border-color:var(--q-accent);}
+.backup-btn:hover{color:var(--q-accent-text);border-color:var(--q-accent);}
 .danger:disabled{opacity:.5;cursor:default;}
 
 .danger.armed{
@@ -809,7 +848,7 @@ mark.hit{
     font-weight:600;
     letter-spacing:.09em;
     text-transform:uppercase;
-    color:var(--q-accent);
+    color:var(--q-accent-text);
     margin-bottom:5px;
 }
 
@@ -847,7 +886,7 @@ mark.hit{
     font-weight:600;
     letter-spacing:.08em;
     text-transform:uppercase;
-    color:var(--q-accent);
+    color:var(--q-accent-text);
     margin-bottom:8px;
 }
 
@@ -1001,7 +1040,7 @@ mark.hit{
     font-family:var(--serif);
     font-size:.95rem;
     font-weight:600;
-    color:var(--q-accent);
+    color:var(--q-accent-text);
 }
 
 .tag{
@@ -1231,7 +1270,7 @@ mark.hit{
     text-underline-offset:2px;
 }
 .ans-src .sw-lec:hover,.ans-src .sw-lec:focus-visible{
-    color:var(--q-accent);
+    color:var(--q-accent-text);
     text-decoration-style:solid;
 }
 
@@ -1276,7 +1315,7 @@ body.has-dialog{overflow:hidden;}
     font-weight:600;
     letter-spacing:.08em;
     text-transform:uppercase;
-    color:var(--q-accent);
+    color:var(--q-accent-text);
     margin:0;
 }
 .notedlg-full{font-size:.8rem;color:var(--muted);}
@@ -1292,7 +1331,7 @@ body.has-dialog{overflow:hidden;}
     line-height:1;
     cursor:pointer;
 }
-.notedlg-close:hover,.notedlg-close:focus-visible{color:var(--q-accent);border-color:var(--q-accent);}
+.notedlg-close:hover,.notedlg-close:focus-visible{color:var(--q-accent-text);border-color:var(--q-accent);}
 
 .notedlg-body{
     overflow-y:auto;
@@ -1774,7 +1813,7 @@ body.has-dialog{overflow:hidden;}
 }
 
 .pwblock:hover .pw-open{opacity:1;}
-.pw-open:hover{color:var(--q-accent);border-color:var(--q-accent);}
+.pw-open:hover{color:var(--q-accent-text);border-color:var(--q-accent);}
 
 .pathway{
     margin:0;
@@ -1844,7 +1883,7 @@ body.has-dialog{overflow:hidden;}
 }
 
 .figblock:hover .fig-open{opacity:1;}
-.fig-open:hover{color:var(--q-accent);border-color:var(--q-accent);}
+.fig-open:hover{color:var(--q-accent-text);border-color:var(--q-accent);}
 
 .workup{
     font-size:.88rem;
@@ -1905,7 +1944,7 @@ body.has-dialog{overflow:hidden;}
     transition:color .15s,border-color .15s;
 }
 
-.pdf-btn:hover{color:var(--q-accent);border-color:var(--q-accent);}
+.pdf-btn:hover{color:var(--q-accent-text);border-color:var(--q-accent);}
 
 .note-head .spacer{flex:1;}
 
@@ -1926,7 +1965,7 @@ body.has-dialog{overflow:hidden;}
     transition:color .15s,border-color .15s;
 }
 
-.print-cta:hover:not(:disabled){color:var(--q-accent);border-color:var(--q-accent);}
+.print-cta:hover:not(:disabled){color:var(--q-accent-text);border-color:var(--q-accent);}
 .print-cta:disabled{opacity:.5;cursor:default;}
 
 /* how progress is kept - folded away under the filter bar, because it only
@@ -2133,7 +2172,7 @@ body.has-dialog{overflow:hidden;}
     transition:border-color .15s,color .15s;
 }
 
-.pb-step:hover:not(:disabled){color:var(--q-accent);border-color:var(--q-accent);}
+.pb-step:hover:not(:disabled){color:var(--q-accent-text);border-color:var(--q-accent);}
 .pb-step:disabled{opacity:.4;cursor:default;}
 
 /* the way back to the top, on both tabs. Wider than the arrows because it

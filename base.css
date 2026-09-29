@@ -15,6 +15,29 @@
     --sans:"Inter",-apple-system,BlinkMacSystemFont,sans-serif;
 }
 
+/* The dark theme. The inline script in every page's head sets data-theme on
+   the root before the stylesheets apply, from the reader's stored choice or,
+   failing that, the OS setting; with scripting off there is no attribute and
+   the page stays light. The values keep the light palette's warmth: a rose
+   black rather than a neutral one, so the two themes read as one portal.
+   Measured against the bg: text 15.8:1, muted 7.0:1, accent 7.7:1.
+
+   Wrapped in "not print" rather than reverted under print, so the light values
+   above are what a PDF gets and there is only one copy of them. color-scheme
+   tells the browser the form controls and scrollbars should follow. */
+@media not print{
+    :root[data-theme="dark"]{
+        --bg:#161113;
+        --card-bg:#201a1c;
+        --text:#f2eaeb;
+        --muted:#a99b9e;
+        --border:#3b3034;
+        --accent:#e18ea3;
+        --accent-soft:#3e2029;
+        color-scheme:dark;
+    }
+}
+
 *{
     margin:0;
     padding:0;
