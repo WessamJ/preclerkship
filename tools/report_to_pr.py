@@ -46,7 +46,7 @@ def parse_report(body):
         return None
     if not re.match(r"^[a-z0-9]{1,12}$", fields.get("block", "")):
         return None
-    if not re.match(r"^[a-z0-9-]{3,80}$", fields.get("qid", "")):
+    if not re.match(r"^[A-Za-z0-9-]{3,80}$", fields.get("qid", "")):
         return None
     if fields.get("reason") not in REASON_LABEL:
         return None
@@ -55,7 +55,7 @@ def parse_report(body):
     note = rest.split("### What is wrong", 1)[-1]
     note = note.split("\n_Sent from the Report button", 1)[0].strip()
     # the worker put a zero-width space between any backticks; take it out
-    fields["note"] = note.replace(u"​", "")
+    fields["note"] = note.replace(u"\u200b", "")
     return fields
 
 
@@ -90,14 +90,17 @@ def main():
     n = os.environ.get("ISSUE_NUMBER", "").strip()
     body = os.environ.get("ISSUE_BODY", "")
     if not n:
-        print("no ISSUE_NUMBER; nothing to do"); return 0
+        print("no ISSUE_NUMBER; nothing to do")
+        return 0
     r = parse_report(body)
     if not r:
-        print("issue #%s carries no report block; nothing to do" % n); return 0
+        print("issue #%s carries no report block; nothing to do" % n)
+        return 0
     branch = "report/%s" % n
     if subprocess.run(["git", "ls-remote", "--exit-code", "--heads", "origin", branch],
                       capture_output=True).returncode == 0:
-        print("branch %s exists; already handled" % branch); return 0
+        print("branch %s exists; already handled" % branch)
+        return 0
     path = os.path.join(r["course"], "data", "questions", "%s.json" % r["block"])
     if not os.path.exists(path) or not patch_file(path, r["qid"], flag_for(r["reason"], r["note"])):
         sh("gh", "issue", "comment", n, "--body",
@@ -116,6 +119,11 @@ def main():
     sh("git", "push", "origin", branch)
     pr_body = "Closes #%s.\n\n**%s.**\n\n%s\n\nEdit the flag in `%s`, change its `type` to `warning` to add the head tag, or fix the question itself before merging." % (
         n, REASON_LABEL[r["reason"]], r["note"], path)
+    # the label may not exist yet, and a failed create after the push would
+    # leave the issue with a branch and no pull request forever; --force
+    # creates it or updates it and never fails on exists
+    sh("gh", "label", "create", "report", "--color", "e4a11b", "--description",
+       "A reader's report from the bank's Report button", "--force")
     url = sh("gh", "pr", "create", "--base", "main", "--head", branch, "--title", title,
              "--body", pr_body, "--label", "report")
     sh("gh", "issue", "comment", n, "--body", "Opened %s to flag the question. Thank you." % url)

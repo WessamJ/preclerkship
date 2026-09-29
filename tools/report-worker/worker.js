@@ -7,7 +7,9 @@
    and nothing else. The Action in .github/workflows/report-to-pr.yml then
    turns the issue into a pull request. The fenced block at the top of the
    issue body is what that Action parses, so its shape is fixed here and
-   read there. */
+   read there. COURSES and REASONS are repeated in quiz.js and
+   tools/report_to_pr.py, which run elsewhere and cannot import them: change
+   all three together. */
 
 const COURSES = ["fom", "pom1", "pom2", "t2c"];
 const REASONS = ["wrong-key", "explanation", "typo", "misfiled", "other"];
@@ -17,12 +19,13 @@ export function validate(r) {
   if (r.site !== "preclerkship") return "wrong site";
   if (!COURSES.includes(r.course)) return "unknown course";
   if (!/^[a-z0-9]{1,12}$/.test(r.block || "")) return "bad block";
-  if (!/^[a-z0-9-]{3,80}$/.test(r.qid || "")) return "bad qid";
+  if (!/^[A-Za-z0-9-]{3,80}$/.test(r.qid || "")) return "bad qid";
   if (!REASONS.includes(r.reason)) return "unknown reason";
   const note = typeof r.note === "string" ? r.note.trim() : "";
   if (note.length < 3) return "note too short";
   if (note.length > 2000) return "note too long";
   if (typeof r.page !== "string" || r.page.length > 300) return "bad page";
+  // the honeypot field, which only a bot fills
   if (r.hp) return "refused";
   return null;
 }
@@ -30,9 +33,11 @@ export function validate(r) {
 /* Three backticks inside the note would end the fenced block early, and a
    crafted note could open a second report block for the Action to read. A
    zero-width space between the backticks keeps the text readable and the
-   fence whole. */
-function unfence(s) {
-  return s.replace(/```/g, "`​`​`");
+   fence whole. The issue is opened under the token owner's account, so an
+   @name in the note would ping that person as if the owner had written it;
+   the same space after the @ turns it into plain text. */
+function defuse(s) {
+  return s.replace(/```/g, "`\u200b`\u200b`").replace(/@(?=[A-Za-z0-9])/g, "@\u200b");
 }
 
 export function issueBody(r) {
@@ -46,7 +51,7 @@ export function issueBody(r) {
     "```",
     "",
     "### What is wrong",
-    unfence(r.note.trim()),
+    defuse(r.note.trim()),
     "",
     "_Sent from the Report button on the question. The Action opens a pull request that flags the question with this note._",
   ].join("\n");

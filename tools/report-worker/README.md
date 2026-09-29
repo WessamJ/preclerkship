@@ -36,6 +36,8 @@ leaving this step for later.
    requests". Without it the Action can flag the question but cannot open the
    pull request.
 
+The `report` label needs no setup: the Action creates it on first use.
+
 ## Try it
 
 One request from the command line, with the origin the worker allows:
