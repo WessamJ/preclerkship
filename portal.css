@@ -54,6 +54,24 @@
     }
 }
 
+/* What the dark theme has to say about particular components, kept together
+   here rather than scattered beside each one. The shadows go deeper because a
+   shadow on a dark page is barely there at the light strength; the dialog's
+   backdrop likewise. The course cards set --hue inline, one per course or
+   block, and those are the light theme's accents: as text on the dark bg they
+   would fall below 3:1, so the eyebrow reads through the same lightening the
+   ink gets, and the card's top rule gets a little of it. */
+@media not print{
+    :root[data-theme="dark"] .notedlg{box-shadow:0 24px 60px rgba(0,0,0,.6);}
+    :root[data-theme="dark"] .notedlg::backdrop{background:rgba(0,0,0,.62);}
+    :root[data-theme="dark"] .msel-pop{box-shadow:0 12px 28px rgba(0,0,0,.5);}
+    :root[data-theme="dark"] .block-card .bmeta,
+    :root[data-theme="dark"] .qbank-card .bmeta{color:color-mix(in srgb,var(--hue) 55%,#ffffff);}
+    :root[data-theme="dark"] .block-card{border-top-color:color-mix(in srgb,var(--hue) 75%,#ffffff);}
+    :root[data-theme="dark"] .block-card:hover{border-color:color-mix(in srgb,var(--hue) 75%,#ffffff);}
+    :root[data-theme="dark"] .block-card.is-empty:hover{border-color:var(--border);}
+}
+
 /* A block page opens on roughly 600px of chrome - switcher, masthead, tabs,
    how-to, toolbar - and on a 1366x768 laptop that IS the screen: you land on
    a block and the first question is below the fold, every time. Every number
@@ -350,7 +368,9 @@ body[data-tab="questions"] .q-masthead .lead{display:none;}
     font-weight:500;
     padding:1px 8px;
     border-radius:999px;
-    background:rgba(255,255,255,.22);
+    /* a wash of the button's own text colour, so it sits on the accent in
+       either theme */
+    background:color-mix(in srgb,var(--on-q-accent) 22%,transparent);
 }
 
 .deck-how{
@@ -623,8 +643,13 @@ mark.hit{
 .chip.starish[aria-pressed="true"]{background:var(--q-star-soft);border-color:var(--q-star);color:var(--q-star);}
 
 /* the family rows have always greyed out at zero; the chips never did, so
-   "Wrong 0" was a live button to an empty page */
-.chip:disabled{color:#c3b7b9;border-color:#f4ebec;cursor:default;}
+   "Wrong 0" was a live button to an empty page. Faded towards the card
+   rather than towards white, so the fade holds in the dark theme too. */
+.chip:disabled{
+    color:color-mix(in srgb,var(--muted) 55%,var(--card-bg));
+    border-color:color-mix(in srgb,var(--border) 60%,var(--card-bg));
+    cursor:default;
+}
 .chip:disabled .n{opacity:.6;}
 
 /* the lecture index
@@ -1159,15 +1184,15 @@ mark.hit{
 .opt[data-pick="on"] .L{background:var(--q-accent);color:var(--on-q-accent);}
 
 .opt[data-mark="hit"]{border-color:var(--q-ok);background:var(--q-ok-soft);}
-.opt[data-mark="hit"] .L{background:var(--q-ok);color:#fff;}
+.opt[data-mark="hit"] .L{background:var(--q-ok);color:var(--on-q-mark);}
 .opt[data-mark="hit"] .verdict{color:var(--q-ok);}
 
 .opt[data-mark="miss"]{border-color:var(--q-bad);background:var(--q-bad-soft);}
-.opt[data-mark="miss"] .L{background:var(--q-bad);color:#fff;}
+.opt[data-mark="miss"] .L{background:var(--q-bad);color:var(--on-q-mark);}
 .opt[data-mark="miss"] .verdict{color:var(--q-bad);}
 
 .opt[data-mark="key"]{border-color:var(--q-ok);}
-.opt[data-mark="key"] .L{background:var(--q-ok);color:#fff;}
+.opt[data-mark="key"] .L{background:var(--q-ok);color:var(--on-q-mark);}
 .opt[data-mark="key"] .verdict{color:var(--q-ok);}
 
 .actions{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:16px;}
@@ -2591,7 +2616,7 @@ select.ps:disabled{cursor:default;opacity:1;}
     border-radius:5px;
 }
 
-.tb-clock[data-low="1"]{color:var(--on-q-accent);background:var(--q-warn);}
+.tb-clock[data-low="1"]{color:var(--on-q-mark);background:var(--q-warn);}
 
 .tb-size{display:flex;align-items:center;gap:8px;}
 .tb-size label{font-size:.83rem;font-weight:600;white-space:nowrap;}
