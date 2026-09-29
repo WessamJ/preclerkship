@@ -231,6 +231,10 @@ already study from. They are updated week by week, so what you pull is a snapsho
 **To improve it.** Suggest a feature, fix an answer you think is wrong, or send in
 questions of your own. Corrections and questions are the two most useful things
 to send.
+Every question in the bank has a **Report this question** button. Until the
+relay in `tools/report-worker/` is deployed it opens an email; once it is, the
+report becomes a public GitHub issue and a pull request that flags the question
+for review, with no account needed.
 
 ## Licence and content
 

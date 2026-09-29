@@ -19,3 +19,6 @@ pom1/Question Bank*/
 pom1/Nicole_s Notes/
 pom1/*.pdf
 *:Zone.Identifier
+
+# wrangler's local cache beside the report relay; the relay itself is one file
+tools/report-worker/.wrangler/
