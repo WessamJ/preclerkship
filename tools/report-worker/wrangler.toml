@@ -1,0 +1,17 @@
+# The report relay. Deploy from this folder with `npx wrangler deploy`; the
+# GitHub token is a secret set with `npx wrangler secret put GITHUB_TOKEN`,
+# never a value in this file. See README.md beside it.
+name = "preclerkship-report"
+main = "worker.js"
+compatibility_date = "2025-09-01"
+
+# Five reports a minute from one address. Period may only be 10 or 60.
+[[unsafe.bindings]]
+name = "LIMIT"
+type = "ratelimit"
+namespace_id = "1001"
+simple = { limit = 5, period = 60 }
+
+[vars]
+REPO = "schulichmed/preclerkship"
+ALLOWED_ORIGINS = "https://schulichmed.github.io,http://localhost:8765,http://127.0.0.1:8765"
