@@ -1912,18 +1912,14 @@
 
   function onKey(e) {
     if (DLG && DLG.open) return;   // the dialog has the keyboard
+    /* "/" jumps to the search box; portal.js holds the guards, and it is
+       asked first because it takes shift where the letters below do not */
+    if (search() && search().jumpKey(e, byId("bank-q"), "panel-questions")) return;
     if (e.ctrlKey || e.metaKey || e.altKey) return;
     if (byId("panel-questions").hidden) return;
     var t = e.target;
     if (t && (t.isContentEditable ||
               /^(input|textarea|select)$/i.test(t.tagName || ""))) return;
-    /* the find-a-thing key on GitHub and most documentation sites; checked
-       before the shift guard because on many European layouts "/" IS shifted */
-    if (e.key === "/" && byId("bank-q")) {
-      e.preventDefault();
-      byId("bank-q").focus();
-      return;
-    }
     if (e.shiftKey) return;
     if (e.key === "j") { e.preventDefault(); step(1); }
     else if (e.key === "k") { e.preventDefault(); step(-1); }

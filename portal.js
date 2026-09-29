@@ -591,6 +591,27 @@
     });
   }
 
+  /* "/" jumps to the search box, the way it does on GitHub and most
+     documentation sites. It is taken only while the tab the box belongs to
+     is showing, no dialog has the keyboard and the key was not typed into
+     some other field. Shift is allowed, and a caller must ask here before
+     its own shift guard, because on many European layouts "/" IS shifted.
+     The text is selected so the next keystroke replaces the old query.
+     Returns true when it took the key, so the caller can stop there. */
+  function jumpKey(e, box, panelId) {
+    if (!box || e.key !== "/" || e.ctrlKey || e.metaKey || e.altKey) return false;
+    var panel = panelId ? byId(panelId) : null;
+    if (panel && panel.hidden) return false;
+    if (document.querySelector("dialog[open]")) return false;
+    var t = e.target;
+    if (t && (t.isContentEditable ||
+              /^(input|textarea|select)$/i.test(t.tagName || ""))) return false;
+    e.preventDefault();
+    box.focus();
+    if (box.select) box.select();
+    return true;
+  }
+
   window.PORTAL_SEARCH = {
     words: searchWords,
     hit: searchHit,
@@ -598,7 +619,8 @@
     MARK_BUDGET: MARK_BUDGET,
     paintWords: paintWords,
     mark: markWords,
-    unmark: unmarkWords
+    unmark: unmarkWords,
+    jumpKey: jumpKey
   };
 
   /* Notes come first when there are any - they are what you read before you

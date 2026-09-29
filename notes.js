@@ -606,23 +606,10 @@
     if (next) next.addEventListener("click", function () { goHit(1); });
 
     document.addEventListener("keydown", function (e) {
-      /* "/" jumps to the box, the way it does in the bank and on GitHub. Only
-         while the notes are the visible panel, no dialog has the keyboard and
-         the key was not typed into some other field; checked before the
-         modifier guard because on many European layouts "/" IS shifted. The
-         text is selected so the next keystroke replaces the old query. */
-      if (e.key === "/" && !e.ctrlKey && !e.metaKey && !e.altKey) {
-        var panel = byId("panel-notes");
-        if (panel && panel.hidden) return;
-        if (document.querySelector("dialog[open]")) return;
-        var t = e.target;
-        if (t && (t.isContentEditable ||
-                  /^(input|textarea|select)$/i.test(t.tagName || ""))) return;
-        e.preventDefault();
-        box.focus();
-        box.select();
-        return;
-      }
+      /* "/" jumps to the box, as it does in the bank; portal.js holds the
+         guards, among them that the notes tab is the one showing */
+      var s = search();
+      if (s && s.jumpKey(e, box, "panel-notes")) return;
 
       /* F3 and ctrl/cmd-G are the find-again keys every browser already uses,
          and here they should walk THIS search rather than open the browser's,
