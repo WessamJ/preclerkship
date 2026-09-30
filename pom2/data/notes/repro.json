@@ -3824,6 +3824,13 @@
       {
        "t": "note",
        "html": "<p><strong>Causes of bleeding in a reproductive-age woman, ABCDEHIN:</strong> <strong>A</strong>natomic (<strong>PALE</strong>: <span class=\"wl\">polyp</span>, <span class=\"wl\">adenomyosis</span>, <span class=\"wl\">leiomyoma</span>, <span class=\"wl\">endometritis</span>) · <strong>B</strong>aby (SA, ectopic, GTD) · <strong>C</strong>oagulopathy · <strong>D</strong>ysfunctional uterine bleeding · <strong>E</strong>ndocrine · <strong>H</strong>ormones (exogenous) · <strong>I</strong>nfectious · <strong>N</strong>eoplasia</p>"
+      },
+      {
+       "t": "figure",
+       "src": "assets/figures/190387dc008d.jpg",
+       "alt": "gestational trophoblastic disease panel (generated infographic).png",
+       "w": 900,
+       "h": 2007
       }
      ]
     },
@@ -4040,6 +4047,17 @@
       {
        "t": "note",
        "html": "<p><strong>Discriminatory zone:</strong> the hCG <strong>above which TVUS should show a gestational sac</strong> in a normal IUP. The old <strong>1000-2000</strong> cut-off ignored slow-rising and low-normal viable pregnancies and mislabelled them as failed or ectopic; <strong>2000-3000 keeps them in the PUL differential</strong>.</p>"
+      },
+      {
+       "t": "figure",
+       "src": "assets/figures/06dda61a7882.jpg",
+       "alt": "early pregnancy timeline - ultrasound and hCG milestones (generated infographic).png",
+       "w": 900,
+       "h": 502
+      },
+      {
+       "t": "note",
+       "html": "<p>Two details the poster leaves out: MSD is also retired once it passes <strong>14 mm</strong>, and CRL hands over to the <strong>BPD after 84 mm (14 weeks)</strong>, where the two are equally good at 12-14 weeks.</p>"
       }
      ]
     },
