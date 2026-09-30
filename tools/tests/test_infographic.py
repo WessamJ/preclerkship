@@ -200,3 +200,93 @@ def test_read_api_key_missing(monkeypatch: pytest.MonkeyPatch) -> None:
 def test_read_api_key_present(monkeypatch: pytest.MonkeyPatch) -> None:
     monkeypatch.setenv(ig.KEY_VAR, "abc")
     assert ig.read_api_key() == "abc"
+
+
+def test_output_path_default_and_override(tmp_path: Path) -> None:
+    vault = make_vault(tmp_path)
+    note = next(vault.rglob("09 - *.md"))
+    default = ig.output_path(vault, note, None)
+    assert default.parent == vault / "Attachments"
+    assert default.name == "09 - Pathology of 1st Trimester Bleeding (generated infographic).png"
+    assert ig.output_path(vault, note, tmp_path / "x.png") == tmp_path / "x.png"
+
+
+CHART_NOTE = """---
+type: LectureNote
+---
+# Overview chart: Thing
+
+table here
+
+**High-yield discriminators:** stuff
+
+---
+
+> [!check] Objectives
+> 1. one
+
+# Body
+"""
+
+
+def test_embed_in_note_inserts_before_chart_separator(tmp_path: Path) -> None:
+    note = tmp_path / "n.md"
+    note.write_text(CHART_NOTE, encoding="utf-8")
+    assert ig.embed_in_note(note, "n (generated infographic).png") is True
+    text = note.read_text(encoding="utf-8")
+    embed_at = text.index("![[n (generated infographic).png]]")
+    assert embed_at < text.index("\n---\n\n> [!check]")
+    assert embed_at > text.index("High-yield discriminators")
+    # a blank line before the rule, or Obsidian reads the embed as a setext heading
+    assert "![[n (generated infographic).png]]\n\n---\n" in text
+
+
+def test_embed_in_note_is_idempotent(tmp_path: Path) -> None:
+    note = tmp_path / "n.md"
+    note.write_text(CHART_NOTE, encoding="utf-8")
+    ig.embed_in_note(note, "pic.png")
+    once = note.read_text(encoding="utf-8")
+    assert ig.embed_in_note(note, "pic.png") is False
+    assert note.read_text(encoding="utf-8") == once
+    assert once.count("![[pic.png]]") == 1
+
+
+def test_embed_in_note_appends_when_no_separator(tmp_path: Path) -> None:
+    note = tmp_path / "n.md"
+    note.write_text("# Only a heading\n\nprose\n", encoding="utf-8")
+    ig.embed_in_note(note, "pic.png")
+    assert note.read_text(encoding="utf-8").endswith("![[pic.png]]\n")
+
+
+def test_main_writes_png_and_embeds(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> None:
+    vault = make_vault(tmp_path)
+    note = next(vault.rglob("09 - *.md"))
+    note.write_text(CHART_NOTE, encoding="utf-8")
+    monkeypatch.setattr(ig, "VAULT", vault)
+    monkeypatch.setenv(ig.KEY_VAR, "k")
+    monkeypatch.setattr(ig.requests, "post", lambda *a, **k: FakeResponse(200, image_payload()))
+    rc = ig.main(["pathology of 1st", "--embed"])
+    assert rc == 0
+    png = vault / "Attachments" / "09 - Pathology of 1st Trimester Bleeding (generated infographic).png"
+    assert png.read_bytes() == PNG_BYTES
+    assert "![[09 - Pathology of 1st Trimester Bleeding (generated infographic).png]]" in note.read_text(encoding="utf-8")
+
+
+def test_main_refuses_to_overwrite_without_force(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> None:
+    vault = make_vault(tmp_path)
+    png = vault / "Attachments" / "09 - Pathology of 1st Trimester Bleeding (generated infographic).png"
+    png.write_bytes(b"old")
+    monkeypatch.setattr(ig, "VAULT", vault)
+    monkeypatch.setenv(ig.KEY_VAR, "k")
+    monkeypatch.setattr(ig.requests, "post", lambda *a, **k: FakeResponse(200, image_payload()))
+    assert ig.main(["pathology of 1st"]) == 3
+    assert png.read_bytes() == b"old"
+    assert ig.main(["pathology of 1st", "--force"]) == 0
+    assert png.read_bytes() == PNG_BYTES
+
+
+def test_main_without_key_exits_cleanly(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> None:
+    vault = make_vault(tmp_path)
+    monkeypatch.setattr(ig, "VAULT", vault)
+    monkeypatch.delenv(ig.KEY_VAR, raising=False)
+    assert ig.main(["pathology of 1st"]) == 4

@@ -312,6 +312,68 @@ def note_title(path: Path) -> str:
     return re.sub(r"^\d+\s*-\s*", "", path.stem)
 
 
+def output_path(vault: Path, note: Path, out: Path | None) -> Path:
+    """Where the PNG goes: ``--out`` if given, else the vault's Attachments folder.
+
+    Parameters
+    ----------
+    vault : Path
+        The medwiki vault root.
+    note : Path
+        The lecture note the picture is drawn from.
+    out : Path or None
+        An explicit destination, from ``--out``.
+
+    Returns
+    -------
+    Path
+        ``out``, or ``<vault>/Attachments/<note stem> (generated infographic).png``.
+    """
+    return out if out is not None else vault / ATTACHMENTS / f"{note.stem}{SUFFIX}"
+
+
+_CHART_END = re.compile(r"\n---\n")
+
+
+def embed_in_note(note: Path, image_name: str) -> bool:
+    """Insert ``![[image_name]]`` at the end of the note's chart region.
+
+    The chart region is everything between the H1 and the first ``---`` rule
+    after it. With no such rule the line is appended at the end. The search
+    never starts inside the frontmatter, whose closing ``---`` is not a rule.
+
+    Parameters
+    ----------
+    note : Path
+        The lecture note, modified in place.
+    image_name : str
+        Filename of the picture in Attachments/.
+
+    Returns
+    -------
+    bool
+        True if the line was inserted; False, touching nothing, if it was
+        already there.
+    """
+    text = note.read_text(encoding="utf-8")
+    line = f"![[{image_name}]]"
+    if line in text:
+        return False
+    front = _FRONTMATTER.match(text)
+    floor = front.end() if front else 0
+    h1 = text.find("\n# ", max(floor - 1, 0))
+    start = h1 + 1 if h1 >= 0 else floor
+    match = _CHART_END.search(text, start)
+    if match:
+        # A blank line both sides: a line directly above ``---`` would turn it
+        # into a setext heading instead of a rule.
+        text = text[: match.start()].rstrip("\n") + f"\n\n{line}\n" + text[match.start():]
+    else:
+        text = text.rstrip("\n") + f"\n\n{line}\n"
+    note.write_text(text, encoding="utf-8")
+    return True
+
+
 def parse_args(argv: list[str] | None) -> argparse.Namespace:
     """Parse the command line.
 
@@ -346,7 +408,8 @@ def main(argv: list[str] | None = None) -> int:
     Returns
     -------
     int
-        Exit status: 0 success, 2 note not found or ambiguous.
+        Exit status: 0 success, 2 note not found or ambiguous, 3 output exists
+        without --force, 4 no API key, 5 the API call failed.
     """
     logging.basicConfig(level=logging.INFO, format="%(levelname)s %(message)s")
     args = parse_args(argv)
@@ -359,8 +422,28 @@ def main(argv: list[str] | None = None) -> int:
     if args.dry_run:
         print(prompt)
         return 0
-    LOG.error("generation is not wired up yet")  # replaced in Task 3
-    return 1
+    target = output_path(VAULT, note, args.out)
+    if target.exists() and not args.force:
+        LOG.error("%s exists; pass --force to overwrite it", target)
+        return 3
+    try:
+        key = read_api_key()
+    except ApiKeyMissing as err:
+        LOG.error("%s", err)
+        return 4
+    LOG.info("asking %s for a %s infographic of %r", MODEL, args.detail, note_title(note))
+    try:
+        png = generate_image(prompt, key)
+    except RuntimeError as err:
+        LOG.error("%s", err)
+        return 5
+    target.parent.mkdir(parents=True, exist_ok=True)
+    target.write_bytes(png)
+    LOG.info("wrote %s (%d KB)", target, len(png) // 1024)
+    if args.embed and embed_in_note(note, target.name):
+        LOG.info("embedded in %s", note.name)
+    print(target)
+    return 0
 
 
 if __name__ == "__main__":

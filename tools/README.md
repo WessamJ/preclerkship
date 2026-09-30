@@ -323,3 +323,26 @@ automatic backups under
 `%LOCALAPPDATA%/Microsoft/OneNote/16.0/Backup` hold the same text —
 `strings -el` on a `.one` section file reaches it without any app at all, but
 flattens the page, losing the split between her notes and the lecturer's slides.
+
+---
+
+## Infographics without NotebookLM
+
+`infographic.py` is the NotebookLM "Infographic" button with the login taken
+out: it reads one lecture note, cleans the Obsidian syntax off it, and asks
+Gemini's image model for a portrait study poster, which lands in the vault's
+`Attachments/` as `<note> (generated infographic).png`. It needs `requests`
+and a `GEMINI_API_KEY` in the environment (make one at aistudio.google.com;
+it can only call the Gemini API and is revoked on the same page). It never
+reads browser cookies.
+
+```bash
+python tools/infographic.py "pathology of 1st trimester" --dry-run   # see the prompt
+python tools/infographic.py "pathology of 1st trimester"             # write the PNG
+python tools/infographic.py "pathology of 1st trimester" --embed     # and link it under the chart
+```
+
+Slides are the gold standard. The picture is drawn by an image model and image
+models garble small text, so check every number on it against the slides; the
+filename says "generated infographic" so it is never mistaken for one. Tests:
+`python -m pytest tools/tests -v`.
