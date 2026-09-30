@@ -116,3 +116,87 @@ def test_dry_run_prints_prompt_and_writes_nothing(
     out = capsys.readouterr().out
     assert "Pathology of 1st Trimester Bleeding" in out
     assert not list((vault / "Attachments").iterdir())
+
+
+import base64  # noqa: E402
+
+
+class FakeResponse:
+    def __init__(self, status: int, payload: dict | None = None, text: str = "") -> None:
+        self.status_code = status
+        self._payload = payload or {}
+        self.text = text or str(payload)
+
+    def json(self) -> dict:
+        return self._payload
+
+
+PNG_BYTES = b"\x89PNG\r\n\x1a\n" + b"fake"
+
+
+def image_payload() -> dict:
+    return {"candidates": [{"content": {"parts": [
+        {"text": "Here is your infographic."},
+        {"inlineData": {"mimeType": "image/png", "data": base64.b64encode(PNG_BYTES).decode()}},
+    ]}}]}
+
+
+def test_generate_image_returns_png_bytes(monkeypatch: pytest.MonkeyPatch) -> None:
+    calls = []
+
+    def fake_post(url: str, headers: dict | None = None, json: dict | None = None, timeout: float | None = None) -> FakeResponse:
+        calls.append((url, headers, json))
+        return FakeResponse(200, image_payload())
+
+    monkeypatch.setattr(ig.requests, "post", fake_post)
+    out = ig.generate_image("draw", "KEY123", model="m-test")
+    assert out == PNG_BYTES
+    url, headers, body = calls[0]
+    assert url.endswith("/models/m-test:generateContent")
+    assert headers["x-goog-api-key"] == "KEY123"
+    assert body["contents"][0]["parts"][0]["text"] == "draw"
+    assert "IMAGE" in body["generationConfig"]["responseModalities"]
+
+
+def test_generate_image_retries_then_succeeds(monkeypatch: pytest.MonkeyPatch) -> None:
+    seq = [FakeResponse(429, text="slow down"), FakeResponse(503, text="busy"), FakeResponse(200, image_payload())]
+    slept = []
+    monkeypatch.setattr(ig.requests, "post", lambda *a, **k: seq.pop(0))
+    out = ig.generate_image("draw", "K", sleep=slept.append)
+    assert out == PNG_BYTES
+    assert len(slept) == 2
+
+
+def test_generate_image_gives_up_after_retries(monkeypatch: pytest.MonkeyPatch) -> None:
+    monkeypatch.setattr(ig.requests, "post", lambda *a, **k: FakeResponse(429, text="quota"))
+    with pytest.raises(RuntimeError) as err:
+        ig.generate_image("draw", "K", sleep=lambda s: None)
+    assert "429" in str(err.value) and "quota" in str(err.value)
+
+
+def test_generate_image_fails_fast_on_400(monkeypatch: pytest.MonkeyPatch) -> None:
+    posts = []
+    monkeypatch.setattr(ig.requests, "post", lambda *a, **k: posts.append(1) or FakeResponse(400, text="bad key"))
+    with pytest.raises(RuntimeError) as err:
+        ig.generate_image("draw", "K", sleep=lambda s: None)
+    assert "400" in str(err.value) and len(posts) == 1
+
+
+def test_generate_image_text_only_is_an_error(monkeypatch: pytest.MonkeyPatch) -> None:
+    payload = {"candidates": [{"content": {"parts": [{"text": "I cannot draw that."}]}}]}
+    monkeypatch.setattr(ig.requests, "post", lambda *a, **k: FakeResponse(200, payload))
+    with pytest.raises(RuntimeError) as err:
+        ig.generate_image("draw", "K")
+    assert "I cannot draw that." in str(err.value)
+
+
+def test_read_api_key_missing(monkeypatch: pytest.MonkeyPatch) -> None:
+    monkeypatch.delenv(ig.KEY_VAR, raising=False)
+    with pytest.raises(ig.ApiKeyMissing) as err:
+        ig.read_api_key()
+    assert "aistudio.google.com" in str(err.value)
+
+
+def test_read_api_key_present(monkeypatch: pytest.MonkeyPatch) -> None:
+    monkeypatch.setenv(ig.KEY_VAR, "abc")
+    assert ig.read_api_key() == "abc"

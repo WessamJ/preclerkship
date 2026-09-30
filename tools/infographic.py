@@ -30,6 +30,7 @@ import os
 import re
 import sys
 import time
+from collections.abc import Callable
 from pathlib import Path
 
 import requests
@@ -41,7 +42,9 @@ LECTURES = "01 - Lectures"
 ATTACHMENTS = "Attachments"
 SUFFIX = " (generated infographic).png"
 
-MODEL = os.environ.get("GEMINI_IMAGE_MODEL", "gemini-2.5-flash-image")
+# gemini-2.5-flash-image is still served but now limited to accounts that already
+# used it, so a new key starts on the current stable Flash image model.
+MODEL = os.environ.get("GEMINI_IMAGE_MODEL", "gemini-3.1-flash-image")
 ENDPOINT = "https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent"
 KEY_VAR = "GEMINI_API_KEY"
 RETRIES = 3
@@ -125,6 +128,112 @@ def clean_markdown(text: str) -> str:
     text = _HTML_TAG.sub("", text)
     text = _BLANK_RUN.sub("\n\n", text)
     return text.strip() + "\n"
+
+
+class ApiKeyMissing(RuntimeError):
+    """GEMINI_API_KEY is not set."""
+
+
+def read_api_key() -> str:
+    """Read the Gemini key from the environment; never from a file or an argument.
+
+    Returns
+    -------
+    str
+        The key, stripped of surrounding whitespace.
+
+    Raises
+    ------
+    ApiKeyMissing
+        The variable is unset or blank; the message says how to make a key.
+    """
+    key = os.environ.get(KEY_VAR, "").strip()
+    if not key:
+        raise ApiKeyMissing(
+            f"{KEY_VAR} is not set. Create a key at https://aistudio.google.com (Get API key), "
+            f"then: echo 'export {KEY_VAR}=<key>' >> ~/.bashrc and open a new terminal. "
+            "The key can only call the Gemini API and can be revoked on the same page."
+        )
+    return key
+
+
+def _extract_image(payload: dict) -> bytes:
+    """Pull the first inline image out of a generateContent response, or raise.
+
+    Parameters
+    ----------
+    payload : dict
+        The decoded JSON body of a 200 response.
+
+    Returns
+    -------
+    bytes
+        The decoded image.
+
+    Raises
+    ------
+    RuntimeError
+        No part carries image data; the message quotes whatever text came back.
+    """
+    texts: list[str] = []
+    for candidate in payload.get("candidates", []):
+        for part in candidate.get("content", {}).get("parts", []):
+            inline = part.get("inlineData") or part.get("inline_data")
+            if inline and inline.get("data"):
+                return base64.b64decode(inline["data"])
+            if part.get("text"):
+                texts.append(part["text"])
+    reason = " / ".join(texts) if texts else str(payload)[:500]
+    raise RuntimeError(f"the model returned no image. It said: {reason}")
+
+
+def generate_image(
+    prompt: str, api_key: str, model: str = MODEL, sleep: Callable[[float], None] = time.sleep
+) -> bytes:
+    """POST the prompt to Gemini's generateContent and return PNG bytes.
+
+    Parameters
+    ----------
+    prompt : str
+        Output of ``build_prompt``.
+    api_key : str
+        Output of ``read_api_key``. Sent in the ``x-goog-api-key`` header only.
+    model : str
+        Gemini image-capable model id.
+    sleep : callable
+        Injected for tests; receives the backoff in seconds.
+
+    Returns
+    -------
+    bytes
+        The image the model drew.
+
+    Raises
+    ------
+    RuntimeError
+        Non-retryable HTTP status, retries exhausted, or a text-only answer.
+    """
+    body = {
+        "contents": [{"parts": [{"text": prompt}]}],
+        "generationConfig": {
+            "responseModalities": ["TEXT", "IMAGE"],
+            "imageConfig": {"aspectRatio": "3:4"},
+        },
+    }
+    headers = {"x-goog-api-key": api_key, "Content-Type": "application/json"}
+    url = ENDPOINT.format(model=model)
+    last = None
+    for attempt in range(RETRIES):
+        resp = requests.post(url, headers=headers, json=body, timeout=TIMEOUT_S)
+        if resp.status_code == 200:
+            return _extract_image(resp.json())
+        last = resp
+        if resp.status_code not in RETRY_STATUSES or attempt == RETRIES - 1:
+            break
+        wait = 5 * (2 ** attempt)
+        LOG.warning("HTTP %s from Gemini, retrying in %ss (%s/%s)", resp.status_code, wait, attempt + 1, RETRIES)
+        sleep(wait)
+    raise RuntimeError(f"Gemini returned HTTP {last.status_code}: {last.text[:500]}")
 
 
 DETAIL_LEVELS = {
