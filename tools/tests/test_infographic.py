@@ -82,3 +82,37 @@ def test_clean_markdown_strips_obsidian_syntax() -> None:
     assert "Maternal" in out and "basal plate" in out
     assert "Objectives" in out and "Describe implantation" in out
     assert "hydatidiform mole.png" not in out
+
+
+def test_build_prompt_carries_title_note_and_rules() -> None:
+    prompt = ig.build_prompt("Pathology of first trimester bleeding", "Complete mole: 46 XX.\n", "detailed")
+    assert "Pathology of first trimester bleeding" in prompt
+    assert "Complete mole: 46 XX." in prompt
+    assert "only facts from the source" in prompt.lower() or "only facts in the source" in prompt.lower()
+    assert "portrait" in prompt.lower()
+    assert "detailed" in prompt.lower()
+
+
+def test_build_prompt_concise_differs() -> None:
+    a = ig.build_prompt("T", "body\n", "concise")
+    b = ig.build_prompt("T", "body\n", "detailed")
+    assert a != b
+    assert "concise" in a.lower()
+
+
+def test_build_prompt_rejects_unknown_detail() -> None:
+    with pytest.raises(ValueError):
+        ig.build_prompt("T", "body\n", "lavish")
+
+
+def test_dry_run_prints_prompt_and_writes_nothing(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch, capsys: pytest.CaptureFixture[str]
+) -> None:
+    vault = make_vault(tmp_path)
+    monkeypatch.setattr(ig, "VAULT", vault)
+    monkeypatch.delenv(ig.KEY_VAR, raising=False)
+    rc = ig.main(["pathology of 1st", "--dry-run"])
+    assert rc == 0
+    out = capsys.readouterr().out
+    assert "Pathology of 1st Trimester Bleeding" in out
+    assert not list((vault / "Attachments").iterdir())
