@@ -98,6 +98,7 @@ _ALIASED_LINK = re.compile(r"\[\[[^\]|]*\|([^\]]*)\]\]")
 _PLAIN_LINK = re.compile(r"\[\[([^\]]*)\]\]")
 _CALLOUT_TAG = re.compile(r"\[![\w-]+(\|[\w-]+)?\]\s*")
 _QUOTE_PREFIX = re.compile(r"^(>\s*)+", re.M)
+_LINE_BREAK = re.compile(r"<br\s*/?>", re.I)
 _HTML_TAG = re.compile(r"<[^>]+>")
 _BLANK_RUN = re.compile(r"\n{3,}")
 
@@ -125,6 +126,7 @@ def clean_markdown(text: str) -> str:
     text = _PLAIN_LINK.sub(r"\1", text)
     text = _CALLOUT_TAG.sub("", text)
     text = _QUOTE_PREFIX.sub("", text)
+    text = _LINE_BREAK.sub(" ", text)  # else "ECTOPIC<br/>endometrium" fuses
     text = _HTML_TAG.sub("", text)
     text = _BLANK_RUN.sub("\n\n", text)
     return text.strip() + "\n"

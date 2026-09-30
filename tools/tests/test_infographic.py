@@ -290,3 +290,9 @@ def test_main_without_key_exits_cleanly(tmp_path: Path, monkeypatch: pytest.Monk
     monkeypatch.setattr(ig, "VAULT", vault)
     monkeypatch.delenv(ig.KEY_VAR, raising=False)
     assert ig.main(["pathology of 1st"]) == 4
+
+
+def test_clean_markdown_line_breaks_keep_words_apart() -> None:
+    out = ig.clean_markdown('D["ECTOPIC<br/>endometrium decidualized"] and a<br>b')
+    assert "ECTOPIC endometrium" in out
+    assert "a b" in out
