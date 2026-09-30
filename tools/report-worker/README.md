@@ -1,14 +1,17 @@
 # The report relay
 
-Every question in the bank carries a **Report this question** button. The
+Every question in the bank carries a **Report this question** button, and
+every lecture note a **Report this note** button beside its PDF button. The
 portal is static and a reader without a GitHub account cannot open an issue,
 so the button posts the report here instead: a small Cloudflare Worker that
 checks the report, refuses more than five a minute from one address, and opens
 an issue labelled `report` on the repository with a token that can write
 issues there and nothing else. The Action in
 `.github/workflows/report-to-pr.yml` then turns that issue into a pull request
-that flags the question, so the maintainer reviews a change rather than an
-email.
+that flags the question, or adds a "Reader report" callout to the top of the
+note (kept in the lecture's `flags`, which the vault rebuilds leave alone), so
+the maintainer reviews a change rather than an email. A report with no `kind`
+is a question's, so pages cached from before notes had the button still work.
 
 The whole relay is `worker.js`, one file with no dependencies, and
 `wrangler.toml` beside it. Until it is deployed the button opens an email to

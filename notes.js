@@ -676,7 +676,7 @@
       }
       frag.appendChild(wb);
       (w.lectures || []).forEach(function (lec) {
-        frag.appendChild(lec.hasNote === true ? shared().build(lec, { block: BLOCK.name, onPrint: printNote })
+        frag.appendChild(lec.hasNote === true ? shared().build(lec, { block: BLOCK.name, slug: BLOCK.slug, onPrint: printNote })
                          : lec.coveredBy ? buildCovered(lec) : buildGap(lec));
       });
     });

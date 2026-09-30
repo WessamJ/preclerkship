@@ -1388,8 +1388,10 @@ body.has-dialog{overflow:hidden;}
     min-height:0;
 }
 .notedlg-body .note{border:0;padding:0;margin:0;box-shadow:none;}
-/* the dialog's own head already gives the lecture's number and title */
-.notedlg-body .note-head{display:none;}
+/* the dialog's own head already gives the lecture's number and title, so
+   only the note's Report button is kept from its head */
+.notedlg-body .note-head{justify-content:flex-end;}
+.notedlg-body .note-head > :not(.report-q){display:none;}
 .notedlg-state{color:var(--muted);margin:0;}
 
 .callout{
@@ -1462,6 +1464,9 @@ body.has-dialog{overflow:hidden;}
 
 .reset-q:hover{color:var(--q-bad);border-color:var(--q-bad);}
 .report-q:hover{color:var(--q-accent);border-color:var(--q-accent);}
+/* on a note it sits in the head beside the PDF button, and is not printed */
+.note-head .report-q{align-self:center;flex-shrink:0;}
+@media print{.note-head .report-q{display:none;}}
 
 /* The report dialog: the note dialog's frame at a form's width. Its
    declarations are its own rather than shared, so the two can drift apart

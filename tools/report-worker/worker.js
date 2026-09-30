@@ -7,20 +7,39 @@
    and nothing else. The Action in .github/workflows/report-to-pr.yml then
    turns the issue into a pull request. The fenced block at the top of the
    issue body is what that Action parses, so its shape is fixed here and
-   read there. COURSES and REASONS are repeated in quiz.js and
-   tools/report_to_pr.py, which run elsewhere and cannot import them: change
-   all three together. */
+   read there. A report names a question or, with kind "note", a lecture's
+   note; a report with no kind is a question's, which is what every page
+   sent before notes had the button. COURSES and REASONS are repeated in
+   portal.js and tools/report_to_pr.py, which run elsewhere and cannot
+   import them: change all three together. */
 
 const COURSES = ["fom", "pom1", "pom2", "t2c"];
-const REASONS = ["wrong-key", "explanation", "typo", "misfiled", "other"];
+const REASONS = {
+  question: ["wrong-key", "explanation", "typo", "misfiled", "other"],
+  note: ["wrong", "missing", "typo", "misfiled", "other"],
+};
+
+export function kindOf(r) {
+  return r.kind === undefined ? "question" : r.kind;
+}
 
 export function validate(r) {
   if (!r || typeof r !== "object") return "not a report";
   if (r.site !== "preclerkship") return "wrong site";
   if (!COURSES.includes(r.course)) return "unknown course";
   if (!/^[a-z0-9]{1,12}$/.test(r.block || "")) return "bad block";
-  if (!/^[A-Za-z0-9-]{3,80}$/.test(r.qid || "")) return "bad qid";
-  if (!REASONS.includes(r.reason)) return "unknown reason";
+  const kind = kindOf(r);
+  if (!REASONS[kind]) return "unknown kind";
+  if (kind === "question") {
+    if (!/^[A-Za-z0-9-]{3,80}$/.test(r.qid || "")) return "bad qid";
+  } else {
+    // lecture ids carry a dot where one lecture was split in two (msk-w7-02.1)
+    if (!/^[A-Za-z0-9.-]{3,80}$/.test(r.lecture || "")) return "bad lecture";
+    // the name tells apart two lectures a roster gave the same id; it goes
+    // on one line of the block, so no line breaks and nothing unprintable
+    if (typeof r.name !== "string" || r.name.length > 200 || /[\u0000-\u001f\u007f]/.test(r.name)) return "bad name";
+  }
+  if (!REASONS[kind].includes(r.reason)) return "unknown reason";
   const note = typeof r.note === "string" ? r.note.trim() : "";
   if (note.length < 3) return "note too short";
   if (note.length > 2000) return "note too long";
@@ -41,11 +60,16 @@ function defuse(s) {
 }
 
 export function issueBody(r) {
+  const note = kindOf(r) === "note";
+  const what = note
+    ? ["kind: note", "lecture: " + r.lecture, "name: " + defuse(r.name)]
+    : ["qid: " + r.qid];
+  const thing = note ? "note" : "question";
   return [
     "```report",
     "course: " + r.course,
     "block: " + r.block,
-    "qid: " + r.qid,
+    ...what,
     "reason: " + r.reason,
     "page: " + r.page,
     "```",
@@ -53,8 +77,12 @@ export function issueBody(r) {
     "### What is wrong",
     defuse(r.note.trim()),
     "",
-    "_Sent from the Report button on the question. The Action opens a pull request that flags the question with this note._",
+    "_Sent from the Report button on the " + thing + ". The Action opens a pull request that flags the " + thing + " with this report._",
   ].join("\n");
+}
+
+export function issueTitle(r) {
+  return "Report: " + (kindOf(r) === "note" ? r.lecture + " note" : r.qid) + " (" + r.reason + ")";
 }
 
 export function corsHeaders(origin, allowed) {
@@ -104,7 +132,7 @@ export default {
         "content-type": "application/json",
       },
       body: JSON.stringify({
-        title: "Report: " + report.qid + " (" + report.reason + ")",
+        title: issueTitle(report),
         body: issueBody(report),
         labels: ["report"],
       }),
