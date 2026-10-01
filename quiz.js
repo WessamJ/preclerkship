@@ -874,6 +874,11 @@
     paintBar();
   }
 
+  /* every edit still inside its 600 ms, saved now: the page is going away */
+  function flushMemos() {
+    Object.keys(MEMO_PENDING).forEach(function (qid) { MEMO_PENDING[qid](); });
+  }
+
   /* The memo sits in the answer, so it shows exactly when the answer does,
      by whichever path revealed it, and a sat paper hides it with the rest.
      A card with no memo carries only a quiet button: two thousand empty
@@ -2989,6 +2994,13 @@
     applyFilters();
     QUESTIONS.forEach(function (q) { paintQuestion(q.qid); });
     initPos();
+    /* An edit still inside its pause is saved when the page goes away.
+       visibilitychange as well as pagehide: a phone can discard a tab it
+       has hidden without ever firing pagehide. */
+    window.addEventListener("pagehide", flushMemos);
+    document.addEventListener("visibilitychange", function () {
+      if (document.visibilityState === "hidden") flushMemos();
+    });
     if (!storeWritable) {
       note("This browser will not let the page use local storage, so answers cannot be saved. Every question still works.");
     }
