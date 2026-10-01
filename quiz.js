@@ -879,6 +879,24 @@
     Object.keys(MEMO_PENDING).forEach(function (qid) { MEMO_PENDING[qid](); });
   }
 
+  /* After an import has changed memos under the cards: each box takes the
+     stored text, unless the learner is in it or has an edit still pending. */
+  function syncMemoCard(qid) {
+    var art = byId("q-" + qid);
+    if (!art) return;
+    var tag = art.querySelector(".has-memo");
+    if (tag) tag.hidden = !hasMemo(qid);
+    var ta = art.querySelector(".memo-text");
+    if (!ta || ta === document.activeElement || MEMO_PENDING[qid]) return;
+    ta.value = memoText(qid);
+    ta.rows = memoRows(ta.value);
+    if (hasMemo(qid)) {
+      ta.hidden = false;
+      art.querySelector(".memo-head").hidden = false;
+      art.querySelector(".memo-add").hidden = true;
+    }
+  }
+
   /* The memo sits in the answer, so it shows exactly when the answer does,
      by whichever path revealed it, and a sat paper hides it with the rest.
      A card with no memo carries only a quiet button: two thousand empty
@@ -2813,9 +2831,12 @@
     byId("export-progress").addEventListener("click", function () {
       var payload = {
         store: "nsq",
-        version: 2,
+        version: 3,
         exported: new Date().toISOString(),
-        blocks: everyBlock()
+        blocks: everyBlock(),
+        /* memos ride along under their own key, naming the course they came
+           from, which is what lets a restore refuse another course's file */
+        memos: exportMemos()
       };
       var url = URL.createObjectURL(
         new Blob([JSON.stringify(payload, null, 1)], { type: "application/json" }));
@@ -2860,6 +2881,16 @@
     try { parsed = JSON.parse(text); }
     catch (e) { note("That file is not valid JSON, so nothing was imported."); return; }
 
+    /* A version 3 file names the course its memos came from. One from
+       another course's bank is refused whole: its progress would otherwise
+       be written under this course's prefix, where nothing ever reads it. */
+    var fileMemos = (parsed && typeof parsed === "object" && parsed.memos &&
+                     typeof parsed.memos === "object") ? parsed.memos : null;
+    if (fileMemos && fileMemos.store !== STORE_PREFIX) {
+      note("That file is from another course's question bank, so nothing was imported.");
+      return;
+    }
+
     var incoming = blocksInFile(parsed);
     if (!incoming) { note("No progress records found in that file."); return; }
 
@@ -2898,22 +2929,38 @@
       elsewhere.push(slug);
     });
 
-    if (!here && !away) {
-      note("Nothing in that file was newer than what is already here, so nothing changed.");
+    /* before the early return, so a file whose only news is memos is not
+       reported as having changed nothing */
+    var mm = fileMemos ? importMemos(fileMemos.items) : { changed: 0, restored: 0 };
+    var memoRefused = mm === null;
+    if (memoRefused) mm = { changed: 0, restored: 0 };
+
+    if (!here && !away && !mm.changed) {
+      note(memoRefused
+        ? "The notes in that file could not be saved, because the browser refused storage."
+        : "Nothing in that file was newer than what is already here, so nothing changed.");
       return;
     }
 
     save();
     QUESTIONS.forEach(function (q) { paintQuestion(q.qid); });
+    if (mm.changed) QUESTIONS.forEach(function (q) { syncMemoCard(q.qid); });
     paintStats();
     applyFilters();
 
-    var msg = here + " question" + (here === 1 ? "" : "s") + " restored in " + BLOCK.name + ".";
-    if (away) {
-      msg += " Another " + away + " in " + elsewhere.join(", ") +
-             ", which appear when you open those blocks.";
+    var parts = [];
+    if (here || away) {
+      var msg = here + " question" + (here === 1 ? "" : "s") + " restored in " + BLOCK.name + ".";
+      if (away) {
+        msg += " Another " + away + " in " + elsewhere.join(", ") +
+               ", which appear when you open those blocks.";
+      }
+      parts.push(msg);
     }
-    note(msg);
+    if (mm.restored) parts.push(mm.restored + " note" + (mm.restored === 1 ? "" : "s") + " restored.");
+    else if (mm.changed) parts.push("Your notes were brought up to date.");
+    if (memoRefused) parts.push("The notes in that file could not be saved, because the browser refused storage.");
+    note(parts.join(" "));
   }
 
   function buildStream() {
