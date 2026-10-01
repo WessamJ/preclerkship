@@ -1305,7 +1305,7 @@
       case "correct": return st === "correct";
       case "starred": return isStarred(q.qid);
       case "noted":   return hasMemo(q.qid);
-      default:       return true;
+      default:        return true;
     }
   }
 
