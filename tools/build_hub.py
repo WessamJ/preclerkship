@@ -203,7 +203,7 @@ A collaborative initiative by the Schulich <strong>Open-Source Medicine</strong>
 <p>
 <strong>Contributors.</strong> Ashish Saragadam, Negar Goodarzynejad, Jessica Wang,
 Tamjeed Nawaz, Yasmine Madan, Class of 2029.
-Wessam Al Jawhri, Class of 2030.
+Wessam Al Jawhri, Ella Boone, Class of 2030.
 </p>
 
 <p>
