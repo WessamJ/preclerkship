@@ -1114,6 +1114,8 @@ mark.hit{
 .tag.multi{color:var(--q-accent-ink);border-color:var(--q-accent);}
 
 .qhead .spacer{flex:1;}
+/* the note tag and the star wrap as one unit */
+.qhead-end{display:inline-flex;align-items:center;gap:7px;flex:none;}
 
 .star-btn{
     font-size:1rem;
@@ -1338,8 +1340,6 @@ mark.hit{
     padding-top:11px;
     border-top:1px dashed var(--border);
 }
-/* the head is a flex row and the box a block, so [hidden] needs saying */
-.memo [hidden]{display:none !important;}
 .memo-head{
     display:flex;
     flex-wrap:wrap;

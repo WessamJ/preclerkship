@@ -328,17 +328,20 @@
      tombstone ({t: ""}) merges like any memo, which is what stops an old
      backup bringing back a note the learner deleted. */
   function memoMerge(store, items, known) {
-    var changed = 0, restored = 0;
+    var changed = 0, restored = 0, stored = 0;
     Object.keys(items || {}).forEach(function (qid) {
       var inc = items[qid];
       if (!known(qid) || !memoEntryOk(inc)) return;
       var have = store.memos[qid];
       if (memoEntryOk(have) && have.ts >= inc.ts) return;
       store.memos[qid] = { t: inc.t.slice(0, MEMO_MAX), ts: inc.ts };
-      changed++;
+      /* a tombstone for a note that was never here is still kept, so a later
+         file cannot bring the note back, but it is no news to the learner */
+      stored++;
+      if (inc.t || (memoEntryOk(have) && have.t)) changed++;
       if (inc.t) restored++;
     });
-    return { changed: changed, restored: restored };
+    return { changed: changed, restored: restored, stored: stored };
   }
 
   /* The stored object as it is, not as this page understands it: a save
@@ -413,7 +416,7 @@
     try {
       var store = readMemoStore();
       res = memoMerge(store, items, function (qid) { return !!QMAP[qid]; });
-      if (res.changed) writeMemoStore(store);
+      if (res.stored) writeMemoStore(store);
     } catch (e) { return null; }
     if (res.changed) loadMemos();
     return res;
@@ -851,15 +854,21 @@
      here, so the next edit, blur or hide tries again. */
   var MEMO_PENDING = Object.create(null);
 
-  /* a starting height that fits the text, for browsers without
-     field-sizing: lines of about 70 characters, 3 to 16 of them */
-  function memoRows(t) {
-    var n = 0;
-    String(t || "").split("\n").forEach(function (line) {
-      n += Math.max(1, Math.ceil(line.length / 70));
-    });
-    return Math.min(16, Math.max(3, n));
+  /* Browsers without field-sizing (iOS Safari before 26.2, Firefox before
+     152) do not grow a textarea with its text. There the box is sized from
+     its scrollHeight; a guess from the character count fell short at phone
+     width, where about 38 characters fit a line. Checked once. */
+  var FIELD_SIZING = !!(window.CSS && CSS.supports && CSS.supports("field-sizing", "content"));
+  function memoFit(ta) {
+    if (FIELD_SIZING) return;
+    ta.style.height = "auto";
+    /* a box inside a hidden answer measures 0; leave it to size on opening.
+       The border is added because the box is border-sized. */
+    if (ta.scrollHeight) ta.style.height = (ta.scrollHeight + ta.offsetHeight - ta.clientHeight) + "px";
   }
+
+  /* shown when the count is, which is rare: formatted once, not per card */
+  var MEMO_MAX_TEXT = MEMO_MAX.toLocaleString("en-CA");
 
   /* A memo's own repaint. It never goes through paintQuestion, which sets
      "revealed" from the stored answer: a free question opened with Show
@@ -880,30 +889,40 @@
   }
 
   /* After an import has changed memos under the cards: each box takes the
-     stored text, unless the learner is in it or has an edit still pending. */
+     stored text, unless the learner is in it or has an edit still pending.
+     A card that has no box yet gets one only if a note now exists for it. */
   function syncMemoCard(qid) {
     var art = byId("q-" + qid);
     if (!art) return;
     var tag = art.querySelector(".has-memo");
     if (tag) tag.hidden = !hasMemo(qid);
-    var ta = art.querySelector(".memo-text");
-    if (!ta || ta === document.activeElement || MEMO_PENDING[qid]) return;
+    var box = art.querySelector(".memo");
+    if (!box || !memoReadable) return;
+    var ta = box.querySelector(".memo-text");
+    if (!ta) {
+      if (hasMemo(qid)) openMemo(box, qid, false);
+      return;
+    }
+    if (ta === document.activeElement || MEMO_PENDING[qid]) return;
     ta.value = memoText(qid);
-    ta.rows = memoRows(ta.value);
+    memoFit(ta);
     if (hasMemo(qid)) {
       ta.hidden = false;
-      art.querySelector(".memo-head").hidden = false;
-      art.querySelector(".memo-add").hidden = true;
+      box.querySelector(".memo-head").hidden = false;
+      box.querySelector(".memo-add").hidden = true;
     }
   }
 
-  /* The memo sits in the answer, so it shows exactly when the answer does,
-     by whichever path revealed it, and a sat paper hides it with the rest.
-     A card with no memo carries only a quiet button: two thousand empty
-     boxes down the stream would be noise. */
-  function buildMemo(q) {
-    var qid = q.qid;
-    var box = el("div", "memo");
+  /* The one place a note's heading, textarea, count and listeners are made,
+     for all three ways a card comes to need them: built with a note, the Add
+     a note click, and an import that brings a note. Idempotent. Returns the
+     textarea. */
+  function openMemo(box, qid, focus) {
+    var have = box.querySelector(".memo-text");
+    if (have) return have;
+    var add = box.querySelector(".memo-add");
+    add.hidden = true;
+
     var head = el("div", "memo-head");
     var h = el("p", "memo-h", "Your note");
     h.id = "memo-h-" + qid;
@@ -911,71 +930,92 @@
     status.setAttribute("role", "status");
     head.appendChild(h);
     head.appendChild(status);
-    box.appendChild(head);
 
-    if (!memoReadable) {
-      box.appendChild(el("p", "memo-off", "Notes cannot be kept in this browser."));
-      return box;
-    }
-
-    var add = el("button", "btn ghost memo-add", "Add a note");
-    add.type = "button";
     var ta = document.createElement("textarea");
     ta.className = "memo-text";
     ta.maxLength = MEMO_MAX;
+    ta.rows = 3;
     ta.setAttribute("aria-labelledby", h.id);
     ta.placeholder = "Only you can see this. Why you got it wrong, a mnemonic, what to reread.";
     ta.value = memoText(qid);
-    ta.rows = memoRows(ta.value);
     /* outside the live region, or it would be read out on every keystroke */
     var count = el("span", "memo-count");
+    count.hidden = true;
 
-    var open = hasMemo(qid);
-    head.hidden = !open;
-    ta.hidden = !open;
-    add.hidden = open;
-
+    /* the count is formatted only while it shows, past MEMO_COUNT_AT */
     function paintCount() {
       var n = ta.value.length;
       count.hidden = n <= MEMO_COUNT_AT;
-      count.textContent = n.toLocaleString("en-CA") + " / " + MEMO_MAX.toLocaleString("en-CA");
+      if (!count.hidden) count.textContent = n.toLocaleString("en-CA") + " / " + MEMO_MAX_TEXT;
     }
 
-    /* The timer holds this card's box and is not cancelled by losing focus:
-       the Order switch moves cards between containers, which drops focus
-       without a blur, and the edit must still land. */
+    /* The timer holds this card's box and is not cancelled by losing focus.
+       A blur normally flushes it, but the edit must also land where hiding
+       or moving the box (the Order switch moves cards between containers)
+       does not blur it. */
     var timer = null;
     function flush() {
       if (timer) { window.clearTimeout(timer); timer = null; }
       if (!MEMO_PENDING[qid]) return;
+      /* Typing and clearing in a box this tab never held a note for is not a
+         delete. Writing a tombstone would carry a newer stamp than another
+         device's real note and erase it on the next merge. */
+      if (!ta.value.trim() && !hasMemo(qid)) {
+        delete MEMO_PENDING[qid];
+        status.textContent = "";
+        return;
+      }
       var saved = writeMemo(qid, ta.value);
       status.textContent = saved ? "Saved" : "Not saved: the browser refused storage";
       if (saved) delete MEMO_PENDING[qid];
       paintMemo(qid);
     }
 
-    add.addEventListener("click", function () {
-      add.hidden = true;
-      head.hidden = false;
-      ta.hidden = false;
-      ta.focus();
-    });
     ta.addEventListener("input", function () {
-      /* maxlength stops typing; this stops anything that sets the value */
+      /* maxlength stops typing; this catches input that got past it, such as
+         some paste and IME paths. Setting .value from code fires no input. */
       if (ta.value.length > MEMO_MAX) ta.value = ta.value.slice(0, MEMO_MAX);
       MEMO_PENDING[qid] = flush;
       status.textContent = "";
-      ta.rows = memoRows(ta.value);
+      memoFit(ta);
       paintCount();
       if (timer) window.clearTimeout(timer);
       timer = window.setTimeout(flush, MEMO_DELAY);
     });
     ta.addEventListener("blur", flush);
+    ta.addEventListener("focus", function () { memoFit(ta); });
 
+    box.insertBefore(head, add);
+    box.insertBefore(ta, add);
+    box.insertBefore(count, add);
     paintCount();
+    memoFit(ta);
+    if (focus) ta.focus();
+    return ta;
+  }
+
+  /* The memo sits in the answer, so it shows exactly when the answer does,
+     by whichever path revealed it, and a sat paper hides it with the rest.
+     A card with no note carries only a quiet button; its box is built when
+     the button is pressed or a note arrives, because two thousand empty
+     boxes down the stream would be noise and slow the page's first paint. */
+  function buildMemo(q) {
+    var qid = q.qid;
+    var box = el("div", "memo");
+    if (!memoReadable) {
+      var head = el("div", "memo-head");
+      var h = el("p", "memo-h", "Your note");
+      h.id = "memo-h-" + qid;
+      head.appendChild(h);
+      box.appendChild(head);
+      box.appendChild(el("p", "memo-off", "Notes cannot be kept in this browser."));
+      return box;
+    }
+    var add = el("button", "btn ghost memo-add", "Add a note");
+    add.type = "button";
     box.appendChild(add);
-    box.appendChild(ta);
-    box.appendChild(count);
+    add.addEventListener("click", function () { openMemo(box, qid, true); });
+    if (hasMemo(qid)) openMemo(box, qid, false);
     return box;
   }
 
@@ -1005,7 +1045,10 @@
     var mtag = el("span", "tag has-memo", "your note");
     mtag.title = "Answer to see your note";
     mtag.hidden = !hasMemo(q.qid);
-    head.appendChild(mtag);
+    /* the tag and the star wrap as one unit, so the star never drops to a
+       header row of its own on a narrow screen */
+    var endcap = el("span", "qhead-end");
+    endcap.appendChild(mtag);
 
     var star = el("button", "star-btn", "★");
     star.type = "button";
@@ -1015,7 +1058,8 @@
     star.addEventListener("click", function () {
       persist(q.qid, { flagged: !isStarred(q.qid) });
     });
-    head.appendChild(star);
+    endcap.appendChild(star);
+    head.appendChild(endcap);
     art.appendChild(head);
 
     /* Shown only in a shuffled stream, where the week and lecture headings are
@@ -2884,13 +2928,12 @@
     /* A version 3 file names the course its memos came from. One from
        another course's bank is refused whole: its progress would otherwise
        be written under this course's prefix, where nothing ever reads it.
-       A memos key that names no course (an array, no store, no items) is
-       malformed rather than foreign: it is ignored and progress restores. */
+       A memos key that names no course (an array, no store) is malformed
+       rather than foreign: it is ignored and progress restores. Memos are
+       imported only when items is an object. */
     var fileMemos = (parsed && typeof parsed === "object" && parsed.memos &&
                      typeof parsed.memos === "object" && !Array.isArray(parsed.memos) &&
-                     typeof parsed.memos.store === "string" &&
-                     parsed.memos.items && typeof parsed.memos.items === "object" &&
-                     !Array.isArray(parsed.memos.items)) ? parsed.memos : null;
+                     typeof parsed.memos.store === "string") ? parsed.memos : null;
     if (fileMemos && fileMemos.store !== STORE_PREFIX) {
       note("That file is from another course's question bank, so nothing was imported.");
       return;
@@ -2936,7 +2979,9 @@
 
     /* before the early return, so a file whose only news is memos is not
        reported as having changed nothing */
-    var mm = fileMemos ? importMemos(fileMemos.items) : { changed: 0, restored: 0 };
+    var fileItems = fileMemos && fileMemos.items && typeof fileMemos.items === "object" &&
+                    !Array.isArray(fileMemos.items) ? fileMemos.items : null;
+    var mm = fileItems ? importMemos(fileItems) : { changed: 0, restored: 0 };
     var memoRefused = mm === null;
     if (memoRefused) mm = { changed: 0, restored: 0 };
 
