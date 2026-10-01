@@ -22,7 +22,8 @@ HOWTO = """<details class="howto">
 <summary>Remember to save your progress</summary>
 <div class="body">
 <p>Your answers live in your browser&rsquo;s local storage. They don&rsquo;t follow you
-on a different browser or laptop, and could be lost if the site data is cleared.</p>
+on a different browser or laptop, and could be lost if the site data is cleared. Your notes
+on questions are kept the same way and travel in the same file.</p>
 <p>To save your progress, press <strong>Download all my progress</strong> below. On your other
 device, press <strong>Restore from a file</strong>. A restore only adds and updates, so an out
 of date file cannot wipe newer answers.</p>
