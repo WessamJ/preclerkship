@@ -1293,9 +1293,10 @@
     return filters.tag.some(function (k) { return t.indexOf(k) !== -1; });
   }
 
-  /* Starred is not a state the other three can be in - a starred question is
-     also unseen or wrong or correct - so picking Wrong and Starred asks for
-     the union of two overlapping sets, not for their intersection. */
+  /* Starred and Your note are not states the other three can be in - a
+     starred or noted question is also unseen or wrong or correct - so picking
+     Wrong and Starred asks for the union of two overlapping sets, not for
+     their intersection. */
   function statusIs(q, k) {
     var st = stateOf(q.qid);
     switch (k) {
@@ -1303,7 +1304,8 @@
       case "wrong":   return st === "wrong";
       case "correct": return st === "correct";
       case "starred": return isStarred(q.qid);
-      default:        return true;
+      case "noted":   return hasMemo(q.qid);
+      default:       return true;
     }
   }
 
@@ -1339,7 +1341,12 @@
 
      The answer and its explanation are never read. A search for "metformin"
      that surfaced every question whose ANSWER is metformin would hand out the
-     key before the question was attempted. */
+     key before the question was attempted.
+
+     A memo is read too (searchOk adds it), and that is no exception to the
+     rule: the rule keeps the bank's own key out of the search, and a memo is
+     the learner's own words. If they wrote the answer into it, that was
+     their choice. */
   function searchText(q) {
     var parts = [q.stem];
     /* a preamble is usually {title, html}; two in the banks are bare strings */
@@ -1370,9 +1377,11 @@
   }
 
   /* The pure form: one question, one query, no state. It is what the test
-     script exercises. */
-  function searchMatches(q, query) {
-    return searchHit(searchText(q), searchWords(query));
+     script exercises; the memo is handed in rather than looked up. */
+  function searchMatches(q, query, memo) {
+    var hay = searchText(q);
+    if (memo) hay += " " + String(memo).toLowerCase();
+    return searchHit(hay, searchWords(query));
   }
 
   /* The haystack is stripped once per question rather than on every keystroke
@@ -1396,6 +1405,10 @@
     if (!words.length) return true;
     var hay = SEARCH_HAY[q.qid];
     if (hay === undefined) hay = SEARCH_HAY[q.qid] = searchText(q);
+    /* the memo is appended per check rather than cached, so an edit needs
+       no invalidation; only noted questions pay for it */
+    var memo = memoText(q.qid);
+    if (memo) hay = hay + " " + memo.toLowerCase();
     return searchHit(hay, words);
   }
 
@@ -1423,9 +1436,22 @@
      stem, options - and never into the answer, which it did not. */
   var SEARCH_MARKED = [];
 
+  /* A memo is in a textarea, where a mark cannot go, and before the answer
+     shows it is hidden. So a memo that matched lights its tag and its
+     heading instead, and the learner can see why the card is in play. These
+     cost nothing like a text mark does and do not spend the budget. */
+  var MEMO_MARKED = [];
+
   function unmarkSearch() {
     if (search()) search().unmark(SEARCH_MARKED);
     SEARCH_MARKED = [];
+    MEMO_MARKED.forEach(function (n) { n.classList.remove("memo-hit"); });
+    MEMO_MARKED = [];
+  }
+
+  function memoHit(qid, words) {
+    var m = memoText(qid).toLowerCase();
+    return !!m && words.some(function (w) { return m.indexOf(w) !== -1; });
   }
 
   function paintSearchMarks(live) {
@@ -1436,9 +1462,16 @@
     if (!words.length) return;
     var budget = s.MARK_BUDGET;
     QUESTIONS.forEach(function (q) {
-      if (budget <= 0 || !live[q.qid]) return;
+      if (!live[q.qid]) return;
       var art = byId("q-" + q.qid);
       if (!art) return;
+      if (memoHit(q.qid, words)) {
+        [].forEach.call(art.querySelectorAll(".has-memo, .memo-h"), function (n) {
+          n.classList.add("memo-hit");
+          MEMO_MARKED.push(n);
+        });
+      }
+      if (budget <= 0) return;
       var made = 0;
       [].forEach.call(art.querySelectorAll(".preamble, .stem, .opts .t"), function (part) {
         made += s.mark(part, words, budget - made);
@@ -2238,7 +2271,8 @@
     { k: "unseen", label: "Unseen" },
     { k: "wrong", label: "Wrong", cls: "wrongish" },
     { k: "correct", label: "Correct" },
-    { k: "starred", label: "Starred", cls: "starish" }
+    { k: "starred", label: "Starred", cls: "starish" },
+    { k: "noted", label: "Your note" }
   ];
 
   /* Weeks come off the questions rather than off BLOCK.weeks: that is a
@@ -2300,7 +2334,7 @@
   function facetCounts() {
     var blk = Object.create(null), fam = Object.create(null);
     var week = Object.create(null), tag = Object.create(null);
-    var status = { all: 0, unseen: 0, wrong: 0, correct: 0, starred: 0 };
+    var status = { all: 0, unseen: 0, wrong: 0, correct: 0, starred: 0, noted: 0 };
     var blkAll = 0, famAll = 0, weekAll = 0, tagAll = 0, shown = 0;
     QUESTIONS.forEach(function (q) {
       var b = blockOk(q), f = famOk(q), w = weekOk(q), t = tagOk(q);
@@ -2335,6 +2369,7 @@
         else if (st === "wrong") status.wrong++;
         else status.correct++;
         if (isStarred(q.qid)) status.starred++;
+        if (hasMemo(q.qid)) status.noted++;
       }
       if (b && f && w && t && sOk) shown++;
     });
