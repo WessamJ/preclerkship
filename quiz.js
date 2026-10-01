@@ -296,6 +296,129 @@
     }
   }
 
+  /* ---------- memos ---------- */
+
+  /* A memo is the learner's own note on one question. It is kept apart from
+     progress on purpose: forgetMany deletes whole records, sanitize and
+     persist rebuild them from a fixed list of fields, and restore merges them
+     by the time of the last answer. A memo inside the record would be erased
+     by a reset, dropped by an older cached copy of this file, and overwritten
+     by an import whose answer happened to be newer. Its key must not begin
+     with STORE_PREFIX either, or everyBlock() would export it as a block. */
+  var MEMO_KEY = "memo:" + STORE_PREFIX;
+  var MEMO_MAX = 2000;
+  var memos = Object.create(null);   // qid -> text, for memos that have text
+  var memoReadable = true;
+
+  function memoEntryOk(e) {
+    return !!e && typeof e === "object" && typeof e.t === "string" &&
+           typeof e.ts === "number" && isFinite(e.ts);
+  }
+
+  /* A local edit always wins for its own question. Stamping it one past what
+     is stored, when the clock says otherwise, stops a device whose clock is
+     behind from writing a save that every later merge would treat as older
+     than the thing it replaced. */
+  function memoStamp(prev, now) {
+    return memoEntryOk(prev) ? Math.max(now, prev.ts + 1) : now;
+  }
+
+  /* Import is the one place newer-wins applies: a file is a copy of the past,
+     so a memo here that is newer than the file's was written since. A
+     tombstone ({t: ""}) merges like any memo, which is what stops an old
+     backup bringing back a note the learner deleted. */
+  function memoMerge(store, items, known) {
+    var changed = 0, restored = 0;
+    Object.keys(items || {}).forEach(function (qid) {
+      var inc = items[qid];
+      if (!known(qid) || !memoEntryOk(inc)) return;
+      var have = store.memos[qid];
+      if (memoEntryOk(have) && have.ts >= inc.ts) return;
+      store.memos[qid] = { t: inc.t.slice(0, MEMO_MAX), ts: inc.ts };
+      changed++;
+      if (inc.t) restored++;
+    });
+    return { changed: changed, restored: restored };
+  }
+
+  /* The stored object as it is, not as this page understands it: a save
+     patches one entry and writes the rest back untouched, so entries the
+     loader ignored (a later version's fields, a retired question's memo)
+     survive. Throws if the browser will not read storage at all. */
+  function readMemoStore() {
+    var raw = window.localStorage.getItem(MEMO_KEY), parsed = null;
+    if (raw) {
+      try { parsed = JSON.parse(raw); }
+      catch (e) { parsed = null; }
+    }
+    if (!parsed || typeof parsed !== "object" || Array.isArray(parsed)) parsed = { v: 1, memos: {} };
+    if (!parsed.memos || typeof parsed.memos !== "object" || Array.isArray(parsed.memos)) parsed.memos = {};
+    return parsed;
+  }
+
+  function writeMemoStore(store) {
+    window.localStorage.setItem(MEMO_KEY, JSON.stringify(store));
+  }
+
+  function loadMemos() {
+    memos = Object.create(null);
+    var store;
+    try { store = readMemoStore(); }
+    catch (e) { memoReadable = false; return; }
+    Object.keys(store.memos).forEach(function (qid) {
+      var m = store.memos[qid];
+      /* a tombstone and a malformed entry alike show nothing; a long one is
+         cut for display only, and never written back cut */
+      if (memoEntryOk(m) && m.t) memos[qid] = m.t.slice(0, MEMO_MAX);
+    });
+  }
+
+  function hasMemo(qid) { return !!memos[qid]; }
+
+  function memoText(qid) { return memos[qid] || ""; }
+
+  /* Read, patch the one question, write. Re-reading first is what keeps two
+     tabs on the same bank from erasing each other's memos. Text that is
+     empty once trimmed is a delete, kept as a tombstone. On a refusal the
+     copy in memory is left as it was and the caller is told. */
+  function writeMemo(qid, text) {
+    var t = String(text || "");
+    if (!t.trim()) t = "";
+    t = t.slice(0, MEMO_MAX);
+    try {
+      var store = readMemoStore();
+      store.memos[qid] = { t: t, ts: memoStamp(store.memos[qid], Date.now()) };
+      writeMemoStore(store);
+    } catch (e) { return false; }
+    if (t) memos[qid] = t; else delete memos[qid];
+    return true;
+  }
+
+  /* for the backup file: every entry that reads as one, tombstones included */
+  function exportMemos() {
+    var items = {};
+    try {
+      var store = readMemoStore();
+      Object.keys(store.memos).forEach(function (qid) {
+        var m = store.memos[qid];
+        if (memoEntryOk(m)) items[qid] = { t: m.t, ts: m.ts };
+      });
+    } catch (e) { /* unreadable: the file carries no memos */ }
+    return { store: STORE_PREFIX, items: items };
+  }
+
+  /* one read-merge-write for a whole file's memos; null if storage refused */
+  function importMemos(items) {
+    var res;
+    try {
+      var store = readMemoStore();
+      res = memoMerge(store, items, function (qid) { return !!QMAP[qid]; });
+      if (res.changed) writeMemoStore(store);
+    } catch (e) { return null; }
+    if (res.changed) loadMemos();
+    return res;
+  }
+
   /* ---------- mode helpers ---------- */
 
   /* The single gate on showing an answer. In tutor mode an answered question
@@ -2735,6 +2858,7 @@
     QUESTIONS = data;
     QUESTIONS.forEach(function (q) { QMAP[q.qid] = q; });
     load();
+    loadMemos();
     readHash();
     buildMasthead();
     buildBar();
@@ -2757,6 +2881,12 @@
     blockForWeek: blockForWeek,
     noteIdFor: noteIdFor,
     reviewParts: reviewParts,
+    /* the memo store, for the test script; nothing on a page calls these */
+    memo: {
+      key: MEMO_KEY, entryOk: memoEntryOk, stamp: memoStamp, merge: memoMerge,
+      load: loadMemos, has: hasMemo, text: memoText, write: writeMemo,
+      readable: function () { return memoReadable; }
+    },
     boot: function () {
       if (booted) return;
       booted = true;
