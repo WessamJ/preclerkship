@@ -843,6 +843,119 @@
     });
   }
 
+  /* ---------- the memo on a card ---------- */
+
+  var MEMO_DELAY = 600;       // ms after the last keystroke before a save
+  var MEMO_COUNT_AT = 1800;   // the character count appears past this
+  /* qid -> that card's flush, for an edit not saved yet. A refused save stays
+     here, so the next edit, blur or hide tries again. */
+  var MEMO_PENDING = Object.create(null);
+
+  /* a starting height that fits the text, for browsers without
+     field-sizing: lines of about 70 characters, 3 to 16 of them */
+  function memoRows(t) {
+    var n = 0;
+    String(t || "").split("\n").forEach(function (line) {
+      n += Math.max(1, Math.ceil(line.length / 70));
+    });
+    return Math.min(16, Math.max(3, n));
+  }
+
+  /* A memo's own repaint. It never goes through paintQuestion, which sets
+     "revealed" from the stored answer: a free question opened with Show
+     answer and no verdict has none, so a paintQuestion would fold the answer
+     shut with the learner's cursor still in the box. */
+  function paintMemo(qid) {
+    var art = byId("q-" + qid);
+    if (art) {
+      var tag = art.querySelector(".has-memo");
+      if (tag) tag.hidden = !hasMemo(qid);
+    }
+    paintBar();
+  }
+
+  /* The memo sits in the answer, so it shows exactly when the answer does,
+     by whichever path revealed it, and a sat paper hides it with the rest.
+     A card with no memo carries only a quiet button: two thousand empty
+     boxes down the stream would be noise. */
+  function buildMemo(q) {
+    var qid = q.qid;
+    var box = el("div", "memo");
+    var head = el("div", "memo-head");
+    var h = el("p", "memo-h", "Your note");
+    h.id = "memo-h-" + qid;
+    var status = el("span", "memo-status");
+    status.setAttribute("role", "status");
+    head.appendChild(h);
+    head.appendChild(status);
+    box.appendChild(head);
+
+    if (!memoReadable) {
+      box.appendChild(el("p", "memo-off", "Notes cannot be kept in this browser."));
+      return box;
+    }
+
+    var add = el("button", "btn ghost memo-add", "Add a note");
+    add.type = "button";
+    var ta = document.createElement("textarea");
+    ta.className = "memo-text";
+    ta.maxLength = MEMO_MAX;
+    ta.setAttribute("aria-labelledby", h.id);
+    ta.placeholder = "Only you can see this. Why you got it wrong, a mnemonic, what to reread.";
+    ta.value = memoText(qid);
+    ta.rows = memoRows(ta.value);
+    /* outside the live region, or it would be read out on every keystroke */
+    var count = el("span", "memo-count");
+
+    var open = hasMemo(qid);
+    head.hidden = !open;
+    ta.hidden = !open;
+    add.hidden = open;
+
+    function paintCount() {
+      var n = ta.value.length;
+      count.hidden = n <= MEMO_COUNT_AT;
+      count.textContent = n.toLocaleString("en-CA") + " / " + MEMO_MAX.toLocaleString("en-CA");
+    }
+
+    /* The timer holds this card's box and is not cancelled by losing focus:
+       the Order switch moves cards between containers, which drops focus
+       without a blur, and the edit must still land. */
+    var timer = null;
+    function flush() {
+      if (timer) { window.clearTimeout(timer); timer = null; }
+      if (!MEMO_PENDING[qid]) return;
+      var saved = writeMemo(qid, ta.value);
+      status.textContent = saved ? "Saved" : "Not saved: the browser refused storage";
+      if (saved) delete MEMO_PENDING[qid];
+      paintMemo(qid);
+    }
+
+    add.addEventListener("click", function () {
+      add.hidden = true;
+      head.hidden = false;
+      ta.hidden = false;
+      ta.focus();
+    });
+    ta.addEventListener("input", function () {
+      /* maxlength stops typing; this stops anything that sets the value */
+      if (ta.value.length > MEMO_MAX) ta.value = ta.value.slice(0, MEMO_MAX);
+      MEMO_PENDING[qid] = flush;
+      status.textContent = "";
+      ta.rows = memoRows(ta.value);
+      paintCount();
+      if (timer) window.clearTimeout(timer);
+      timer = window.setTimeout(flush, MEMO_DELAY);
+    });
+    ta.addEventListener("blur", flush);
+
+    paintCount();
+    box.appendChild(add);
+    box.appendChild(ta);
+    box.appendChild(count);
+    return box;
+  }
+
   function buildQuestion(q) {
     var art = el("article", "q");
     art.id = "q-" + q.qid;
@@ -862,6 +975,14 @@
     });
     if (hasErr) head.appendChild(el("span", "tag errflag", "source error flagged"));
     head.appendChild(el("span", "spacer"));
+
+    /* says a memo exists without saying what it is; the memo itself is in
+       the answer. CSS hides it once the answer shows and while a paper is
+       sat, so paintQuestion never has to know about it. */
+    var mtag = el("span", "tag has-memo", "your note");
+    mtag.title = "Answer to see your note";
+    mtag.hidden = !hasMemo(q.qid);
+    head.appendChild(mtag);
 
     var star = el("button", "star-btn", "★");
     star.type = "button";
@@ -1007,6 +1128,7 @@
     src.appendChild(el("span", "sl", "Review"));
     src.appendChild(buildWhere(q));
     ans.appendChild(src);
+    ans.appendChild(buildMemo(q));
 
     art.appendChild(ans);
 

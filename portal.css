@@ -73,6 +73,7 @@
        or in --border; the accent is a dark colour, so the tag's rule takes the
        ink and the callout's left bar takes the muted grey at full strength. */
     :root[data-theme="dark"] .tag.multi{border-color:var(--q-accent-ink);}
+    :root[data-theme="dark"] .tag.has-memo{border-color:var(--q-accent-ink);}
     :root[data-theme="dark"] .block-card{
         --hue-ink:color-mix(in srgb,var(--hue) 45%,#ffffff);
         border-top-color:var(--hue-ink);
@@ -1322,6 +1323,61 @@ mark.hit{
     color:var(--q-accent-text);
     text-decoration-style:solid;
 }
+
+/* The learner's own note on a question. It sits in the answer, under the
+   review line, so it shows exactly when the answer does and a sat paper hides
+   it with everything else. Set like the review line: the answer is what is
+   being read, and this is the learner's margin. */
+.memo{
+    margin-top:14px;
+    padding-top:11px;
+    border-top:1px dashed var(--border);
+}
+/* the head is a flex row and the box a block, so [hidden] needs saying */
+.memo [hidden]{display:none !important;}
+.memo-head{
+    display:flex;
+    flex-wrap:wrap;
+    align-items:baseline;
+    gap:10px;
+    margin-bottom:6px;
+}
+.memo-h{
+    margin:0;
+    font-size:.68rem;
+    font-weight:700;
+    letter-spacing:.09em;
+    text-transform:uppercase;
+    color:var(--q-accent-ink);
+}
+.memo-status{font-size:.78rem;color:var(--muted);}
+.memo-text{
+    display:block;
+    width:100%;
+    field-sizing:content;
+    min-height:4.5em;
+    font:inherit;
+    /* 1rem, not the report box's .9rem: under 16px, iOS Safari zooms the
+       whole page on focus */
+    font-size:1rem;
+    line-height:1.5;
+    color:var(--text);
+    background:var(--bg);
+    border:1px solid var(--border);
+    border-radius:6px;
+    padding:8px 10px;
+    resize:vertical;
+}
+.memo-text:focus{outline:2px solid var(--q-accent);outline-offset:1px;}
+.memo-count{display:block;margin-top:4px;font-size:.75rem;color:var(--muted);text-align:right;}
+.memo-off{margin:0;font-size:.82rem;color:var(--muted);}
+
+/* The tag that says a memo exists. Gone once the memo itself shows, and
+   while a paper is being sat, where "you wrote a note here" would cue that
+   this question caught you before. */
+.tag.has-memo{color:var(--q-accent-ink);border-color:var(--q-accent);}
+.q.revealed .tag.has-memo,
+#panel-questions[data-mode="test"][data-submitted="false"] .tag.has-memo{display:none;}
 
 /* The note dialog: one lecture's note, read without leaving the question.
    Sized to the note's own column so tables and pathways lay out as they do
