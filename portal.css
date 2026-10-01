@@ -1368,7 +1368,7 @@ mark.hit{
     padding:8px 10px;
     resize:vertical;
 }
-.memo-text:focus{outline:2px solid var(--q-accent);outline-offset:1px;}
+.memo-text:focus{outline:2px solid var(--q-accent-text);outline-offset:1px;}
 .memo-count{display:block;margin-top:4px;font-size:.75rem;color:var(--muted);text-align:right;}
 .memo-off{margin:0;font-size:.82rem;color:var(--muted);}
 
