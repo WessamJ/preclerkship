@@ -2883,9 +2883,14 @@
 
     /* A version 3 file names the course its memos came from. One from
        another course's bank is refused whole: its progress would otherwise
-       be written under this course's prefix, where nothing ever reads it. */
+       be written under this course's prefix, where nothing ever reads it.
+       A memos key that names no course (an array, no store, no items) is
+       malformed rather than foreign: it is ignored and progress restores. */
     var fileMemos = (parsed && typeof parsed === "object" && parsed.memos &&
-                     typeof parsed.memos === "object") ? parsed.memos : null;
+                     typeof parsed.memos === "object" && !Array.isArray(parsed.memos) &&
+                     typeof parsed.memos.store === "string" &&
+                     parsed.memos.items && typeof parsed.memos.items === "object" &&
+                     !Array.isArray(parsed.memos.items)) ? parsed.memos : null;
     if (fileMemos && fileMemos.store !== STORE_PREFIX) {
       note("That file is from another course's question bank, so nothing was imported.");
       return;
@@ -2942,8 +2947,14 @@
       return;
     }
 
-    save();
-    QUESTIONS.forEach(function (q) { paintQuestion(q.qid); });
+    /* paintQuestion rebuilds a card from stored progress, and a free question
+       opened with Show answer stores none, so repainting for a file whose
+       only news is memos would fold those answers shut. Memo changes reach
+       the cards through syncMemoCard instead. */
+    if (here || away) {
+      save();
+      QUESTIONS.forEach(function (q) { paintQuestion(q.qid); });
+    }
     if (mm.changed) QUESTIONS.forEach(function (q) { syncMemoCard(q.qid); });
     paintStats();
     applyFilters();
