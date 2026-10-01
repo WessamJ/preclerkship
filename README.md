@@ -209,6 +209,15 @@ The flip side is that it does not follow you, so each course's questions tab has
 by hand. One file holds every block of that course, and a restore only adds and
 updates, so an out of date file cannot overwrite newer answers.
 
+A note you write on a question stays on the device the same way, under a key of
+its own (`memo:` and the course's prefix) rather than inside the progress
+record, so resetting a question or the whole bank never deletes what you wrote.
+A note shows only once its question is answered, which keeps it from handing
+you the answer on a second try, and it stays hidden while a paper is sat. The
+**Your note** status finds every question you have written on, the search reads
+your notes as well as the questions, and the backup file carries notes beside
+answers.
+
 ## Open source
 
 The beauty of open source is that anyone can access the work, improve it or
