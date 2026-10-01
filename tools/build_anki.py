@@ -19,15 +19,30 @@ them starts their own. Re-running overwrites both outputs, which is the point -
 the deck on the site is whatever the collection said the last time this ran.
 """
 
-import io, json, os, sys, urllib.request
+import io, json, os, platform, subprocess, sys, tempfile, urllib.request
 
 ANKICONNECT = "http://127.0.0.1:8765"
+EXPORT_NAME = "_anki_export.apkg"
 
-# AnkiConnect writes the package itself, so the path it is handed is a path on
-# the machine Anki runs on. Under WSL that is Windows, reached back through
-# /mnt/c, and the two spellings of the same file are not interchangeable.
-WIN_TMP = r"C:\Users\nsims\Downloads\_anki_export.apkg"
-WSL_TMP = "/mnt/c/Users/nsims/Downloads/_anki_export.apkg"
+
+def export_paths():
+    """(path Anki writes the package to, path this script reads it back from).
+
+    AnkiConnect writes the package itself, so the first path is a path on the
+    machine Anki runs on. On Windows or a Mac running this script natively the
+    two are the same temp file. Under WSL, Anki runs on Windows: the package
+    goes to the Windows temp folder and is read back through /mnt/c, and the two
+    spellings of the same file are not interchangeable.
+    """
+    if "microsoft" not in platform.uname().release.lower():
+        local = os.path.join(tempfile.gettempdir(), EXPORT_NAME)
+        return local, local
+    win_tmp = subprocess.check_output(
+        ["cmd.exe", "/c", "echo %TEMP%"], stderr=subprocess.DEVNULL
+    ).decode("utf-8", "replace").strip()
+    win_path = win_tmp + "\\" + EXPORT_NAME
+    wsl_path = subprocess.check_output(["wslpath", "-u", win_path]).decode("utf-8").strip()
+    return win_path, wsl_path
 
 
 def ac(action, **params):
@@ -63,14 +78,15 @@ def counts(deck):
 
 def export(root, dest):
     """Export root and its subdecks to dest, without scheduling."""
-    if not ac("exportPackage", deck=root, path=WIN_TMP, includeSched=False):
+    anki_path, local_path = export_paths()
+    if not ac("exportPackage", deck=root, path=anki_path, includeSched=False):
         raise RuntimeError("exportPackage returned false for %r" % root)
     d = os.path.dirname(dest)
     if not os.path.isdir(d):
         os.makedirs(d)
-    with open(WSL_TMP, "rb") as src, open(dest, "wb") as dst:
+    with open(local_path, "rb") as src, open(dest, "wb") as dst:
         dst.write(src.read())
-    os.remove(WSL_TMP)
+    os.remove(local_path)
     return os.path.getsize(dest)
 
 
