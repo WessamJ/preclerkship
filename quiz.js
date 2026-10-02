@@ -200,6 +200,23 @@
     });
   }
 
+  /* The records in memory that belong to one block. save() files them under
+     that block's key and everyBlock() exports them under its slug. */
+  function recordsOf(slug) {
+    var mine = Object.create(null);
+    Object.keys(progress).forEach(function (qid) {
+      var q = QMAP[qid];
+      if (q && q.block === slug) mine[qid] = progress[qid];
+    });
+    return mine;
+  }
+
+  /* BLOCKS holds the blocks this page runs. On the pooled page BLOCK.slug is
+     "term", which is a page and not one of them. */
+  function onThisPage(slug) {
+    return BLOCKS.some(function (b) { return b.slug === slug; });
+  }
+
   /* Given a slug, writes that one block. Without one, all of them - which is
      what a restore needs and what a single answer must not do, or every tick
      on the term page would re-serialise fifteen hundred records five times. */
@@ -207,11 +224,7 @@
     if (!storeWritable) return;
     var want = slug ? [slug] : BLOCKS.map(function (b) { return b.slug; });
     want.forEach(function (s) {
-      var mine = Object.create(null);
-      Object.keys(progress).forEach(function (qid) {
-        var q = QMAP[qid];
-        if (q && q.block === s) mine[qid] = progress[qid];
-      });
+      var mine = recordsOf(s);
       try { window.localStorage.setItem(storeKey(s), JSON.stringify(mine)); }
       catch (e) {
         storeWritable = false;
@@ -2511,7 +2524,18 @@
         if (data) out[slug] = data;
       }
     } catch (e) { /* the scan was refused; the open block still lands below */ }
-    out[BLOCK.slug] = progress;   // what is in memory is at least as new
+    /* Memory is at least as new as storage, so each block this page runs is
+       exported from memory under its own slug, over the scanned copy. A stored
+       record whose qid memory does not hold, such as a retired question's, is
+       kept. The page's own slug is not a block on the pooled page ("term"),
+       so it is never exported: its progress is every block's, already filed
+       under their own slugs above. */
+    BLOCKS.forEach(function (b) {
+      var mem = recordsOf(b.slug), merged = out[b.slug] || {};
+      Object.keys(mem).forEach(function (qid) { merged[qid] = mem[qid]; });
+      if (Object.keys(merged).length) out[b.slug] = merged;
+    });
+    if (!onThisPage(BLOCK.slug)) delete out[BLOCK.slug];
     return out;
   }
 
@@ -2588,7 +2612,11 @@
          pooled page is BLOCK.slug "term", which no record carries, and routing
          its blocks through storage instead let the save() below overwrite
          them with the empty copy still in memory. */
-      if (BLOCKS.some(function (b) { return b.slug === slug; })) {
+      /* Exports from the pooled page between 2026-09-25 and the fix also carry
+         a "term" block, a second copy of every answer. Taking it here too puts
+         those records through sanitize and newer(): the copy changes nothing,
+         and an answer only it carried still reaches its real block. */
+      if (onThisPage(slug) || slug === BLOCK.slug) {
         Object.keys(set).forEach(function (qid) {
           var r = sanitize(qid, set[qid]);
           if (r && newer(progress[qid], r)) { progress[qid] = r; here++; }
