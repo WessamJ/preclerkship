@@ -200,6 +200,23 @@
     });
   }
 
+  /* The records in memory that belong to one block. save() files them under
+     that block's key and everyBlock() exports them under its slug. */
+  function recordsOf(slug) {
+    var mine = Object.create(null);
+    Object.keys(progress).forEach(function (qid) {
+      var q = QMAP[qid];
+      if (q && q.block === slug) mine[qid] = progress[qid];
+    });
+    return mine;
+  }
+
+  /* BLOCKS holds the blocks this page runs. On the pooled page BLOCK.slug is
+     "term", which is a page and not one of them. */
+  function onThisPage(slug) {
+    return BLOCKS.some(function (b) { return b.slug === slug; });
+  }
+
   /* Given a slug, writes that one block. Without one, all of them - which is
      what a restore needs and what a single answer must not do, or every tick
      on the term page would re-serialise fifteen hundred records five times. */
@@ -207,11 +224,7 @@
     if (!storeWritable) return;
     var want = slug ? [slug] : BLOCKS.map(function (b) { return b.slug; });
     want.forEach(function (s) {
-      var mine = Object.create(null);
-      Object.keys(progress).forEach(function (qid) {
-        var q = QMAP[qid];
-        if (q && q.block === s) mine[qid] = progress[qid];
-      });
+      var mine = recordsOf(s);
       try { window.localStorage.setItem(storeKey(s), JSON.stringify(mine)); }
       catch (e) {
         storeWritable = false;
@@ -2871,7 +2884,21 @@
         if (data) out[slug] = data;
       }
     } catch (e) { /* the scan was refused; the open block still lands below */ }
-    out[BLOCK.slug] = progress;   // what is in memory is at least as new
+    /* Each block this page runs is exported under its own slug. Memory is laid
+       over the scanned stored copy only where it is strictly newer: another tab
+       may have written a newer record since this one loaded, and a stored
+       record whose qid memory does not hold, such as a retired question's, is
+       kept. The page's own slug is not a block on the pooled page ("term"), so
+       it is never exported: its progress is every block's, already filed under
+       their own slugs. */
+    BLOCKS.forEach(function (b) {
+      var mem = recordsOf(b.slug), merged = out[b.slug] || {};
+      Object.keys(mem).forEach(function (qid) {
+        if (!merged[qid] || newer(merged[qid], mem[qid])) merged[qid] = mem[qid];
+      });
+      if (Object.keys(merged).length) out[b.slug] = merged;
+    });
+    if (!onThisPage(BLOCK.slug)) delete out[BLOCK.slug];
     return out;
   }
 
@@ -2955,7 +2982,7 @@
     var incoming = blocksInFile(parsed);
     if (!incoming) { note("No progress records found in that file."); return; }
 
-    var here = 0, away = 0, elsewhere = [];
+    var got = {}, here = 0, away = 0, elsewhere = [];
 
     Object.keys(incoming).forEach(function (slug) {
       var set = incoming[slug];
@@ -2964,11 +2991,15 @@
       /* every block this page holds in memory is restored into memory. The
          pooled page is BLOCK.slug "term", which no record carries, and routing
          its blocks through storage instead let the save() below overwrite
-         them with the empty copy still in memory. */
-      if (BLOCKS.some(function (b) { return b.slug === slug; })) {
+         them with the empty copy still in memory. Exports made until this
+         change also carry a "term" block, a second copy of every answer, so
+         that slug is taken here too: its records go through sanitize and
+         newer() like any other. An identical or older copy changes nothing; a
+         newer one is applied, and save() files it under its real block. */
+      if (onThisPage(slug) || slug === BLOCK.slug) {
         Object.keys(set).forEach(function (qid) {
           var r = sanitize(qid, set[qid]);
-          if (r && newer(progress[qid], r)) { progress[qid] = r; here++; }
+          if (r && newer(progress[qid], r)) { progress[qid] = r; got[qid] = true; }
         });
         return;
       }
@@ -2989,6 +3020,9 @@
       away += n;
       elsewhere.push(slug);
     });
+
+    /* a qid can arrive twice, under its block and under term: count it once */
+    here = Object.keys(got).length;
 
     /* before the early return, so a file whose only news is memos is not
        reported as having changed nothing */
