@@ -2524,15 +2524,18 @@
         if (data) out[slug] = data;
       }
     } catch (e) { /* the scan was refused; the open block still lands below */ }
-    /* Memory is at least as new as storage, so each block this page runs is
-       exported from memory under its own slug, over the scanned copy. A stored
+    /* Each block this page runs is exported under its own slug. Memory is laid
+       over the scanned stored copy only where it is strictly newer: another tab
+       may have written a newer record since this one loaded, and a stored
        record whose qid memory does not hold, such as a retired question's, is
-       kept. The page's own slug is not a block on the pooled page ("term"),
-       so it is never exported: its progress is every block's, already filed
-       under their own slugs above. */
+       kept. The page's own slug is not a block on the pooled page ("term"), so
+       it is never exported: its progress is every block's, already filed under
+       their own slugs. */
     BLOCKS.forEach(function (b) {
       var mem = recordsOf(b.slug), merged = out[b.slug] || {};
-      Object.keys(mem).forEach(function (qid) { merged[qid] = mem[qid]; });
+      Object.keys(mem).forEach(function (qid) {
+        if (!merged[qid] || newer(merged[qid], mem[qid])) merged[qid] = mem[qid];
+      });
       if (Object.keys(merged).length) out[b.slug] = merged;
     });
     if (!onThisPage(BLOCK.slug)) delete out[BLOCK.slug];
@@ -2602,7 +2605,7 @@
     var incoming = blocksInFile(parsed);
     if (!incoming) { note("No progress records found in that file."); return; }
 
-    var here = 0, away = 0, elsewhere = [];
+    var got = {}, here = 0, away = 0, elsewhere = [];
 
     Object.keys(incoming).forEach(function (slug) {
       var set = incoming[slug];
@@ -2611,15 +2614,15 @@
       /* every block this page holds in memory is restored into memory. The
          pooled page is BLOCK.slug "term", which no record carries, and routing
          its blocks through storage instead let the save() below overwrite
-         them with the empty copy still in memory. */
-      /* Exports from the pooled page between 2026-09-25 and the fix also carry
-         a "term" block, a second copy of every answer. Taking it here too puts
-         those records through sanitize and newer(): the copy changes nothing,
-         and an answer only it carried still reaches its real block. */
+         them with the empty copy still in memory. Exports made until this
+         change also carry a "term" block, a second copy of every answer, so
+         that slug is taken here too: its records go through sanitize and
+         newer() like any other. An identical or older copy changes nothing; a
+         newer one is applied, and save() files it under its real block. */
       if (onThisPage(slug) || slug === BLOCK.slug) {
         Object.keys(set).forEach(function (qid) {
           var r = sanitize(qid, set[qid]);
-          if (r && newer(progress[qid], r)) { progress[qid] = r; here++; }
+          if (r && newer(progress[qid], r)) { progress[qid] = r; got[qid] = true; }
         });
         return;
       }
@@ -2640,6 +2643,9 @@
       away += n;
       elsewhere.push(slug);
     });
+
+    /* a qid can arrive twice, under its block and under term: count it once */
+    here = Object.keys(got).length;
 
     if (!here && !away) {
       note("Nothing in that file was newer than what is already here, so nothing changed.");
