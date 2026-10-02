@@ -1115,7 +1115,7 @@ mark.hit{
 
 .qhead .spacer{flex:1;}
 /* the note tag and the star wrap as one unit */
-.qhead-end{display:inline-flex;align-items:center;gap:7px;flex:none;}
+.qhead-end{margin-left:auto;display:inline-flex;align-items:center;gap:7px;flex:none;}
 
 .star-btn{
     font-size:1rem;

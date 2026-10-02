@@ -907,11 +907,6 @@
     if (ta === document.activeElement || MEMO_PENDING[qid]) return;
     ta.value = memoText(qid);
     memoFit(ta);
-    if (hasMemo(qid)) {
-      ta.hidden = false;
-      box.querySelector(".memo-head").hidden = false;
-      box.querySelector(".memo-add").hidden = true;
-    }
   }
 
   /* The one place a note's heading, textarea, count and listeners are made,
@@ -951,9 +946,10 @@
     }
 
     /* The timer holds this card's box and is not cancelled by losing focus.
-       A blur normally flushes it, but the edit must also land where hiding
-       or moving the box (the Order switch moves cards between containers)
-       does not blur it. */
+       A blur normally flushes it, but the edit must also land where the box
+       is hidden with the cursor still inside (a reset, or a paper starting,
+       sets the answer to display:none), since a blur is not guaranteed there
+       in every browser. */
     var timer = null;
     function flush() {
       if (timer) { window.clearTimeout(timer); timer = null; }
