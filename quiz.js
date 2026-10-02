@@ -995,7 +995,12 @@
       var seenW = -1;
       new ResizeObserver(function (entries) {
         var w = entries[0].contentRect.width;
-        if (w !== seenW) { seenW = w; memoFit(ta); }
+        if (w !== seenW) {
+          seenW = w;
+          /* next frame: fitting here resizes the observed box, which Firefox
+             and Safari report as a loop error event */
+          window.requestAnimationFrame(function () { memoFit(ta); });
+        }
       }).observe(ta);
     }
     if (focus) ta.focus();
