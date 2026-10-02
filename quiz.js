@@ -862,8 +862,9 @@
   function memoFit(ta) {
     if (FIELD_SIZING) return;
     ta.style.height = "auto";
-    /* a box inside a hidden answer measures 0; leave it to size on opening.
-       The border is added because the box is border-sized. */
+    /* a box built off-page or inside a hidden answer measures 0 here; the
+       observer in openMemo fits it again when it is first laid out. The
+       border is added because the box is border-sized. */
     if (ta.scrollHeight) ta.style.height = (ta.scrollHeight + ta.offsetHeight - ta.clientHeight) + "px";
   }
 
@@ -990,6 +991,17 @@
     box.insertBefore(count, add);
     paintCount();
     memoFit(ta);
+    /* Without field-sizing the box is sized from its scrollHeight, which is 0
+       while it is built off-page or inside a hidden answer. Fitting again
+       whenever its width changes catches the moment it is first laid out;
+       width only, because the fit itself changes the height. */
+    if (!FIELD_SIZING && window.ResizeObserver) {
+      var seenW = -1;
+      new ResizeObserver(function (entries) {
+        var w = entries[0].contentRect.width;
+        if (w !== seenW) { seenW = w; memoFit(ta); }
+      }).observe(ta);
+    }
     if (focus) ta.focus();
     return ta;
   }
